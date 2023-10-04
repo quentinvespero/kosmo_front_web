@@ -8,7 +8,7 @@ $pink : #E5A2CA;
 $blue : #7CB1FF;
 
 // -------- main fonts
-@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap');
 
 // -------- redundant usable rules
 @mixin usualSpaces($marginY, $marginX, $paddingY, $paddingX) {
@@ -41,11 +41,11 @@ $assetsPath : 'src/assets/';
 
 // -------- main rules
 * {
-    transition: .05s;
+    // transition: .05s;
 }
 
 body {
-    font-family: 'Amazon Ember';
+    font-family: 'sen';
     margin: 0;
     background: $grey3;
     font-size: 1.2rem;
@@ -75,6 +75,10 @@ li {
 
 input[type="checkbox"] {
     margin: 0 .5rem;
+}
+
+h1{
+    font-size: 1.5rem;
 }
 
 .divider {

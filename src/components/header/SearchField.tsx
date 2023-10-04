@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CommentButton = () => {
+const SearchField = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const CommentButton = () => {
     )
 }
 
-export default CommentButton
+export default SearchField

@@ -1,1 +1,26 @@
 @import './mainRules.scss';
+@import './app.scss';
+
+// components
+
+    // header
+    @import './components/header/header.scss';
+    @import './components/header/pointsCounter.scss';
+    @import './components/header/searchField.scss';
+    
+    // post
+    @import './components/post/commentButton.scss';
+    @import './components/post/counter.scss';
+    @import './components/post/post.scss';
+    @import './components/post/postContent.scss';
+    @import './components/post/postInteractions.scss';
+    @import './components/post/postTheme.scss';
+    @import './components/post/upDownVoteButton.scss';
+    
+    @import './components/addPostButton.scss';
+    @import './components/feed.scss';
+    @import './components/feedSelector.scss';
+
+// screens
+
+    @import './screens/home.scss'
