@@ -1,12 +1,12 @@
 import React from 'react'
-import PointsCounter from './PointsCounter'
+import PointCounter from './PointCounter'
 import SearchField from './SearchField'
 
 const Header = () => {
     return (
-        <div className='headerElement'>
-            <PointsCounter/>
+        <div className='header'>
             <SearchField/>
+            <PointCounter/>
         </div>
     )
 }

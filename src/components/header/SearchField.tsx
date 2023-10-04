@@ -2,8 +2,8 @@ import React from 'react'
 
 const SearchField = () => {
     return (
-        <div>
-            
+        <div className='searchField'>
+            <input type="text" />
         </div>
     )
 }
