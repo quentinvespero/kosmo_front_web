@@ -3,7 +3,7 @@ import React from 'react'
 const PointCounter = () => {
     return (
         <div className='pointCounter'>
-            <p>10pts</p>
+            <p><strong>10</strong> pts</p>
         </div>
     )
 }
