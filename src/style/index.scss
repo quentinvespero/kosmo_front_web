@@ -7,6 +7,7 @@
     @import './components/header/header.scss';
     @import './components/header/pointCounter.scss';
     @import './components/header/searchField.scss';
+    @import './components/header/searchFieldButton.scss';
     
     // post
     @import './components/post/commentButton.scss';
@@ -23,4 +24,5 @@
 
 // screens
 
+    // home
     @import './screens/home.scss'

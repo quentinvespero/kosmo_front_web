@@ -1,5 +1,5 @@
 // -------- main colors
-$white : #e5e5e5;
+$white : #dddddd;
 $grey1 : #5C5C5C;
 $grey2 : #3C3C3C;
 $grey3 : #2C2C2C;
@@ -36,6 +36,10 @@ $blue : #7CB1FF;
     }
 }
 
+@mixin transition($time){
+    transition: $time ease-in-out 0s;
+}
+
 // -------- path for the images
 $assetsPath : 'src/assets/';
 
@@ -48,7 +52,7 @@ body {
     font-family: 'sen';
     margin: 0;
     background: $grey3;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: .1s;
     color: $white;
     transition: .15s ease-in-out 0s;

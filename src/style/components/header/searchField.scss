@@ -34,24 +34,3 @@
         font-family: 'sen';
         color: $grey1;
     }
-    
-    // ----- button
-    .searchField > button{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-self: center;
-        width: 2rem;
-        height: 2rem;
-        background: $blue;
-        border-radius: 3rem;
-        cursor: pointer;
-        transition: .1s ease-in-out 0s;
-    }
-    .searchField > button:hover{
-        background: darken($blue, 5%);
-    }
-    .searchField > button:active{
-        background: darken($blue, 5%);
-        transform: scale(.9);
-    }
