@@ -1,12 +1,57 @@
 .searchField{
-    width: 70%;
-    height: 3.5rem;
+    display: flex;
+    width: 60%;
+    height: 2.2rem;
     background: $grey4;
     border-radius: 1rem;
-    border: .2rem solid $grey1;
+    border: .25rem solid $grey1;
     margin-right: 1rem;
+    transition: .15s ease-in-out 0s;
+    color: $white;
+    font-family: 'sen';
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    place-content: space-between;
 }
-
+.searchField:hover{
+    // border: .25rem solid $grey2;
+}
+    
+    // ----- input
     .searchField > input{
-        
+        background: $grey4;
+        color: $white;
+        font-family: 'sen';
+        font-size: 1.2rem;
+    }
+    .searchField > input:focus{
+        outline: none;
+        // background: $grey2;
+    }
+
+    .searchField > input::placeholder{
+        font-size: 1.2rem;
+        font-family: 'sen';
+        color: $grey1;
+    }
+    
+    // ----- button
+    .searchField > button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 2rem;
+        height: 2rem;
+        background: $blue;
+        border-radius: 3rem;
+        cursor: pointer;
+        transition: .1s ease-in-out 0s;
+    }
+    .searchField > button:hover{
+        background: darken($blue, 5%);
+    }
+    .searchField > button:active{
+        background: darken($blue, 5%);
+        transform: scale(.9);
     }
