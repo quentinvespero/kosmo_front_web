@@ -2,8 +2,10 @@ import React from 'react'
 
 const PostTheme = () => {
     return (
-        <div>
-            
+        <div className='postTheme'>
+            <p>#theme1</p>
+            <p>#theme2</p>
+            <p>#theme2</p>
         </div>
     )
 }

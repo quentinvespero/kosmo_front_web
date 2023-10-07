@@ -10,13 +10,17 @@
     @import './components/header/searchFieldButton.scss';
     
     // post
-    @import './components/post/commentButton.scss';
-    @import './components/post/counter.scss';
     @import './components/post/post.scss';
     @import './components/post/postContent.scss';
-    @import './components/post/postInteractions.scss';
     @import './components/post/postTheme.scss';
-    @import './components/post/upDownVoteButton.scss';
+
+        // post interactions
+        @import './components/post/postInteractions/postInteractions.scss';
+        @import './components/post/postInteractions/commentButton.scss';
+        @import './components/post/postInteractions/counter.scss';
+        @import './components/post/postInteractions/upDownVoteButton.scss';
+        @import './components/post/postInteractions/downvoteButton.scss';
+        @import './components/post/postInteractions/upvoteButton.scss';
     
     @import './components/addPostButton.scss';
     @import './components/feed.scss';

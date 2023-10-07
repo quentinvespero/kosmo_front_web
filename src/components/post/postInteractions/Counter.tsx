@@ -2,8 +2,8 @@ import React from 'react'
 
 const Counter = () => {
     return (
-        <div>
-            
+        <div className='counter'>
+            <p>100</p>
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.counter{
+    background: $white;
+    color: $grey1;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: .3rem .7rem .3rem 1.2rem;
+    border-radius: 0rem 3rem 3rem 0rem;
+    align-self: center;
+    transform: translateX(-.8rem);
+    z-index: 0;
+}

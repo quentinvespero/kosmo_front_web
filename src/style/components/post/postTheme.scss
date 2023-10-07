@@ -1,0 +1,13 @@
+.postTheme{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.postTheme > p{
+    margin: .2rem .5rem 0rem 0rem;
+    background: $grey2;
+    border-radius: 3rem;
+    padding: .1rem .5rem;
+    font-size: .7rem;
+}
