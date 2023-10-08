@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentButton from './CommentButton'
+import CommentElements from './CommentElements'
 import UpDownVoteElements from './UpDownVoteElements'
 
 const PostInteractions = () => {
@@ -7,7 +7,7 @@ const PostInteractions = () => {
         <div className='postInteractions'>
             <UpDownVoteElements interactionType='upvote'/>
             <UpDownVoteElements interactionType='downvote'/>
-            <CommentButton/>
+            <CommentElements/>
         </div>
     )
 }

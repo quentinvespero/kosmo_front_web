@@ -1,12 +1,12 @@
 import React from 'react'
-import PostTheme from './PostTheme'
+import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
 
 const Post = () => {
     return (
         <div className='post'>
-            <PostTheme/>
+            <PostThemeElements/>
             <PostContent/>
             <PostInteractions/>
         </div>

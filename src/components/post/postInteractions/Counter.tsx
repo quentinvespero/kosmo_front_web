@@ -3,7 +3,7 @@ import React from 'react'
 const Counter = () => {
     return (
         <div className='counter'>
-            <p>100</p>
+            <p>10k</p>
         </div>
     )
 }

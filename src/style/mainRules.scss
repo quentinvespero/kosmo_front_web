@@ -19,20 +19,17 @@ $blue : #7CB1FF;
 
 @mixin buttonType1($color){
     background: $color;
-    @include usualSpaces(.5rem, .5rem, .6rem, 3rem);
-    align-self: flex-end;
-    align-self: center;
-    transition: .2s;
-    border: .2rem solid darken($color, 10%);
     cursor: pointer;
-    transition: .15s;
+    @include transition(.1s);
+    border-radius: 3rem;
+    z-index: 1;
 
     &:hover {
         background: darken($color, 7%);
-        border: .2rem solid darken($color, 15%);
+        // filter: brightness(85%);
     }
     &:active {
-        transform: scale(.97);
+        transform: scale(.9);
     }
 }
 

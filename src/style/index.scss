@@ -5,6 +5,7 @@
 
     // buttons
     @import './components/buttons/arrowButton.scss';
+    @import './components/buttons/buttonType1.scss';
 
     // header
     @import './components/header/header.scss';
@@ -14,13 +15,13 @@
     // post
     @import './components/post/post.scss';
     @import './components/post/postContent.scss';
-    @import './components/post/postTheme.scss';
+    @import './components/post/postThemeElements.scss';
 
         // post interactions
         @import './components/post/postInteractions/postInteractions.scss';
-        @import './components/post/postInteractions/commentButton.scss';
+        @import './components/post/postInteractions/commentElements.scss';
         @import './components/post/postInteractions/counter.scss';
-        @import './components/post/postInteractions/UpDownVoteElements.scss';
+        @import './components/post/postInteractions/upDownVoteElements.scss';
     
     @import './components/addPostButton.scss';
     @import './components/feed.scss';

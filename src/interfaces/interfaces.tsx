@@ -2,3 +2,8 @@
 export interface UpDownVoteElementsProps {
     interactionType?: 'upvote' | 'downvote' | 'search'
 }
+
+// buttonType1 props
+export interface ButtonType1Props {
+    buttonText?: string
+}

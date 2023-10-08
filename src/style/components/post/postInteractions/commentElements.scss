@@ -1,0 +1,12 @@
+.commentElements{
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    filter: drop-shadow(0rem 0rem 1.5rem $grey2);
+    align-items: center;
+}
+
+.commentElements > .buttonType1{
+    padding: .5rem 1rem;
+    @include buttonType1($grey1)
+}
