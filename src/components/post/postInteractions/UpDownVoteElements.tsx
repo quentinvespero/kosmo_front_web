@@ -3,19 +3,11 @@ import { UpDownVoteElementsProps } from '../../../interfaces/interfaces'
 import Counter from './Counter'
 import ArrowButton from '../../buttons/ArrowButton'
 
-const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({direction}) => {
-
-    const directionClassMap = {
-        up: 'UpDownVoteElements-up',
-        down: 'UpDownVoteElements-down',
-        right: 'UpDownVoteElements-right'
-    }
-
-    const directionClass = `UpDownVoteElements ${direction && directionClassMap[direction]}`
+const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType}) => {
 
     return (
-        <div className={directionClass}>
-            <ArrowButton/>
+        <div className='UpDownVoteElements'>
+            <ArrowButton interactionType={interactionType}/>
             <Counter/>
         </div>
     )

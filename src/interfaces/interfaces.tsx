@@ -1,11 +1,4 @@
 // post interactions - button Up / Down vote
 export interface UpDownVoteElementsProps {
-    direction?: 'up' | 'down' | 'right';
+    interactionType?: 'upvote' | 'downvote' | 'search'
 }
-
-// buttons
-
-    // arrow button
-    export interface ArrowButtonProps {
-        
-    }

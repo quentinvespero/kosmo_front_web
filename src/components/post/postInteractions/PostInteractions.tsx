@@ -5,8 +5,8 @@ import UpDownVoteElements from './UpDownVoteElements'
 const PostInteractions = () => {
     return (
         <div className='postInteractions'>
-            <UpDownVoteElements direction='up'/>
-            <UpDownVoteElements direction='down'/>
+            <UpDownVoteElements interactionType='upvote'/>
+            <UpDownVoteElements interactionType='downvote'/>
             <CommentButton/>
         </div>
     )
