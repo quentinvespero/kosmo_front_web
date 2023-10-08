@@ -1,3 +1,7 @@
 .upvoteButton{
     @include updownvoteButtons()
 }
+
+.upvoteButton > .upDownVoteButton{
+    transform: rotate(0deg);
+}

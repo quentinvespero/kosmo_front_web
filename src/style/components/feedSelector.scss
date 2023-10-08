@@ -13,7 +13,7 @@
         padding: .5rem 1rem;
         border-radius: 3rem;
         cursor: pointer;
-        @include transition(.15s)
+        @include transition(.1s)
     }
     .feedElements:hover{
         background: $grey1;
