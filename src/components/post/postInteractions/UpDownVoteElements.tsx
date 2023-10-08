@@ -6,7 +6,7 @@ import ArrowButton from '../../buttons/ArrowButton'
 const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType}) => {
 
     return (
-        <div className='UpDownVoteElements'>
+        <div className='upDownVoteElements'>
             <ArrowButton interactionType={interactionType}/>
             <Counter/>
         </div>

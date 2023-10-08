@@ -3,11 +3,13 @@
 
 // components
 
+    // buttons
+    @import './components/buttons/arrowButton.scss';
+
     // header
     @import './components/header/header.scss';
     @import './components/header/pointCounter.scss';
     @import './components/header/searchField.scss';
-    @import './components/header/searchFieldButton.scss';
     
     // post
     @import './components/post/post.scss';

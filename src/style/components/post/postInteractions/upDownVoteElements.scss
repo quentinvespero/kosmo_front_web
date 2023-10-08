@@ -1,17 +1,6 @@
-.upDownVoteButton{
-    background: $grey1;
-    border-radius: 3rem;
-    padding: .7rem;
+.upDownVoteElements{
+    margin: 0rem .3rem;
     display: flex;
-    z-index: 1;
-}
-
-// upvote
-.upDownVoteButton-up{
-    
-}
-
-// downvote
-.upDownVoteButton-down{
-
+    flex-direction: row;
+    filter: drop-shadow(0rem 0rem 1.5rem $grey2);
 }

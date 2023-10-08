@@ -1,11 +1,11 @@
 import React from 'react'
-import SearchFieldButton from './SearchFieldButton'
+import ArrowButton from '../buttons/ArrowButton'
 
 const SearchField = () => {
     return (
         <div className="searchField">
             <input type='search' placeholder='search' />
-            <SearchFieldButton/>
+            <ArrowButton interactionType='search'/>
         </div>
     )
 }

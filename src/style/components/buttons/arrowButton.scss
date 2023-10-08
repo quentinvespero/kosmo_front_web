@@ -1,0 +1,40 @@
+.arrowButton{
+    background: $grey1;
+    border-radius: 3rem;
+    padding: .7rem;
+    z-index: 1;
+    display: flex;
+    cursor: pointer;
+    @include transition(.1s);
+}
+.arrowButton:hover{
+    filter: brightness(85%);
+}
+.arrowButton:active{
+    transform: scale(.85);
+}
+
+// variants of the buttons
+
+    // upvote
+    .arrowButton-upvote{
+        
+    }
+
+    // downvote
+    .arrowButton-downvote{
+        transform: rotate(180deg);
+    }
+    .arrowButton-downvote:active{
+        transform: scale(.85) rotate(180deg);
+    }
+
+    // search button
+    .arrowButton-search{
+        transform: rotate(90deg);
+        background: $blue;
+        padding: .5rem;
+    }
+    .arrowButton-search:active{
+        transform: scale(.85) rotate(90deg);
+    }

@@ -12,6 +12,7 @@
     font-size: 1.2rem;
     padding: .5rem 1rem;
     place-content: space-between;
+    align-items: center;
 }
 .searchField:hover{
     // border: .25rem solid $grey2;
@@ -23,6 +24,7 @@
         color: $white;
         font-family: 'sen';
         font-size: 1.2rem;
+        max-width: 9.5rem;
     }
     .searchField > input:focus{
         outline: none;

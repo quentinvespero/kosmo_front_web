@@ -4,9 +4,9 @@ const ArrowButton: React.FC<UpDownVoteElementsProps> = ({interactionType}) => {
 
     // we map the class that will take effect, depending on the value of interactionType props
     const interactionTypeClassMap = {
-        upvote: 'upvoteButton',
-        downvote: 'downvoteButton',
-        search: 'searchButton'
+        upvote: 'arrowButton-upvote',
+        downvote: 'arrowButton-downvote',
+        search: 'arrowButton-search'
     }
 
     // defining the classes that will take effect for the arrow button div, with arrowButton by default, and then, depending on the given props, a class that will be searched in the interactionTypeClassMap object
