@@ -30,4 +30,7 @@
 // screens
 
     // home
-    @import './screens/home.scss'
+    @import './screens/home.scss';
+
+// responsive - Have to insert it at the end so it can bypass the eventual previous rules
+@import './responsiveRules.scss';
