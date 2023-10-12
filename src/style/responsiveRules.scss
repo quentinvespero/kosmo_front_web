@@ -1,9 +1,21 @@
 // ----- desktop
-@media screen and (min-width:850px) {
-
+@media screen and (min-width:1200px) {
+    .feedSelector{
+        max-width: 50%;
+        border-radius: 6rem;
+        padding: .1rem 1rem;
+    }
 }
 
 // ----- mobile/tablet
+@media screen and (max-width:800px) {
+
+}
+@media screen and (max-width:600px) {
+    .post{
+        margin: 0rem 0rem 2rem 0rem;
+    }
+}
 @media screen and (max-width:400px) {
     .commentElements, .upDownVoteElements{
         margin-left: 0rem;

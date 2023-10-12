@@ -6,6 +6,7 @@
     display: flex;
     flex-flow: wrap;
     margin-top: 2rem;
+    align-self: center;
 }
 
     // feed element
@@ -14,22 +15,24 @@
         padding: .5rem 1rem;
         border-radius: 3rem;
         cursor: pointer;
-        @include transition(.1s)
-    }
-    .feedElements:hover{
-        background: $grey1;
-    }
-    .feedElements:active{
-        transform: scale(.9);
+        @include transition(.1s);
+        
+        &:hover{
+            background: $grey1;
+        }
+        &:active{
+            transform: scale(.9);
+        }
     }
 
     // selected feed element
     .feedSelectedElement{
         background: $grey3;
-    }
-    .feedSelectedElement:hover{
-        background: $grey3;
-    }
-    .feedSelectedElement:active{
-        transform:none;
+        
+        &:hover{
+            background: $grey3;
+        }
+        &:active{
+            transform:none;
+        }
     }

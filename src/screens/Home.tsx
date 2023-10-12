@@ -5,7 +5,7 @@ import Feed from '../components/Feed'
 
 const Home = () => {
     return (
-        <div className='homeScreen'>
+        <div className='home'>
             <h1>Home</h1>
             <Header/>
             <FeedSelector/>
