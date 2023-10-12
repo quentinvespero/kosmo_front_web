@@ -1,6 +1,7 @@
 // post interactions - button Up / Down vote
 export interface UpDownVoteElementsProps {
     interactionType?: 'upvote' | 'downvote' | 'search'
+    // active?: true | null
 }
 
 // buttonType1 props
