@@ -5,7 +5,7 @@ import Counter from './Counter'
 const CommentElements = () => {
     return (
         <div className='commentElements'>
-            <ButtonType1 buttonText='comment'/>
+            <ButtonType1 buttonText='comment' interactionType='comment'/>
             <Counter/>
         </div>
     )

@@ -1,4 +1,58 @@
+// ----- global rules for the button
 .buttonType1{
-    // padding: .5rem 1rem;
-    // @include buttonType1($grey1)
+    background: $grey1;
+    cursor: pointer;
+    border-radius: 3rem;
+    z-index: 1;
+    @include transition(.1s);
+
+    &:hover{
+        background: darken($grey1, 7%);
+    }
+    &:active{
+        transform: scale(.9);
+    }
+
+    & > .buttonType1-image{
+        display: flex;
+    }
+}
+
+// ----- upvote / downvote
+.buttonType1-upvote, .buttonType1-downvote{
+    padding: .5rem;
+    display: flex;
+}
+
+// ----- search
+.buttonType1-search{
+    background: $blue;
+    padding: .5rem;
+
+    &:hover{
+        background: darken($blue, 7%);
+    }
+}
+
+// ----- comment
+.buttonType1-comment{
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+
+    & > .buttonType1-image{
+        display: none;
+    }
+}
+
+// ----- theme
+.buttonType1-theme{
+    background: $grey2;
+    margin-right: .5rem;
+    padding: .1rem .5rem;
+    font-size: .7rem;
+
+    &:hover{
+        background: darken($grey2, 7%);
+    }
 }

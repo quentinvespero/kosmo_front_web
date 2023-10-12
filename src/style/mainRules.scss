@@ -17,22 +17,6 @@ $blue : #7CB1FF;
     border-radius: .6rem;
 }
 
-@mixin buttonType1($color){
-    background: $color;
-    cursor: pointer;
-    @include transition(.1s);
-    border-radius: 3rem;
-    z-index: 1;
-
-    &:hover {
-        background: darken($color, 7%);
-        // filter: brightness(85%);
-    }
-    &:active {
-        transform: scale(.9);
-    }
-}
-
 @mixin transition($time){
     transition: $time ease-in-out 0s;
 }
@@ -42,7 +26,7 @@ $assetsPath : 'src/assets/';
 
 // -------- main rules
 * {
-    // transition: .05s;
+    // @include transition(.1s);
 }
 
 body {
@@ -50,7 +34,7 @@ body {
     margin: 0;
     background: $grey3;
     font-size: 1rem;
-    transition: .1s;
+    @include transition(.1s);
     color: $white;
     transition: .15s ease-in-out 0s;
 }

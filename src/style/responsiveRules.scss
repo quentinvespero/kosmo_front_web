@@ -1,8 +1,27 @@
-@media screen and (max-width:500px) {
-    .commentElements{
+// ----- desktop
+@media screen and (min-width:850px) {
+
+}
+
+// ----- mobile/tablet
+@media screen and (max-width:400px) {
+    .commentElements, .upDownVoteElements{
         margin-left: 0rem;
     }
-    .upDownVoteElements{
-        margin-left: 0rem;
+}
+
+@media screen and (max-width:350px) {
+    .buttonType1-comment{
+        padding: .5rem .8rem !important;
+        
+        & > p{
+            display: none;
+        }
+        & > .buttonType1-image{
+            display: flex !important;
+        }
+    }
+    .buttonType1-theme{
+        margin-bottom: .5rem;
     }
 }
