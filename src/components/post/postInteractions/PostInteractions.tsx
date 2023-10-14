@@ -4,12 +4,13 @@ import UpDownVoteElements from './UpDownVoteElements'
 
 const PostInteractions = () => {
 
-    // const [vote, setVote] = React.useState('none')
+    // defining the "shape" of interactionChoice, explicitely indicating that it will have the string value upvote, downvote or none. And that by default, it takes the value 'none'
+    const [interactionChoice, setInteractionChoice] = React.useState<'upvote' | 'downvote' | 'none'>('none')
 
     return (
         <div className='postInteractions'>
-            <UpDownVoteElements interactionType='upvote'/>
-            <UpDownVoteElements interactionType='downvote'/>
+            <UpDownVoteElements interactionType='upvote' setInteractionChoice={setInteractionChoice} interactionChoice={interactionChoice}/>
+            <UpDownVoteElements interactionType='downvote' setInteractionChoice={setInteractionChoice} interactionChoice={interactionChoice}/>
             <CommentElements/>
         </div>
     )
