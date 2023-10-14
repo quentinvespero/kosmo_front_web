@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonType1Props } from '../../interfaces/interfaces'
 
-const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType}) => {
+const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, isActive, onClick}) => {
 
     // mapping the different svg version and classes to use depending on the value of the props interactionType
     const interactionTypeMap = {
@@ -32,10 +32,10 @@ const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType}) 
     }
 
     // defining the classes that will take effect for the buttonType1 div
-    const interactionTypeClass = `buttonType1 ${interactionType && interactionTypeMap[interactionType].class}`
+    const interactionTypeClass = `buttonType1 ${interactionType && interactionTypeMap[interactionType].class} ${isActive ? 'buttonType1-active' : ''}`
 
     return (
-        <div className={interactionTypeClass}>
+        <div className={interactionTypeClass} onClick={onClick}>
             
             {/* p element will show up only if buttonText has a value */}
             {buttonText && <p>{buttonText}</p> }

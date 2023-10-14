@@ -5,21 +5,23 @@ import ButtonType1 from '../../buttons/ButtonType1'
 
 const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType, setInteractionChoice, interactionChoice}) => {
 
-    // handling the click on upvote/downote
+    const [isCounterVisible, setIsCounterVisible] = React.useState(false)
+
     const handleInteractionChoice = () => {
         if (interactionType === interactionChoice) {
             setInteractionChoice('none')
+            setIsCounterVisible(false)
         }
         else {
             setInteractionChoice(interactionType)
-            console.log(interactionType)
+            setIsCounterVisible(true)
         }
     }
 
     return (
         <div className='upDownVoteElements'>
-            <ButtonType1 interactionType={interactionType} onClick={handleInteractionChoice}/>
-            <Counter/>
+            <ButtonType1 interactionType={interactionType} onClick={handleInteractionChoice} isActive={interactionType === interactionChoice}/>
+            {isCounterVisible && <Counter/>}
         </div>
     )
 }

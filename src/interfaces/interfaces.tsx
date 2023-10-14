@@ -11,5 +11,5 @@ export interface ButtonType1Props {
     buttonText?: string
     interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme'
     onClick?: () => void
-    interactionChoice?: true | false
+    isActive?: boolean
 }
