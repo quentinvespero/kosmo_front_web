@@ -7,11 +7,26 @@ const PostInteractions = () => {
     // defining the "shape" of interactionChoice, explicitely indicating that it will have the string value upvote, downvote or none. And that by default, it takes the value 'none'
     const [interactionChoice, setInteractionChoice] = React.useState<'upvote' | 'downvote' | 'none'>('none')
 
+    // state of the counters. If they are hidden or showing up
+    const [isCountersVisible, setIsCountersVisible] = React.useState(false)
+
     return (
         <div className='postInteractions'>
-            <UpDownVoteElements interactionType='upvote' setInteractionChoice={setInteractionChoice} interactionChoice={interactionChoice}/>
-            <UpDownVoteElements interactionType='downvote' setInteractionChoice={setInteractionChoice} interactionChoice={interactionChoice}/>
-            <CommentElements/>
+            <UpDownVoteElements 
+                interactionType='upvote' 
+                setInteractionChoice={setInteractionChoice} 
+                interactionChoice={interactionChoice} 
+                isCountersVisible={isCountersVisible} 
+                setIsCountersVisible={setIsCountersVisible}
+            />
+            <UpDownVoteElements 
+                interactionType='downvote' 
+                setInteractionChoice={setInteractionChoice} 
+                interactionChoice={interactionChoice} 
+                isCountersVisible={isCountersVisible} 
+                setIsCountersVisible={setIsCountersVisible}
+            />
+            <CommentElements isCountersVisible={isCountersVisible}/>
         </div>
     )
 }

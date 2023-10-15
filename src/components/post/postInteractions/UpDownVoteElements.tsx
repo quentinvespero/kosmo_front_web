@@ -3,25 +3,23 @@ import { UpDownVoteElementsProps } from '../../../interfaces/interfaces'
 import Counter from './Counter'
 import ButtonType1 from '../../buttons/ButtonType1'
 
-const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType, setInteractionChoice, interactionChoice}) => {
-
-    const [isCounterVisible, setIsCounterVisible] = React.useState(false)
+const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType, setInteractionChoice, interactionChoice, isCountersVisible, setIsCountersVisible}) => {
 
     const handleInteractionChoice = () => {
         if (interactionType === interactionChoice) {
             setInteractionChoice('none')
-            setIsCounterVisible(false)
+            setIsCountersVisible(false)
         }
         else {
             setInteractionChoice(interactionType)
-            setIsCounterVisible(true)
+            setIsCountersVisible(true)
         }
     }
 
     return (
-        <div className='upDownVoteElements'>
+        <div className='upDownVoteElements' style={interactionType === 'downvote' && interactionChoice === 'none' ? {marginLeft:'1rem'} : {}}>
             <ButtonType1 interactionType={interactionType} onClick={handleInteractionChoice} isActive={interactionType === interactionChoice}/>
-            {isCounterVisible && <Counter/>}
+            {isCountersVisible && <Counter/>}
         </div>
     )
 }

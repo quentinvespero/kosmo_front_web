@@ -18,6 +18,15 @@
     }
 }
 
+// when buttonType1 is using the props upvote/downvote and is active
+.buttonType1-active{
+    background: $blue;
+
+    &:hover{
+        background: darken($blue, 7%);
+    }    
+}
+
 // ----- upvote / downvote
 .buttonType1-upvote, .buttonType1-downvote{
     padding: .5rem;

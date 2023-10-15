@@ -36,4 +36,14 @@
     .buttonType1-theme{
         margin-bottom: .5rem;
     }
+    .header{
+        flex-direction: column-reverse;
+    }
+    .pointCounter{
+        align-self: flex-end;
+        margin-bottom: 2rem;
+    }
+    .searchField > input{
+        max-width: 8.5rem;
+    }
 }
