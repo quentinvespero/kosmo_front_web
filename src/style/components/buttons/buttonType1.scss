@@ -18,19 +18,26 @@
     }
 }
 
-// when buttonType1 is using the props upvote/downvote and is active
-.buttonType1-active{
-    background: $blue;
-
-    &:hover{
-        background: darken($blue, 7%);
-    }    
-}
-
 // ----- upvote / downvote
 .buttonType1-upvote, .buttonType1-downvote{
     padding: .5rem;
     display: flex;
+}
+// active upvote button style
+.buttonType1-upvote.buttonType1-active{
+    background: $red;
+
+    &:hover{
+        background: darken($red, 7%);
+    }    
+}
+// active downvote button style
+.buttonType1-downvote.buttonType1-active{
+    background: $blue;
+    
+    &:hover{
+        background: darken($blue, 7%);
+    }    
 }
 
 // ----- search
