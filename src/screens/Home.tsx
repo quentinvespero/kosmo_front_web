@@ -1,14 +1,13 @@
 import React from 'react'
 import Header from '../components/header/Header'
-import FeedSelector from '../components/FeedSelector'
 import Feed from '../components/Feed'
+import DesktopMenu from '../components/DesktopMenu'
 
 const Home = () => {
     return (
         <div className='home'>
-            <h1>Home</h1>
             <Header/>
-            <FeedSelector/>
+            <DesktopMenu/>
             <Feed/>
         </div>
     )

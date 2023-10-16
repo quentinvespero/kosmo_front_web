@@ -1,0 +1,13 @@
+.desktopMenu{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    background: $transparentGrey2;
+    padding: 0.4rem .6rem;
+    border-radius: 4rem;
+    position: fixed;
+    z-index: 2;
+    margin-top: .5rem;
+    backdrop-filter: blur(2rem);
+    box-shadow: 0rem 0rem 3rem $grey3;
+}
