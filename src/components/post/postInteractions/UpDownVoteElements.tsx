@@ -17,7 +17,8 @@ const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType,
     }
 
     return (
-        <div className='upDownVoteElements' style={interactionType === 'downvote' && interactionChoice === 'none' ? {marginLeft:'1rem'} : {}}>
+        // <div className='upDownVoteElements' style={interactionType === 'downvote' && interactionChoice === 'none' ? {marginLeft:'3.2rem'} : {}}>
+        <div className='upDownVoteElements' style={interactionType === 'downvote' ? {position:'absolute',left:'4.5rem'} : {}}>
             <ButtonType1 interactionType={interactionType} onClick={handleInteractionChoice} isActive={interactionType === interactionChoice}/>
             {isCountersVisible && <Counter/>}
         </div>

@@ -23,6 +23,11 @@
     padding: .5rem;
     display: flex;
 }
+
+// active button global
+.buttonType1-active{
+    transform: scale(1.05);
+}
 // active upvote button style
 .buttonType1-upvote.buttonType1-active{
     background: $red;
@@ -43,7 +48,7 @@
 // ----- search
 .buttonType1-search{
     background: $blue;
-    padding: .5rem;
+    padding: .4rem;
 
     &:hover{
         background: darken($blue, 7%);

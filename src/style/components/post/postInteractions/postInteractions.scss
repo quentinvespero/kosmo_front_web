@@ -1,7 +1,9 @@
 .postInteractions{
     display: flex;
     flex-direction: row;
-    position: absolute;
-    transform: translateY(-0.3rem);
+    // position: absolute;
+    transform: translateY(1.7rem);
     align-items: center;
+    // justify-content: space-evenly;
+    margin-left: 1rem;
 }
