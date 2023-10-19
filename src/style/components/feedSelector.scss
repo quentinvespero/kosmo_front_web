@@ -4,9 +4,16 @@
     padding: .5rem;
     border-radius: 1rem;
     display: flex;
-    flex-flow: wrap;
+    // flex-flow: wrap;
     // margin-top: 1rem;
     align-self: center;
+    max-width: 25rem;
+    overflow-x: scroll;
+}
+
+// hide the horizontal scrollbar when there are too many feedElements that trigger the overflow-x scroll
+.feedSelector::-webkit-scrollbar{
+    display: none;
 }
 
     // feed element
@@ -16,6 +23,7 @@
         border-radius: 3rem;
         cursor: pointer;
         @include transition(.1s);
+        white-space: pre;
         
         &:hover{
             background: $grey1;
