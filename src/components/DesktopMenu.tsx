@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import SearchField from './header/SearchField'
 import FeedSelector from './FeedSelector'
+import { DesktopMenuProps } from '../interfaces/interfaces'
 
-const DesktopMenu = () => {
-
-    // defining if desktop menu is sticky or not
-    const [isSticky, setIsSticky] = useState(false)
+const DesktopMenu:React.FC<DesktopMenuProps> = ({setIsSticky, isSticky}) => {
     
     // the reference used to define whether the desktopMenu have to be sticky or not
     const ref = useRef<HTMLDivElement>(null)

@@ -23,3 +23,9 @@ export interface CommentElementsProps {
     isCountersVisible: boolean
     interactionChoice?: UpDownVoteElementsProps['interactionChoice']
 }
+
+// DesktopMenu component props
+export interface DesktopMenuProps {
+    setIsSticky: (isSticky:boolean) => void
+    isSticky: boolean
+}
