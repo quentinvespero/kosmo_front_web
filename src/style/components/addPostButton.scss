@@ -1,0 +1,20 @@
+.addPostButton{
+    position: fixed;
+    bottom: 1rem;
+    align-self: flex-end;
+    padding: .8rem;
+    border-radius: 3rem;
+    border: .15rem solid $transparentGrey1;
+    z-index: 2;
+    @include transparent($transparentwhite, .7rem);
+    @include transition(.1s);
+    @include buttonBehavior($transparentwhite);
+
+    &:hover{
+        background: $transparentwhite;
+    }
+
+    & > .addPostButton-img{
+        display: flex;
+    }
+}

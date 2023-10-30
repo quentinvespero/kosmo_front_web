@@ -1,17 +1,9 @@
 // ----- global rules for the button
 .buttonType1{
-    background: $grey1;
-    cursor: pointer;
     border-radius: 3rem;
     z-index: 1;
     @include transition(.1s);
-
-    &:hover{
-        background: darken($grey1, 7%);
-    }
-    &:active{
-        transform: scale(.9);
-    }
+    @include buttonBehavior($grey1);
 
     & > .buttonType1-image{
         display: flex;

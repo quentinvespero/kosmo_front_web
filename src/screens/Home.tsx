@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../components/header/Header'
 import Feed from '../components/Feed'
 import DesktopMenu from '../components/DesktopMenu'
+import AddPostButton from '../components/AddPostButton'
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
             {isSticky && <div className="fillTheGap"></div>}
             <DesktopMenu setIsSticky={setIsSticky} isSticky={isSticky}/>
             <Feed/>
+            <AddPostButton/>
         </div>
     )
 }

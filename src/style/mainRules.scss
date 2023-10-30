@@ -9,6 +9,7 @@ $blue : #7CB1FF;
 $red : #bc6785;
 $transparentGrey1: #5c5c5ca8;
 $transparentGrey2 : #3C3C3Ca8;
+$transparentwhite : #ddddddcf;
 
 // -------- main fonts
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap');
@@ -22,6 +23,23 @@ $transparentGrey2 : #3C3C3Ca8;
 
 @mixin transition($time){
     transition: $time ease-in-out 0s;
+}
+
+@mixin transparent($color, $blur){
+    backdrop-filter: blur($blur);
+    background: $color;
+}
+
+@mixin buttonBehavior($color){
+    background: $color;
+    cursor: pointer;
+
+    &:hover{
+        background: darken($color, 7%);
+    }
+    &:active{
+        transform: scale(.9);
+    }
 }
 
 // -------- path for the images
