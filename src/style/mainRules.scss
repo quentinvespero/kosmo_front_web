@@ -35,7 +35,7 @@ $transparentwhite : #ddddddcf;
     cursor: pointer;
 
     &:hover{
-        background: darken($color, 7%);
+        background: darken($color, 4%);
     }
     &:active{
         transform: scale(.9);
