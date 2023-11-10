@@ -6,8 +6,10 @@ import PostInteractions from './postInteractions/PostInteractions'
 const Post = () => {
     return (
         <div className='post'>
-            <PostThemeElements/>
-            <PostContent/>
+            <div className="innerPost">
+                <PostThemeElements/>
+                <PostContent/>
+            </div>
             <PostInteractions/>
         </div>
     )

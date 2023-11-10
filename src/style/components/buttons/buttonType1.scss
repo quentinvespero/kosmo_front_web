@@ -3,7 +3,7 @@
     border-radius: 3rem;
     z-index: 1;
     @include transition(.1s);
-    @include buttonBehavior($grey1);
+    @include buttonBehavior($grey1, .9);
 
     & > .buttonType1-image{
         display: flex;

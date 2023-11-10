@@ -30,7 +30,7 @@ $transparentwhite : #ddddddcf;
     background: $color;
 }
 
-@mixin buttonBehavior($color){
+@mixin buttonBehavior($color, $scale){
     background: $color;
     cursor: pointer;
 
@@ -38,7 +38,7 @@ $transparentwhite : #ddddddcf;
         background: darken($color, 4%);
     }
     &:active{
-        transform: scale(.9);
+        transform: scale($scale);
     }
 }
 

@@ -8,6 +8,6 @@
     justify-content: center;
     font-size: 1.1rem;
     @include transition(.1s);
-    @include buttonBehavior($pink);
+    @include buttonBehavior($pink, .9);
     padding: 0rem .3rem;
 }
