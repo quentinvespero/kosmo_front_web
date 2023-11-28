@@ -25,7 +25,9 @@ export interface CommentElementsProps {
 }
 
 // DesktopMenu component props
-export interface DesktopMenuProps {
+export interface TopMenuProps {
     setIsSticky: (isSticky:boolean) => void
     isSticky: boolean
+    mobileLayout: boolean
+    setMobileLayout: (mobileLayout:boolean) => void
 }

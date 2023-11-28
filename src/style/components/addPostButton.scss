@@ -1,10 +1,10 @@
 .addPostButton{
     position: fixed;
-    bottom: 1rem;
+    bottom: 2rem;
     align-self: flex-end;
     padding: .7rem;
     border-radius: 3rem;
-    border: .15rem solid $transparentGrey1;
+    border: .25rem solid $transparentGrey1;
     z-index: 2;
     @include transparent($transparentwhite, .7rem);
     @include transition(.1s);

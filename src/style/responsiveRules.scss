@@ -2,14 +2,35 @@
 @media screen and (min-width:700px) {
     .feedSelector{
         // max-width: 50%;
-        border-radius: 6rem;
-        padding: 0.2rem .4rem;
+        // border-radius: 6rem;
     }
 }
 
 // ----- mobile/tablet
+@media screen and (max-width:1100px) {
+    .header{
+        margin-bottom: 1.5rem;
+    }
+}
 @media screen and (max-width:800px) {
 
+}
+@media screen and (max-width:700px) {
+    .topMenu{
+        padding: 0.3rem 0rem;
+
+        & .feedSelector{
+            padding: 0rem .4rem;
+        }
+    }
+    .searchField{
+        background: $grey2;
+
+        & input {
+            background: $grey2;
+            color: $white;
+        }
+    }
 }
 @media screen and (max-width:600px) {
     .post{

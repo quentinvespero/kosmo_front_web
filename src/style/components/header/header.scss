@@ -3,4 +3,5 @@
     flex-direction: row;
     place-content: space-between;
     align-items: center;
+    @include transition(.2s)
 }
