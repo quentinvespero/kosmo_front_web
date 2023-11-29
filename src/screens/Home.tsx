@@ -25,7 +25,7 @@ const Home = () => {
         }
 
         handleResize()
-        
+
         window.addEventListener('resize', handleResize)
 
         return () => {
@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <Header />
+            <Header headerScreen='home' mobileLayout={mobileLayout}/>
             {isSticky && <div className="fillTheGap"></div>}
             <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} mobileLayout={mobileLayout} setMobileLayout={setMobileLayout} />
             {mobileLayout && <SearchField/>}

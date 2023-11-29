@@ -31,3 +31,9 @@ export interface TopMenuProps {
     mobileLayout: boolean
     setMobileLayout: (mobileLayout:boolean) => void
 }
+
+// Header component props
+export interface HeaderProps {
+    headerScreen: 'home' | 'entryPage'
+    mobileLayout?: TopMenuProps['mobileLayout']
+}

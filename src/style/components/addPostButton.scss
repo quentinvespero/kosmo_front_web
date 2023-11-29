@@ -8,10 +8,15 @@
     z-index: 2;
     @include transparent($transparentwhite, .7rem);
     @include transition(.1s);
-    @include buttonBehavior($transparentwhite, .9);
+    // @include buttonBehavior($transparentwhite, .9);
+    cursor: pointer;
 
     &:hover{
-        background: $transparentwhite;
+        background: darken($transparentwhite, 4%);
+    }
+    &:active{
+        margin: 0rem 0.1rem .1rem 0rem;
+        border: .15rem solid $transparentGrey1;
     }
     & > .addPostButton-img{
         display: flex;
