@@ -1,8 +1,8 @@
 # "Kosmo project" : social network - web frontend
 
-- technology : React + Vite
+- **technology** : React + Vite
 
-- link for a description of the application : labo.quentinvespero.com
+- **link for a description of the application** : labo.quentinvespero.com
 
 ---
 
