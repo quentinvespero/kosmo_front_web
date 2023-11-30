@@ -74,7 +74,7 @@
 .buttonType1-login, .buttonType1-register{
     background: $grey2;
     padding: .7rem;
-    border-radius: .12rem;
+    border-radius: .15rem;
     
     &.buttonType1-login{
         // border: .15rem solid darken($pink, 4%);
@@ -92,7 +92,7 @@
     cursor: pointer;
     font-size: 2.5rem;
     padding: .3rem 1.5rem;
-    border-radius: .12rem;
+    border-radius: .15rem;
     color: $grey4;
     @include buttonBehavior($transparentWhite, 1);
     // @include transparent($transparentGrey2, 0rem);

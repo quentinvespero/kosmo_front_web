@@ -20,6 +20,7 @@
         @include flexVerticalCentered(row);
         justify-content: space-between;
         width: 100%;
+        animation: flex-direction;
         
         & .header-entryPage-connectSection{
             @include flexVerticalCentered(row);

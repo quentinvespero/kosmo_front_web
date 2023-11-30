@@ -21,8 +21,16 @@
 }
   
 @keyframes gradientBackground {
-    0% { background: $blue;}
-    100% { background: $pink;}
+    0% { 
+        background: $blue; 
+        // box-shadow: 20rem 11rem 0rem 4rem $pink;
+        box-shadow: 0rem 0rem 0rem 6rem $blue;
+    }
+    100% { 
+        background: $pink; 
+        // box-shadow: -28rem -14rem 0rem 1rem $blue;
+        box-shadow: 0rem 0rem 0rem 3rem $pink;
+    }
 }
 @keyframes gradientTransparentBackground {
     0% { background: $transparentBlue;}
