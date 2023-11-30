@@ -22,10 +22,10 @@
 }
 // active upvote button style
 .buttonType1-upvote.buttonType1-active{
-    background: $red;
+    background: $pink;
 
     &:hover{
-        background: darken($red, 7%);
+        background: darken($pink, 7%);
     }    
 }
 // active downvote button style
@@ -68,4 +68,77 @@
     &:hover{
         background: darken($grey2, 7%);
     }
+}
+
+// login & register buttons
+.buttonType1-login, .buttonType1-register{
+    background: $grey2;
+    padding: .7rem;
+    border-radius: .12rem;
+    
+    &.buttonType1-login{
+        // border: .15rem solid darken($pink, 4%);
+        @include buttonBehavior($grey4, .95);
+    }
+    &.buttonType1-register{
+        @include buttonBehavior($grey4, .95);
+        // border: .15rem solid darken($blue, 4%);
+    }
+}
+
+// entryPageButton
+.buttonType1-entryButton{
+    @include transition(.15s);
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: .3rem 1.5rem;
+    border-radius: .12rem;
+    color: $grey4;
+    @include buttonBehavior($transparentWhite, 1);
+    // @include transparent($transparentGrey2, 0rem);
+    // animation: gradientTransparentBackground 15s ease-in-out infinite alternate;
+    position: relative;
+    overflow: hidden;
+
+    &:hover{
+        // background: $grey4 !important;
+        // background: repeating-linear-gradient(45deg, $white, $white 5px, $transparent 0px, $transparent 30px) !important;
+        // animation: orbit 1s ease-in-out infinite alternate;
+        // background: $grey3;
+        // background-image: linear-gradient(bottom, black, black);
+        color: $white;
+    }
+    &:active{
+        // background: $grey4 !important;
+        // background: repeating-linear-gradient(45deg, $white, $white 5px, $white 0px, $transparent 30px) !important;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: $grey4;
+        transition: left 0.2s;
+        z-index: -1;
+    }
+    &:hover:before {
+        left: 0;
+    }
+    &:hover:active {
+        background: repeating-linear-gradient(45deg, $white, $white 5px, $white 0px, $white 30px) !important;
+    }
+
+    & .blinkingUnderscore{
+        animation: blink 1s steps(2, start) infinite;
+    }
+}
+
+// ----- usual
+.buttonType1-usual{
+    background: $grey2;
+    padding: .7rem;
+    border-radius: .2rem;
+    @include buttonBehavior($grey1, .95);
 }

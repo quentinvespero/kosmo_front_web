@@ -1,7 +1,29 @@
 .header{
-    display: flex;
-    flex-direction: row;
-    place-content: space-between;
-    align-items: center;
-    @include transition(.2s)
+    @include transition(.2s);
+    
+    // style for the home screen
+    & .innerHeader-home{
+        @include transition(.2s);
+        @include flexVerticalCentered(row);
+        place-content: space-between;
+    }
+    
+    // style for the entry screen
+    &.header-entryPage{
+        @include transition(.2s);
+        @include flexVerticalCentered(row);
+        padding: 3rem
+    }
+    
+    & .innerHeader-entryPage{
+        @include transition(.2s);
+        @include flexVerticalCentered(row);
+        justify-content: space-between;
+        width: 100%;
+        
+        & .header-entryPage-connectSection{
+            @include flexVerticalCentered(row);
+            gap: 1rem;
+        }
+    }
 }

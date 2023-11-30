@@ -38,7 +38,7 @@ const Home = () => {
             <Header headerScreen='home' mobileLayout={mobileLayout}/>
             {isSticky && <div className="fillTheGap"></div>}
             <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} mobileLayout={mobileLayout} setMobileLayout={setMobileLayout} />
-            {mobileLayout && <SearchField/>}
+            {/* {mobileLayout && <SearchField/>} */}
             <Feed />
             <AddPostButton />
         </div>

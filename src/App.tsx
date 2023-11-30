@@ -5,8 +5,8 @@ import EntryPage from './screens/EntryPage'
 const App = () => {
     return(
         <div className='app'>
-            <Home/>
-            {/* <EntryPage/> */}
+            {/* <Home/> */}
+            <EntryPage/>
         </div>
     )
 }

@@ -31,6 +31,12 @@
 
     // home
     @import './screens/home.scss';
+    @import './screens/entryPage.scss';
+
+// other
+
+    // keyframes
+    @import './other/keyframes.scss';
 
 // responsive - Have to insert it at the end so it can bypass the eventual previous rules
 @import './responsiveRules.scss';

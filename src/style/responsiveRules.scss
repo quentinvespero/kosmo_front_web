@@ -8,14 +8,14 @@
 
 // ----- mobile/tablet
 @media screen and (max-width:1100px) {
-    .header{
+    .innerHeader-home{
         margin-bottom: 1.5rem;
     }
 }
 @media screen and (max-width:800px) {
 
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width:699px) {
     .topMenu{
         padding: 0.3rem 0rem;
 
@@ -31,10 +31,25 @@
             color: $white;
         }
     }
+    .innerHeader-home{
+        margin-bottom: 3rem;
+    }
 }
 @media screen and (max-width:600px) {
     .post{
         margin: 0rem 0rem 2rem 0rem;
+    }
+}
+@media screen and (max-width:500px) {
+    .home{
+        padding: 2rem;
+    }
+    .topMenu{
+        border-radius: 1rem;
+
+        & .feedSelector{
+            flex-wrap: wrap;
+        }
     }
 }
 @media screen and (max-width:400px) {
@@ -57,7 +72,7 @@
     .buttonType1-theme{
         margin-bottom: .5rem;
     }
-    .header{
+    .innerHeader-home{
         flex-direction: column-reverse;
     }
     .pointCounter{

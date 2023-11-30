@@ -1,4 +1,4 @@
 .app{
-    padding: 2rem 3rem;
     // background: $grey3;
+    @include transition(.1s)
 }

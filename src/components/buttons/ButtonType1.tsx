@@ -26,7 +26,19 @@ const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, i
             svg:null
         },
         usual:{
-            class:'',
+            class:'buttonType1-usual',
+            svg:null
+        },
+        login:{
+            class:'buttonType1-login',
+            svg:null
+        },
+        register:{
+            class:'buttonType1-register',
+            svg:null
+        },
+        entryButton:{
+            class:'buttonType1-entryButton',
             svg:null
         }
     }
@@ -38,7 +50,12 @@ const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, i
         <div className={interactionTypeClass} onClick={onClick}>
             
             {/* p element will show up only if buttonText has a value */}
-            {buttonText && <p>{buttonText}</p> }
+            {buttonText && buttonText === 'Enter Kosmo_' 
+                ? 
+                <p>Enter Kosmo<span className="blinkingUnderscore">_</span></p>
+                :
+                <p>{buttonText}</p> 
+            }
 
             {/* the image div will show up only if the object has a svg that is not null in interactionTypeMap */}
             {interactionType && interactionTypeMap[interactionType].svg && 
