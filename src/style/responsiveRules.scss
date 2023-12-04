@@ -61,19 +61,21 @@
             gap: 3rem;
         }
     }
-    .entryPage-centerSection{
-        flex-direction: column-reverse !important;
-        margin-top: 0rem !important;
-        justify-content: space-around !important;
+    .entryPage-innerElements{
+        gap: 0rem !important;
 
-        & .entryPage-sideSection{
-            position: unset !important;
-            max-width: 20rem !important;
-            // font-size: 0.8rem !important;
-            // align-self: flex-start;
-        }
-        & .entryPage-buttonSection > *{
-            font-size: 2rem;
+        & .entryPage-centerSection{
+            flex-direction: column-reverse !important;
+            justify-content: space-around !important;
+    
+            & .entryPage-sideSection{
+                position: unset !important;
+                max-width: 20rem !important;
+                font-size: .8rem !important;
+            }
+            & .entryPage-buttonSection > *{
+                font-size: 1.7rem;
+            }
         }
     }
 }
