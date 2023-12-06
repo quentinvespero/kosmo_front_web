@@ -39,6 +39,9 @@
     .post{
         margin: 0rem 0rem 2rem 0rem;
     }
+    .entryPage-description{
+        font-size: .9rem !important;
+    }
 }
 @media screen and (max-width:500px) {
     .home{
@@ -68,14 +71,14 @@
             flex-direction: column-reverse !important;
             justify-content: space-around !important;
     
-            & .entryPage-sideSection{
-                position: unset !important;
-                max-width: 20rem !important;
-                font-size: .8rem !important;
-            }
             & .entryPage-buttonSection > *{
                 font-size: 1.7rem;
             }
+        }
+        
+        & .entryPage-description{
+            max-width: 20rem !important;
+            font-size: .8rem !important;
         }
     }
 }

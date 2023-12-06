@@ -17,9 +17,6 @@
             gradientBackground 15s infinite alternate, 
             sizeChanging 15s infinite alternate;
     }
-    & .colorLight-focus{
-
-    }
     
     & .entryPage-backgroundLayer{
         height: 100vh;
@@ -28,38 +25,30 @@
 
         & .entryPage-innerElements{
             @include flexVerticalCentered(column);
-            justify-content: flex-start;
             align-items: normal;
             height: 100vh;
             width: 100vw;
-            gap: 5rem;
-            // transform-style: preserve-3d;
-            // perspective-origin: center;
         
             & .entryPage-centerSection{
                 @include flexVerticalCentered(column-reverse);
                 justify-content: center;
                 flex-grow: 1;
-                // gap: 8rem;
+                gap: 2rem;
                 justify-content: space-evenly;
+            }
+            
+            & .entryPage-description{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                max-width: 45rem;
+                font-size: 1rem;
+                margin: 0rem 1rem 2rem 1rem;
 
-                & .entryPage-sideSection{
-                    display: flex;
-                    flex-direction: column;
-                    max-width: 45rem;
-                    font-size: .9rem;
-                    margin: 0rem 1rem;
-
-                    & > * {
-                        background: $grey4;
-                        // border-radius: .15rem;
-                        padding: .4rem;
-                        width: fit-content;
-                    }
-                }
-                & .entryPage-buttonSection{
-                    // display: flex;
-                    // transform-style: preserve-3d;
+                & > p {
+                    background: $grey4;
+                    padding: .4rem;
+                    width: fit-content;
                 }
             }
         }
