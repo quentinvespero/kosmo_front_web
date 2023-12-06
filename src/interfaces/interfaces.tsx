@@ -28,12 +28,22 @@ export interface CommentElementsProps {
 export interface TopMenuProps {
     setIsSticky: (isSticky:boolean) => void
     isSticky: boolean
-    mobileLayout: boolean
-    setMobileLayout: (mobileLayout:boolean) => void
+    mobileLayout: ScreenProps['mobileLayout']
 }
 
 // Header component props
 export interface HeaderProps {
     headerScreen: 'home' | 'entryPage'
-    mobileLayout?: TopMenuProps['mobileLayout']
+    mobileLayout?: ScreenProps['mobileLayout']
+}
+
+// EntryPage component props
+export interface EntryPageProps {
+    pageSelection: () => void
+    mobileLayout?: ScreenProps['mobileLayout']
+}
+
+// General props for screens components
+export interface ScreenProps {
+    mobileLayout: boolean
 }

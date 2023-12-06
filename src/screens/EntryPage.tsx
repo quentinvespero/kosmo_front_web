@@ -1,7 +1,9 @@
+import React from "react"
 import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
+import { EntryPageProps } from "../interfaces/interfaces"
 
-const EntryPage = () => {
+const EntryPage: React.FC<EntryPageProps> = ({ pageSelection }) => {
 
     // used to follow if the "enter kosmo" button is being hovered or not
     // const [isButtonHovered, setButtonIsHovered] = useState(false)
@@ -33,6 +35,7 @@ const EntryPage = () => {
                             className='entryPage-buttonSection' 
                             // onMouseEnter={handleButtonHovering} 
                             // onMouseLeave={handleButtonLeaving}
+                            onClick={pageSelection}
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
                         </div>
