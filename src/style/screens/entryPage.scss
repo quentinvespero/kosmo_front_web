@@ -16,6 +16,11 @@
         animation: move 20s ease-in-out infinite alternate, 
             gradientBackground 15s infinite alternate, 
             sizeChanging 15s infinite alternate;
+        opacity: 100%;
+        transition: .1s;
+    }
+    & .colorLight-off{
+        opacity: 10%;
     }
     
     & .entryPage-backgroundLayer{

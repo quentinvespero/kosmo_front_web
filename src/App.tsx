@@ -8,10 +8,16 @@ const App = () => {
 
     // defining if we are in mobile or desktop mode
     const [mobileLayout, setMobileLayout] = useState(false)
+
+    // defining animation between different screens
+    const [animation, setAnimation] = useState(false)
     
-    // function to handle the change of the current page to render
+    // function to handle the change of the current screen component to render
     const handlePageChange = () => {
-        setCurrentPage('home')
+        setAnimation(true)
+        setTimeout(() => {
+            setCurrentPage('home')
+        }, 500)
     }
 
     // function to set the value of mobileLayout based on the width of the window. 
@@ -37,13 +43,12 @@ const App = () => {
 
     return (
         <div className='app'>
-            {currentPage === 'entry' ? (
-                // Pass the handlePageChange function as a prop to EntryPage
-                <EntryPage pageSelection={handlePageChange}/>
-            ) : (
-                // Render Home component when currentPage is 'home'
-                <Home mobileLayout={mobileLayout}/>
-            )}
+            {currentPage === 'entry' &&
+                <EntryPage pageSelection={handlePageChange} animation={animation}/>
+            }
+            {currentPage === 'home' && 
+                <Home mobileLayout={mobileLayout} animation={animation} setAnimation={setAnimation}/>
+            }
         </div>
     )
 }

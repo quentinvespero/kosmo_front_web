@@ -67,9 +67,8 @@ body {
     margin: 0;
     background: $grey3;
     font-size: 1rem;
-    @include transition(.1s);
+    // @include transition(.1s);
     color: $white;
-    transition: .15s ease-in-out 0s;
 }
 
 a {

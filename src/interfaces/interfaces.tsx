@@ -45,5 +45,7 @@ export interface EntryPageProps {
 
 // General props for screens components
 export interface ScreenProps {
-    mobileLayout: boolean
+    mobileLayout?: boolean
+    animation?: boolean
+    setAnimation?: (animation:boolean) => void
 }
