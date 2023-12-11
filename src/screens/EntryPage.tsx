@@ -39,7 +39,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                         <p>Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
                         <p>A space where your time would feel well-spent.</p>
                         <br />
-                        <p>By putting humans first in our reflections, I designed the features to promote online civility and reduce online influence and hatred.</p>
+                        <p>By putting humans first in my reflections, I designed the features to promote online civility and reduce online influence and hatred.</p>
                     </div>
                 </div>
             </div>
