@@ -5,6 +5,7 @@
 
     // buttons
     @import './components/buttons/buttonType1.scss';
+    @import './components/buttons/addPostButton.scss';
 
     // header
     @import './components/header/header.scss';
@@ -22,7 +23,6 @@
         @import './components/post/postInteractions/counter.scss';
         @import './components/post/postInteractions/upDownVoteElements.scss';
     
-    @import './components/addPostButton.scss';
     @import './components/feed.scss';
     @import './components/feedSelector.scss';
     @import './components/topMenu.scss';

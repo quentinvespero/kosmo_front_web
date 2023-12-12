@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/header/Header'
 import Feed from '../components/Feed'
 import TopMenu from '../components/TopMenu'
-import AddPostButton from '../components/AddPostButton'
+import AddPostButton from '../components/buttons/AddPostButton'
 import SearchField from '../components/header/SearchField'
 import { ScreenProps } from '../interfaces/interfaces'
 
