@@ -122,11 +122,14 @@ p{
     margin: 0;
 }
 
-.divider {
+.dividerHorizontal {
     height: .15rem;
     background: $grey1;
     width: 100%;
     align-self: center;
     @include usualSpaces(1rem, 0rem, 0rem, 0rem);
     border-radius: .5rem;
+}
+.dividerVertical {
+    border-left: #1E1E1E;
 }

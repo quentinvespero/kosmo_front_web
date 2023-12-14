@@ -1,9 +1,14 @@
-.home{
+.home {
     display: flex;
     flex-direction: column;
     padding: 2rem 3rem;
-}
+    
+    & .fillTheGap {
+        height: 4rem;
+    }
 
-.fillTheGap{
-    height: 4rem;
+    & .innerHome {
+        display: flex;
+        flex-direction: row;
+    }
 }

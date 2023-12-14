@@ -5,6 +5,7 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import SearchField from '../components/header/SearchField'
 import { ScreenProps } from '../interfaces/interfaces'
+import RightPanel from '../components/RightPanel'
 
 const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation }) => {
 
@@ -26,7 +27,10 @@ const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation }) 
             {isSticky && <div className="fillTheGap"></div>}
             <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} mobileLayout={mobileLayout} />
             {/* {mobileLayout && <SearchField/>} */}
-            <Feed />
+            <div className="innerHome">
+                <Feed />
+                {!mobileLayout && <RightPanel/>}
+            </div>
             <AddPostButton />
         </div>
     )
