@@ -17,6 +17,12 @@ export interface ButtonType1Props {
     isActive?: boolean
 }
 
+// buttonType2 props
+export interface ButtonType2Props {
+    buttonText: string
+    buttonType: 'button-trend' | 'button-liveEvent'
+}
+
 // CommentElements props
 export interface CommentElementsProps {
     // defining the props for showing/hiding the counters
@@ -45,7 +51,7 @@ export interface EntryPageProps {
 
 // General props for screens components
 export interface ScreenProps {
-    mobileLayout?: boolean
+    mobileLayout?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
 }

@@ -5,6 +5,7 @@
 
     // buttons
     @import './components/buttons/buttonType1.scss';
+    @import './components/buttons/buttonType2.scss';
     @import './components/buttons/addPostButton.scss';
 
     // header
@@ -23,10 +24,13 @@
         @import './components/post/postInteractions/counter.scss';
         @import './components/post/postInteractions/upDownVoteElements.scss';
     
+    // rightPanel
+    @import './components/rightPanel/rightPanel.scss';
+    @import './components/rightPanel/trendSection.scss';
+    
     @import './components/feed.scss';
     @import './components/feedSelector.scss';
     @import './components/topMenu.scss';
-    @import './components/rightPanel.scss';
 
 // screens
 

@@ -7,7 +7,8 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState('entry')
 
     // defining if we are in mobile or desktop mode
-    const [mobileLayout, setMobileLayout] = useState(false)
+    // const [mobileLayout, setMobileLayout] = useState(false)
+    const [mobileLayout, setMobileLayout] = useState('')
 
     // defining animation between different screens
     const [animation, setAnimation] = useState(false)
@@ -25,10 +26,13 @@ const App = () => {
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 700) {
-                setMobileLayout(true)
+                setMobileLayout('mobile')
+            }
+            else if (window.innerWidth < 1100) {
+                setMobileLayout('tablet')
             }
             else {
-                setMobileLayout(false)
+                setMobileLayout('desktop')
             }
         }
 

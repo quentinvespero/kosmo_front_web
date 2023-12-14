@@ -5,7 +5,7 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import SearchField from '../components/header/SearchField'
 import { ScreenProps } from '../interfaces/interfaces'
-import RightPanel from '../components/RightPanel'
+import RightPanel from '../components/rightPanel/RightPanel'
 
 const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation }) => {
 
@@ -29,7 +29,7 @@ const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation }) 
             {/* {mobileLayout && <SearchField/>} */}
             <div className="innerHome">
                 <Feed />
-                {!mobileLayout && <RightPanel/>}
+                {mobileLayout === 'desktop' && <RightPanel/>}
             </div>
             <AddPostButton />
         </div>

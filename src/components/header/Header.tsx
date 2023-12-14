@@ -10,8 +10,8 @@ const Header:React.FC<HeaderProps> = ({ headerScreen, mobileLayout }) => {
 
             {headerScreen === 'home' && 
                 <div className="innerHeader-home">
-                    {!mobileLayout && <h1>Home</h1>}
-                    {mobileLayout && <SearchField/>}
+                    {mobileLayout !== 'mobile' && <h1>Home</h1>}
+                    {mobileLayout === 'mobile' && <SearchField/>}
                     <PointCounter/>
                 </div>
             }

@@ -1,7 +1,7 @@
 .searchField{
     @include flexVerticalCentered(row);
     // width: 60%;
-    background: $grey3;
+    background: $grey4;
     border-radius: 3rem;
     // border: .25rem solid $grey1;
     margin-right: 1rem;
@@ -19,7 +19,7 @@
     
     // ----- input
     .searchField > input{
-        background: $grey3;
+        background: $grey4;
         color: $white;
         font-family: 'sen';
         font-size: 1.2rem;
