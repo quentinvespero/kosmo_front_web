@@ -9,6 +9,9 @@ const TrendSection = () => {
                 <ButtonType2 buttonType='button-trend' buttonText='#trend1'/>
                 <ButtonType2 buttonType='button-trend' buttonText='#trend2'/>
                 <ButtonType2 buttonType='button-trend' buttonText='#trend3'/>
+                <ButtonType2 buttonType='button-trend' buttonText='#trend4'/>
+                <ButtonType2 buttonType='button-trend' buttonText='#trend5'/>
+                <ButtonType2 buttonType='button-trend' buttonText='#trend6'/>
             </div>
         </div>
     )

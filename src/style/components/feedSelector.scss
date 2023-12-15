@@ -1,40 +1,41 @@
 .feedSelector{
-    // background: $grey2;
-    // margin: 1rem 0rem;
-    padding: 0.2rem .4rem;
     border-radius: 1rem;
     display: flex;
-    // flex-flow: wrap;
-    // margin-top: 1rem;
     align-self: center;
     max-width: 25rem;
     overflow-x: scroll;
-}
-
-// hide the horizontal scrollbar when there are too many feedElements that trigger the overflow-x scroll
-.feedSelector::-webkit-scrollbar{
-    display: none;
-}
-
-    // feed element
-    .feedElements{
-        margin: .4rem;
+    gap: .5rem;
+    
+    // hide the horizontal scrollbar when there are too many feedElements that trigger the overflow-x scroll
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    
+    & .feedElements{
         padding: .5rem 1rem;
         border-radius: 3rem;
         cursor: pointer;
         @include transition(.1s);
         white-space: pre;
+        display: flex;
         
         &:hover{
             background: $grey1;
         }
         &:active{
-            transform: scale(.9);
+            transform: scale(.92);
         }
     }
+    
+    & .feedElements-profile{
+        gap: 1rem;
+    }
+    & .feedElements-profile::before{
+        content: url('../assets/profile.svg');
+        height: 0.7rem;
+    }
 
-    // selected feed element
-    .feedSelectedElement{
+    & .feedElements-selected{
         background: $grey4;
         
         &:hover{
@@ -44,3 +45,4 @@
             transform:none;
         }
     }
+}

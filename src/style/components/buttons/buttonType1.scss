@@ -94,7 +94,7 @@
     padding: .3rem 1.5rem;
     border-radius: 0rem;
     color: $grey4;
-    @include buttonBehavior($transparentWhite, 1);
+    @include buttonBehavior($transparentWhite2, 1);
     // @include transparent($transparentGrey2, 0rem);
     // animation: gradientTransparentBackground 15s ease-in-out infinite alternate;
     position: relative;

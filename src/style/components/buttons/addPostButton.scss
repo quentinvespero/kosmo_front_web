@@ -6,12 +6,12 @@
     border-radius: 3rem;
     border: .25rem solid $transparentGrey1;
     z-index: 2;
-    @include transparent($white, .7rem);
+    @include transparent($transparentWhite1, .2rem);
     @include transition(.1s);
     cursor: pointer;
 
     &:hover{
-        background: darken($white, 4%);
+        background: darken($transparentWhite1, 4%);
     }
     &:active{
         margin: 0rem 0.25rem .25rem 0rem;

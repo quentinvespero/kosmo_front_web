@@ -2,12 +2,11 @@
     display: flex;
     align-self: center;
     flex-direction: row;
-    padding: 0.3rem 0.6rem;
+    padding: .5rem 1rem .5rem .5rem;
     border-radius: 4rem;
-    // position: fixed;
     z-index: 2;
-    // margin-top: .5rem;
     @include transparent($transparentGrey2, 2rem);
     box-shadow: 0rem 0rem 3rem $grey3;
     @include transition(.3s);
+    gap: 1rem;
 }

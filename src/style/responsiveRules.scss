@@ -22,10 +22,10 @@
 }
 @media screen and (max-width:699px) {
     .topMenu{
-        padding: 0.3rem 0rem;
+        padding: .5rem;
 
         & .feedSelector{
-            padding: 0rem .4rem;
+            padding: .3rem;
         }
     }
     .searchField{
@@ -54,6 +54,7 @@
     }
     .topMenu{
         border-radius: 1rem;
+        margin: 0rem .5rem;
 
         & .feedSelector{
             flex-wrap: wrap;
