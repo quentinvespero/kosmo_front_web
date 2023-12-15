@@ -50,7 +50,7 @@
 }
 @media screen and (max-width:500px) {
     .home{
-        padding: 2rem;
+        padding: 1.5rem;
     }
     .topMenu{
         border-radius: 1rem;
@@ -95,6 +95,9 @@
 }
 
 @media screen and (max-width:350px) {
+    .home{
+        padding: .8rem;
+    }
     .buttonType1-comment{
         padding: .5rem .8rem !important;
         
