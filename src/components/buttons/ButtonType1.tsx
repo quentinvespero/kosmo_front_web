@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonType1Props } from '../../interfaces/interfaces'
 
-const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, isActive, onClick}) => {
+const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, isActive, onClick, mobileLayout}) => {
 
     // mapping the different svg version and classes to use depending on the value of the props interactionType
     const interactionTypeMap = {

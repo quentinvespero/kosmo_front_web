@@ -15,6 +15,7 @@ export interface ButtonType1Props {
     interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme' | 'login' | 'register' | 'entryButton'
     onClick?: () => void
     isActive?: boolean
+    mobileLayout?: ScreenProps['mobileLayout']
 }
 
 // buttonType2 props
@@ -28,6 +29,7 @@ export interface CommentElementsProps {
     // defining the props for showing/hiding the counters
     isCountersVisible: boolean
     interactionChoice?: UpDownVoteElementsProps['interactionChoice']
+    mobileLayout?: ScreenProps['mobileLayout']
 }
 
 // DesktopMenu component props
@@ -55,4 +57,9 @@ export interface ScreenProps {
     mobileLayout?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
+}
+
+export interface FeedSelectorProps {
+    mobileLayout?: ScreenProps['mobileLayout']
+    isSticky?: TopMenuProps['isSticky']
 }

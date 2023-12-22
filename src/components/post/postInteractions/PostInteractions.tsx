@@ -1,8 +1,9 @@
 import React from 'react'
 import CommentElements from './CommentElements'
 import UpDownVoteElements from './UpDownVoteElements'
+import { CommentElementsProps } from '../../../interfaces/interfaces'
 
-const PostInteractions = () => {
+const PostInteractions:React.FC<CommentElementsProps> = ({mobileLayout}) => {
 
     // defining the "shape" of interactionChoice, explicitely indicating that it will have the string value upvote, downvote or none. And that by default, it takes the value 'none'
     const [interactionChoice, setInteractionChoice] = React.useState<'upvote' | 'downvote' | 'none'>('none')
@@ -26,7 +27,7 @@ const PostInteractions = () => {
                 isCountersVisible={isCountersVisible} 
                 setIsCountersVisible={setIsCountersVisible}
             />
-            <CommentElements isCountersVisible={isCountersVisible}/>
+            <CommentElements isCountersVisible={isCountersVisible} mobileLayout={}/>
         </div>
     )
 }

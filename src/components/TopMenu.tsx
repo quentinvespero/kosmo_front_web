@@ -33,9 +33,13 @@ const TopMenu:React.FC<TopMenuProps> = ({setIsSticky, isSticky, mobileLayout}) =
     }, [])
 
     return (
-        <div className='topMenu' ref={ref} style={{ position: isSticky ? 'fixed' : 'relative', top: isSticky ? '.5rem' : '-1rem' }}>
+        <div className='topMenu' ref={ref} style={{ 
+            position: isSticky ? 'fixed' : 'relative', 
+            top: isSticky ? '.5rem' : '-1rem', 
+            margin: mobileLayout==='mobile' && isSticky ? '0rem .5rem' : '' 
+        }}>
             {mobileLayout !=='mobile' && <SearchField/>}
-            <FeedSelector/>
+            <FeedSelector mobileLayout={mobileLayout} isSticky={isSticky}/>
         </div>
     )
 
