@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
 import { EntryPageProps, ScreenProps } from "../interfaces/interfaces"
@@ -16,10 +16,29 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
     //     setButtonIsHovered(false)
     // }
 
+    const [colorLightAnimation, setColorLightAnimation] = useState(false)
+    const [entryPageAnimation, setEntryPageAnimation] = useState(false)
+
+    useEffect(() => {
+        if (animation) {
+            setColorLightAnimation(true)
+            setTimeout(() => {
+                setEntryPageAnimation(true)
+            }, 500)
+        }
+        else {
+            setEntryPageAnimation(false)
+            setTimeout(() => {
+                setColorLightAnimation(false)
+            }, 500)
+        }
+    }, [animation])
+
     return (
-        <div className={`entryPage ${animation ? 'screenAnimation-fadeOut' : ''}`}>
+        // <div className={`entryPage ${animation ? 'screenAnimation-fadeOut' : ''}`}>
+        <div className={`entryPage ${entryPageAnimation ? 'screenAnimation-fadeOut' : ''}`}>
             {/* <div className='entryPage-colorLight'></div> */}
-            <div className={`entryPage-colorLight ${animation && 'colorLight-off'}`}></div>
+            <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
                     <Header headerScreen="entryPage"/>

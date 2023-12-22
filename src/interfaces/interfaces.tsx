@@ -47,6 +47,7 @@ export interface HeaderProps {
 export interface EntryPageProps {
     pageSelection: () => void
     mobileLayout?: ScreenProps['mobileLayout']
+    lightFadingDesktop?: boolean
 }
 
 // General props for screens components
