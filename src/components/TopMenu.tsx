@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import SearchField from './header/SearchField'
 import FeedSelector from './FeedSelector'
-import { TopMenuProps } from '../interfaces/interfaces'
+import { ScreenProps, TopMenuProps } from '../interfaces/interfaces'
 
-const TopMenu:React.FC<TopMenuProps> = ({setIsSticky, isSticky, mobileLayout}) => {
+const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setIsSticky, isSticky, screenFormat}) => {
     
     // the reference used to define whether the TopMenu have to be sticky or not
     const ref = useRef<HTMLDivElement>(null)
@@ -36,10 +36,10 @@ const TopMenu:React.FC<TopMenuProps> = ({setIsSticky, isSticky, mobileLayout}) =
         <div className='topMenu' ref={ref} style={{ 
             position: isSticky ? 'fixed' : 'relative', 
             top: isSticky ? '.5rem' : '-1rem', 
-            margin: mobileLayout==='mobile' && isSticky ? '0rem .5rem' : '' 
+            margin: screenFormat==='mobile' && isSticky ? '0rem .5rem' : '' 
         }}>
-            {mobileLayout !=='mobile' && <SearchField/>}
-            <FeedSelector mobileLayout={mobileLayout} isSticky={isSticky}/>
+            {screenFormat !=='mobile' && <SearchField/>}
+            <FeedSelector screenFormat={screenFormat} isSticky={isSticky}/>
         </div>
     )
 

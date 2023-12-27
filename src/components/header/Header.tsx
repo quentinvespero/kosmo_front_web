@@ -19,10 +19,6 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
             {headerScreen === 'entryPage' && 
                 <div className="innerHeader-entryPage">
                     <h1 className="header-entryPage-title">Kosmo Project.</h1>
-                    {/* <div className="header-entryPage-connectSection">
-                        <ButtonType1 buttonText='login' interactionType='login'/>
-                        <ButtonType1 buttonText='register' interactionType='register'/>
-                    </div> */}
                 </div>
             }
         </div>

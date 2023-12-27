@@ -6,14 +6,11 @@ const App = () => {
     // state to determine which component to show
     const [currentPage, setCurrentPage] = useState('entry')
 
-    // defining if we are in mobile or desktop mode
-    // const [mobileLayout, setMobileLayout] = useState(false)
-    
-    // old way of defining the screen layout
-    // const [mobileLayout, setMobileLayout] = useState('')
-    const [screenFormat, setScreenFormat] = useState('')
+    // defining the screen format
+    // const [screenFormat, setScreenFormat] = useState('')
+    const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
 
-    // defining animation between different screens
+    // defining animation when switching to a different screens of the app
     const [animation, setAnimation] = useState(false)
     
     // function to handle the change of the current screen component to render

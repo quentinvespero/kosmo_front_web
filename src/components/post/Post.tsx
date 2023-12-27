@@ -2,9 +2,9 @@ import React from 'react'
 import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
-import { screenFormatProps } from '../../interfaces/interfaces'
+import { ScreenProps } from '../../interfaces/interfaces'
 
-const Post:React.FC<screenFormatProps> = ({ screenFormat }) => {
+const Post:React.FC<ScreenProps> = ({ screenFormat }) => {
     return (
         <div className='post'>
             <div className="innerPost">

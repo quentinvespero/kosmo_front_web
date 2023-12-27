@@ -59,17 +59,11 @@ export interface ScreenProps {
     // screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
-    screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
+    screenFormat?: 'mobile' | 'tablet' | 'desktop'
 }
 
 // FeedSelector component props
-
 export interface FeedSelectorProps {
     screenFormat?: ScreenProps['screenFormat']
     isSticky?: TopMenuProps['isSticky']
-}
-
-// screenFormat props -- SINCE 27/12/23, GONNA USE THAT
-export interface screenFormatProps {
-    screenFormat: '' | 'mobile' | 'tablet' | 'desktop'
 }
