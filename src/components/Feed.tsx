@@ -1,36 +1,11 @@
 import React from 'react'
 import Post from './post/Post'
+import { ScreenProps } from '../interfaces/interfaces'
 
-const Feed = () => {
+const Feed:React.FC<ScreenProps> = ({screenLayout}) => {
     return (
         <div className='feed'>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post screenLayout={screenLayout}/>
         </div>
     )
 }

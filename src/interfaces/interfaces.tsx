@@ -1,8 +1,5 @@
 // post
 
-    // PostInteractions component props
-    export interface
-
     // post interactions - button Up / Down vote
     export interface UpDownVoteElementsProps {
         interactionType: 'upvote' | 'downvote'
@@ -12,6 +9,14 @@
         // defining the props for showing/hiding the counters
         isCountersVisible: boolean
         setIsCountersVisible: (isCountersVisible:boolean) => void
+    }
+
+    // CommentElements props
+    export interface CommentElementsProps {
+        // defining the props for showing/hiding the counters
+        isCountersVisible: boolean
+        interactionChoice?: UpDownVoteElementsProps['interactionChoice']
+        mobileLayout?: ScreenProps['mobileLayout']
     }
 
 // buttonType1 props
@@ -27,14 +32,6 @@ export interface ButtonType1Props {
 export interface ButtonType2Props {
     buttonText: string
     buttonType: 'button-trend' | 'button-liveEvent'
-}
-
-// CommentElements props
-export interface CommentElementsProps {
-    // defining the props for showing/hiding the counters
-    isCountersVisible: boolean
-    interactionChoice?: UpDownVoteElementsProps['interactionChoice']
-    mobileLayout?: ScreenProps['mobileLayout']
 }
 
 // DesktopMenu component props
@@ -62,6 +59,7 @@ export interface ScreenProps {
     mobileLayout?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
+    screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
 }
 
 // FeedSelector component props

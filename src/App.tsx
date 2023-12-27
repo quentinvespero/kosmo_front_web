@@ -9,6 +9,7 @@ const App = () => {
     // defining if we are in mobile or desktop mode
     // const [mobileLayout, setMobileLayout] = useState(false)
     const [mobileLayout, setMobileLayout] = useState('')
+    const [screenFormat, setScreenFormat] = useState('')
 
     // defining animation between different screens
     const [animation, setAnimation] = useState(false)
@@ -26,13 +27,13 @@ const App = () => {
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 700) {
-                setMobileLayout('mobile')
+                setScreenFormat('mobile')
             }
             else if (window.innerWidth < 1100) {
-                setMobileLayout('tablet')
+                setScreenFormat('tablet')
             }
             else {
-                setMobileLayout('desktop')
+                setScreenFormat('desktop')
             }
         }
 
@@ -51,7 +52,7 @@ const App = () => {
                 <EntryPage pageSelection={handlePageChange} animation={animation}/>
             }
             {currentPage === 'home' && 
-                <Home mobileLayout={mobileLayout} animation={animation} setAnimation={setAnimation}/>
+                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation}/>
             }
         </div>
     )
