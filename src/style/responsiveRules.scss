@@ -17,8 +17,10 @@
         margin-bottom: 1.5rem;
     }
 }
-@media screen and (max-width:800px) {
-
+@media screen and (max-width:900px) {
+    .feed{
+        gap: 3rem 1.5rem;
+    }
 }
 @media screen and (max-width:699px) {
     .topMenu{
@@ -41,9 +43,6 @@
     }
 }
 @media screen and (max-width:600px) {
-    .post{
-        margin: 0rem 0rem 2rem 0rem;
-    }
     .entryPage-description{
         font-size: .9rem !important;
     }
@@ -59,6 +58,10 @@
             flex-wrap: wrap;
         }
     }
+    // .feed {
+    //     column-gap: 0;
+    //     row-gap: 1rem;
+    // }
 }
 @media screen and (max-width:450px) {
     .header-entryPage{
@@ -114,8 +117,8 @@
         flex-direction: column-reverse;
     }
     .pointCounter{
-        align-self: flex-end;
-        margin-bottom: 2rem;
+        align-self: center;
+        // margin-bottom: 2rem;
     }
     .searchField > input{
         max-width: 8.5rem;

@@ -36,7 +36,8 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setIsSticky, isSticky, sc
         <div className='topMenu' ref={ref} style={{ 
             position: isSticky ? 'fixed' : 'relative', 
             top: isSticky ? '.5rem' : '-1rem', 
-            margin: screenFormat==='mobile' && isSticky ? '0rem .5rem' : '' 
+            margin: screenFormat==='mobile' && isSticky ? '0rem .5rem' : '',
+            // fontSize: isSticky ? '.95rem' : '1rem'
         }}>
             {screenFormat !=='mobile' && <SearchField/>}
             <FeedSelector screenFormat={screenFormat} isSticky={isSticky}/>

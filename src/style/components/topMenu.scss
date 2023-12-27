@@ -7,6 +7,6 @@
     z-index: 2;
     @include transparent($transparentGrey2, 2rem);
     box-shadow: 0rem 0rem 3rem $grey3;
-    @include transition(.3s);
+    @include transition(.2s);
     gap: 1rem;
 }
