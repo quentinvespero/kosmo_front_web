@@ -1,17 +1,17 @@
 import React from 'react'
 import PointCounter from './PointCounter'
-import { HeaderProps } from '../../interfaces/interfaces'
+import { HeaderProps, ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
 import ButtonType1 from '../buttons/ButtonType1'
 
-const Header:React.FC<HeaderProps> = ({ headerScreen, mobileLayout }) => {
+const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat }) => {
     return (
         <div className={`header ${headerScreen === 'entryPage' && 'header-entryPage'}`}>
 
             {headerScreen === 'home' && 
                 <div className="innerHeader-home">
-                    {mobileLayout !== 'mobile' && <h1>Home</h1>}
-                    {mobileLayout === 'mobile' && <SearchField/>}
+                    {screenFormat !== 'mobile' && <h1>Home</h1>}
+                    {screenFormat === 'mobile' && <SearchField/>}
                     <PointCounter/>
                 </div>
             }

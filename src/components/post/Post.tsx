@@ -2,16 +2,16 @@ import React from 'react'
 import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
-import { mobileLayoutProps } from '../../interfaces/interfaces'
+import { screenFormatProps } from '../../interfaces/interfaces'
 
-const Post:React.FC<mobileLayoutProps> = ({ mobileLayout }) => {
+const Post:React.FC<screenFormatProps> = ({ screenFormat }) => {
     return (
         <div className='post'>
             <div className="innerPost">
                 <PostThemeElements/>
                 <PostContent/>
             </div>
-            <PostInteractions mobileLayout={ mobileLayout }/>
+            <PostInteractions screenFormat={ screenFormat }/>
         </div>
     )
 }

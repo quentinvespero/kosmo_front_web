@@ -1,12 +1,12 @@
 import React from 'react'
 import ButtonType1 from '../../buttons/ButtonType1'
 import Counter from './Counter'
-import { CommentElementsProps, mobileLayoutProps } from '../../../interfaces/interfaces'
+import { CommentElementsProps, ScreenProps } from '../../../interfaces/interfaces'
 
-const CommentElements: React.FC<CommentElementsProps & mobileLayoutProps> = ({ isCountersVisible, mobileLayout }) => {
+const CommentElements: React.FC<CommentElementsProps & ScreenProps> = ({ isCountersVisible, screenFormat }) => {
     return (
         <div className='commentElements' style={{
-            left: mobileLayout==='mobile' ? '9rem' : '13rem'
+            left: screenFormat==='mobile' ? '9rem' : '13rem'
         }}>
             <ButtonType1 buttonText='comment' interactionType='comment'/>
             {isCountersVisible && <Counter/>}

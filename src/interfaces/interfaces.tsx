@@ -16,7 +16,7 @@
         // defining the props for showing/hiding the counters
         isCountersVisible: boolean
         interactionChoice?: UpDownVoteElementsProps['interactionChoice']
-        mobileLayout?: ScreenProps['mobileLayout']
+        screenFormat?: ScreenProps['screenFormat']
     }
 
 // buttonType1 props
@@ -25,7 +25,7 @@ export interface ButtonType1Props {
     interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme' | 'login' | 'register' | 'entryButton'
     onClick?: () => void
     isActive?: boolean
-    mobileLayout?: ScreenProps['mobileLayout']
+    screenFormat?: ScreenProps['screenFormat']
 }
 
 // buttonType2 props
@@ -38,25 +38,25 @@ export interface ButtonType2Props {
 export interface TopMenuProps {
     setIsSticky: (isSticky:boolean) => void
     isSticky: boolean
-    mobileLayout: ScreenProps['mobileLayout']
+    screenFormat: ScreenProps['screenFormat']
 }
 
 // Header component props
 export interface HeaderProps {
     headerScreen: 'home' | 'entryPage'
-    mobileLayout?: ScreenProps['mobileLayout']
+    screenFormat?: ScreenProps['screenFormat']
 }
 
 // EntryPage component props
 export interface EntryPageProps {
     pageSelection: () => void
-    mobileLayout?: ScreenProps['mobileLayout']
+    screenFormat?: ScreenProps['screenFormat']
     lightFadingDesktop?: boolean
 }
 
 // General props for screens components
 export interface ScreenProps {
-    mobileLayout?: '' | 'mobile' | 'tablet' | 'desktop'
+    // screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
     screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
@@ -65,11 +65,11 @@ export interface ScreenProps {
 // FeedSelector component props
 
 export interface FeedSelectorProps {
-    mobileLayout?: ScreenProps['mobileLayout']
+    screenFormat?: ScreenProps['screenFormat']
     isSticky?: TopMenuProps['isSticky']
 }
 
-// mobileLayout props -- SINCE 27/12/23, GONNA USE THAT
-export interface mobileLayoutProps {
-    mobileLayout: '' | 'mobile' | 'tablet' | 'desktop'
+// screenFormat props -- SINCE 27/12/23, GONNA USE THAT
+export interface screenFormatProps {
+    screenFormat: '' | 'mobile' | 'tablet' | 'desktop'
 }

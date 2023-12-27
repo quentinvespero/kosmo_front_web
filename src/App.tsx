@@ -8,7 +8,9 @@ const App = () => {
 
     // defining if we are in mobile or desktop mode
     // const [mobileLayout, setMobileLayout] = useState(false)
-    const [mobileLayout, setMobileLayout] = useState('')
+    
+    // old way of defining the screen layout
+    // const [mobileLayout, setMobileLayout] = useState('')
     const [screenFormat, setScreenFormat] = useState('')
 
     // defining animation between different screens

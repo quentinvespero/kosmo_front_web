@@ -3,11 +3,10 @@ import Header from '../components/header/Header'
 import Feed from '../components/Feed'
 import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
-import SearchField from '../components/header/SearchField'
 import { ScreenProps } from '../interfaces/interfaces'
 import RightPanel from '../components/rightPanel/RightPanel'
 
-const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation, screenFormat }) => {
+const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) => {
 
     // defining if top menu is sticky or not
     const [isSticky, setIsSticky] = useState(false)
@@ -21,14 +20,12 @@ const Home: React.FC<ScreenProps> = ({ mobileLayout, animation, setAnimation, sc
     })
 
     return (
-        // <div className='home'>
         <div className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}>
-            <Header headerScreen='home' mobileLayout={screenFormat}/>
+            <Header headerScreen='home' screenFormat={screenFormat}/>
             {isSticky && <div className="fillTheGap"></div>}
-            <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} mobileLayout={screenFormat} />
-            {/* {mobileLayout && <SearchField/>} */}
+            <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} screenFormat={screenFormat} />
             <div className="innerHome">
-                <Feed />
+                <Feed screenFormat={screenFormat}/>
                 {screenFormat === 'desktop' && <RightPanel/>}
             </div>
             <AddPostButton />
