@@ -1,7 +1,4 @@
 .commentElements{
     @include flexVerticalCentered(row);
-    // margin-left: 2rem;
     filter: drop-shadow(0rem 0rem 1.5rem $grey2);
-    position: absolute;
-    left: 13rem;
 }

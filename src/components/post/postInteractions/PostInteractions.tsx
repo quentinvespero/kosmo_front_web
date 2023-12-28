@@ -12,7 +12,11 @@ const PostInteractions:React.FC<ScreenProps> = ({screenFormat}) => {
     const [isCountersVisible, setIsCountersVisible] = React.useState(false)
 
     return (
-        <div className='postInteractions'>
+        <div className='postInteractions' 
+            style={{
+                columnGap: isCountersVisible ? '1rem' : '3rem'
+            }}
+        >
             <UpDownVoteElements 
                 interactionType='upvote' 
                 setInteractionChoice={setInteractionChoice} 

@@ -6,7 +6,7 @@ import { CommentElementsProps, ScreenProps } from '../../../interfaces/interface
 const CommentElements: React.FC<CommentElementsProps & ScreenProps> = ({ isCountersVisible, screenFormat }) => {
     return (
         <div className='commentElements' style={{
-            left: screenFormat== 'tablet' || 'mobile' ? '9.5rem' : '13rem'
+            // left: screenFormat== 'tablet' || 'mobile' ? '9.5rem' : '13rem'
         }}>
             <ButtonType1 buttonText='comment' interactionType='comment'/>
             {isCountersVisible && <Counter/>}
