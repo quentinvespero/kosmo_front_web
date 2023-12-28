@@ -5,7 +5,7 @@
     max-width: 25rem;
     overflow-x: scroll;
     gap: .5rem;
-    @include transition(.1s);
+    @include transition(.2s);
     
     // hide the horizontal scrollbar when there are too many feedElements that trigger the overflow-x scroll
     &::-webkit-scrollbar{

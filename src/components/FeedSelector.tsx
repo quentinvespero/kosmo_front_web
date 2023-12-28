@@ -6,7 +6,7 @@ const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, 
         // <div className='feedSelector' style={{ flexWrap: screenFormat==='mobile' && isSticky ? 'unset' : 'wrap'}}>
         <div className='feedSelector' style={{ 
             flexWrap: screenFormat==='mobile' && isSticky ? 'unset' : 'wrap',
-            gap: screenFormat==='mobile' && isSticky ? '0rem' : '.5rem'
+            gap: isSticky ? '.2rem' : '.7rem'
         }}>
             <div className="feedElements feedElements-profile">{screenFormat != 'mobile' && 'Profile'}</div>
             <div className="feedElements feedElements-1 feedElements-selected">Feed 1</div>
