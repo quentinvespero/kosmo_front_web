@@ -18,7 +18,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setIsSticky, isSticky, sc
             }
             else {
                 // setIsSticky(ref.current.getBoundingClientRect().top <= 64)
-                setIsSticky(window.scrollY >= 120)
+                setIsSticky(window.scrollY >= 110)
             }
         }
     }
@@ -38,6 +38,8 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setIsSticky, isSticky, sc
             top: isSticky ? '.5rem' : '-1rem', 
             margin: screenFormat==='mobile' && isSticky ? '0rem .5rem' : '',
             // fontSize: isSticky ? '.95rem' : '1rem'
+            // gap: isSticky ? '1rem' : '3rem',
+            animation: isSticky ? 'bounce .3s ease-in-out' : 'unset'
         }}>
             {screenFormat !=='mobile' && <SearchField/>}
             <FeedSelector screenFormat={screenFormat} isSticky={isSticky}/>

@@ -77,3 +77,17 @@
         visibility: visible;
     }
 }
+
+@keyframes bounce {
+    0% {
+        transform: scale(1) translateY(0rem);
+        // opacity: 0;
+    }
+    50% {
+        transform: scale(.95) translateY(.5rem);
+    }
+    100% {
+        transform: scale(1) translateY(0rem);
+        // opacity: 1;
+    }
+}
