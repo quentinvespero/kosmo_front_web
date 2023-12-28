@@ -9,7 +9,7 @@ import RightPanel from '../components/rightPanel/RightPanel'
 const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) => {
 
     // defining if top menu is sticky or not
-    const [isSticky, setIsSticky] = useState(false)
+    const [topmenuIsSticky, setTopmenuIsSticky] = useState(false)
 
     useEffect(() => {
         if (animation && setAnimation) {
@@ -22,8 +22,8 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
     return (
         <div className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}>
             <Header headerScreen='home' screenFormat={screenFormat}/>
-            {isSticky && <div className="fillTheGap"></div>}
-            <TopMenu setIsSticky={setIsSticky} isSticky={isSticky} screenFormat={screenFormat} />
+            <div className="fillTheGap" style={{height: topmenuIsSticky ? '3.9rem' : '0rem'}}></div>
+            <TopMenu setTopmenuIsSticky={setTopmenuIsSticky} topmenuIsSticky={topmenuIsSticky} screenFormat={screenFormat} />
             <div className="innerHome">
                 <Feed screenFormat={screenFormat}/>
                 {screenFormat === 'desktop' && <RightPanel/>}

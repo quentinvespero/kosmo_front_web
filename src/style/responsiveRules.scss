@@ -88,7 +88,7 @@
     }
 }
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:360px) {
     .home{
         padding: .8rem;
     }
@@ -110,7 +110,6 @@
     }
     .pointCounter{
         align-self: center;
-        // margin-bottom: 2rem;
     }
     .searchField > input{
         max-width: 8.5rem;

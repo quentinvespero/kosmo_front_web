@@ -21,8 +21,7 @@ const App = () => {
         }, 500)
     }
 
-    // function to set the value of mobileLayout based on the width of the window. 
-    //(if the screen is smaller than 700px, then the mobile layout will be true)
+    // function to set the value of screenFormat based on the width of the window
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 700) {

@@ -1,12 +1,12 @@
 import React from 'react'
 import { FeedSelectorProps, ScreenProps } from '../interfaces/interfaces'
 
-const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, isSticky }) => {
+const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky }) => {
     return (
-        // <div className='feedSelector' style={{ flexWrap: screenFormat==='mobile' && isSticky ? 'unset' : 'wrap'}}>
+        // <div className='feedSelector' style={{ flexWrap: screenFormat==='mobile' && topmenuIsSticky ? 'unset' : 'wrap'}}>
         <div className='feedSelector' style={{ 
-            flexWrap: screenFormat==='mobile' && isSticky ? 'unset' : 'wrap',
-            gap: isSticky ? '.2rem' : '.7rem'
+            flexWrap: screenFormat==='mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
+            gap: topmenuIsSticky ? '.2rem' : '.7rem'
         }}>
             <div className="feedElements feedElements-profile">{screenFormat != 'mobile' && 'Profile'}</div>
             <div className="feedElements feedElements-1 feedElements-selected">Feed 1</div>

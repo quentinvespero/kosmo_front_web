@@ -5,7 +5,8 @@
     @include transition(.1s);
     
     & .fillTheGap {
-        height: 3.9rem;
+        // height: 0rem;
+        // @include transition(.1s)
     }
 
     & .innerHome {

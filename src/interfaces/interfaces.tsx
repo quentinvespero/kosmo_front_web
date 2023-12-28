@@ -36,8 +36,8 @@ export interface ButtonType2Props {
 
 // DesktopMenu component props
 export interface TopMenuProps {
-    setIsSticky: (isSticky:boolean) => void
-    isSticky: boolean
+    setTopmenuIsSticky: (topmenuIsSticky:boolean) => void
+    topmenuIsSticky: boolean
     screenFormat: ScreenProps['screenFormat']
 }
 
@@ -65,5 +65,5 @@ export interface ScreenProps {
 // FeedSelector component props
 export interface FeedSelectorProps {
     screenFormat?: ScreenProps['screenFormat']
-    isSticky?: TopMenuProps['isSticky']
+    topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
 }

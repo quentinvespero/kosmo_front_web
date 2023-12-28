@@ -23,6 +23,14 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
             <Post screenFormat={screenFormat}/>
             <Post screenFormat={screenFormat}/>
             <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
+            <Post screenFormat={screenFormat}/>
         </div>
     )
 }
