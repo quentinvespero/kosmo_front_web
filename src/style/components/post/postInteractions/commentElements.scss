@@ -1,4 +1,5 @@
 .commentElements{
     @include flexVerticalCentered(row);
     filter: drop-shadow(0rem 0rem 1.5rem $grey2);
+    margin-left: .7rem;
 }
