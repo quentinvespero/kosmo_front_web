@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# archive containing files not useful anymore
+# personal files
 archive
+prompts_datas

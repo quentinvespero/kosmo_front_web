@@ -1,25 +1,27 @@
 import React from 'react'
 import ButtonType3 from '../buttons/ButtonType3'
+import { SuggestionSectionProps } from '../../interfaces/rightPanelInterfaces'
+import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 
-const SuggestionSection = () => {
+const SuggestionSection:React.FC<SuggestionSectionProps & DatasInterfaces> = ({datas}) => {
+
     return (
         <div className='suggestionSection'>
             <h2>Suggestions</h2>
             <div className="suggestionSection-people">
                 <p>friends</p>
                 <div className="suggestionSection-peopleElements">
-                    <ButtonType3 buttonText='lorem ipsum'/>
-                    <ButtonType3 buttonText='lorem ipsum'/>
-                    <ButtonType3 buttonText='lorem ipsum'/>
+                    {datas && datas.suggestions.friends.map((friend, index) => (
+                        <ButtonType3 key={index} buttonText={friend.friendName} />
+                    ))}
                 </div>
             </div>
             <div className="suggestionSection-feed">
                 <p>feed</p>
                 <div className="suggestionSection-feedElements">
-                    <ButtonType3 buttonText=''/>
-                    <ButtonType3 buttonText=''/>
-                    <ButtonType3 buttonText=''/>
-                    <ButtonType3 buttonText=''/>
+                    {datas && datas.suggestions.feeds.map((feed, index) => (
+                        <ButtonType3 key={index} buttonText={feed.feedName} />
+                    ))}
                 </div>
             </div>
         </div>

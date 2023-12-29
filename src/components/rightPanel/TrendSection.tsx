@@ -1,7 +1,9 @@
 import React from 'react'
 import ButtonType2 from '../buttons/ButtonType2'
+import { TrendSectionProps } from '../../interfaces/rightPanelInterfaces'
+import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 
-const TrendSection = () => {
+const TrendSection:React.FC<TrendSectionProps & DatasInterfaces> = ({datas}) => {
     return (
         <div className='trendSection'>
             <h2>Trending at the moment</h2>
