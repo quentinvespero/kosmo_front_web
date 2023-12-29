@@ -43,6 +43,7 @@
     // keyframes
     @import './other/keyframes.scss';
     @import './other/screenAnimations.scss';
+    @import './other/lightDarkMode.scss';
 
 // responsive - Have to insert it at the end so it can bypass the eventual previous rules
 @import './responsiveRules.scss';

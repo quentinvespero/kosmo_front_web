@@ -1,12 +1,14 @@
 import React from 'react'
 import { CounterProps } from '../../../interfaces/interfaces'
 
-const Counter:React.FC<CounterProps> = ({isCounterVisible, hiddingCounter}) => {
+const Counter:React.FC<CounterProps> = ({isCountersVisible, isCountersBeingHide, setIsCountersVisible}) => {
     return (
         <div 
-            className='counter'
-            style={{
-                // animation: isCounterVisible && hiddingCounter ? 'slideFromRight .15s ease-in-out' : ''
+            className={isCountersVisible && isCountersBeingHide ? 'counter counter-hidden' : 'counter'}
+            onTransitionEnd={() =>{
+                if (isCountersBeingHide) {
+                    setIsCountersVisible(false)
+                }
             }}
         >
             <p>10k</p>

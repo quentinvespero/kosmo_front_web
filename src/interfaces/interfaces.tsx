@@ -14,15 +14,18 @@
         // CommentElements props
         export interface CommentElementsProps {
             // defining the props for showing/hiding the counters
-            isCountersVisible: boolean
+            isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
             interactionChoice?: UpDownVoteElementsProps['interactionChoice']
             screenFormat?: ScreenProps['screenFormat']
         }
 
         // Counter component props
         export interface CounterProps {
-            isCounterVisible: CommentElementsProps['isCountersVisible']
-            hiddingCounter?: boolean
+            isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
+            isCountersBeingHide?: boolean
+            setIsCountersVisible:UpDownVoteElementsProps['setIsCountersVisible']
+            // setIsCountersVisible: (isCountersVisible: boolean) => void
+            setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
         }
 
 // buttonType1 props

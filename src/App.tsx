@@ -7,11 +7,13 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState('entry')
 
     // defining the screen format
-    // const [screenFormat, setScreenFormat] = useState('')
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
 
     // defining animation when switching to a different screens of the app
     const [animation, setAnimation] = useState(false)
+
+    // variable to follow if the device is in dark or light mode
+    const [isDeviceInDarkMode, setIsDeviceInDarkMode] = useState(true)
     
     // function to handle the change of the current screen component to render
     const handlePageChange = () => {
@@ -42,6 +44,22 @@ const App = () => {
         return () => {
             window.removeEventListener('resize', handleResize)
         }
+    }, [])
+
+    // function to "track" if the device is in dark mode or not, and change the value of isDeviceInDarkMode accordingly
+    // ---- 29/12/23 ---- for now, this function and the related variables aren't used yet
+    // In a second time, it will be used  in childs components
+    useEffect(() => {
+        const match = window.matchMedia('(prefers-color-scheme: dark)')
+        
+        setIsDeviceInDarkMode(match.matches)
+
+        // Adding an event listener to update state if preference changes
+        const handler = (event:MediaQueryListEvent) => setIsDeviceInDarkMode(event.matches)
+        match.addEventListener('change', handler)
+
+        // Cleanup function to remove the event listener
+        return () => match.removeEventListener('change', handler)
     }, [])
 
     return (

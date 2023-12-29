@@ -9,7 +9,7 @@ const CommentElements: React.FC<CommentElementsProps & ScreenProps> = ({ isCount
             // left: screenFormat== 'tablet' || 'mobile' ? '9.5rem' : '13rem'
         }}>
             <ButtonType1 buttonText='comment' interactionType='comment'/>
-            {isCountersVisible && <Counter isCounterVisible={isCountersVisible}/>}
+            {isCountersVisible && <Counter isCountersVisible={isCountersVisible}/>}
         </div>
     )
 }
