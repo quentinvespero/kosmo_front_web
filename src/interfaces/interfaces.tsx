@@ -56,6 +56,7 @@
     export interface ButtonType3Props {
         buttonText?: string
         buttonImageSrc?: string
+        buttonType: 'button-friends' | 'button-feeds'
         
         // buttonImg could be an object that contains both the src of the image and its description for alt
         buttonImg?: {}

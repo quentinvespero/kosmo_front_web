@@ -6,14 +6,14 @@ const SuggestionSection: React.FC<SuggestionSectionProps> = ({ datas }) => {
     return (
         <div className='suggestionSection'>
             <h2>Suggestions</h2>
-            <div className="suggestionSection-people">
+            <div className="suggestionSection-friends">
                 <p>friends</p>
-                <div className="suggestionSection-peopleElements">
+                <div className="suggestionSection-friendsElements">
                     {datas &&
                         datas.suggestions.length > 0 &&
                         datas.suggestions[0].friends &&
                         datas.suggestions[0].friends.map((friend, index) => (
-                            <ButtonType3 key={index} buttonText={friend.friendName} />
+                            <ButtonType3 key={index} buttonText={friend.friendName} buttonType='button-friends'/>
                         ))}
                 </div>
             </div>
@@ -24,7 +24,7 @@ const SuggestionSection: React.FC<SuggestionSectionProps> = ({ datas }) => {
                         datas.suggestions.length > 0 &&
                         datas.suggestions[1].feeds &&
                         datas.suggestions[1].feeds.map((feed, index) => (
-                            <ButtonType3 key={index} buttonText={feed.feedName} />
+                            <ButtonType3 key={index} buttonText={feed.feedName} buttonType='button-feeds'/>
                         ))}
                 </div>
             </div>
