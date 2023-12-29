@@ -1,0 +1,31 @@
+.suggestionSection{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+
+    & .suggestionSection-people{
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+
+        & .suggestionSection-peopleElements{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: .6rem;
+        }
+    }
+    & .suggestionSection-feed{
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+
+        & .suggestionSection-feedElements{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: .6rem;
+        }
+    }
+}

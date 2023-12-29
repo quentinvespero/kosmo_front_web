@@ -1,6 +1,8 @@
 .rightPanel {
-    // width: 100%;
-    // background: $grey1;
     border-left: .1rem solid $grey2;
     max-width: 30%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
