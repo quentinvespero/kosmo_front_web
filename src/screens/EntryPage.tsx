@@ -55,10 +55,10 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                     <div className="entryPage-description">
                         <p>Get into the Field.</p>
                         <br />
-                        <p>Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
+                        <p>Kosmo aims to be a quality-focused social network, that provide a comfortable and enriching space.</p>
                         <p>A space where your time would feel well-spent.</p>
                         <br />
-                        <p>By putting humans first in my reflections, I designed the features to encourage online civility and reduce online influence and hatred.</p>
+                        <p>By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
                     </div>
                 </div>
             </div>
