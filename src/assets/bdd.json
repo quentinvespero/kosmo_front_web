@@ -1,0 +1,98 @@
+{
+    "users": [
+        {
+            "userBaseInformations": {
+                "username": "user1",
+                "mailAdress": "user1@example.com",
+                "password": "password1",
+                "birthdate": "1990-01-01"
+            },
+            "userAdditionalInformations": {
+                "location": "Paris",
+                "bio": "Hello, I'm user1!",
+                "profilePicture": "profile1.jpg",
+                "link": "http://example.com/user1",
+                "userFeeds": ["feed1", "feed2"]
+            },
+            "userSocialInformations": {
+                "followers": ["user2", "user3"],
+                "following": ["user4", "user5"],
+                "pointsCount": 50,
+                "upvotedPosts": ["post1", "post2"],
+                "bookmarkedPosts": ["post3", "post4"]
+            }
+        }
+    ],
+    "posts": [
+        {
+            "author": "user1",
+            "tags": ["tag1", "tag2"],
+            "content": {
+                "text": "Hello, this is my first post!",
+                "image": ["image1.jpg", "image2.jpg"],
+                "video": "video1.mp4",
+                "poll": {
+                    "question": "Do you like this post?",
+                    "options": ["Yes", "No"]
+                }
+            },
+            "interactionsSection": "interaction1"
+        }
+    ],
+    "comments": [
+        {
+            "_id": "comment1",
+            "parentPost": "post1",
+            "author": "user1",
+            "text": "This is a comment."
+        },
+        {
+            "_id": "comment2",
+            "parentPost": "post2",
+            "author": "user2",
+            "text": "This is a comment."
+        }
+    ],
+    "interactions": [
+        {
+            "_id": "interaction1",
+            "parentPost": "post1",
+            "upvotes": ["user2", "user3"],
+            "downvotes": ["user4"],
+            "comments": ["comment1", "comment2"]
+        },
+        {
+            "_id": "interaction2",
+            "parentPost": "post2",
+            "upvotes": ["user2", "user3"],
+            "downvotes": ["user4"],
+            "comments": ["comment1", "comment2"]
+        }
+    ],
+    "feeds": [
+        {
+            "_id": "feed1",
+            "name": "Feed 1",
+            "private": true,
+            "owner": "user1",
+            "userList": ["user2", "user3"],
+            "follower": ["user4", "user5"]
+        },
+        {
+            "_id": "feed2",
+            "name": "Feed 2",
+            "private": true,
+            "owner": "user1",
+            "userList": ["user2", "user3"],
+            "follower": ["user4", "user5"]
+        },
+        {
+            "_id": "feed3",
+            "name": "Feed 3",
+            "private": true,
+            "owner": "user1",
+            "userList": ["user2", "user3"],
+            "follower": ["user4", "user5"]
+        }
+    ]
+}

@@ -8,22 +8,18 @@ const SuggestionSection = () => {
             <div className="suggestionSection-people">
                 <p>friends</p>
                 <div className="suggestionSection-peopleElements">
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
                 </div>
             </div>
             <div className="suggestionSection-feed">
                 <p>feed</p>
                 <div className="suggestionSection-feedElements">
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
-                    <ButtonType3/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
+                    <ButtonType3 buttonText='lorem ipsum'/>
                 </div>
             </div>
         </div>
