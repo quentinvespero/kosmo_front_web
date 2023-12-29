@@ -1,6 +1,13 @@
 .buttonType3{
     background: $grey4;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 1rem;
+    @include flexVerticalCentered(column);
+    place-content: end;
+    padding: .7rem;
+
+    & > p{
+        font-size: .7rem;
+    }
 }

@@ -94,5 +94,72 @@
             "userList": ["user2", "user3"],
             "follower": ["user4", "user5"]
         }
+    ],
+    "rightPanelContent": [
+        {
+            "trending":[
+                {
+                    "trendName":"#trend1"
+                },
+                {
+                    "trendName":"#trend1"
+                },
+                {
+                    "trendName":"#trend1"
+                },
+                {
+                    "trendName":"#trend1"
+                },
+                {
+                    "trendName":"#trend1"
+                }
+            ],
+            "suggestions":[
+                {
+                    "friends":[
+                        {
+                            "friendName":"friend1"
+                        },
+                        {
+                            "friendName":"friend2"
+                        },
+                        {
+                            "friendName":"friend3"
+                        },
+                        {
+                            "friendName":"friend4"
+                        },
+                        {
+                            "friendName":"friend5"
+                        }
+                    ]
+                },
+                {
+                    "feeds":[
+                        {
+                            "feedName":"feed1"
+                        },
+                        {
+                            "feedName":"feed2"
+                        },
+                        {
+                            "feedName":"feed3"
+                        },
+                        {
+                            "feedName":"feed4"
+                        },
+                        {
+                            "feedName":"feed5"
+                        },
+                        {
+                            "feedName":"feed6"
+                        },
+                        {
+                            "feedName":"feed7"
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }
