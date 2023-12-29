@@ -3,18 +3,21 @@ import { UpDownVoteElementsProps } from '../../../interfaces/interfaces'
 import Counter from './Counter'
 import ButtonType1 from '../../buttons/ButtonType1'
 
-const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType, setInteractionChoice, interactionChoice, isCountersVisible, setIsCountersVisible}) => {
-
-    const [isCountersBeingHide, setIsCountersBeingHide] = React.useState(false)
+const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({
+    interactionType, 
+    interactionChoice, 
+    setInteractionChoice, 
+    isCountersVisible, 
+    setIsCountersVisible, 
+    isCountersBeingHide, 
+    setIsCountersBeingHide
+}) => {
 
     const handleInteractionChoice = () => {
         if (interactionType === interactionChoice) {
-            
             setInteractionChoice('none')
             setIsCountersBeingHide(true)
-            setTimeout(() => {
-                setIsCountersVisible(false)
-            }, 300)
+            setTimeout(() => setIsCountersVisible(false), 100)
         }
         else {
             setInteractionChoice(interactionType)
@@ -30,7 +33,11 @@ const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({interactionType,
                 onClick={handleInteractionChoice} 
                 isActive={interactionType === interactionChoice}
             />
-            {isCountersVisible && <Counter isCountersVisible={isCountersVisible} isCountersBeingHide={isCountersBeingHide} setIsCountersVisible={setIsCountersVisible}/>}
+            {isCountersVisible && <Counter 
+                isCountersVisible={isCountersVisible} 
+                setIsCountersVisible={setIsCountersVisible} 
+                isCountersBeingHide={isCountersBeingHide} 
+                setIsCountersBeingHide={setIsCountersBeingHide}/>}
         </div>
     )
 }

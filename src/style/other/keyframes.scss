@@ -93,26 +93,31 @@
 }
 
 @keyframes slideFromLeft {
-    from {
-        // opacity: 0;
-        // width: 0%;
+    0% {
+        opacity: 0;
+        width: 0%;
         transform: translateX(-1rem);
     }
-    to {
-        // opacity: 1;
-        // width: 100%;
+    50%{
+        opacity: .5;
+        width: 50%;
+        transform: translateX(.3rem);
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
         transform: translateX(0);
     }
 }
 @keyframes slideFromRight {
     from {
-        // opacity: 1;
-        // width: 100%;
+        opacity: 1;
+        width: 100%;
         transform: translateX(0);
     }
     to {
-        // opacity: 0;
-        // width: 0%;
+        opacity: 0;
+        width: 0%;
         transform: translateX(-1rem);
     }
 }

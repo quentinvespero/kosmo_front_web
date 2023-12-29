@@ -11,14 +11,19 @@ const PostInteractions:React.FC<ScreenProps> = ({screenFormat}) => {
     // state of the counters. If they are hidden or showing up
     const [isCountersVisible, setIsCountersVisible] = React.useState(false)
 
+    // state of the conters appearing/hiddding
+    const [isCountersBeingHide, setIsCountersBeingHide] = React.useState(false)
+
     return (
-        <div className='postInteractions' style={{columnGap: isCountersVisible ? '.7rem' : '2.7rem'}}>
+        <div className='postInteractions' style={{columnGap: isCountersVisible ? '.72rem' : '2.7rem'}}>
             <UpDownVoteElements 
                 interactionType='upvote' 
                 setInteractionChoice={setInteractionChoice} 
                 interactionChoice={interactionChoice} 
                 isCountersVisible={isCountersVisible} 
                 setIsCountersVisible={setIsCountersVisible}
+                isCountersBeingHide={isCountersBeingHide}
+                setIsCountersBeingHide={setIsCountersBeingHide}
             />
             <UpDownVoteElements 
                 interactionType='downvote' 
@@ -26,8 +31,15 @@ const PostInteractions:React.FC<ScreenProps> = ({screenFormat}) => {
                 interactionChoice={interactionChoice} 
                 isCountersVisible={isCountersVisible} 
                 setIsCountersVisible={setIsCountersVisible}
+                isCountersBeingHide={isCountersBeingHide}
+                setIsCountersBeingHide={setIsCountersBeingHide}
             />
-            <CommentElements isCountersVisible={isCountersVisible} screenFormat={screenFormat}/>
+            <CommentElements 
+                isCountersVisible={isCountersVisible} 
+                screenFormat={screenFormat}
+                isCountersBeingHide={isCountersBeingHide}
+                setIsCountersVisible={setIsCountersVisible}
+            />
         </div>
     )
 }
