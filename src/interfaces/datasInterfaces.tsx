@@ -69,7 +69,7 @@
     }
 
 // --- rightPanel
-    interface RightPanelContent {
+    export interface RightPanelContent {
         trending: Trending[]
         suggestions: Suggestions[]
     }

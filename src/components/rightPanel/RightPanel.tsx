@@ -2,21 +2,20 @@ import React, { useEffect, useState } from 'react'
 import TrendSection from './TrendSection'
 import SuggestionSection from './SuggestionSection'
 import jsonData from '../../assets/bdd.json'
-import { DatasInterfaces } from '../../interfaces/datasInterfaces'
+import { RightPanelContent } from '../../interfaces/datasInterfaces'
 
 const RightPanel = () => {
 
-    const [datas, setDatas] = useState<DatasInterfaces | null>(null)
+    const [datas, setDatas] = useState<RightPanelContent | null>(null)
 
     useEffect(() => {
         setDatas(jsonData.rightPanelContent[0])
-        console.log('-----niania-----', datas)
     },[])
 
     return (
         <div className='rightPanel'>
-            <TrendSection datas={datas}/>
-            <SuggestionSection datas={datas}/>
+            {datas && <TrendSection datas={datas}/>}
+            {datas && <SuggestionSection datas={datas}/>}
         </div>
     )
 }
