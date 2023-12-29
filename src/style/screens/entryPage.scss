@@ -26,7 +26,8 @@
     & .entryPage-backgroundLayer{
         height: 100vh;
         width: 100vw;
-        @include transparent($transparentGrey3, 6rem);
+        backdrop-filter: blur(6rem);
+        -webkit-backdrop-filter: blur(6rem);
 
         & .entryPage-innerElements{
             @include flexVerticalCentered(column);

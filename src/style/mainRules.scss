@@ -39,8 +39,8 @@ $transparent : #dddddd1a;
 }
 
 @mixin transparent($color, $blur){
-    backdrop-filter: blur($blur);
     background: $color;
+    backdrop-filter: blur($blur);
     -webkit-backdrop-filter: blur($blur);
 }
 
