@@ -1,10 +1,11 @@
 import React from 'react'
 import PointCounter from './PointCounter'
-import { HeaderProps, ScreenProps } from '../../interfaces/interfaces'
+import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
 import ButtonType1 from '../buttons/ButtonType1'
+import { HeaderProps } from '../../interfaces/headerInterfaces'
 
-const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat }) => {
+const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat, selectedFeed }) => {
     return (
         <div className={`header ${headerScreen === 'entryPage' && 'header-entryPage'}`}>
 
@@ -12,7 +13,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
                 <div className="innerHeader-home">
                     {screenFormat !== 'mobile' && <h1>Kosmo Project.</h1>}
                     {screenFormat === 'mobile' && <SearchField/>}
-                    <PointCounter/>
+                    {/* {selectedFeed?.includes('feed') && <PointCounter/>} */}
                 </div>
             }
 

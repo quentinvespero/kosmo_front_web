@@ -5,7 +5,8 @@
     & .innerHeader-home{
         @include transition(.2s);
         @include flexVerticalCentered(row);
-        place-content: space-between;
+        // place-content: space-between;
+        justify-content: center
     }
     
     // style for the entry screen

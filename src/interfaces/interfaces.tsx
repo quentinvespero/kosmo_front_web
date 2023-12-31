@@ -71,11 +71,12 @@ export interface TopMenuProps {
     setSelectedFeed: FeedSelectorProps['setSelectedFeed']
 }
 
-// Header component props
-export interface HeaderProps {
-    headerScreen: 'home' | 'entryPage'
-    screenFormat?: ScreenProps['screenFormat']
-}
+// // Header component props
+// 31/12/23 - deprecated
+// export interface HeaderProps {
+//     headerScreen: 'home' | 'entryPage'
+//     screenFormat?: ScreenProps['screenFormat']
+// }
 
 // EntryPage component props
 export interface EntryPageProps {

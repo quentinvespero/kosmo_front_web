@@ -30,8 +30,13 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
 
     return (
         <div className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}>
-            <Header headerScreen='home' screenFormat={screenFormat}/>
-            <div className="fillTheGap" style={{height: topmenuIsSticky ? '3.9rem' : '0rem'}}></div>
+            <Header 
+                headerScreen='home' 
+                screenFormat={screenFormat}
+                selectedFeed={selectedFeed}     
+            />
+            {/* <div className="fillTheGap" style={{height: topmenuIsSticky ? '3.9rem' : '0rem'}}></div> */}
+            {topmenuIsSticky && <div className="fillTheGap"></div>}
             <TopMenu 
                 setTopmenuIsSticky={setTopmenuIsSticky} 
                 topmenuIsSticky={topmenuIsSticky} 

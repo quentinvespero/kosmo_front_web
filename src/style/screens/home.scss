@@ -3,16 +3,17 @@
     flex-direction: column;
     padding: 2rem;
     @include transition(.1s);
+    row-gap: 4rem;
     
     & .fillTheGap {
-        // height: 0rem;
+        height: 3.9rem;
         // @include transition(.1s)
     }
 
     & .innerHome {
         display: flex;
         flex-direction: row;
-        padding-top: 2rem;
+        // padding-top: 2rem;
         gap: 1rem;
     }
 }

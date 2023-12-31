@@ -11,7 +11,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
                 setTopmenuIsSticky(false)
             }
             else {
-                setTopmenuIsSticky(window.scrollY >= 115)
+                setTopmenuIsSticky(window.scrollY >= 155)
             }
     }
 
@@ -29,7 +29,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
             className='topMenu' 
             style={{ 
                 position: topmenuIsSticky ? 'fixed' : 'relative', 
-                top: topmenuIsSticky ? '.5rem' : '-1rem', 
+                top: topmenuIsSticky ? '.5rem' : '0rem', 
                 margin: screenFormat==='mobile' && topmenuIsSticky ? '0rem .5rem' : '',
                 animation: topmenuIsSticky ? 'bounce .4s ease-in-out' : 'unset',
                 boxShadow: topmenuIsSticky ? '0rem 0rem 3rem #2C2C2C' : '',
