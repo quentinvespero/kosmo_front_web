@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import SearchField from './header/SearchField'
 import FeedSelector from './FeedSelector'
 import { ScreenProps, TopMenuProps } from '../interfaces/interfaces'
 
-const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat}) => {
+const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed}) => {
 
     // the function used to handle the scroll, and then use its value as part of the function to define if the TopMenu is sticky or not
     const handleScroll = () => {
@@ -36,7 +36,12 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
             }}
         >
             {screenFormat !=='mobile' && <SearchField/>}
-            <FeedSelector screenFormat={screenFormat} topmenuIsSticky={topmenuIsSticky}/>
+            <FeedSelector 
+                screenFormat={screenFormat} 
+                topmenuIsSticky={topmenuIsSticky} 
+                selectedFeed={selectedFeed} 
+                setSelectedFeed={setSelectedFeed}
+            />
         </div>
     )
 

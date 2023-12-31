@@ -67,6 +67,8 @@ export interface TopMenuProps {
     setTopmenuIsSticky: (topmenuIsSticky:boolean) => void
     topmenuIsSticky: boolean
     screenFormat: ScreenProps['screenFormat']
+    selectedFeed: FeedSelectorProps['selectedFeed']
+    setSelectedFeed: FeedSelectorProps['setSelectedFeed']
 }
 
 // Header component props
@@ -94,4 +96,6 @@ export interface ScreenProps {
 export interface FeedSelectorProps {
     screenFormat?: ScreenProps['screenFormat']
     topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
+    selectedFeed: string
+    setSelectedFeed: (selectedFeed:string) => void
 }

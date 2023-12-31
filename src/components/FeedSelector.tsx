@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FeedSelectorProps, ScreenProps } from '../interfaces/interfaces'
 import jsonData from '../../src/assets/bdd.json'
 
-const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky }) => {
+const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed }) => {
 
-    const [selectedFeed, setSelectedFeed] = useState('feed1')
-
+    // changing the state of selected feed in home component
     const handleFeedChoice = (feedId: string) => {
         setSelectedFeed(feedId)
     }
