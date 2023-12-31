@@ -4,11 +4,7 @@
     // style for the home screen
     & .innerHeader-home {
         @include transition(.2s);
-        // display: flex;
-        // flex-direction: row;
         @include flexVerticalCentered(row);
-        // place-content: space-between;
-        // justify-content: center;
 
         & .innerHeader-section1 {
             @include flexVerticalCentered(row);

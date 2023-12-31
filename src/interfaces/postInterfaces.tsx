@@ -1,3 +1,9 @@
+import { ScreenProps } from "./interfaces"
+
+export interface PostProps {
+    postId: string
+}
+
 // post interactions - button Up / Down vote
 export interface UpDownVoteElementsProps {
     interactionType: 'upvote' | 'downvote'

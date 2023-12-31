@@ -30,6 +30,7 @@
 
 // --- post
     interface Post {
+        _id:string
         author: string
         tags: string[]
         content: Content
