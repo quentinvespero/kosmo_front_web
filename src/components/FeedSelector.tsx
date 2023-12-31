@@ -14,7 +14,13 @@ const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat,
             flexWrap: screenFormat === 'mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
             gap: topmenuIsSticky ? '.2rem' : '.7rem'
         }}>
-            <div className="feedElements feedElements-profile">{screenFormat != 'mobile' && 'Profile'}</div>
+            <div 
+                // className="feedElements feedElements-profile" 
+                className={`feedElements feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`} 
+                onClick={() => handleFeedChoice('profile')}
+            >
+                {screenFormat != 'mobile' && 'Profile'}
+            </div>
             {jsonData && 
             jsonData.feeds.length > 0 &&
             jsonData.feeds.map((feed) => (

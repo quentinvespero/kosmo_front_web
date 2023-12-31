@@ -35,7 +35,6 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
     }, [animation])
 
     return (
-        // <div className={`entryPage ${animation ? 'screenAnimation-fadeOut' : ''}`}>
         <div className={`entryPage ${entryPageAnimation ? 'screenAnimation-fadeOut' : ''}`}>
             {/* <div className='entryPage-colorLight'></div> */}
             <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>

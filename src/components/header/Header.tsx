@@ -10,7 +10,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
 
             {headerScreen === 'home' && 
                 <div className="innerHeader-home">
-                    {screenFormat !== 'mobile' && <h1>Home</h1>}
+                    {screenFormat !== 'mobile' && <h1>Kosmo Project.</h1>}
                     {screenFormat === 'mobile' && <SearchField/>}
                     <PointCounter/>
                 </div>

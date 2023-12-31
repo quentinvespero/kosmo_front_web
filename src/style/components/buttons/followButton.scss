@@ -1,0 +1,16 @@
+.followButton {
+    background: $white3;
+    display: flex;
+    border-radius: .7rem;
+    padding: .5rem 1rem;
+    column-gap: .5rem;
+    
+    & > p {
+        color: $grey4;
+        font-size: .9rem;
+    }
+
+    & .followButton-counter {
+        font-weight: 900;
+    }
+}

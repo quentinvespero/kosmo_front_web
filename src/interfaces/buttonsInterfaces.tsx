@@ -1,3 +1,5 @@
+import { ScreenProps } from "./interfaces"
+
 // buttonType1 props
 export interface ButtonType1Props {
     buttonText?: string
@@ -20,4 +22,9 @@ export interface ButtonType3Props {
     
     // buttonImg could be an object that contains both the src of the image and its description for alt
     buttonImg?: {}
+}
+
+// FollowButton props
+export interface FollowButtonProps {
+    buttonText: string
 }

@@ -5,6 +5,7 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import RightPanel from '../components/rightPanel/RightPanel'
+import Profile from '../components/innerSections/Profile'
 
 const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) => {
 
@@ -23,6 +24,10 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
     // managing feeds selection
     const [selectedFeed, setSelectedFeed] = useState('feed1')
 
+    // managing inner screens
+    // 31/12/23 : not really used at the moment. will think about using it to switch between the different feed
+    const [currentInnerScreen, setCurrentInnerScreen] = useState({selectedFeed})
+
     return (
         <div className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}>
             <Header headerScreen='home' screenFormat={screenFormat}/>
@@ -35,8 +40,9 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
                 setSelectedFeed={setSelectedFeed}
             />
             <div className="innerHome">
-                <Feed screenFormat={screenFormat}/>
-                {screenFormat === 'desktop' && <RightPanel/>}
+                {selectedFeed.includes('feed') && <Feed screenFormat={screenFormat}/>}
+                {screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
+                {selectedFeed === 'profile' && <Profile/>}
             </div>
             <AddPostButton />
         </div>
