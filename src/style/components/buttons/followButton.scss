@@ -1,9 +1,10 @@
 .followButton {
     background: $white3;
     display: flex;
-    border-radius: .7rem;
+    border-radius: .4rem;
     padding: .5rem 1rem;
     column-gap: .5rem;
+    @include buttonBehavior($white3, .95, .1s);
     
     & > p {
         color: $grey4;

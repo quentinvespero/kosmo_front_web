@@ -7,13 +7,13 @@
     
     & .fillTheGap {
         height: 3.9rem;
-        // @include transition(.1s)
+        @include transition(.1s)
     }
 
     & .innerHome {
         display: flex;
         flex-direction: row;
-        // padding-top: 2rem;
         gap: 1rem;
+        align-self: center;
     }
 }

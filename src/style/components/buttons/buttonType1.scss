@@ -2,8 +2,8 @@
 .buttonType1{
     border-radius: 3rem;
     z-index: 1;
-    @include transition(.1s);
-    @include buttonBehavior($grey1, .9);
+    // @include transition(.1s);
+    @include buttonBehavior($grey1, .9, .1s);
 
     & > .buttonType1-image{
         display: flex;
@@ -78,23 +78,23 @@
     
     &.buttonType1-login{
         // border: .15rem solid darken($pink, 4%);
-        @include buttonBehavior($grey4, .95);
+        @include buttonBehavior($grey4, .95, .1s);
     }
     &.buttonType1-register{
-        @include buttonBehavior($grey4, .95);
+        @include buttonBehavior($grey4, .95, .1s);
         // border: .15rem solid darken($blue, 4%);
     }
 }
 
 // entryPageButton
 .buttonType1-entryButton{
-    @include transition(.15s);
+    // @include transition(.15s);
     cursor: pointer;
     font-size: 1.7rem;
     padding: .3rem 1.5rem;
     border-radius: 0rem;
     color: $grey4;
-    @include buttonBehavior($transparentWhite2, 1);
+    @include buttonBehavior($transparentWhite2, 1, .15s);
     // @include transparent($transparentGrey2, 0rem);
     // animation: gradientTransparentBackground 15s ease-in-out infinite alternate;
     position: relative;
@@ -141,5 +141,5 @@
     background: $grey2;
     padding: .7rem;
     border-radius: .2rem;
-    @include buttonBehavior($grey1, .95);
+    @include buttonBehavior($grey1, .95, .1s);
 }

@@ -1,17 +1,26 @@
 import React from 'react'
 import Feed from '../Feed'
 import FollowButton from '../buttons/FollowButton'
+import PointCounter from '../header/PointCounter'
+import jsondata from '../../assets/bdd.json'
 
 const Profile = () => {
+
+    const profilePictureUrl = jsondata.users[0].userAdditionalInformations.profilePicture
+
     return (
         <div className='profile'>
-            {/* <PointCounter/> */}
             <div className="profile-section1">
                 <div className="profile-innerSection1">
-                    {/* <img src="" alt="" srcset="" /> */}
-                    <div className="profile-name">
-                        <p className='profile-username'>Username</p>
-                        <p className='profile-handle'>@username</p>
+                    <div className="profile-innerSection1-top">
+                        <div className="profile-innerSection1-imageAndCounter">
+                            <img src={profilePictureUrl} alt="profilePicture" />
+                            <PointCounter/>
+                        </div>
+                        <div className="profile-name">
+                            <p className='profile-username'>Username</p>
+                            <p className='profile-handle'>@username</p>
+                        </div>
                     </div>
                     <div className="profile-followButtons">
                         <FollowButton buttonText='Followers'/>

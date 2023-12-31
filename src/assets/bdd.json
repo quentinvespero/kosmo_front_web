@@ -10,7 +10,7 @@
             "userAdditionalInformations": {
                 "location": "Paris",
                 "bio": "Hello, I'm user1!",
-                "profilePicture": "profile1.jpg",
+                "profilePicture": "src/assets/profile1.png",
                 "link": "http://example.com/user1",
                 "userFeeds": ["feed1", "feed2"]
             },

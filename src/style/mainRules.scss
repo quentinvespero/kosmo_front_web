@@ -44,9 +44,10 @@ $transparent : #dddddd1a;
     -webkit-backdrop-filter: blur($blur);
 }
 
-@mixin buttonBehavior($color, $scale){
+@mixin buttonBehavior($color, $scale, $transitionTime){
     background: $color;
     cursor: pointer;
+    @include transition($transitionTime);
 
     &:hover{
         background: darken($color, 4%);

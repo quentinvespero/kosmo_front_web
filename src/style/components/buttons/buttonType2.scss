@@ -4,6 +4,6 @@
     margin: .5rem 0rem;
     border-radius: .2rem;
     font-size: .85rem;
-    @include buttonBehavior($grey4, .95);
-    @include transition(.15s);
+    @include buttonBehavior($grey4, .95, .15s);
+    // @include transition(.15s);
 }

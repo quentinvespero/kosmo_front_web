@@ -16,29 +16,47 @@
             border-radius: 1rem;
             display: flex;
             flex-direction: column;
-            row-gap: 2rem;
+            row-gap: 2.2rem;
 
-            & .profile-name {
-                @include flexVerticalCentered(row);
-                column-gap: 1rem;
+            & .profile-innerSection1-top {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
 
-                & .profile-username {
-                    font-weight: 900;
-                    font-size: 1.3rem;
+                & .profile-innerSection1-imageAndCounter {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    & > img {
+                        width: 7rem;
+                        border-radius: 5rem;
+                    }
                 }
-                & .profile-handle {
-                    color: $white5;
+                
+                & .profile-name {
+                    @include flexVerticalCentered(row);
+                    column-gap: 1rem;
+                    
+                    & .profile-username {
+                        font-weight: 900;
+                        font-size: 1.3rem;
+                    }
+                    & .profile-handle {
+                        color: $white5;
+                    }
                 }
+
             }
 
             & .profile-followButtons{
                 display: flex;
                 column-gap: 1rem;
             }
-            
-            & .profile-editProfileButton{
-                text-align: end;
-            }
+        }
+
+        & .profile-editProfileButton{
+            text-align: end;
         }
     }
 }
