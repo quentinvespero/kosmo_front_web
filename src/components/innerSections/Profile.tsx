@@ -14,8 +14,8 @@ const Profile = () => {
                         <p className='profile-handle'>@username</p>
                     </div>
                     <div className="profile-followButtons">
-                        <FollowButton buttonText='followers'/>
-                        <FollowButton buttonText='following'/>
+                        <FollowButton buttonText='Followers'/>
+                        <FollowButton buttonText='Following'/>
                     </div>
                     <div className="profile-bio">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis distinctio, unde quaerat accusamus voluptatum porro maiores a reprehenderit ut voluptatibus.</p>
@@ -27,7 +27,7 @@ const Profile = () => {
 
             </div>
             <div className="profile-section3">
-                <Feed/>
+                {/* <Feed/> */}
             </div>
         </div>
     )
