@@ -9,26 +9,27 @@
         & .innerHeader-section1 {
             @include flexVerticalCentered(row);
             justify-content: space-between;
+        }
+    }
+}
 
-            // style for the entry screen
-            &.header-entryPage {
-                @include transition(.2s);
-                @include flexVerticalCentered(row);
-                padding: 3rem;
-            }
-
-            & .innerHeader-entryPage {
-                @include transition(.2s);
-                @include flexVerticalCentered(row);
-                justify-content: space-between;
-                width: 100%;
-                animation: flex-direction;
-
-                & .header-entryPage-connectSection {
-                    @include flexVerticalCentered(row);
-                    gap: 1rem;
-                }
-            }
+// style for the entry screen
+.header-entryPage {
+    @include transition(.2s);
+    @include flexVerticalCentered(row);
+    margin-top: 3rem;
+    margin-left: 2rem;
+    
+    & .innerHeader-entryPage {
+        @include transition(.2s);
+        @include flexVerticalCentered(row);
+        justify-content: space-between;
+        width: 100%;
+        animation: flex-direction;
+    
+        & .header-entryPage-connectSection {
+            @include flexVerticalCentered(row);
+            gap: 1rem;
         }
     }
 }

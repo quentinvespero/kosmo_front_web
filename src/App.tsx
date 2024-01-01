@@ -4,7 +4,7 @@ import EntryPage from './screens/EntryPage'
 
 const App = () => {
     // state to determine which component to show
-    const [currentPage, setCurrentPage] = useState('home')
+    const [currentPage, setCurrentPage] = useState('entry')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
