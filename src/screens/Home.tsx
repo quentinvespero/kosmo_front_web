@@ -26,16 +26,20 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
 
     // managing inner screens
     // 31/12/23 : not really used at the moment. will think about using it to switch between the different feed
-    const [currentInnerScreen, setCurrentInnerScreen] = useState({selectedFeed})
+    // const [currentInnerScreen, setCurrentInnerScreen] = useState({selectedFeed})
 
     return (
-        <div className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}>
+        <div 
+            className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}
+            style={{
+                rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
+            }}
+        >
             <Header 
                 headerScreen='home' 
                 screenFormat={screenFormat}
                 selectedFeed={selectedFeed}     
             />
-            {/* <div className="fillTheGap" style={{height: topmenuIsSticky ? '3.9rem' : '0rem'}}></div> */}
             {topmenuIsSticky && <div className="fillTheGap"></div>}
             <TopMenu 
                 setTopmenuIsSticky={setTopmenuIsSticky} 

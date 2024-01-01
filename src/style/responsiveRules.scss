@@ -27,11 +27,12 @@
         align-self: flex-start;
     }
     .topMenu{
-        padding: .5rem;
+        padding: .7rem;
+        border-radius: 1rem;
 
-        & .feedSelector{
-            padding: .3rem;
-        }
+        // & .feedSelector{
+        //     padding: .3rem;
+        // }
     }
     // .innerHeader-home{
     //     margin-bottom: 3rem;
@@ -47,7 +48,6 @@
         padding: 1.5rem;
     }
     .topMenu{
-        border-radius: 1rem;
 
         & .feedSelector{
             flex-wrap: wrap;
@@ -113,6 +113,6 @@
         align-self: center;
     }
     .searchField > input{
-        max-width: 8.5rem;
+        max-width: 7.5rem;
     }
 }

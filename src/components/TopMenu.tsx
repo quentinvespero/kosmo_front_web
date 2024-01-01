@@ -7,12 +7,19 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
 
     // the function used to handle the scroll, and then use its value as part of the function to define if the TopMenu is sticky or not
     const handleScroll = () => {
-            if (window.scrollY === 0) {
-                setTopmenuIsSticky(false)
-            }
-            else {
-                setTopmenuIsSticky(window.scrollY >= 155)
-            }
+        if (window.scrollY === 0) {
+            setTopmenuIsSticky(false)
+        }
+        else {
+            setTopmenuIsSticky(window.scrollY >= 155)
+            // setTopmenuIsSticky(screenFormat !== 'mobile' ? window.scrollY >= 155 : window.scrollY >= 250)
+            // if (screenFormat !== 'mobile') {
+            //     setTopmenuIsSticky(window.scrollY >= 155)
+            // }
+            // else {
+            //     setTopmenuIsSticky(window.scrollY>= 270)
+            // }
+        }
     }
 
     // get the value of the scroll

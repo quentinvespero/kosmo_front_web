@@ -14,7 +14,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
                     className="innerHeader-home" 
                     style={{
                         flexDirection: screenFormat === 'mobile' ? 'column' : 'row',
-                        rowGap: screenFormat === 'mobile' ? '4rem' : '',
+                        rowGap: screenFormat === 'mobile' ? '3rem' : '',
                         alignItems: screenFormat === 'mobile' ? 'normal' : 'center',
                         justifyContent: screenFormat !== 'mobile' ? 'center' : '',
                         marginTop: screenFormat === 'mobile' ? '2rem' : ''

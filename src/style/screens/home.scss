@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 2rem;
     @include transition(.1s);
-    row-gap: 4rem;
+    // row-gap: 4rem;
     
     & .fillTheGap {
         height: 3.9rem;
