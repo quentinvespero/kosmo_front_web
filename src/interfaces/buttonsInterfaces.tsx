@@ -28,3 +28,11 @@ export interface ButtonType3Props {
 export interface FollowButtonProps {
     buttonText: string
 }
+
+// NotificationButton
+export interface NotificationButtonProps {
+    // notification: boolean
+    _id: string,
+    message: string,
+    read:boolean
+}

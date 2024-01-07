@@ -9,11 +9,13 @@
     @import './components/buttons/addPostButton.scss';
     @import './components/buttons/buttonType3.scss';
     @import './components/buttons/followButton.scss';
+    @import './components/buttons/notificationButton.scss';
 
     // header
     @import './components/header/header.scss';
     @import './components/header/pointCounter.scss';
     @import './components/header/searchField.scss';
+    @import './components/header/headerMenu.scss';
     
     // post
     @import './components/post/post.scss';

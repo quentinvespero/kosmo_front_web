@@ -6,6 +6,10 @@ export interface HeaderProps {
     selectedFeed?:FeedSelectorProps['selectedFeed']
 }
 
+export interface HeaderMenuProps {
+    
+}
+
 // export interface PointCounterProps {
 //     selectedFeed?:FeedSelectorProps['selectedFeed']
 // }

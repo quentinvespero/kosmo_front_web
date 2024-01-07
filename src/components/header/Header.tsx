@@ -4,6 +4,7 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
 import ButtonType1 from '../buttons/ButtonType1'
 import { HeaderProps } from '../../interfaces/headerInterfaces'
+import HeaderMenu from './HeaderMenu'
 
 const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat, selectedFeed }) => {
     return (
@@ -24,7 +25,8 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
                     <h1 style={{alignSelf:'center'}}>Kosmo Project.</h1>
                     <div className="innerHeader-section1">
                         {screenFormat === 'mobile' && <SearchField/>}
-                        {selectedFeed!.includes('feed') && screenFormat === 'mobile' && <PointCounter/>}
+                        {/* {selectedFeed && selectedFeed.includes('feed') && screenFormat === 'mobile' && <PointCounter/>} */}
+                        {screenFormat !== 'mobile' && <HeaderMenu screenFormat={screenFormat}/>}
                     </div>
                 </div>
             }

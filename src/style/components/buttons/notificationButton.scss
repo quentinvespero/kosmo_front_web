@@ -1,0 +1,20 @@
+.notificationButton {
+    @include flexVerticalCentered(row);
+    padding: .4rem .5rem;
+    border-radius: 2rem;
+    @include buttonBehavior($white1, .9, .1s);
+    position: relative;
+    column-gap: .5rem;
+
+    & > .notificationButton-bell{
+        content: url('/src/assets/bell2.svg');
+    }
+}
+.notificationButton-true {
+    // content: url('/src/assets/bell2.svg');
+    // position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: $blue;
+    border-radius: 3rem;
+}
