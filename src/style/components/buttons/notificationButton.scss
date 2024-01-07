@@ -6,15 +6,16 @@
     position: relative;
     column-gap: .5rem;
 
-    & > .notificationButton-bell{
+    & .notificationButton-bell{
         content: url('/src/assets/bell2.svg');
+        width: .9rem;
+        height: .9rem;
     }
-}
-.notificationButton-true {
-    // content: url('/src/assets/bell2.svg');
-    // position: absolute;
-    width: 1rem;
-    height: 1rem;
-    background: $blue;
-    border-radius: 3rem;
+
+    & .notificationButton-true {
+        width: .9rem;
+        height: .9rem;
+        background: $blue;
+        border-radius: 3rem;
+    }
 }

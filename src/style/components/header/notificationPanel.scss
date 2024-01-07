@@ -1,0 +1,17 @@
+.notificationPanel{
+    position: absolute;
+    // min-height: 3rem;
+    width: 15rem;
+    background: $grey4;
+    border-radius: 1rem;
+    top: 3.3rem;
+    right: -6.3rem;
+    z-index: 3;
+    padding: 1rem;
+    @include transition(.15s);
+    box-shadow: 0rem 0rem 2rem $grey3;
+
+    & .notificationPanel-element{
+        padding: .2rem 0rem;
+    }
+}

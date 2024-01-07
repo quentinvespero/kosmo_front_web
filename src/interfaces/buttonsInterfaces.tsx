@@ -32,7 +32,7 @@ export interface FollowButtonProps {
 // NotificationButton
 export interface NotificationButtonProps {
     // notification: boolean
-    _id: string,
-    message: string,
-    read:boolean
+    _id?: string,
+    message?: string,
+    read?:boolean
 }

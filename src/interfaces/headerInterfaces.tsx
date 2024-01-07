@@ -10,6 +10,10 @@ export interface HeaderMenuProps {
     
 }
 
+export interface notificationPanelProps {
+    notifications: string[]
+}
+
 // export interface PointCounterProps {
 //     selectedFeed?:FeedSelectorProps['selectedFeed']
 // }

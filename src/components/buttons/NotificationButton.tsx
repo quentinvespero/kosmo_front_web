@@ -1,13 +1,17 @@
 // NotificationButton.tsx
 import React, { useEffect, useState } from 'react'
 import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
-import './styles.css'
+import NotificationPanel from '../header/NotificationPanel'
 
 const NotificationButton:React.FC<NotificationButtonProps> = ({}) => {
     
+    // the content of the notifications as an array
     const [notifications, setNotifications] = useState<NotificationButtonProps[] | null>(null)
+    
+    // the state of the notifications, if there are some new one or not
     const [isNewNotification, setIsNewNotification] = useState(false)
 
+    // fetching the notifications from the backend
     useEffect(() => {
         fetch('API_URL')
             .then(response => response.json())
@@ -20,11 +24,18 @@ const NotificationButton:React.FC<NotificationButtonProps> = ({}) => {
             .catch(error => console.error(error))
     }, [])
 
-    return (
-        <div className='notificationButton'>
-            <div className="notificationButton-bell"></div>
+    // toggling the notifications panel
+    const handleShowingNotificationPanel = () => {
 
-            {notifications && notifications.length > 0 && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>}
+    }
+
+    return (
+        <div className='notificationButton' onClick={handleShowingNotificationPanel}>
+            <div className="notificationButton-bell"></div>
+            {/* {notifications && notifications.length > 0 && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>} */}
+            <div className='notificationButton-true'></div>
+            {/* {notifications && notifications.length > 0 && <NotificationPanel notifications={notifications}/>} */}
+            <NotificationPanel notifications={notifications}/>
         </div>
     )
 }
