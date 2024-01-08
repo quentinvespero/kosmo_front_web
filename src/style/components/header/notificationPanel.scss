@@ -1,6 +1,5 @@
 .notificationPanel{
     position: absolute;
-    // min-height: 3rem;
     width: 17rem;
     background: $grey4;
     border-radius: 1rem;
@@ -13,16 +12,14 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.2rem;
+    font-size: .8rem;
 
     & .notificationPanel-element{
-        // padding: .8rem 1rem;
         border-radius: .5rem;
         @include flexVerticalCentered(row);
         column-gap: 1rem;
 
         & .notificationPanel-icon{
-            // width: 2rem;
-            // height: 2rem;
             padding: 1rem;
             border-radius: .3rem;
             @include buttonBehavior($grey1, .95, .1s);

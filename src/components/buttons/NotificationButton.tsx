@@ -9,7 +9,7 @@ const NotificationButton:React.FC<NotificationButtonProps> = ({}) => {
     const [notificationsContent, setNotificationsContent] = useState<NotificationButtonProps[] | null>(null)
     
     // the state of the notifications, if there are some new one or not
-    const [isNewNotification, setIsNewNotification] = useState(false)
+    const [isNewNotification, setIsNewNotification] = useState(true)
 
     // variable to show/hide the notificationPanel
     const [notificationPanelVisibility, setNotificationPanelVisibility] = useState(false)
@@ -31,12 +31,12 @@ const NotificationButton:React.FC<NotificationButtonProps> = ({}) => {
     const handleShowingNotificationPanel = () => {
         if (!notificationPanelVisibility) {
             setNotificationPanelVisibility(true)
-            setIsNewNotification(true)
+            setIsNewNotification(false)
             setNotificationsContent(['test'])
         }
         else {
             setNotificationPanelVisibility(false)
-            setIsNewNotification(false)
+            setIsNewNotification(true)
             setNotificationsContent(null)
         }
     }
@@ -44,7 +44,7 @@ const NotificationButton:React.FC<NotificationButtonProps> = ({}) => {
     return (
         <div className='notificationButton' onClick={handleShowingNotificationPanel}>
             <div className="notificationButton-bell"></div>
-            {notificationsContent && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>}
+            {isNewNotification && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>}
             {/* <div className='notificationButton-true'></div> */}
             {/* {notifications && notifications.length > 0 && <NotificationPanel notifications={notifications}/>} */}
             {notificationPanelVisibility && <NotificationPanel notificationsContent={notificationsContent}/>}

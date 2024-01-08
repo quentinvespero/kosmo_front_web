@@ -424,6 +424,14 @@
             "owner": "user1",
             "userList": ["user2", "user3"],
             "follower": ["user4", "user5"]
+        },
+        {
+            "_id": "feed4",
+            "name": "Feed 4",
+            "private": true,
+            "owner": "user1",
+            "userList": ["user2", "user3"],
+            "follower": ["user4", "user5"]
         }
     ],
     "rightPanelContent": [

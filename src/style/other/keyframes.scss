@@ -169,3 +169,36 @@
         color: $white2;
     }
 }
+@keyframes letterGlitering1 {
+    0%{
+        color: $white2;
+    }
+    50%{
+        color: $pink;
+    }
+    100%{
+        color: $white2;
+    }
+}
+@keyframes letterGlitering2 {
+    0%{
+        color: $white2;
+    }
+    50%{
+        color: $blue;
+    }
+    100%{
+        color: $white2;
+    }
+}
+@keyframes letterGlitering3 {
+    0%{
+        color: $pink;
+    }
+    50%{
+        color: $white2;
+    }
+    100%{
+        color: $blue;
+    }
+}

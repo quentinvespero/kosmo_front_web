@@ -14,7 +14,18 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
     }, [])
 
     if (!datas) {
-        return <div className='loadingPost'>loading...</div>
+        return <div className='feed-loadingPost'>
+            <span className="feed-glitterElement1 feed-glitterElement">l</span>
+            <span className="feed-glitterElement2 feed-glitterElement">o</span>
+            <span className="feed-glitterElement1 feed-glitterElement">a</span>
+            <span className="feed-glitterElement2 feed-glitterElement">d</span>
+            <span className="feed-glitterElement1 feed-glitterElement">i</span>
+            <span className="feed-glitterElement2 feed-glitterElement">n</span>
+            <span className="feed-glitterElement1 feed-glitterElement">g</span>
+            <span className="feed-glitterElement2 feed-glitterElement">.</span>
+            <span className="feed-glitterElement1 feed-glitterElement">.</span>
+            <span className="feed-glitterElement2 feed-glitterElement">.</span>
+        </div>
     }
 
     return (

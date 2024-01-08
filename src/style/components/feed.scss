@@ -5,5 +5,26 @@
     align-items: flex-start;
     gap: 3rem;
     flex-grow: 1;
-    @include transition(.15s)
+    @include transition(.15s);
+
+}
+.feed-loadingPost{
+    // flex-grow: 1;
+    background: $grey2;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1rem;
+    // font-size: 1.2rem;
+}
+.feed-glitterElement1{
+    animation: 
+        letterGlitering1 1s ease-in-out, 
+        letterGlitering2 1s ease-in-out, 
+        letterGlitering3 .5s ease-in-out infinite;
+}
+.feed-glitterElement2{
+    animation: 
+        letterGlitering2 1s ease-in-out, 
+        letterGlitering3 1s ease-in-out, 
+        letterGlitering1 .5s ease-in-out infinite;
 }
