@@ -1,8 +1,8 @@
 .notificationButton {
     @include flexVerticalCentered(row);
-    padding: .4rem .5rem;
+    padding: .5rem .5rem;
     border-radius: 2rem;
-    @include buttonBehavior($white1, .9, .1s);
+    @include buttonBehavior($white1, .95, .1s);
     position: relative;
     column-gap: .5rem;
 
@@ -17,5 +17,6 @@
         height: .9rem;
         background: $blue;
         border-radius: 3rem;
+        animation: slideFromLeft2 .35s ease-in-out;
     }
 }

@@ -11,7 +11,7 @@ export interface HeaderMenuProps {
 }
 
 export interface notificationPanelProps {
-    notifications: string[]
+    notificationsContent: string[]
 }
 
 // export interface PointCounterProps {

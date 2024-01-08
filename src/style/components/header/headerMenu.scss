@@ -1,8 +1,8 @@
 .headerMenu {
     @include flexVerticalCentered(row);
     background: $grey1;
-    padding: .7rem;
+    padding: .5rem 1rem;
     border-radius: 1rem;
-    column-gap: 1rem;
-    box-shadow: 0rem 0rem 3rem $grey4;
+    column-gap: 1.5rem;
+    box-shadow: 0rem 0rem 3rem $transparentGrey2;
 }

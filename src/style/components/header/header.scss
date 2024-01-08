@@ -6,8 +6,18 @@
         @include transition(.2s);
         @include flexVerticalCentered(row);
 
+        & .projectTitle{
+            animation: slideFromLeft3 1.5s ease-in-out, projectTitleLetterGlitering 5s ease-in-out 2;
+            font-size: 1.7rem;
+        }
+
+        & .emptyElement{
+            width: 12rem;
+        }
+
         & .innerHeader-section1 {
             @include flexVerticalCentered(row);
+            align-self: flex-end;
             justify-content: space-between;
         }
     }

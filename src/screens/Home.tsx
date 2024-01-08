@@ -53,7 +53,7 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
                 {screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
                 {selectedFeed === 'profile' && <Profile/>}
             </div>
-            <AddPostButton />
+            {screenFormat ==='mobile' && <AddPostButton />}
         </div>
     )
 }

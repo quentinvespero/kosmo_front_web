@@ -1,8 +1,14 @@
 import React from 'react'
+import { ScreenProps } from '../../interfaces/interfaces'
 
-const PointCounter = () => {
+const PointCounter:React.FC<ScreenProps> = ({screenFormat}) => {
     return (
-        <div className='pointCounter'>
+        <div 
+            className='pointCounter'
+            style={{
+                alignSelf: screenFormat === 'mobile' ? 'center' : 'start'
+            }}    
+        >
             <p><strong>10</strong> pts</p>
         </div>
     )
