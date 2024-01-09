@@ -147,11 +147,25 @@
     }
     50%{
         opacity: .5;
-        margin-left: .3rem;
+        margin-left: .5rem;
     }
     100% {
         opacity: 1;
         margin-left: 0rem;
+    }
+}
+@keyframes slideFromRight2 {
+    0% {
+        opacity: 0;
+        margin-right: -5rem;
+    }
+    50%{
+        opacity: .5;
+        margin-right: .5rem;
+    }
+    100% {
+        opacity: 1;
+        margin-right: 0rem;
     }
 }
 
