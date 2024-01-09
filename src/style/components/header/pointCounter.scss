@@ -8,3 +8,8 @@
     align-self: flex-start;
     color: $grey2;
 }
+
+// changing the font-size for the pointCounter button on the headerMenu only
+.headerMenu > .pointCounter{
+    font-size: .8rem;
+}

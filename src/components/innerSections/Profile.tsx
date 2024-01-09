@@ -3,14 +3,20 @@ import Feed from '../Feed'
 import FollowButton from '../buttons/FollowButton'
 import PointCounter from '../header/PointCounter'
 import jsondata from '../../assets/bdd.json'
+import { ScreenProps } from '../../interfaces/interfaces'
 
-const Profile = () => {
+const Profile:React.FC<ScreenProps> = ({screenFormat}) => {
 
     const profilePictureUrl = jsondata.users[0].userAdditionalInformations.profilePicture
 
     return (
         <div className='profile'>
-            <div className="profile-section1">
+            <div 
+                className="profile-section1"
+                style={{
+                    maxWidth: screenFormat !== 'mobile' ? '50%' : ''
+                }}
+            >
                 <div className="profile-innerSection1">
                     <div className="profile-innerSection1-top">
                         <div className="profile-innerSection1-imageAndCounter">

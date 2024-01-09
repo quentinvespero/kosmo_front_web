@@ -1,4 +1,4 @@
-import { ScreenProps } from "./interfaces"
+import { FeedSelectorProps, ScreenProps } from "./interfaces"
 
 // buttonType1 props
 export interface ButtonType1Props {
@@ -31,8 +31,14 @@ export interface FollowButtonProps {
 
 // NotificationButton
 export interface NotificationButtonProps {
-    // notification: boolean
     _id?: string,
     message?: string,
     read?:boolean
+}
+
+export interface ProfileButtonProps {
+    selectedFeed?:FeedSelectorProps['selectedFeed']
+    setselectedFeed?:FeedSelectorProps['setSelectedFeed']
+    handleFeedChoice?: () => void
+    locationContext: 'feedSelector' | 'headerMenu'
 }

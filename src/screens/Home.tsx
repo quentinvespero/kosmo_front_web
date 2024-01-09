@@ -51,7 +51,7 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
             <div className="innerHome">
                 {selectedFeed.includes('feed') && <Feed screenFormat={screenFormat}/>}
                 {screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
-                {selectedFeed === 'profile' && <Profile/>}
+                {selectedFeed === 'profile' && <Profile screenFormat={screenFormat}/>}
             </div>
             {screenFormat ==='mobile' && <AddPostButton />}
         </div>
