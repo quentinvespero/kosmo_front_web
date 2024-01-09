@@ -1,0 +1,27 @@
+.profileButton{
+    @include buttonBehavior($white2, .95, .15s);
+    @include flexVerticalCentered(row);
+    padding: .3rem .7rem;
+    border-radius: 3rem;
+    column-gap: .5rem;
+    white-space: pre;
+    font-size: .9rem;
+    color: $grey2;
+}
+.feedElements-profile-selected{
+    background: $grey4;
+}
+.feedElements-profile-selected:hover{
+    background: $grey4;
+}
+.profileButton::before {
+    content: '';
+    background: url('/src/assets/icons/profile_icon_grey2.svg') no-repeat center center;
+    height: .8rem;
+    width: .8rem;
+    background-size: contain;
+}
+.feedElements-profile::before{
+    content: url('/src/assets/icons/profile_icon_white2.svg');
+    height: 0.7rem;
+}

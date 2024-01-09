@@ -1,4 +1,3 @@
-// NotificationButton.tsx
 import React, { useEffect, useState } from 'react'
 import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
 import NotificationPanel from '../header/NotificationPanel'

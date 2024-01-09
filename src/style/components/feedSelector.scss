@@ -8,6 +8,7 @@
     @include transition(.2s);
     
     // hide the horizontal scrollbar when there are too many feedElements that trigger the overflow-x scroll
+    // edit 09/01/24 : not working on firefox for now
     &::-webkit-scrollbar{
         display: none;
     }

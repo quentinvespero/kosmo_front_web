@@ -38,7 +38,7 @@ export interface NotificationButtonProps {
 
 export interface ProfileButtonProps {
     selectedFeed?:FeedSelectorProps['selectedFeed']
-    setselectedFeed?:FeedSelectorProps['setSelectedFeed']
+    setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
     handleFeedChoice?: () => void
     locationContext: 'feedSelector' | 'headerMenu'
 }
