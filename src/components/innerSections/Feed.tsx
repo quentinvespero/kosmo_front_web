@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Post from './post/Post'
-import { ScreenProps } from '../interfaces/interfaces'
-import { DatasInterfaces } from '../interfaces/datasInterfaces'
+import Post from '../post/Post'
+import { ScreenProps } from '../../interfaces/interfaces'
+import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 
 const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
 

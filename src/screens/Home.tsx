@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/header/Header'
-import Feed from '../components/Feed'
 import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
-import RightPanel from '../components/rightPanel/RightPanel'
-import Profile from '../components/innerSections/Profile'
+import InnerSection from '../components/innerSections/InnerSection'
 
 const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) => {
 
@@ -48,11 +46,12 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
                 selectedFeed={selectedFeed}
                 setSelectedFeed={setSelectedFeed}
             />
-            <div className="innerHome">
+            {/* <div className="innerHome">
                 {selectedFeed.includes('feed') && <Feed screenFormat={screenFormat}/>}
                 {screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
                 {selectedFeed === 'profile' && <Profile screenFormat={screenFormat}/>}
-            </div>
+            </div> */}
+            <InnerSection screenFormat={screenFormat} selectedFeed={selectedFeed}/>
             {screenFormat ==='mobile' && <AddPostButton />}
         </div>
     )

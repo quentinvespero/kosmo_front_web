@@ -6,13 +6,14 @@
     gap: 3rem;
     flex-grow: 1;
     @include transition(.15s);
-
+    animation: slideFromBottom .2s ease-in-out;
 }
 .feed-loadingPost{
     // flex-grow: 1;
-    background: $grey2;
+    // background: $grey2;
     text-align: center;
-    padding: 3rem;
+    // padding: 2rem;
+    // padding-top: 2rem;
     border-radius: 1rem;
     // font-size: 1.2rem;
 }

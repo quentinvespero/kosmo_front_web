@@ -100,3 +100,7 @@ export interface FeedSelectorProps {
     selectedFeed: string
     setSelectedFeed: (selectedFeed:string) => void
 }
+
+export interface InnerSectionProps {
+    selectedFeed?: string
+}

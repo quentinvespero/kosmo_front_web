@@ -109,7 +109,7 @@
         transform: translateX(0);
     }
 }
-@keyframes slideFromRight {
+@keyframes slideFromRight3 {
     from {
         opacity: 1;
         width: 100%;
@@ -214,5 +214,30 @@
     }
     100%{
         color: $blue;
+    }
+}
+
+@keyframes slideFromBottom {
+    0% {
+        opacity: 0;
+        margin-top: 1.5rem;
+    }
+    // 50%{
+    //     opacity: .5;
+    //     margin-top: .5rem;
+    // }
+    100% {
+        opacity: 1;
+        margin-top:0rem;
+    }
+}
+@keyframes slideFromRight3 {
+    0% {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

@@ -3,6 +3,7 @@
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
+    animation: slideFromBottom .3s ease-in-out;
 
     & .profile-section1 {
         display: flex;
