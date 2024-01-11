@@ -65,7 +65,7 @@ const App = () => {
     return (
         <div className='app'>
             {currentPage === 'entry' &&
-                <EntryPage pageSelection={handlePageChange} animation={animation}/>
+                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat}/>
             }
             {currentPage === 'home' && 
                 <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation}/>

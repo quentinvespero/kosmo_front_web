@@ -1,94 +1,28 @@
 // ----- desktop
-@media screen and (min-width:1100px) {
-    .feed {
-        max-width: 75%;
-    }
-}
-@media screen and (min-width:700px) {
-    .feedSelector{
-        // max-width: 50%;
-        // border-radius: 6rem;
-    }
+// range : from 1100px to more
+@media screen and (min-width:1101px) {
+
 }
 
-// ----- mobile/tablet
-@media screen and (max-width:1100px) {
-    // .innerHeader-home{
-    //     margin-bottom: 1.5rem;
-    // }
+// ----- tablet
+
+// range : 1100px and less
+@media screen and (max-width:1099px) {
+    
 }
-@media screen and (max-width:900px) {
-    .feed{
-        gap: 3rem 1.5rem;
-    }
-}
+
+// ----- mobile
+
+// range : 700px and less
 @media screen and (max-width:699px) {
-    .searchField {
-        align-self: flex-start;
-    }
-    .topMenu{
-        padding: .7rem;
-        border-radius: 1rem;
-
-        // & .feedSelector{
-        //     padding: .3rem;
-        // }
-    }
-    // .innerHeader-home{
-    //     margin-bottom: 3rem;
-    // }
-}
-@media screen and (max-width:600px) {
-    .entryPage-description{
+    .entryPage-description-texts{
         font-size: .9rem !important;
     }
 }
-@media screen and (max-width:500px) {
-    .home{
-        padding: 1.5rem;
-    }
-    .topMenu{
 
-        & .feedSelector{
-            flex-wrap: wrap;
-        }
-    }
-    // .feed {
-    //     column-gap: 0;
-    //     row-gap: 1rem;
-    // }
-}
-@media screen and (max-width:450px) {
-    .header-entryPage{
-        padding: 3rem 1rem;
+// ----- mobile-tiny
 
-        & .innerHeader-entryPage{
-            flex-direction: column;
-            gap: 3rem;
-        }
-    }
-    .entryPage-innerElements{
-        gap: 0rem !important;
-
-        & .entryPage-centerSection{
-            flex-direction: column-reverse !important;
-            justify-content: space-around !important;
-    
-            & .entryPage-buttonSection > *{
-                font-size: 1.7rem;
-            }
-        }
-        
-        & .entryPage-description{
-            max-width: 20rem !important;
-            font-size: .8rem !important;
-        }
-    }
-}
-@media screen and (max-width:400px) {
-
-}
-
+// range : 370px and less
 @media screen and (max-width:370px) {
     .home{
         padding: .8rem;
@@ -103,16 +37,34 @@
             display: flex !important;
         }
     }
-    .buttonType1-theme{
-        margin-bottom: .5rem;
-    }
-    .innerHeader-home{
-        flex-direction: column-reverse;
-    }
-    .pointCounter{
-        align-self: center;
-    }
     .searchField > input{
         max-width: 7.5rem;
+    }
+}
+
+// --------------- responsive rules for the height
+@media screen and (max-height:500px) {
+    .entryPage-innerElements{
+        height: inherit !important;
+        width: inherit !important;
+
+        & .entryPage-centerSection{
+            margin: 5rem 1rem !important;
+        }
+    }
+}
+// I made these modifications for smartphones in landscape mode as I experienced a strange bug where the texts in description were showing up in different font size..
+// so below, these rules aims to be enable only on smartphone devices that are in landscape mode
+@media screen and (max-height:350px) and (max-width:900px) and (min-width:700px) {
+    .entryPage-description{
+        max-width: 30rem !important;
+        
+        & .entryPage-description-texts{
+            width: inherit !important;
+            font-size: .5rem !important;
+        }
+        & .verticalSpace{
+            display: none;
+        }
     }
 }

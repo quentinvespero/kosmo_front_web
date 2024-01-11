@@ -29,7 +29,13 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
     }
 
     return (
-        <div className='feed'>
+        <div 
+            className='feed'
+            style={{
+                gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2.5rem',
+                maxWidth: screenFormat === 'desktop' ? '75%' : ''
+            }}
+        >
             {datas &&
             datas.posts && 
             datas.posts.map((post) => (

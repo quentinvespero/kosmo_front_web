@@ -4,6 +4,6 @@
     gap: 1rem;
     align-self: center;
     justify-content: space-between;
-    animation: slideFromBottom .5s ease-in-out;
+    // animation: slideFromBottom .5s ease-in-out;
     @include transition(.1s)
 }

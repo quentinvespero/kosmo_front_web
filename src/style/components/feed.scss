@@ -3,19 +3,20 @@
     flex-flow: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
     flex-grow: 1;
     @include transition(.15s);
     animation: slideFromBottom .2s ease-in-out;
+    margin-bottom: 2rem;
 }
 .feed-loadingPost{
-    // flex-grow: 1;
+    flex-grow: 1;
     // background: $grey2;
     text-align: center;
     // padding: 2rem;
     // padding-top: 2rem;
-    border-radius: 1rem;
+    // border-radius: 1rem;
     // font-size: 1.2rem;
+    animation: slideFromBottom .7s ease-in-out;
 }
 .feed-glitterElement1{
     animation: 

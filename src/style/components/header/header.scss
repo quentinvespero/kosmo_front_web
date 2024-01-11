@@ -1,7 +1,6 @@
 .header {
-    @include transition(.2s);
+    // @include transition(.2s);
 
-    // style for the home screen
     & .innerHeader-home {
         @include transition(.2s);
         @include flexVerticalCentered(row);
@@ -11,7 +10,6 @@
             animation: slideFromLeft3 .7s ease-in-out, 
                 // projectTitleLetterGlitering 5s ease-in-out 2
             ;
-            font-size: 1.7rem;
             align-self: center;
         }
 
@@ -27,15 +25,12 @@
     }
 }
 
-// style for the entry screen
+// ----- style for the entry screen
 .header-entryPage {
-    @include transition(.2s);
+    // @include transition(.2s);
     @include flexVerticalCentered(row);
-    margin-top: 3rem;
-    margin-left: 2rem;
     
     & .innerHeader-entryPage {
-        @include transition(.2s);
         @include flexVerticalCentered(row);
         justify-content: space-between;
         width: 100%;
@@ -43,7 +38,7 @@
     
         & .header-entryPage-connectSection {
             @include flexVerticalCentered(row);
-            gap: 1rem;
+            row-gap: 1rem;
         }
     }
 }

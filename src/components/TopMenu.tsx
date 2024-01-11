@@ -41,7 +41,9 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
                 animation: topmenuIsSticky ? 'bounce .4s ease-in-out' : 'unset',
                 boxShadow: topmenuIsSticky ? '0rem 0rem 3rem #2C2C2C' : '',
                 background: topmenuIsSticky ? '#3C3C3Ca8' : '#3C3C3C',
-                maxWidth: topmenuIsSticky && screenFormat === 'mobile' ? '90%' : ''
+                maxWidth: topmenuIsSticky && screenFormat === 'mobile' ? '90%' : '',
+                borderRadius: screenFormat ==='mobile' ? '1rem' : '4rem',
+                padding: screenFormat ==='mobile' ? '.7rem' : '.5rem'
             }}
         >
             {screenFormat !=='mobile' && <SearchField/>}

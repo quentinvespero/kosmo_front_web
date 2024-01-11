@@ -2,13 +2,17 @@ import React from 'react'
 import PointCounter from './PointCounter'
 import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
-import ButtonType1 from '../buttons/ButtonType1'
 import { HeaderProps } from '../../interfaces/headerInterfaces'
 import HeaderMenu from './HeaderMenu'
 
 const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat, selectedFeed }) => {
     return (
-        <div className={`header ${headerScreen === 'entryPage' ? 'header-entryPage' : ''}`}>
+        <div 
+            className={`header ${headerScreen === 'entryPage' ? 'header-entryPage' : ''}`}
+            style={
+                headerScreen ==='entryPage' ? {marginTop: headerScreen === 'entryPage' && screenFormat === 'mobile' ? '5rem' : '2.5rem'} : {}
+            }
+        >
 
             {headerScreen === 'home' && 
                 <div 
@@ -22,8 +26,6 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
                         margin: screenFormat !== 'mobile' ? '0 3rem 0 3rem' : '2rem 0rem 0 0rem'
                     }}
                 >
-                    {/* {screenFormat !== 'mobile' && <h1>Kosmo Project.</h1>} */}
-                    {/* {screenFormat !== 'mobile' && <div className="emptyElement"></div>} */}
                     <h1 className='projectTitle'>Kosmo Project.</h1>
                     <div 
                         className="innerHeader-section1"
@@ -40,7 +42,13 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
             }
 
             {headerScreen === 'entryPage' && 
-                <div className="innerHeader-entryPage">
+                <div 
+                    className="innerHeader-entryPage"
+                    style={{
+                        marginLeft: screenFormat !== 'mobile' ? '2rem' : '0rem',
+                        justifyContent: screenFormat === 'mobile' ? 'center' : ''
+                    }}
+                >
                     <h1 className="header-entryPage-title">Kosmo Project.</h1>
                 </div>
             }

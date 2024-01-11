@@ -3,7 +3,7 @@ import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
 import { EntryPageProps, ScreenProps } from "../interfaces/interfaces"
 
-const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation }) => {
+const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat }) => {
 
     // used to follow if the "enter kosmo" button is being hovered or not
     // const [isButtonHovered, setButtonIsHovered] = useState(false)
@@ -40,7 +40,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
             <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
-                    <Header headerScreen="entryPage"/>
+                    <Header headerScreen="entryPage" screenFormat={screenFormat}/>
                     <div className="entryPage-centerSection">
                         <div 
                             className='entryPage-buttonSection' 
@@ -52,12 +52,12 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                         </div>
                     </div>
                     <div className="entryPage-description">
-                        <p>Get into the Field.</p>
+                        <p className="entryPage-description-texts">Get into the Field.</p>
                         <div className="verticalSpace"></div>
-                        <p>Kosmo aims to be a quality-focused social network, that provide a comfortable and enriching space.</p>
-                        <p>A space where your time would feel well-spent.</p>
+                        <p className="entryPage-description-texts">Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
+                        <p className="entryPage-description-texts">A space where your time would feel well-spent.</p>
                         <div className="verticalSpace"></div>
-                        <p>By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
+                        <p className="entryPage-description-texts">By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
                     </div>
                 </div>
             </div>
