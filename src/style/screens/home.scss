@@ -9,12 +9,4 @@
         height: 3.9rem;
         @include transition(.1s)
     }
-
-    & .innerHome {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-self: center;
-        justify-content: space-between;
-    }
 }

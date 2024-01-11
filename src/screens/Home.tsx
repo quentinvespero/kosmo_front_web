@@ -46,11 +46,6 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
                 selectedFeed={selectedFeed}
                 setSelectedFeed={setSelectedFeed}
             />
-            {/* <div className="innerHome">
-                {selectedFeed.includes('feed') && <Feed screenFormat={screenFormat}/>}
-                {screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
-                {selectedFeed === 'profile' && <Profile screenFormat={screenFormat}/>}
-            </div> */}
             <InnerSection screenFormat={screenFormat} selectedFeed={selectedFeed}/>
             {screenFormat ==='mobile' && <AddPostButton />}
         </div>
