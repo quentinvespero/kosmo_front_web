@@ -4,8 +4,9 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'
+import { HomeProps } from '../interfaces/screensInterface'
 
-const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) => {
+const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentScreen }) => {
 
     // defining if top menu is sticky or not
     const [topmenuIsSticky, setTopmenuIsSticky] = useState(false)
@@ -34,9 +35,9 @@ const Home: React.FC<ScreenProps> = ({ animation, setAnimation, screenFormat }) 
             }}
         >
             <Header 
-                headerScreen='home' 
                 screenFormat={screenFormat}
-                selectedFeed={selectedFeed}     
+                selectedFeed={selectedFeed}
+                currentScreen={currentScreen}
             />
             {topmenuIsSticky && <div className="fillTheGap"></div>}
             <TopMenu 

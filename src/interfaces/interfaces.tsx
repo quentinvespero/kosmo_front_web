@@ -79,15 +79,14 @@ export interface TopMenuProps {
 // }
 
 // EntryPage component props
-export interface EntryPageProps {
-    pageSelection: () => void
-    screenFormat?: ScreenProps['screenFormat']
-    lightFadingDesktop?: boolean
-}
+// export interface EntryPageProps {
+//     pageSelection: () => void
+//     screenFormat?: ScreenProps['screenFormat']
+//     lightFadingDesktop?: boolean
+// }
 
 // General props for screens components
 export interface ScreenProps {
-    // screenFormat?: '' | 'mobile' | 'tablet' | 'desktop'
     animation?: boolean
     setAnimation?: (animation:boolean) => void
     screenFormat?: 'mobile' | 'tablet' | 'desktop'

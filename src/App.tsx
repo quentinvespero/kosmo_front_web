@@ -4,7 +4,7 @@ import EntryPage from './screens/EntryPage'
 
 const App = () => {
     // state to determine which component to show
-    const [currentPage, setCurrentPage] = useState('home')
+    const [currentScreen, setCurrentScreen] = useState('entry')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
@@ -19,7 +19,7 @@ const App = () => {
     const handlePageChange = () => {
         setAnimation(true)
         setTimeout(() => {
-            setCurrentPage('home')
+            setCurrentScreen('home')
         }, 500)
     }
 
@@ -64,11 +64,11 @@ const App = () => {
 
     return (
         <div className='app'>
-            {currentPage === 'entry' &&
-                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat}/>
+            {currentScreen === 'entry' &&
+                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentScreen={currentScreen}/>
             }
-            {currentPage === 'home' && 
-                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation}/>
+            {currentScreen === 'home' && 
+                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentScreen={currentScreen}/>
             }
         </div>
     )

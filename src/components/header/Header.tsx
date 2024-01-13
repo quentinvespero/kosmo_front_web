@@ -5,16 +5,16 @@ import SearchField from './SearchField'
 import { HeaderProps } from '../../interfaces/headerInterfaces'
 import HeaderMenu from './HeaderMenu'
 
-const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat, selectedFeed }) => {
+const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed, currentScreen }) => {
     return (
         <div 
-            className={`header ${headerScreen === 'entryPage' ? 'header-entryPage' : ''}`}
+            className={`header ${currentScreen === 'entry' ? 'header-entryPage' : ''}`}
             style={
-                headerScreen ==='entryPage' ? {marginTop: headerScreen === 'entryPage' && screenFormat === 'mobile' ? '5rem' : '2.5rem'} : {}
+                currentScreen ==='entry' ? {marginTop: currentScreen === 'entry' && screenFormat === 'mobile' ? '5rem' : '2.5rem'} : {}
             }
         >
 
-            {headerScreen === 'home' && 
+            {currentScreen === 'home' && 
                 <div 
                     className="innerHeader-home" 
                     style={{
@@ -41,7 +41,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ headerScreen, screenFormat
                 </div>
             }
 
-            {headerScreen === 'entryPage' && 
+            {currentScreen === 'entry' && 
                 <div 
                     className="innerHeader-entryPage"
                     style={{
