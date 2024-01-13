@@ -2,7 +2,6 @@
 .buttonType1{
     border-radius: 3rem;
     z-index: 1;
-    // @include transition(.1s);
     @include buttonBehavior($grey1, .9, .1s);
 
     & > .buttonType1-image{
