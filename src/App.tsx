@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Home from './screens/Home'
-import EntryPage from './screens/EntryPage'
+import Home from './pages/Home'
+import EntryPage from './pages/EntryPage'
 
 const App = () => {
     // state to determine which component to show
-    const [currentScreen, setCurrentScreen] = useState('entry')
+    const [currentPage, setCurrentPage] = useState('entry')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
@@ -15,11 +15,11 @@ const App = () => {
     // variable to follow if the device is in dark or light mode
     const [isDeviceInDarkMode, setIsDeviceInDarkMode] = useState(true)
     
-    // function to handle the change of the current screen component to render
+    // function to handle the change of the current page component to render
     const handlePageChange = () => {
         setAnimation(true)
         setTimeout(() => {
-            setCurrentScreen('home')
+            setCurrentPage('home')
         }, 500)
     }
 
@@ -64,11 +64,11 @@ const App = () => {
 
     return (
         <div className='app'>
-            {currentScreen === 'entry' &&
-                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentScreen={currentScreen}/>
+            {currentPage === 'entry' &&
+                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>
             }
-            {currentScreen === 'home' && 
-                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentScreen={currentScreen}/>
+            {currentPage === 'home' && 
+                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>
             }
         </div>
     )

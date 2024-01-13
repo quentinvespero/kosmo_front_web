@@ -1,11 +1,11 @@
 import { FeedSelectorProps, ScreenProps } from "./interfaces";
-import { HomeProps } from "./screensInterface";
+import { HomeProps } from "./pagesInterface";
 
 export interface HeaderProps {
     // headerScreen: 'home' | 'entryPage' <-- deprecated in profit of currentScreen / currentPage
     screenFormat?: ScreenProps['screenFormat']
     selectedFeed?:FeedSelectorProps['selectedFeed']
-    currentScreen?: HomeProps['currentScreen']
+    currentPage?: HomeProps['currentPage']
 }
 
 export interface HeaderMenuProps {

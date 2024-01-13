@@ -4,12 +4,19 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'
-import { HomeProps } from '../interfaces/screensInterface'
+import { HomeProps } from '../interfaces/pagesInterface'
 
-const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentScreen }) => {
+const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
 
     // defining if top menu is sticky or not
     const [topmenuIsSticky, setTopmenuIsSticky] = useState(false)
+
+    // managing feeds selection
+    const [selectedFeed, setSelectedFeed] = useState('feed1')
+
+    // managing inner sections
+    // 14/01/24 : not really used at the moment. will think about using it to keep track of the innerSection, same as for currentPage for a lower level
+    const [currentInnerSection, setCurrentInnerSection] = useState({})
 
     // animation when entering this screen
     useEffect(() => {
@@ -19,13 +26,6 @@ const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, scr
             }, 500)
         }
     })
-
-    // managing feeds selection
-    const [selectedFeed, setSelectedFeed] = useState('feed1')
-
-    // managing inner screens
-    // 31/12/23 : not really used at the moment. will think about using it to switch between the different feed
-    // const [currentInnerScreen, setCurrentInnerScreen] = useState({selectedFeed})
 
     return (
         <div 
@@ -37,7 +37,7 @@ const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, scr
             <Header 
                 screenFormat={screenFormat}
                 selectedFeed={selectedFeed}
-                currentScreen={currentScreen}
+                currentPage={currentPage}
             />
             {topmenuIsSticky && <div className="fillTheGap"></div>}
             <TopMenu 

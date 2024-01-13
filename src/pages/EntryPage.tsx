@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
-import { EntryPageProps } from "../interfaces/screensInterface"
+import { EntryPageProps } from "../interfaces/pagesInterface"
 import { ScreenProps } from "../interfaces/interfaces"
 
-const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat, currentScreen }) => {
+const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat, currentPage }) => {
 
     // used to follow if the "enter kosmo" button is being hovered or not
     // const [isButtonHovered, setButtonIsHovered] = useState(false)
@@ -37,11 +37,10 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
 
     return (
         <div className={`entryPage ${entryPageAnimation ? 'screenAnimation-fadeOut' : ''}`}>
-            {/* <div className='entryPage-colorLight'></div> */}
             <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
-                    <Header screenFormat={screenFormat} currentScreen={currentScreen}/>
+                    <Header screenFormat={screenFormat} currentPage={currentPage}/>
                     <div className="entryPage-centerSection">
                         <div 
                             className='entryPage-buttonSection' 
