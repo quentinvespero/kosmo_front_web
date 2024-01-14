@@ -1,5 +1,5 @@
 import React from 'react'
-import { UpDownVoteElementsProps } from '../../../interfaces/interfaces'
+import { UpDownVoteElementsProps } from '../../../interfaces/postInterfaces'
 import Counter from './Counter'
 import ButtonType1 from '../../buttons/ButtonType1'
 

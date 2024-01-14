@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonType3Props } from '../../interfaces/interfaces'
+import { ButtonType3Props } from '../../interfaces/buttonsInterfaces'
 
 const ButtonType3:React.FC<ButtonType3Props> = ({ buttonText, buttonImageSrc, buttonType}) => {
     return (

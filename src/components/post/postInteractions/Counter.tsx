@@ -1,5 +1,5 @@
 import React from 'react'
-import { CounterProps } from '../../../interfaces/interfaces'
+import { CounterProps } from '../../../interfaces/postInterfaces'
 
 const Counter:React.FC<CounterProps> = ({isCountersVisible, isCountersBeingHide, setIsCountersVisible}) => {
     return (

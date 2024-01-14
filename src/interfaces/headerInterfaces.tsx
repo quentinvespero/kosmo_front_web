@@ -1,5 +1,5 @@
 import { FeedSelectorProps, ScreenProps } from "./interfaces";
-import { HomeProps } from "./pagesInterface";
+import { HomeProps } from "./pagesInterfaces";
 
 export interface HeaderProps {
     // headerScreen: 'home' | 'entryPage' <-- deprecated in profit of currentScreen / currentPage

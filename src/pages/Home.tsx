@@ -4,7 +4,7 @@ import TopMenu from '../components/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'
-import { HomeProps } from '../interfaces/pagesInterface'
+import { HomeProps } from '../interfaces/pagesInterfaces'
 
 const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
 

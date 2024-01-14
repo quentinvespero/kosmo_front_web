@@ -1,66 +1,68 @@
 // post
+// 14/01/24 : ⬇️ deprecated, this has been moved to the interface file relative to post : postInterfaces
 
     // post interactions - button Up / Down vote
-    export interface UpDownVoteElementsProps {
-        interactionType: 'upvote' | 'downvote'
+    // export interface UpDownVoteElementsProps {
+    //     interactionType: 'upvote' | 'downvote'
         
-        // in the line below, it says that the property setInteractionChoice is not necessary (with the '?') and that its type is a function that take a parameter interactionChoice that can be one out of the three choices. Also, with the "=> void", it explicitely means that the function returns nothing (void)
-        interactionChoice: 'upvote' | 'downvote' | 'none'
-        setInteractionChoice: (interactionChoice:'upvote' | 'downvote' | 'none') => void
+    //     // in the line below, it says that the property setInteractionChoice is not necessary (with the '?') and that its type is a function that take a parameter interactionChoice that can be one out of the three choices. Also, with the "=> void", it explicitely means that the function returns nothing (void)
+    //     interactionChoice: 'upvote' | 'downvote' | 'none'
+    //     setInteractionChoice: (interactionChoice:'upvote' | 'downvote' | 'none') => void
         
-        // defining the props for showing/hiding the counters
-        isCountersVisible: boolean
-        setIsCountersVisible: (isCountersVisible:boolean) => void
+    //     // defining the props for showing/hiding the counters
+    //     isCountersVisible: boolean
+    //     setIsCountersVisible: (isCountersVisible:boolean) => void
 
-        // defining the props for preparing the counters to be hidden while triggering the animation
-        isCountersBeingHide: boolean
-        setIsCountersBeingHide: (isCountersBeingHide:boolean) => void
-    }
+    //     // defining the props for preparing the counters to be hidden while triggering the animation
+    //     isCountersBeingHide: boolean
+    //     setIsCountersBeingHide: (isCountersBeingHide:boolean) => void
+    // }
 
-        // CommentElements props
-        export interface CommentElementsProps {
-            isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
-            interactionChoice?: UpDownVoteElementsProps['interactionChoice']
-            screenFormat?: ScreenProps['screenFormat']
-            isCountersBeingHide: boolean
-            setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
-            setIsCountersVisible: (isCountersVisible:boolean) => void
-        }
+        // // CommentElements props
+        // export interface CommentElementsProps {
+        //     isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
+        //     interactionChoice?: UpDownVoteElementsProps['interactionChoice']
+        //     screenFormat?: ScreenProps['screenFormat']
+        //     isCountersBeingHide: boolean
+        //     setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
+        //     setIsCountersVisible: (isCountersVisible:boolean) => void
+        // }
 
-        // Counter component props
-        export interface CounterProps {
-            isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
-            setIsCountersVisible:UpDownVoteElementsProps['setIsCountersVisible']
-            isCountersBeingHide?: boolean
-            setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
-        }
+        // // Counter component props
+        // export interface CounterProps {
+        //     isCountersVisible: UpDownVoteElementsProps['isCountersVisible']
+        //     setIsCountersVisible:UpDownVoteElementsProps['setIsCountersVisible']
+        //     isCountersBeingHide?: boolean
+        //     setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
+        // }
 
-//buttons
+// //buttons
+// 14/01/24 : ⬇️ deprecated, this has been moved to the interface file relative to buttons : buttonsInterfaces
 
-    // buttonType1 props
-    export interface ButtonType1Props {
-        buttonText?: string
-        interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme' | 'login' | 'register' | 'entryButton'
-        onClick?: () => void
-        isActive?: boolean
-        screenFormat?: ScreenProps['screenFormat']
-    }
+//     // buttonType1 props
+//     export interface ButtonType1Props {
+//         buttonText?: string
+//         interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme' | 'login' | 'register' | 'entryButton'
+//         onClick?: () => void
+//         isActive?: boolean
+//         screenFormat?: ScreenProps['screenFormat']
+//     }
 
-    // buttonType2 props
-    export interface ButtonType2Props {
-        buttonText: string
-        buttonType: 'button-trend' | 'button-liveEvent'
-    }
+//     // buttonType2 props
+//     export interface ButtonType2Props {
+//         buttonText: string
+//         buttonType: 'button-trend' | 'button-liveEvent'
+//     }
 
-    // buttonType3 props
-    export interface ButtonType3Props {
-        buttonText?: string
-        buttonImageSrc?: string
-        buttonType: 'button-friends' | 'button-feeds'
+//     // buttonType3 props
+//     export interface ButtonType3Props {
+//         buttonText?: string
+//         buttonImageSrc?: string
+//         buttonType: 'button-friends' | 'button-feeds'
         
-        // buttonImg could be an object that contains both the src of the image and its description for alt
-        buttonImg?: {}
-    }
+//         // buttonImg could be an object that contains both the src of the image and its description for alt
+//         buttonImg?: {}
+//     }
 
 // DesktopMenu component props
 export interface TopMenuProps {

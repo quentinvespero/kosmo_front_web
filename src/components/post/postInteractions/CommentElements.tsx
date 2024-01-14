@@ -1,7 +1,8 @@
 import React from 'react'
 import ButtonType1 from '../../buttons/ButtonType1'
 import Counter from './Counter'
-import { CommentElementsProps, ScreenProps } from '../../../interfaces/interfaces'
+import { CommentElementsProps } from '../../../interfaces/postInterfaces'
+import { ScreenProps } from '../../../interfaces/interfaces'
 
 const CommentElements: React.FC<CommentElementsProps & ScreenProps> = ({ isCountersVisible, screenFormat, isCountersBeingHide, setIsCountersVisible }) => {
     return (

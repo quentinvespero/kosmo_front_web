@@ -1,6 +1,13 @@
 import { FeedSelectorProps, ScreenProps } from "./interfaces"
 
 // buttonType1 props
+// 14/01/24 : I will update this component later but as for now, it's used for the :
+// - downvote/upvote buttons
+// - search blue arrow button in the search field
+// - comment button
+// - themes little buttons in post, 
+// - login/register buttons
+// - entry button in the entry page
 export interface ButtonType1Props {
     buttonText?: string
     interactionType?: 'upvote' | 'downvote' | 'search' | 'usual' | 'comment' | 'theme' | 'login' | 'register' | 'entryButton'
@@ -10,15 +17,20 @@ export interface ButtonType1Props {
 }
 
 // buttonType2 props
+// used for the trend buttons in the right panel, in the section trending at the moment
+// 14/01/24 : will update this component later I think, for it to be more clear
 export interface ButtonType2Props {
     buttonText: string
     buttonType: 'button-trend' | 'button-liveEvent'
 }
 
 // buttonType3 props
+// used for the suggestion section in the right panel, can have two shapes, the squares for friend, or the "following text" shape
+// 14/01/24 : will update this component later I think, for it to be more clear
 export interface ButtonType3Props {
     buttonText?: string
     buttonImageSrc?: string
+    buttonType: 'button-friends' | 'button-feeds'
     
     // buttonImg could be an object that contains both the src of the image and its description for alt
     buttonImg?: {}

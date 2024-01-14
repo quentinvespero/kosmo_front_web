@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
-import { EntryPageProps } from "../interfaces/pagesInterface"
+import { EntryPageProps } from "../interfaces/pagesInterfaces"
 import { ScreenProps } from "../interfaces/interfaces"
 
 const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat, currentPage }) => {

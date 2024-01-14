@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonType2Props } from '../../interfaces/interfaces'
+import { ButtonType2Props } from '../../interfaces/buttonsInterfaces'
 
 const ButtonType2:React.FC<ButtonType2Props> = ({buttonText, buttonType}) => {
     return (
