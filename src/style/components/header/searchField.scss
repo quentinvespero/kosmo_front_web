@@ -2,7 +2,7 @@
     @include flexVerticalCentered(row);
     // width: 60%;
     background: $grey4;
-    border-radius: 3rem;
+    border-radius: 3.5rem;
     // border: .25rem solid $grey1;
     transition: .15s ease-in-out 0s;
     color: $white;
@@ -30,6 +30,24 @@
     }
 
     .searchField > input::placeholder{
+        font-size: 1.2rem;
+        font-family: 'sen';
+        color: $grey1;
+    }
+    // ----- input
+    .searchField > textarea{
+        background: $grey4;
+        color: $white;
+        font-family: 'sen';
+        font-size: 1.2rem;
+        max-width: 9.5rem;
+    }
+    .searchField > textarea:focus{
+        outline: none;
+        // background: $grey2;
+    }
+
+    .searchField > textarea::placeholder{
         font-size: 1.2rem;
         font-family: 'sen';
         color: $grey1;

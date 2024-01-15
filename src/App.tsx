@@ -3,8 +3,8 @@ import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 
 const App = () => {
-    // state to determine which component to show
-    const [currentPage, setCurrentPage] = useState('entry')
+    // state to follow the current page displayed
+    const [currentPage, setCurrentPage] = useState('home')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
