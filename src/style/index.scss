@@ -52,9 +52,12 @@
 
 // other
 
-    // keyframes
-    @import './other/keyframes.scss';
-    @import './other/screenAnimations.scss';
+        // keyframes
+        @import './other/keyframes/general-keyframes.scss';
+        @import './other/keyframes/entryPage-keyframes.scss';
+        @import './other/keyframes/homePage-keyframes.scss';
+
+    // @import './other/keyframes.scss'; <-- deprecated to use those in keyframes folder
     @import './other/lightDarkMode.scss';
 
 // responsive - Have to insert it at the end so it can bypass the eventual previous rules

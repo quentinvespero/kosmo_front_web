@@ -1,0 +1,18 @@
+// is used as a transition when switching between pages
+@keyframes fadeOutAnimation {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+// is used as a transition when switching between pages
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}

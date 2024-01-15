@@ -136,6 +136,8 @@ p{
     margin: 0;
 }
 
+// --- personal redondant elements
+
 .dividerHorizontal {
     height: .15rem;
     background: $grey1;
@@ -146,4 +148,12 @@ p{
 }
 .dividerVertical {
     border-left: #1E1E1E;
+}
+
+// animations that are showing up when loading a page, from entry to home for example
+.pageAnimationFadeOut {
+    animation: fadeOutAnimation .5s forwards;
+}
+.pageAnimationFadeIn {
+    animation: fadeInAnimation 1s forwards;
 }

@@ -29,7 +29,7 @@ const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, scr
 
     return (
         <div 
-            className={`home ${screenFormat ? 'screenAnimation-fadeIn' : ''}`}
+            className={`home ${screenFormat ? 'pageAnimationFadeIn' : ''}`}
             style={{
                 rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
             }}
