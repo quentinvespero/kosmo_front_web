@@ -1,3 +1,3 @@
 export interface TextFieldProps {
-    placeholder: string
+    placeholder?: string
 }

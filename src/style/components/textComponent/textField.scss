@@ -1,3 +1,18 @@
 .textField{
-    
+    background: $grey4;
+    color: $white;
+    font-family: 'sen';
+    font-size: 1.2rem;
+    max-width: 9.5rem;
+
+    .searchField:focus{
+        outline: none;
+        // background: $grey2;
+    }
+
+    .searchField::placeholder{
+        font-size: 1.2rem;
+        font-family: 'sen';
+        color: $grey1;
+    }
 }

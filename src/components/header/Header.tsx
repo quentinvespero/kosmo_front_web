@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PointCounter from './PointCounter'
 import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
@@ -6,6 +6,10 @@ import { HeaderProps } from '../../interfaces/headerInterfaces'
 import HeaderMenu from './HeaderMenu'
 
 const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed, currentPage }) => {
+
+    // following the state of the search field. When the user select the search field while being on mobile format, it should hide the counter component, so that way the search field can go wider
+    const [isSearchFieldSelectedOnMobile, setIsSearchFieldSelectedOnMobile] = useState(false)
+
     return (
         <div 
             className={`header ${currentPage === 'entry' ? 'header-entryPage' : ''}`}
@@ -34,8 +38,12 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                             // justifyContent: screenFormat !=='mobile'
                         }}
                     >
-                        {screenFormat === 'mobile' && <SearchField/>}
-                        {selectedFeed && selectedFeed.includes('feed') && screenFormat === 'mobile' && <PointCounter screenFormat={screenFormat}/>}
+                        {screenFormat === 'mobile' && <SearchField isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile} setIsSearchFieldSelectedOnMobile={setIsSearchFieldSelectedOnMobile}/>}
+                        {selectedFeed && 
+                            selectedFeed.includes('feed') &&
+                            screenFormat === 'mobile' &&
+                            isSearchFieldSelectedOnMobile === false &&
+                            <PointCounter screenFormat={screenFormat}/>}
                         {screenFormat !== 'mobile' && <HeaderMenu screenFormat={screenFormat}/>}
                     </div>
                 </div>
