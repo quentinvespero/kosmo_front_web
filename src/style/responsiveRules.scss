@@ -40,6 +40,10 @@
     .searchField > input{
         max-width: 7.5rem;
     }
+    .followButton{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 // --------------- responsive rules for the height
