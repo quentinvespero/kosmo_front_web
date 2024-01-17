@@ -1,11 +1,20 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 import ButtonType1 from '../buttons/ButtonType1'
 import TextField from '../textComponents/TextField'
 import { SearchFieldProps } from '../../interfaces/headerInterfaces'
+import outsideClick from '../../functions/outsideClick'
+import { ScreenProps } from '../../interfaces/interfaces'
 
-const SearchField: React.FC<SearchFieldProps> = ({ setIsSearchFieldSelectedOnMobile, isSearchFieldSelectedOnMobile }) => {
+const SearchField: React.FC<SearchFieldProps & ScreenProps> = ({ setIsSearchFieldSelectedOnMobile, screenFormat, isSearchFieldSelectedOnMobile }) => {
 
     const ref = useRef<HTMLDivElement>(null)
+
+    // here, outsideClick function takes two parameters, the ref, and a callback, which means everything that is after "ref," here, will be executed if outsideClick() execute the instruction "callback()" 
+    outsideClick(ref, () => {
+        if (setIsSearchFieldSelectedOnMobile) {
+            setIsSearchFieldSelectedOnMobile(false)
+        }
+    })
 
     const handleClickOnSearchField = () => {
         if (setIsSearchFieldSelectedOnMobile) {
@@ -13,25 +22,31 @@ const SearchField: React.FC<SearchFieldProps> = ({ setIsSearchFieldSelectedOnMob
         }
     }
 
-    React.useEffect(() => {
-        const handleDocumentClick = (e: MouseEvent) => {
-            if (ref.current && !ref.current.contains(e.target) && setIsSearchFieldSelectedOnMobile) {
-                console.log('nia nia nia')
-                setIsSearchFieldSelectedOnMobile(false)
-            }
-        }
-
-        document.addEventListener("click", handleDocumentClick)
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            document.removeEventListener("click", handleDocumentClick)
-        }
-    }, [setIsSearchFieldSelectedOnMobile])
-
     return (
-        <div className="searchField">
-            <input type='search' placeholder='search' onClick={handleClickOnSearchField} />
+        <div 
+            className="searchField" 
+            ref={ref}
+            style={ 
+                screenFormat && screenFormat === 'mobile' 
+                ? {
+                    width: isSearchFieldSelectedOnMobile ? '85%' : '50%',
+                    placeContent: isSearchFieldSelectedOnMobile ? 'space-between' : 'space-between'
+                } 
+                : {}
+            }
+        >
+            <input 
+                type='search' 
+                placeholder='search' 
+                onClick={handleClickOnSearchField} 
+                style={
+                    screenFormat && screenFormat === 'mobile' 
+                    ? {
+                        maxWidth: isSearchFieldSelectedOnMobile ? '80%' : '75%'
+                    }
+                    : {}
+                }
+            />
             {/* <TextField placeholder='search'/> */}
             {/* <textarea name="" id="" cols={15} rows={1} placeholder='search'></textarea> */}
             <ButtonType1 interactionType='search' />

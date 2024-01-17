@@ -34,16 +34,27 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                     <div 
                         className="innerHeader-section1"
                         style={{
-                            alignSelf: screenFormat !=='mobile' ? 'flex-end' : 'auto'
-                            // justifyContent: screenFormat !=='mobile'
+                            alignSelf: screenFormat !=='mobile' ? 'flex-end' : 'auto',
+                            // justifyContent: screenFormat ==='mobile' && isSearchFieldSelectedOnMobile ? 'center' : 'space-between'
                         }}
                     >
-                        {screenFormat === 'mobile' && <SearchField isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile} setIsSearchFieldSelectedOnMobile={setIsSearchFieldSelectedOnMobile}/>}
+                        {screenFormat === 'mobile' && 
+                            <SearchField 
+                                setIsSearchFieldSelectedOnMobile={setIsSearchFieldSelectedOnMobile} 
+                                screenFormat={screenFormat}
+                                isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile}
+                            />
+                        }
+                        
                         {selectedFeed && 
                             selectedFeed.includes('feed') &&
                             screenFormat === 'mobile' &&
-                            isSearchFieldSelectedOnMobile === false &&
-                            <PointCounter screenFormat={screenFormat}/>}
+                            // isSearchFieldSelectedOnMobile === false &&
+                            <PointCounter 
+                                screenFormat={screenFormat} 
+                                isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile}/>
+                        }
+                        
                         {screenFormat !== 'mobile' && <HeaderMenu screenFormat={screenFormat}/>}
                     </div>
                 </div>

@@ -21,6 +21,8 @@
             @include flexVerticalCentered(row);
             align-self: flex-end;
             justify-content: space-between;
+            // column-gap: 1.5rem;
+            // justify-content: center;
         }
     }
 }

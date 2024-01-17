@@ -12,12 +12,16 @@ export interface HeaderMenuProps {
     
 }
 
-export interface notificationPanelProps {
+export interface NotificationPanelProps {
     notificationsContent: string[]
 }
 
 export interface SearchFieldProps {
     // below, this is the type of setIsSearchFieldSelectedOnMobile 🤷🏻‍♂️
     setIsSearchFieldSelectedOnMobile?: React.Dispatch<React.SetStateAction<boolean>>
+    isSearchFieldSelectedOnMobile?: boolean
+}
+
+export interface PointCounterProps {
     isSearchFieldSelectedOnMobile?: boolean
 }
