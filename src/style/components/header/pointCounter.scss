@@ -15,6 +15,7 @@
     padding: .3rem .5rem;
 }
 
+// changing the showing up animation for PointCounter only in mobile 
 .innerHeader-section1 > .pointCounter {
     animation: slideFromRight2 .7s ease-in-out;
 }
