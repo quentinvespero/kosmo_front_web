@@ -11,6 +11,7 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
         fetch('src/assets/bdd.json')
             .then(response => response.json())
             .then(datas => setDatas(datas))
+            .catch(error => console.error('Error:', error))
     }, [])
 
     if (!datas) {

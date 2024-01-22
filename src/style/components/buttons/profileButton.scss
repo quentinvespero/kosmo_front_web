@@ -14,13 +14,13 @@
 .feedElements-profile-selected:hover{
     background: $grey4;
 }
-.profileButton::before {
-    content: '';
-    background: url('/src/assets/icons/profile_icon_grey2.svg') no-repeat center center;
-    height: .8rem;
-    width: .8rem;
-    background-size: contain;
-}
+// .profileButton::before {
+//     content: '';
+//     background: url('/src/assets/icons/profile_icon_grey2.svg') no-repeat center center;
+//     height: .8rem;
+//     width: .8rem;
+//     background-size: contain;
+// }
 .feedElements-profile::before{
     content: url('/src/assets/icons/profile_icon_white2.svg');
     height: 0.7rem;

@@ -1,0 +1,9 @@
+.profilePhoto{
+    display: flex;
+    
+    & > img {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 2rem;
+    }
+}
