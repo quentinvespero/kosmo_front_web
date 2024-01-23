@@ -5,11 +5,22 @@
     @include transition(.15s);
     
     & .innerPost{
+        display: flex;
+        flex-direction: column;
         background: $grey1;
         padding: .8rem;
         border-radius: 1rem;
         cursor: pointer;
         @include transition(.1s);
+        row-gap: .7rem;
+        padding-bottom: 1.7rem;
+
+        & .innerPost-content {
+            display: flex;
+            flex-direction: column;
+            margin-left: .7rem;
+            row-gap: .7rem;
+        }
         
         &:hover{
             background: darken($grey1, 4%);

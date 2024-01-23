@@ -4,6 +4,7 @@ import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
 import { ScreenProps } from '../../interfaces/interfaces'
 import { PostProps } from '../../interfaces/postInterfaces'
+import ProfileButton from '../buttons/ProfileButton'
 
 const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId }) => {
 
@@ -41,8 +42,11 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId }) => {
             <div className="innerPost" style={{
                 maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
             }}>
-                <PostThemeElements/>
-                <PostContent/>
+                <ProfileButton locationContext='post'/>
+                <div className="innerPost-content">
+                    <PostContent/>
+                    <PostThemeElements/>
+                </div>
             </div>
             <PostInteractions screenFormat={ screenFormat }/>
         </div>

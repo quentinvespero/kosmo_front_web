@@ -25,3 +25,9 @@
     content: url('/src/assets/icons/profile_icon_white2.svg');
     height: 0.7rem;
 }
+
+.profileButton-post{
+    @include buttonBehavior($grey3, .95, .15s);
+    align-self: flex-start;
+    color: $white3;
+}

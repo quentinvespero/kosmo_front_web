@@ -7,13 +7,13 @@ import ProfilePhoto from '../imageComponents/ProfilePhoto'
 const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed}) => {
 
     // storing the path of the image
-    const [imageData, setImageData] = useState<DatasInterfaces | null>(null)
+    const [userData, setUserData] = useState<DatasInterfaces | null>(null)
 
     // fetching the datas from the json file
     useEffect(() => {
         fetch('src/assets/bdd.json')
             .then(response => response.json())
-            .then(datas => setImageData(datas))
+            .then(datas => setUserData(datas))
             .catch(error => console.error('Error:', error))
     }, [])
 
@@ -33,17 +33,26 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat,
         <div 
             className={`profileButton
                 ${locationContext === 'feedSelector' && `feedElements feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`}
-                ${locationContext === 'headerMenu' && 'profileButton'}
+                ${locationContext === 'headerMenu' && 'profileButton-headerMenu'}
+                ${locationContext === 'post' && 'profileButton-post'}
             `}
             onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
         >
-            {imageData && 
-            locationContext === 'headerMenu' && 
+            {locationContext !== 'feedSelector' &&
             <ProfilePhoto 
-                imagePath={imageData.users && imageData.users[0].userAdditionalInformations.profilePicture || ''}
+                imagePath={userData && userData.users && userData.users[0].userAdditionalInformations.profilePicture || ''}
             />
             }
-            {screenFormat != 'mobile' && 'Profile'}
+            
+            {locationContext === 'headerMenu' 
+                ?
+                    userData &&
+                    userData.users &&
+                    screenFormat != 'mobile' && 
+                    userData.users[0].userBaseInformations.username
+                :
+                    locationContext === 'post' && 'userTest'
+            }
         </div>
     )
 }

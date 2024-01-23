@@ -4,7 +4,7 @@ import EntryPage from './pages/EntryPage'
 
 const App = () => {
     // state to follow the current page displayed
-    const [currentPage, setCurrentPage] = useState('entry')
+    const [currentPage, setCurrentPage] = useState('home')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')

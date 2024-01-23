@@ -52,5 +52,5 @@ export interface ProfileButtonProps {
     selectedFeed?:FeedSelectorProps['selectedFeed']
     setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
     handleFeedChoice?: () => void
-    locationContext: 'feedSelector' | 'headerMenu'
+    locationContext: 'feedSelector' | 'headerMenu' | 'post'
 }
