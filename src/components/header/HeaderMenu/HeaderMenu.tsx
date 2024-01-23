@@ -33,7 +33,7 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
                 <AddPostButton2 handleClick={handleClick}/>
                 <NotificationButton handleClick={handleClick}/>
                 <ProfileButton locationContext='headerMenu' handleClick={handleClick}/>
-                <PointCounter/>
+                {headerMenuPanelOpen && headerMenuPanelSelectedElement ==='user' && <PointCounter/>}
             </div>
             {headerMenuPanelOpen && <HeaderMenuPanel headerMenuPanelOpen={headerMenuPanelOpen} headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>}
         </div>

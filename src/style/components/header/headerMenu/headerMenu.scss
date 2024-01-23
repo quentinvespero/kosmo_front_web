@@ -12,6 +12,6 @@
     & .headerMenu-elements{
         @include flexVerticalCentered(row);
         column-gap: 1rem;
-        
+        align-self: flex-start;
     }
 }
