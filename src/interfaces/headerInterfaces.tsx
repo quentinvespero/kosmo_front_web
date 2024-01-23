@@ -11,6 +11,10 @@ export interface HeaderProps {
 export interface HeaderMenuProps {
     
 }
+export interface HeaderMenuPanelProps {
+    headerMenuPanelOpen: boolean
+    headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user' | ''
+}
 
 export interface NotificationPanelProps {
     notificationsContent: string[]

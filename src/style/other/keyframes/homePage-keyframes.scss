@@ -152,3 +152,18 @@
         transform: translateX(0);
     }
 }
+
+// is used for the headerMenu panel
+@keyframes slideFromTop {
+    0% {
+        opacity: 0;
+        margin-bottom: -2rem;
+    }
+    50%{
+        margin-bottom: .5rem;
+    }
+    100% {
+        opacity: 1;
+        margin-bottom:0rem;
+    }
+}

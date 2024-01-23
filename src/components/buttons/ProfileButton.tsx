@@ -4,7 +4,7 @@ import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed}) => {
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick}) => {
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces | null>(null)
@@ -36,7 +36,8 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat,
                 ${locationContext === 'headerMenu' && 'profileButton-headerMenu'}
                 ${locationContext === 'post' && 'profileButton-post'}
             `}
-            onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
+            // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
+            onClick={() => handleClick && handleClick('user')}
         >
             {locationContext !== 'feedSelector' &&
             <ProfilePhoto 

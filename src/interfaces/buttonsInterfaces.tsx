@@ -1,3 +1,4 @@
+import { HeaderMenuPanelProps } from "./headerInterfaces"
 import { FeedSelectorProps, ScreenProps } from "./interfaces"
 
 // buttonType1 props
@@ -46,6 +47,7 @@ export interface NotificationButtonProps {
     _id?: string,
     message?: string,
     read?:boolean
+    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }
 
 export interface ProfileButtonProps {
@@ -53,4 +55,9 @@ export interface ProfileButtonProps {
     setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
     handleFeedChoice?: () => void
     locationContext: 'feedSelector' | 'headerMenu' | 'post'
+    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+}
+
+export interface AddPostButton2Props {
+    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }

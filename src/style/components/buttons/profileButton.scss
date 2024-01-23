@@ -1,7 +1,7 @@
 .profileButton{
     @include buttonBehavior($white2, .95, .15s);
     @include flexVerticalCentered(row);
-    padding: .3rem .7rem;
+    padding: 0.3rem .8rem 0.3rem 0.4rem;
     border-radius: 3rem;
     column-gap: .5rem;
     white-space: pre;
@@ -27,7 +27,7 @@
 }
 
 .profileButton-post{
-    @include buttonBehavior($grey3, .95, .15s);
+    @include buttonBehavior($grey2, .95, .15s);
     align-self: flex-start;
-    color: $white3;
+    color: $white1;
 }
