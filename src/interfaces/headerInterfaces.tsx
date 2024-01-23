@@ -17,7 +17,7 @@ export interface HeaderMenuPanelProps {
 }
 
 export interface NotificationPanelProps {
-    notificationsContent: string[]
+    notificationsContent?: string[]
 }
 
 export interface SearchFieldProps {

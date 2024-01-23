@@ -1,0 +1,12 @@
+.closeButton {
+    @include buttonBehavior($grey2, .95, .1s);
+    display: flex;
+    align-self: flex-end;
+    padding: .3rem;
+    border-radius: .4rem;
+
+    & img {
+        width: .8rem;
+        height: .8rem;
+    }
+}

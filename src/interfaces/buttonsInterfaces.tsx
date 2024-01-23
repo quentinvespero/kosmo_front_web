@@ -61,3 +61,7 @@ export interface ProfileButtonProps {
 export interface AddPostButton2Props {
     handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }
+
+export interface ButtonWithIconProps {
+    buttonTextAndIcon: 'settings' | 'manage feeds' | 'bookmarks'
+}

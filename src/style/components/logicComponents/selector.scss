@@ -1,0 +1,13 @@
+.selector {
+    @include flexVerticalCentered(row);
+    column-gap: .1rem;
+    background: $grey2;
+    align-self: center;
+    border-radius: 1rem;
+
+    & .selectorElements {
+        @include buttonBehavior($grey2, .95, .1s);
+        padding: .3rem .7rem;
+        border-radius: 1rem;
+    }
+}

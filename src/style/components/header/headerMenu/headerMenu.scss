@@ -6,6 +6,8 @@
     box-shadow: 0rem 0rem 3rem $transparentGrey2;
     animation: slideFromRight2 .7s ease-in-out;
     // position: absolute;
+    row-gap: .7rem;
+    font-size: .9rem;
     
     & .headerMenu-elements{
         @include flexVerticalCentered(row);

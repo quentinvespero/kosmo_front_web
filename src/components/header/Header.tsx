@@ -3,7 +3,7 @@ import PointCounter from './PointCounter'
 import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
 import { HeaderProps } from '../../interfaces/headerInterfaces'
-import HeaderMenu from './HeaderMenu'
+import HeaderMenu from './HeaderMenu/HeaderMenu'
 
 const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed, currentPage }) => {
 

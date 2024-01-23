@@ -1,0 +1,17 @@
+.headerMenuPanel{
+    animation: slideFromTop2 .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: .7rem;
+    background: $grey4;
+    border-radius: .7rem;
+
+    & .headerMenuPanel-elements{
+        
+
+        & .headerMenuPanel-user {
+            animation: slideFromTop .4s ease-in-out;
+        }
+    }
+}

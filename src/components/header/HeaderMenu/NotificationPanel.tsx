@@ -1,5 +1,5 @@
 import React from 'react'
-import { NotificationPanelProps } from '../../interfaces/headerInterfaces'
+import { NotificationPanelProps } from '../../../interfaces/headerInterfaces'
 
 const NotificationPanel:React.FC<NotificationPanelProps> = ({notificationsContent}) => {
     return (
