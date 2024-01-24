@@ -1,12 +1,13 @@
 .profileButton{
-    @include buttonBehavior($white2, .95, .15s);
+    @include buttonBehavior($white2, .95, .1s);
     @include flexVerticalCentered(row);
     padding: 0.3rem .8rem 0.3rem 0.4rem;
     border-radius: 3rem;
     column-gap: .5rem;
     white-space: pre;
-    font-size: .9rem;
+    font-size: .8rem;
     color: $grey2;
+    font-weight: 700;
 }
 .feedElements-profile-selected{
     background: $grey4;
