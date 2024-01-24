@@ -1,14 +1,24 @@
 .headerMenuPanel{
-    animation: slideFromTop2 .4s ease-in-out;
+    animation: slideFromTop2 .3s ease-in-out;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: .8rem;
+    position: absolute;
+    margin-top: 4rem;
     padding: .7rem;
-    background: $grey4;
-    border-radius: .7rem;
+    border-radius: 1rem;
+    width: 17rem;
+    @include transparent($transparent, $blur2);
+    
+    & > * {
+        box-shadow: $shadow1;
+    }
 
     & .headerMenuPanel-elements{
-        
+        padding: .7rem;
+        background: $grey4;
+        border-radius: .7rem;
+        // box-shadow: $shadow1;
 
         & .headerMenuPanel-user {
             animation: slideFromTop .4s ease-in-out;

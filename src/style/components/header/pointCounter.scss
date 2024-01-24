@@ -10,14 +10,14 @@
 }
 
 // changing the font-size for the pointCounter button on the headerMenu only
-.headerMenu > .pointCounter{
-    font-size: .9rem;
-    padding: .3rem .5rem;
-}
+// .headerMenu > .pointCounter{
+//     font-size: .9rem;
+//     padding: .3rem .5rem;
+// }
 
 // animation when pointCounter is in headerMenu in desktop
-.headerMenu-elements > .pointCounter {
-    animation: slideFromRight4 .5s ease-in-out;
+.headerMenuPanel > .pointCounter {
+    animation: slideFromTop .5s ease-in-out;
     font-size: .9rem;
     padding: .3rem .5rem;
     // border-radius: 3rem;

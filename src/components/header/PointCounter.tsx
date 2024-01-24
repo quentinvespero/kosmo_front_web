@@ -7,7 +7,7 @@ const PointCounter:React.FC<PointCounterProps & ScreenProps> = ({screenFormat, i
         <div 
             className='pointCounter'
             style={{
-                alignSelf: screenFormat === 'mobile' ? 'center' : 'start',
+                alignSelf: screenFormat === 'mobile' ? 'center' : 'flex-end',
                 display: screenFormat === 'mobile' && isSearchFieldSelectedOnMobile ? 'none' : 'flex',
                 animation: screenFormat === 'mobile' && isSearchFieldSelectedOnMobile ? 'slideFromRight2 .7s ease-in-out;' : ''
             }}    

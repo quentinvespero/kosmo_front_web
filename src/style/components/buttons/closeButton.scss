@@ -1,5 +1,5 @@
 .closeButton {
-    @include buttonBehavior($grey2, .95, .1s);
+    @include buttonBehavior($grey3, .95, .1s);
     display: flex;
     align-self: flex-end;
     padding: .3rem;

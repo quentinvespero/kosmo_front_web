@@ -5,6 +5,7 @@ import ButtonWithIcon from '../../buttons/ButtonWithIcon'
 import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './NotificationPanel'
 import AddPost from './AddPost'
+import PointCounter from '../PointCounter'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement}) => {
     return (
@@ -12,6 +13,8 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             className='headerMenuPanel'
             // style={headerMenuPanelOpen ? {display: 'flex'} : {display: 'none'}}
         >
+            {/* <div className="dividerElement"></div> */}
+            {headerMenuPanelSelectedElement === 'user' && <PointCounter/>}
             <Selector/>
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
