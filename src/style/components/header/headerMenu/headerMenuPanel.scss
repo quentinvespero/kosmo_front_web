@@ -9,6 +9,8 @@
     border-radius: 1rem;
     width: 17rem;
     @include transparent($transparent, $blur2);
+    border: solid .1rem $transparent;
+    z-index: 3;
     
     & > * {
         box-shadow: $shadow1;

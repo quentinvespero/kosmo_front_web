@@ -6,4 +6,5 @@
     @include transparent($transparentGrey2, 2rem);
     @include transition(.3s);
     column-gap: 1rem;
+    border: $border1;
 }

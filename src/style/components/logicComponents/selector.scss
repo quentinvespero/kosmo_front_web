@@ -5,6 +5,7 @@
     align-self: center;
     border-radius: 1rem;
     @include transparent($grey3, $blur1);
+    border: $border2;
 
     & .selectorElements {
         @include buttonBehavior($grey3, .95, .1s);

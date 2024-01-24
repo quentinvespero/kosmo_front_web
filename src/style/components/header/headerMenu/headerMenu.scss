@@ -20,6 +20,7 @@
         column-gap: 1rem;
         align-self: flex-end;
         @include transparent($transparentGrey1, $blur2);
+        border: $border1;
 
         & > *{
             box-shadow: $shadow1
