@@ -14,7 +14,7 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             // style={headerMenuPanelOpen ? {display: 'flex'} : {display: 'none'}}
         >
             {/* <div className="dividerElement"></div> */}
-            {headerMenuPanelSelectedElement === 'user' && <PointCounter/>}
+            <PointCounter isHidden={headerMenuPanelSelectedElement !== 'user'}/>
             <Selector/>
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}

@@ -47,12 +47,14 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                         }
                         
                         {selectedFeed && 
-                            selectedFeed.includes('feed') &&
+                            // selectedFeed.includes('feed') &&
                             screenFormat === 'mobile' &&
                             // isSearchFieldSelectedOnMobile === false &&
                             <PointCounter 
                                 screenFormat={screenFormat} 
-                                isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile}/>
+                                isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile}
+                                isHidden={isSearchFieldSelectedOnMobile || !selectedFeed.includes('feed')}
+                            />
                         }
                         
                         {screenFormat !== 'mobile' && <HeaderMenu screenFormat={screenFormat}/>}

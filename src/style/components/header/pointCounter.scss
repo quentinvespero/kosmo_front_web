@@ -15,15 +15,34 @@
 //     padding: .3rem .5rem;
 // }
 
-// animation when pointCounter is in headerMenu in desktop
-.headerMenuPanel > .pointCounter {
-    animation: slideFromTop .5s ease-in-out;
-    font-size: .9rem;
-    padding: .3rem .5rem;
-    // border-radius: 3rem;
+// pointCounter in headerMenu (in desktop)
+.headerMenuPanel {
+    
+    & > .pointCounter {
+        // animation: slideFromTop .5s ease-in-out;
+        font-size: .9rem;
+        padding: .3rem .5rem;
+        align-self: flex-end;
+    }
+
+    & > .pointCounter-visible{
+        animation: slideFromTop_pointCounter .5s ease-in-out;
+    }
+    & > .pointCounter-hidden{
+        animation: slideFromBottom_pointCounter .25s ease-in-out;
+    }
 }
 
-// changing the showing up animation for PointCounter only in mobile 
-.innerHeader-section1 > .pointCounter {
-    animation: slideFromRight2 .7s ease-in-out;
+// pointCounter in innerHeader-section1 (in mobile)
+.innerHeader-section1 {
+    
+    & > .pointCounter {
+        // animation: slideFromRight_pointCounter .7s ease-in-out;
+    }
+    & > .pointCounter-visible{
+        animation: slideFromRight_pointCounter .8s ease-in-out;
+    }
+    & > .pointCounter-hidden{
+        animation: slideFromLeft_pointCounter .2s ease-in-out;
+    }
 }

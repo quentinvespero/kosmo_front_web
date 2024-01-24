@@ -27,5 +27,6 @@ export interface SearchFieldProps {
 }
 
 export interface PointCounterProps {
-    isSearchFieldSelectedOnMobile?: boolean
+    isSearchFieldSelectedOnMobile?: boolean // <-- potentially deprectated
+    isHidden?: boolean
 }

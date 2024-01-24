@@ -30,7 +30,8 @@ const SearchField: React.FC<SearchFieldProps & ScreenProps> = ({ setIsSearchFiel
                 screenFormat && screenFormat === 'mobile' 
                 ? {
                     width: isSearchFieldSelectedOnMobile ? '85%' : '50%',
-                    placeContent: isSearchFieldSelectedOnMobile ? 'space-between' : 'space-between'
+                    placeContent: isSearchFieldSelectedOnMobile ? 'space-between' : 'space-between',
+                    border: isSearchFieldSelectedOnMobile ? 'solid .2rem #5c5c5ca8' : ''
                 } 
                 : {}
             }
