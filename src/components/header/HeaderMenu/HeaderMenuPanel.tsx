@@ -6,33 +6,20 @@ import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './NotificationPanel'
 import AddPost from './AddPost'
 import PointCounter from '../PointCounter'
+import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement}) => {
 
-    const [displayProperty, setDisplayProperty] = useState('flex')
-
-    useEffect(() => {
-        if (headerMenuPanelOpen) {
-            setDisplayProperty('flex')
-        }
-        else {
-            setTimeout(() => {
-                setDisplayProperty('none')
-            }, 200)
-        }
-    }, [headerMenuPanelOpen])
+    // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden
+    const displayProperty = delayHidingElementDisplayProperty(headerMenuPanelOpen, 200)
 
     return (
         <div 
-            // className='headerMenuPanel'
             className={`headerMenuPanel ${headerMenuPanelOpen ? 'headerMenuPanel-open' : 'headerMenuPanel-closed'}`}
-            // style={headerMenuPanelOpen ? {display: 'flex'} : {display: 'none'}}
             style={{
                 display: displayProperty
             }}
         >
-            {/* <div className="dividerElement"></div> */}
-            {/* <PointCounter isHidden={headerMenuPanelSelectedElement !== 'user'}/> */}
             <Selector/>
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
