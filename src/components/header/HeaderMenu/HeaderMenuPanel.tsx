@@ -18,7 +18,7 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
         else {
             setTimeout(() => {
                 setDisplayProperty('none')
-            }, 190)
+            }, 200)
         }
     }, [headerMenuPanelOpen])
 

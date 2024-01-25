@@ -10,7 +10,7 @@ const PointCounter:React.FC<PointCounterProps & ScreenProps> = ({screenFormat, i
         if (isHidden) {
             setTimeout(() => {
                 setDisplayProperty('none')
-            }, 190)
+            }, 170)
         }
         else {
             setDisplayProperty('flex')

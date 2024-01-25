@@ -41,7 +41,7 @@
         // animation: slideFromRight_pointCounter .7s ease-in-out;
     }
     & > .pointCounter-visible{
-        animation: slideFromRight_pointCounter .8s ease-in-out;
+        animation: slideFromRight_pointCounter 1s ease-in-out;
     }
     & > .pointCounter-hidden{
         animation: slideFromLeft_pointCounter .2s ease-in-out;
