@@ -13,7 +13,7 @@
     
     & .headerMenu-elements{
         position: relative;
-        padding: .8rem;
+        padding: .65rem;
         border-radius: 1rem;
         box-shadow: $shadow2;
         @include flexVerticalCentered(row);
@@ -21,6 +21,7 @@
         align-self: flex-end;
         @include transparent($transparentGrey1, $blur2);
         border: $border1;
+        @include transition(.15s);
 
         & > *{
             box-shadow: $shadow1

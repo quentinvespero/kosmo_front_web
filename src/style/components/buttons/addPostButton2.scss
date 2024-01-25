@@ -4,5 +4,5 @@
     height: .7rem;
     padding: .4rem;
     border-radius: 2rem;
-    @include buttonBehavior($white1, .95, .1s);
+    @include buttonBehavior($white2, .95, .1s);
 }

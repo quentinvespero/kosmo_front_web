@@ -3,7 +3,7 @@
     align-self: center;
     flex-direction: row;
     z-index: 2;
-    @include transparent($transparentGrey2, 2rem);
+    @include transparent($transparentGrey2, $blur3);
     @include transition(.3s);
     column-gap: 1rem;
     border: $border1;

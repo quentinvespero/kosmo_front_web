@@ -33,8 +33,8 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
         <div 
             className='feed'
             style={{
-                gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2.5rem',
-                maxWidth: screenFormat === 'desktop' ? '75%' : ''
+                gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2rem',
+                // maxWidth: screenFormat === 'desktop' ? '75%' : ''
             }}
         >
             {datas &&
