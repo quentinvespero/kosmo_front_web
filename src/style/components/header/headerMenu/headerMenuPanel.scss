@@ -4,7 +4,7 @@
     flex-direction: column;
     row-gap: .8rem;
     position: absolute;
-    margin-top: 4rem;
+    margin-top: 4.25rem;
     padding: .7rem;
     border-radius: 1rem;
     width: 17rem;
@@ -26,4 +26,8 @@
             animation: slideFromTop .4s ease-in-out;
         }
     }
+}
+
+.headerMenuPanel-closed {
+    animation: slideFromBottom_pointCounter .2s ease-in-out;
 }

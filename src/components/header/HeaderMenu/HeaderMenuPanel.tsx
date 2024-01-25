@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
 import ButtonWithIcon from '../../buttons/ButtonWithIcon'
@@ -8,13 +8,31 @@ import AddPost from './AddPost'
 import PointCounter from '../PointCounter'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement}) => {
+
+    const [displayProperty, setDisplayProperty] = useState('flex')
+
+    useEffect(() => {
+        if (headerMenuPanelOpen) {
+            setDisplayProperty('flex')
+        }
+        else {
+            setTimeout(() => {
+                setDisplayProperty('none')
+            }, 190)
+        }
+    }, [headerMenuPanelOpen])
+
     return (
         <div 
-            className='headerMenuPanel'
+            // className='headerMenuPanel'
+            className={`headerMenuPanel ${headerMenuPanelOpen ? 'headerMenuPanel-open' : 'headerMenuPanel-closed'}`}
             // style={headerMenuPanelOpen ? {display: 'flex'} : {display: 'none'}}
+            style={{
+                display: displayProperty
+            }}
         >
             {/* <div className="dividerElement"></div> */}
-            <PointCounter isHidden={headerMenuPanelSelectedElement !== 'user'}/>
+            {/* <PointCounter isHidden={headerMenuPanelSelectedElement !== 'user'}/> */}
             <Selector/>
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
