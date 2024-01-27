@@ -23,7 +23,6 @@ const RightPanel:React.FC<RightPanelProps> = ({}) => {
         <div className='rightPanel'>
             <HideRightPanelButton isRightPanelVisible={isRightPanelVisible} setIsRightPanelVisible={setIsRightPanelVisible}/>
             <div 
-                // className="rightPanel-elements"
                 className={`rightPanel-elements ${isRightPanelVisible ? 'rightPanel-elements-visible' : 'rightPanel-elements-hidden'}`}
                 style={{
                     display: displayProperty

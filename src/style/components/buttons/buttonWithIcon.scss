@@ -1,0 +1,12 @@
+.buttonWithIcon{
+    @include flexVerticalCentered(row);
+    padding: .5rem 2rem .5rem 1rem;
+    column-gap: 1rem;
+    @include buttonBehavior($grey4, .95, .15s);
+    border-radius: 5rem;
+
+    & img {
+        width: 1rem;
+        height: 1rem;
+    }
+}

@@ -6,6 +6,7 @@
     border-radius: 1rem;
     @include transparent($grey3, $blur1);
     border: $border2;
+    font-size: .85rem;
 
     & .selectorElements {
         @include buttonBehavior($grey3, .95, .1s);

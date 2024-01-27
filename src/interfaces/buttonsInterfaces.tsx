@@ -63,10 +63,12 @@ export interface AddPostButton2Props {
 }
 
 export interface ButtonWithIconProps {
-    buttonTextAndIcon: 'settings' | 'manage feeds' | 'bookmarks'
+    // buttonText: 'settings' | 'manage_feeds' | 'bookmarks'
+    buttonText: string
+    buttonIcon: string
 }
 
 export interface HideRightPanelButtonProps {
     isRightPanelVisible: boolean
-    setIsRightPanelVisible: () => void
+    setIsRightPanelVisible: React.Dispatch<React.SetStateAction<boolean>>
 }

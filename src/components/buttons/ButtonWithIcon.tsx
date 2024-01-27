@@ -1,18 +1,19 @@
 import React from 'react'
 import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
-const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonTextAndIcon}) => {
+const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) => {
+
+    // variable used to replace the "_" with actual spaces
+    const textWithoutUnderscores = buttonText.replace(/_/g, ' ')
+
     return (
-        <div className='buttonWithIcon'>
-            <img 
-                src={`
-                    ${buttonTextAndIcon === 'bookmarks' && './src/assets/icons'}
-                    ${buttonTextAndIcon === 'manage feeds' && './src/assets/icons'}
-                    ${buttonTextAndIcon === 'settings' && './src/assets/icons'}
-                `} 
-                alt={`${buttonTextAndIcon} image`} 
+        // <div className='buttonWithIcon'>
+        <div className={`buttonWithIcon buttonWithIcon-${buttonText}`}>
+            <img
+                src={`./src/assets/icons/${buttonIcon}.svg`}
+                alt={`${buttonText} image`} 
             />
-            <p>{buttonTextAndIcon}</p>
+            <p>{textWithoutUnderscores}</p>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import NotificationPanel from './NotificationPanel'
 import AddPost from './AddPost'
 import PointCounter from '../PointCounter'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
+import UserSettingsPanel from './UserSettingsPanel'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement}) => {
 
@@ -24,11 +25,12 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
                 {headerMenuPanelSelectedElement ==='notification' && <NotificationPanel/>}
-                {headerMenuPanelSelectedElement ==='user' && <div className="headerMenuPanel-user">
-                    <ButtonWithIcon buttonTextAndIcon='manage feeds'/>
-                    <ButtonWithIcon buttonTextAndIcon='bookmarks'/>
-                    <ButtonWithIcon buttonTextAndIcon='settings'/>
-                </div>}
+                {/* {headerMenuPanelSelectedElement ==='user' && <div className="headerMenuPanel-user">
+                    <ButtonWithIcon buttonText='manage_feeds' buttonIcon='icon_manageFeeds_white2'/>
+                    <ButtonWithIcon buttonText='bookmarks' buttonIcon='icon_bookmarks_white2'/>
+                    <ButtonWithIcon buttonText='settings' buttonIcon='icon_settings_white2'/>
+                </div>} */}
+                {headerMenuPanelSelectedElement ==='user' && <UserSettingsPanel/>}
             </div>
             <CloseButton/>
         </div>

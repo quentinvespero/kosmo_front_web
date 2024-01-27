@@ -14,6 +14,7 @@
     @import './components/buttons/profileButton.scss';
     @import './components/buttons/closeButton.scss';
     @import './components/buttons/hideRightPanelButton.scss';
+    @import './components/buttons/buttonWithIcon.scss';
 
     // header
     @import './components/header/header.scss';
@@ -25,6 +26,7 @@
         @import './components/header/headerMenu/notificationPanel.scss';
         @import './components/header/headerMenu/headerMenuPanel.scss';
         @import './components/header/headerMenu/addPost.scss';
+        @import './components/header/headerMenu/userSettingsPanel.scss';
     
     // post
     @import './components/post/post.scss';

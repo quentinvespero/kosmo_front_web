@@ -118,12 +118,12 @@
         transform: translateY(0rem);
         display: flex;
     }
-    50%{
+    40%{
         transform: translateY(.5rem);
     }
     100% {
         opacity: 0;
-        transform: translateY(-1rem);
+        transform: translateY(-3rem);
         // display: none;
     }
 }
@@ -236,11 +236,11 @@
         margin-top: 1rem;
     }
     50%{
-        margin-top: 4.75rem;
+        margin-top: 4.5rem;
     }
     100% {
         opacity: 1;
-        margin-top:4.25rem;
+        margin-top:4rem;
     }
 }
 

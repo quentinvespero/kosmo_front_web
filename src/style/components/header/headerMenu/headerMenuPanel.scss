@@ -4,7 +4,7 @@
     flex-direction: column;
     row-gap: .8rem;
     position: absolute;
-    margin-top: 4.25rem;
+    margin-top: 4rem;
     padding: .7rem;
     border-radius: 1rem;
     width: 17rem;
@@ -24,6 +24,8 @@
 
         & .headerMenuPanel-user {
             animation: slideFromTop .4s ease-in-out;
+            display: flex;
+            flex-direction: column;
         }
     }
 }
