@@ -11,16 +11,17 @@
     @include transparent($transparent, $blur2);
     border: solid .1rem $transparent;
     z-index: 3;
+    box-shadow: $shadow4;
     
-    & > * {
-        box-shadow: $shadow1;
-    }
+    // & > * {
+    //     box-shadow: $shadow3;
+    // }
 
     & .headerMenuPanel-elements{
         padding: .7rem;
         background: $grey4;
         border-radius: .7rem;
-        // box-shadow: $shadow1;
+        box-shadow: $shadow5;
 
         & .headerMenuPanel-user {
             animation: slideFromTop .4s ease-in-out;
