@@ -1,9 +1,9 @@
 @media (prefers-color-scheme: unset) {
     body{
-        color: $grey4;
-        background: $white0;
+        color: $grey2;
+        background: $white1;
     }
-    .innerPost, .buttonType1-upvote, .buttonType1-downvote, .buttonType1-comment{
+    .innerPost {
         background: $white2 !important;
 
         & .buttonType1-image {
@@ -14,7 +14,7 @@
         background: $white1 !important;
     }
     .topMenu{
-        background: $transparentWhite3;
+        background: $transparentWhite3 !important;
         // box-shadow: 0rem 0rem 3rem $white5;
     }
     .entryPage .entryPage-backgroundLayer{

@@ -6,7 +6,7 @@ const TrendSection:React.FC<TrendSectionProps> = ({datas}) => {
     return (
         <div className='trendSection'>
             <h2>Trending at the moment</h2>
-            <div className="trendButtons">
+            <div className="trendSection-elements">
                 {datas && 
                 datas.trending.length > 0 &&
                 datas.trending.map((trend, index) => (
