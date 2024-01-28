@@ -1,5 +1,5 @@
 .button-trend{
-    padding: .5rem 1rem;
+    padding: .6rem 1.5rem;
     // background: $grey4;
     // margin: .5rem 0rem;
     border-radius: .5rem;
@@ -7,5 +7,5 @@
     @include buttonBehavior($grey4, .95, .15s);
     // @include transition(.15s);
     box-shadow: $shadow5;
-    border: $border1;
+    // border: $border1;
 }
