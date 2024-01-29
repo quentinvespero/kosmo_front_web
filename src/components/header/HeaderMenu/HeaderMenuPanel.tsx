@@ -9,7 +9,7 @@ import PointCounter from '../PointCounter'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 import UserSettingsPanel from './UserSettingsPanel'
 
-const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement}) => {
+const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen}) => {
 
     // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden
     const displayProperty = delayHidingElementDisplayProperty(headerMenuPanelOpen, 200)
@@ -32,7 +32,7 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
                 </div>} */}
                 {headerMenuPanelSelectedElement ==='user' && <UserSettingsPanel/>}
             </div>
-            <CloseButton/>
+            <CloseButton setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/>
         </div>
     )
 }

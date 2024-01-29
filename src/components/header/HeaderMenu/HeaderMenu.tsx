@@ -30,12 +30,19 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
     return (
         <div className='headerMenu'>
             <div className="headerMenu-elements">
+                {/* <div className="headerMenu-openButton" onClick={handleClick}>
+                    <img src="src/assets/icons/icon_arrowBottom_white2.svg" alt="" />
+                </div> */}
                 <AddPostButton2 handleClick={handleClick}/>
                 <NotificationButton handleClick={handleClick}/>
                 <ProfileButton locationContext='headerMenu' handleClick={handleClick}/>
                 <PointCounter/>
             </div>
-            <HeaderMenuPanel headerMenuPanelOpen={headerMenuPanelOpen} headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
+            <HeaderMenuPanel 
+                headerMenuPanelOpen={headerMenuPanelOpen} 
+                headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}
+                setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}
+            />
         </div>
     )
 }

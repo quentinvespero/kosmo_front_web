@@ -14,6 +14,7 @@ export interface HeaderMenuProps {
 export interface HeaderMenuPanelProps {
     headerMenuPanelOpen: boolean
     headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user' | ''
+    setHeaderMenuPanelOpen?: (type:boolean) => void
 }
 
 export interface NotificationPanelProps {

@@ -9,9 +9,13 @@ const HideRightPanelButton:React.FC<HideRightPanelButtonProps> = ({isRightPanelV
     }
 
     return (
+        // <div className={`hideRightPanelButton ${ isRightPanelVisible ? 'hideRightPanelButton-open' : 'hideRightPanelButton-closed' }`} onClick={handleClick}>
         <div className='hideRightPanelButton' onClick={handleClick}>
-            {isRightPanelVisible && <img src="src/assets/icons/icon_arrow_white2.svg" alt="" />}
-            {!isRightPanelVisible && <img src="src/assets/icons/icon_arrow2_white2.svg" alt="" />}
+            <img 
+                src="src/assets/icons/icon_arrow_white2.svg" 
+                alt="arrow icon" 
+                style={{ transform: isRightPanelVisible ? 'rotate(0deg)' : 'rotate(180deg)'}}
+            />
         </div>
     )
 }

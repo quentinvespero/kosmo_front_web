@@ -72,3 +72,7 @@ export interface HideRightPanelButtonProps {
     isRightPanelVisible: boolean
     setIsRightPanelVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface CloseButtonProps {
+    setHeaderMenuPanelOpen?: (type:boolean) => void
+}
