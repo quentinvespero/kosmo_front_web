@@ -1,5 +1,4 @@
 import React from 'react'
-import closeIcon from '../../assets/icons/icon_close_white2.svg'
 import { CloseButtonProps } from '../../interfaces/buttonsInterfaces'
 
 const CloseButton:React.FC<CloseButtonProps> = ({setHeaderMenuPanelOpen}) => {
@@ -15,7 +14,7 @@ const CloseButton:React.FC<CloseButtonProps> = ({setHeaderMenuPanelOpen}) => {
             className='closeButton' 
             onClick={handleClick}
         >
-            <img src={closeIcon} alt="button close" />
+            <img src='src/assets/icons/icon_close_white2.svg' alt="button close" />
         </div>
     )
 }

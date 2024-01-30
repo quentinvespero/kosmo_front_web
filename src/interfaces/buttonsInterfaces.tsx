@@ -47,7 +47,8 @@ export interface NotificationButtonProps {
     _id?: string,
     message?: string,
     read?:boolean
-    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
 export interface ProfileButtonProps {
@@ -55,11 +56,13 @@ export interface ProfileButtonProps {
     setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
     handleFeedChoice?: () => void
     locationContext: 'feedSelector' | 'headerMenu' | 'post'
-    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
 export interface AddPostButton2Props {
-    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
 export interface ButtonWithIconProps {
@@ -75,4 +78,13 @@ export interface HideRightPanelButtonProps {
 
 export interface CloseButtonProps {
     setHeaderMenuPanelOpen?: (type:boolean) => void
+}
+
+// interface for all the buttons in the headerMenu
+export interface HandleClickHeaderMenuButtonsInterface {
+    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+}
+
+export interface ExpandButtonProps {
+    headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
 }

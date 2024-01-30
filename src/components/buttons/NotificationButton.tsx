@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
+import { HandleClickHeaderMenuButtonsInterface, NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
 import NotificationPanel from '../header/HeaderMenu/NotificationPanel'
 
-const NotificationButton:React.FC<NotificationButtonProps> = ({handleClick}) => {
+const NotificationButton:React.FC<NotificationButtonProps & HandleClickHeaderMenuButtonsInterface> = ({handleClick}) => {
     
     // the content of the notifications as an array
     // const [notificationsContent, setNotificationsContent] = useState<NotificationButtonProps[] | null>(null)

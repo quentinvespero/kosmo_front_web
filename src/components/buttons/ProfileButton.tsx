@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { ScreenProps } from '../../interfaces/interfaces'
-import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
+import { HandleClickHeaderMenuButtonsInterface, ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick}) => {
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick}) => {
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces | null>(null)

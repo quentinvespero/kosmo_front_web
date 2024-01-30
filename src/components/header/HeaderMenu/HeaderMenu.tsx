@@ -6,6 +6,7 @@ import NotificationButton from '../../buttons/NotificationButton'
 import AddPostButton2 from '../../buttons/AddPostButton2'
 import ProfileButton from '../../buttons/ProfileButton'
 import HeaderMenuPanel from './HeaderMenuPanel'
+import ExpandButton from '../../buttons/ExpandButton'
 
 type SelectedElement = "" | "notification" | "addPost" | "user"
 
@@ -15,7 +16,7 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
     const [headerMenuPanelOpen, setHeaderMenuPanelOpen] = useState(false)
     
     // following state of the selected category/element in the panel menu (can be 'notification', 'others', maybe post creation..)
-    const [headerMenuPanelSelectedElement, setHeaderMenuPanelSelectedElement] = useState<SelectedElement>('')
+    const [headerMenuPanelSelectedElement, setHeaderMenuPanelSelectedElement] = useState<SelectedElement>('user')
 
     const handleClick = (selectedElement:SelectedElement) =>{
         if (headerMenuPanelSelectedElement === selectedElement) {
@@ -36,12 +37,14 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
                 <AddPostButton2 handleClick={handleClick}/>
                 <NotificationButton handleClick={handleClick}/>
                 <ProfileButton locationContext='headerMenu' handleClick={handleClick}/>
+                <ExpandButton handleClick={handleClick} headerMenuPanelOpen={headerMenuPanelOpen}/>
                 <PointCounter/>
             </div>
             <HeaderMenuPanel 
                 headerMenuPanelOpen={headerMenuPanelOpen} 
                 headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}
                 setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}
+                setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}
             />
         </div>
     )

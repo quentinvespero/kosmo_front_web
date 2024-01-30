@@ -1,38 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
-import ButtonWithIcon from '../../buttons/ButtonWithIcon'
 import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './NotificationPanel'
 import AddPost from './AddPost'
-import PointCounter from '../PointCounter'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 import UserSettingsPanel from './UserSettingsPanel'
 
-const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen}) => {
+const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen, setHeaderMenuPanelSelectedElement}) => {
 
-    // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden
+    // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden by 200ms
     const displayProperty = delayHidingElementDisplayProperty(headerMenuPanelOpen, 200)
 
     return (
         <div 
             className={`headerMenuPanel ${headerMenuPanelOpen ? 'headerMenuPanel-open' : 'headerMenuPanel-closed'}`}
-            style={{
-                display: displayProperty
-            }}
+            style={{display: displayProperty}}
         >
-            <Selector/>
+            <Selector headerMenuPanelSelectedElement={headerMenuPanelSelectedElement} setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}/>
             <div className="headerMenuPanel-elements">
                 {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
                 {headerMenuPanelSelectedElement ==='notification' && <NotificationPanel/>}
-                {/* {headerMenuPanelSelectedElement ==='user' && <div className="headerMenuPanel-user">
-                    <ButtonWithIcon buttonText='manage_feeds' buttonIcon='icon_manageFeeds_white2'/>
-                    <ButtonWithIcon buttonText='bookmarks' buttonIcon='icon_bookmarks_white2'/>
-                    <ButtonWithIcon buttonText='settings' buttonIcon='icon_settings_white2'/>
-                </div>} */}
                 {headerMenuPanelSelectedElement ==='user' && <UserSettingsPanel/>}
             </div>
-            <CloseButton setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/>
+            {/* <CloseButton setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/> */}
         </div>
     )
 }
