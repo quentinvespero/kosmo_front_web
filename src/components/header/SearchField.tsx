@@ -31,7 +31,8 @@ const SearchField: React.FC<SearchFieldProps & ScreenProps> = ({ setIsSearchFiel
                 ? {
                     width: isSearchFieldSelectedOnMobile ? '85%' : '50%',
                     placeContent: isSearchFieldSelectedOnMobile ? 'space-between' : 'space-between',
-                    border: isSearchFieldSelectedOnMobile ? 'solid .2rem #5c5c5ca8' : ''
+                    // border: isSearchFieldSelectedOnMobile ? 'solid .2rem #5c5c5ca8' : ''
+                    boxShadow: isSearchFieldSelectedOnMobile ? 'inset 0 0 0 .1rem #5c5c5ca8' : ''
                 } 
                 : {}
             }

@@ -1,12 +1,28 @@
 .buttonWithIcon{
-    @include flexVerticalCentered(row);
-    padding: .5rem 2rem .5rem 1rem;
-    column-gap: 1rem;
-    @include buttonBehavior($grey4, .95, .15s);
-    border-radius: 5rem;
+    // @include flexVerticalCentered(row);
+    // padding: .5rem 2rem .5rem 1rem;
+    // column-gap: 1rem;
+    // @include buttonBehavior($grey4, .95, .15s);
+    // border-radius: 5rem;
 
     & img {
         width: 1rem;
         height: 1rem;
     }
+}
+
+.buttonWithIcon-userSettings {
+    @include flexVerticalCentered(row);
+    padding: .5rem 2rem .5rem 1rem;
+    column-gap: 1rem;
+    @include buttonBehavior($grey4, .95, .15s);
+    border-radius: 5rem;
+}
+
+.buttonWithIcon-addPostSection{
+    @include flexVerticalCentered(column);
+    @include buttonBehavior($grey4, .95, .15s);
+    row-gap: .3rem;
+    border-radius: .5rem;
+    padding: .7rem;
 }

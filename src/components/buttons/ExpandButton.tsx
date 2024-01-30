@@ -1,11 +1,18 @@
 import React from 'react'
 import { ExpandButtonProps, HandleClickHeaderMenuButtonsInterface } from '../../interfaces/buttonsInterfaces'
 
-const ExpandButton:React.FC<HandleClickHeaderMenuButtonsInterface & ExpandButtonProps> = ({handleClick, headerMenuPanelOpen}) => {
+const ExpandButton:React.FC<ExpandButtonProps> = ({headerMenuPanelOpen, setHeaderMenuPanelOpen}) => {
+
+    const handleClick = () => {
+        if (setHeaderMenuPanelOpen) {
+            setHeaderMenuPanelOpen(!headerMenuPanelOpen)
+        }
+    }
+
     return (
         <div 
             className='expandButton' 
-            onClick={() => handleClick && handleClick('user')}
+            onClick={handleClick}
         >
             <img src="src/assets/icons/icon_arrowBottom_white2.svg" alt="" style={{transform: headerMenuPanelOpen ? 'rotate(180deg)' : ''}}/>
         </div>

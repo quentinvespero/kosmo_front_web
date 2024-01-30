@@ -87,4 +87,5 @@ export interface HandleClickHeaderMenuButtonsInterface {
 
 export interface ExpandButtonProps {
     headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
+    setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
 }
