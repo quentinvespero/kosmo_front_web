@@ -20,12 +20,18 @@
 }
 
 // used for the photo/video/poll buttons in headerMenu
-.buttonWithIcon-addPostSection{
+.buttonWithIcon-addPostSectionButton{
     @include flexVerticalCentered(column);
     @include buttonBehavior2($grey4, .9, .1s);
-    row-gap: .3rem;
+    row-gap: .5rem;
     border-radius: .5rem;
-    padding: .7rem;
+    padding: .5rem;
+    font-size: .8rem;
+
+    & img {
+        width: .9rem;
+        height: .9rem;
+    }
 }
 
 // used for the blue post button in headerMenu
