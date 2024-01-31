@@ -1,16 +1,19 @@
 import React from 'react'
-import DraftSection from '../DraftSection'
 import AddPostMedia from './AddPostMedia'
 import AddPostPoll from './AddPostPoll'
 import AddPostText from './AddPostText'
+import { AddPostInnerSectionProps } from '../../../../interfaces/addPostInterfaces'
+import AddPostDraft from './AddPostDraft'
 
-const AddPostInnerSection = () => {
+const AddPostInnerSection:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSection, setAddPostSelectedInnerSection}) => {
     return (
         <div className='addPostInnerSection'>
-            {/* <DraftSection />
-            <AddPostMedia/>
-            <AddPostPoll/> */}
-            <AddPostText/>
+            {addPostSelectedInnerSection !== 'draft' && <AddPostText addPostSelectedInnerSection={addPostSelectedInnerSection} />}
+            <div className="addPostInnerSection-elements">
+                {addPostSelectedInnerSection === 'draft' && <AddPostDraft addPostSelectedInnerSection={addPostSelectedInnerSection} />}
+                {addPostSelectedInnerSection === 'media' && <AddPostMedia addPostSelectedInnerSection={addPostSelectedInnerSection} />}
+                {addPostSelectedInnerSection === 'poll' && <AddPostPoll addPostSelectedInnerSection={addPostSelectedInnerSection} />}
+            </div>
         </div>
     )
 }

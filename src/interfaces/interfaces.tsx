@@ -105,3 +105,8 @@ export interface FeedSelectorProps {
 export interface InnerSectionProps {
     selectedFeed?: string
 }
+
+// props redundant that can be used everywhere in the app
+export interface GeneralProps{
+    isVisible?: boolean
+}

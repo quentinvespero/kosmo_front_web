@@ -1,6 +1,7 @@
 .addPostText{
     display: flex;
     flex-grow: 1;
+    position: relative;
     
     & textarea {
         padding: .7rem .8rem;
@@ -16,5 +17,24 @@
     }
     & textarea:focus{
         box-shadow: $innerShadow1;
+    }
+
+    & .characterCount{
+        display: flex;
+        flex-direction: row;
+        column-gap: .2rem;
+        animation: bounceZoom .4s ease-in-out;
+        padding: .1rem .5rem;
+        position: absolute;
+        bottom: .5rem;
+        right: .5rem;
+        font-size: .7rem;
+        border-radius: 3rem;
+        @include transparent($transparentGrey5, $blur3);
+        color: $white5;
+
+        .characterCount-text{
+            animation: slideFromLeft_characterCountText .4s ease-in-out;
+        }
     }
 }

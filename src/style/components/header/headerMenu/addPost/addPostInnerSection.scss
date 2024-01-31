@@ -1,4 +1,11 @@
 .addPostInnerSection{
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    // row-gap: 1rem;
+
+    .addPostInnerSection-elements{
+        display: flex;
+        // flex-grow: 1;
+    }
 }

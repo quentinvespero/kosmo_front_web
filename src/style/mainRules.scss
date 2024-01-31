@@ -10,9 +10,11 @@ $grey1 : #5C5C5C;
 $grey2 : #3C3C3C;
 $grey3 : #2C2C2C;
 $grey4 : #1E1E1E;
+$grey5 : #0f0f0f;
 $pink : #E5A2CA;
 $blue : #7CB1FF;
 $red : #bc6785;
+$darkRed : #972d3b;
 $transparentGrey1: #5c5c5ca8;
 $transparentGrey2 : #3C3C3Ca8;
 $transparentGrey3 : #2c2c2c1a;
@@ -28,6 +30,7 @@ $transparentPink : #e5a2ca73;
 $transparentBlue : #7cb0ff6e;
 $transparent : #dddddd1a;
 $transparent1 : #ffffff0d;
+$transparentMax : #ffffff00;
 
 // shadows
 $shadow1 : 0rem 0rem .5rem $transparentGrey5;
@@ -38,6 +41,7 @@ $shadow5 : 0rem 0rem .4rem 0rem $grey4;
 $innerShadow1 : inset 0rem 0rem .2rem .1rem $grey2;
 $innerShadow2 : inset 0rem 0rem 0rem .1rem $transparentGrey4;
 $innerShadow3 : inset 0 0 0 .1rem $grey2;
+$innerShadow3 : inset 0 0 0 .1rem $transparentGrey2;
 
 // blur
 $blur1 : 1rem;

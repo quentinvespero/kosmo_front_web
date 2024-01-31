@@ -3,7 +3,7 @@ import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
 const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) => {
 
-    // explanation buttonText : buttonText string have to be in this format locationOfTheButton-purposeOfTheButton
+    // explanation buttonText : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
     // - locationOfTheButton will then be used to give the button a personalised class
     // - purposeOfTheButton will be used for the text of the button
 
@@ -11,7 +11,7 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
     const splitButtonText = buttonText.split('-')
 
     // Text of the button, with a regex to replace the "_" with spaces
-    let textWithoutUnderscores = ''
+    let textOfTheButton = ''
     
     // Location of the button
     let buttonLocation = ''
@@ -20,10 +20,10 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
         console.log('No hyphen "-" found in buttonText')
 
         // using the whole text of buttonText anyway
-        textWithoutUnderscores = buttonText
+        textOfTheButton = buttonText
     }
     else {
-        textWithoutUnderscores = splitButtonText[1].replace(/_/g, ' ')
+        textOfTheButton = splitButtonText[1].replace(/_/g, ' ')
     
         buttonLocation = splitButtonText[0]
     }
@@ -32,9 +32,9 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
         <div className={`buttonWithIcon buttonWithIcon-${buttonLocation}`}>
             <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}
-                alt={`${textWithoutUnderscores} image`} 
+                alt={`${textOfTheButton} image`} 
             />
-            <p>{textWithoutUnderscores}</p>
+            <p>{textOfTheButton}</p>
         </div>
     )
 }

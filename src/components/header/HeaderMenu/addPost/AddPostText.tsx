@@ -1,16 +1,46 @@
-import React from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
+import { AddPostInnerSectionProps } from '../../../../interfaces/addPostInterfaces'
 
-const AddPostText = () => {
+const AddPostText:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSection}) => {
+
+    // the amount of characters tat can be used to make a post
+    const maxCharacter = 500
+
+    // the text content of the post
+    const [postText, setPostText] = useState('')
+
+    // the remaining characters
+    const [usedCharacters, setUsedCharacters] = useState(maxCharacter)
+
+    // setting the value of the amount of characters used
+    useEffect(() => {
+        setUsedCharacters(postText.length)
+    }, [postText])
+
+    // setting the text value inside postText
+    const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setPostText(e.target.value)
+    }
+
     return (
         <div className='addPostText'>
             <textarea
-                className='addPost-text'
                 name="test"
-                // cols={20}  
                 placeholder='express yourself here..'
-                // value={postText}
-                maxLength={500}
+                value={postText}
+                maxLength={maxCharacter}
+                onChange={handleTextChange}
+                style={{paddingBottom: usedCharacters > 450 ? '1.8rem' : ''}}
             ></textarea>
+            {usedCharacters > 450 && 
+                <div 
+                    className="characterCount"
+                    style={{background: usedCharacters === 500 ? '#972d3b' : ''}}
+                >
+                    {usedCharacters === 500 && <div className="characterCount-text">limit reached :</div>}
+                    <div className="characterCount-countdown">{usedCharacters} / {maxCharacter}</div>
+                </div>
+            }
         </div>
     )
 }

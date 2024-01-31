@@ -26,13 +26,15 @@
         @import './components/header/headerMenu/headerMenu.scss';
         @import './components/header/headerMenu/notificationPanel.scss';
         @import './components/header/headerMenu/headerMenuPanel.scss';
-        @import './components/header/headerMenu/addPost.scss';
         @import './components/header/headerMenu/userSettingsPanel.scss';
         
             // addPost
+            @import './components/header/headerMenu/addPost/addPost.scss';
+            @import './components/header/headerMenu/addPost/addPostDraft.scss';
             @import './components/header/headerMenu/addPost/addPostInnerSection.scss';
             @import './components/header/headerMenu/addPost/addPostText.scss';
-
+            @import './components/header/headerMenu/addPost/addPostMedia.scss';
+            @import './components/header/headerMenu/addPost/addPostPoll.scss';
     
     // post
     @import './components/post/post.scss';

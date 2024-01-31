@@ -3,7 +3,7 @@ import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
 import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './NotificationPanel'
-import AddPost from './AddPost'
+import AddPost from './addPost/AddPost'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 import UserSettingsPanel from './UserSettingsPanel'
 

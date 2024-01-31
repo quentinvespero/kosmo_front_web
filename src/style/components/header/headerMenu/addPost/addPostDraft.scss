@@ -1,0 +1,15 @@
+.addPostDraft{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 14rem;
+    row-gap: .5rem;
+    align-self: center;
+
+    & .addPostDraft-items{
+        padding: .5rem 1.2rem;
+        @include buttonBehavior($grey2, .95, .1s);
+        border-radius: .5rem;
+        font-size: .7rem;
+    }
+}

@@ -259,3 +259,37 @@
         margin-right: 0rem;
     }
 }
+
+// CharacterCount appearing - AddPostText - HeaderMenu
+@keyframes bounceZoom {
+    0% {
+        opacity: 0;
+        transform:scale(1);
+        background: $red;
+    }
+    50%{
+        opacity: 1;
+        transform:scale(1.1);
+    }
+    100% {
+        transform:scale(1);
+    }
+}
+
+// CharacterCount text appearing - AddPostText - HeaderMenu
+@keyframes slideFromLeft_characterCountText {
+    0% {
+        opacity: 0;
+        // transform:translateX(-5rem);
+        margin-left: -7rem;
+    }
+    50%{
+        margin-left: .5rem;
+        // transform:translateX(.5rem);
+    }
+    100% {
+        opacity: 1;
+        // transform:translateX(0);
+        margin-left: 0rem;
+    }
+}
