@@ -15,14 +15,40 @@
     @include flexVerticalCentered(row);
     padding: .5rem 2rem .5rem 1rem;
     column-gap: 1rem;
-    @include buttonBehavior($grey4, .95, .15s);
+    @include buttonBehavior2($grey4, .95, .15s);
     border-radius: 5rem;
 }
 
+// used for the photo/video/poll buttons in headerMenu
 .buttonWithIcon-addPostSection{
     @include flexVerticalCentered(column);
-    @include buttonBehavior($grey4, .95, .15s);
+    @include buttonBehavior2($grey4, .9, .1s);
     row-gap: .3rem;
     border-radius: .5rem;
     padding: .7rem;
+}
+
+// used for the blue post button in headerMenu
+.buttonWithIcon-addPostSectionBottomPost{
+    @include flexVerticalCentered(row-reverse);
+    @include buttonBehavior($blue, .95, .1s);
+    column-gap: .5rem;
+    padding: .4rem .8rem;
+    border-radius: .5rem;
+    box-shadow: $innerShadow2;
+    font-weight: 700;
+}
+
+.buttonWithIcon-addPostSectionBottomDraft{
+    @include flexVerticalCentered(row-reverse);
+    @include buttonBehavior2($grey4, .95, .1s);
+    padding: .4rem .6rem;
+    column-gap: .5rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+
+    & img {
+        width: .8rem;
+        height: .8rem;
+    }
 }

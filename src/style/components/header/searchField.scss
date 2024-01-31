@@ -13,7 +13,8 @@
     // place-content: space-between;
     align-self: center;
     // transition: border .2s ease-in-out;
-    border: $border2;
+    // border: $border2;
+    box-shadow: $innerShadow3;
 
     & .searchField:hover{
         // border: .25rem solid $grey2;

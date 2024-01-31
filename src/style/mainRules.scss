@@ -19,12 +19,15 @@ $transparentGrey3 : #2c2c2c1a;
 $transparentGrey4 : #1e1e1e29;
 $transparentGrey5 : #3e3e3e6a;
 $transparentGrey6 : #1c1c1cbe;
+$transparentGrey7 : #00000081;
+$transparentGrey8 : #1e1e1ee1;
 $transparentWhite1 : #ffffff99;
 $transparentWhite2 : #dddddd69;
 $transparentWhite3 : #c3c3c35c;
 $transparentPink : #e5a2ca73;
 $transparentBlue : #7cb0ff6e;
 $transparent : #dddddd1a;
+$transparent1 : #ffffff0d;
 
 // shadows
 $shadow1 : 0rem 0rem .5rem $transparentGrey5;
@@ -32,7 +35,9 @@ $shadow2 : 0rem 0rem 1rem $transparentGrey4;
 $shadow3 : 0rem 0rem .4rem .1rem $grey3;
 $shadow4 : 0rem 0rem 3rem 0rem $transparentGrey6;
 $shadow5 : 0rem 0rem .4rem 0rem $grey4;
-$innerShadow1 : inset 0rem 0rem .2rem .2rem $grey3;
+$innerShadow1 : inset 0rem 0rem .2rem .1rem $grey2;
+$innerShadow2 : inset 0rem 0rem 0rem .1rem $transparentGrey4;
+$innerShadow3 : inset 0 0 0 .1rem $grey2;
 
 // blur
 $blur1 : 1rem;
@@ -70,6 +75,18 @@ $border2 : solid .1rem $transparentGrey1;
 
     &:hover{
         background: darken($color, 4%);
+    }
+    &:active{
+        transform: scale($scale);
+    }
+}
+@mixin buttonBehavior2($color, $scale, $transitionTime){
+    cursor: pointer;
+    @include transition($transitionTime);
+
+    &:hover{
+        // background: $color;
+        background: darken($color, 3%);
     }
     &:active{
         transform: scale($scale);
@@ -155,7 +172,7 @@ p{
     margin: 0;
 }
 textarea {
-    border: none;
+    // border: none;
     font-family: 'sen','saira', Arial, Helvetica, sans-serif;
     resize: none;
     width: 100%;
