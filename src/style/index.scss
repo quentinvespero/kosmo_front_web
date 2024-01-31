@@ -28,6 +28,11 @@
         @import './components/header/headerMenu/headerMenuPanel.scss';
         @import './components/header/headerMenu/addPost.scss';
         @import './components/header/headerMenu/userSettingsPanel.scss';
+        
+            // addPost
+            @import './components/header/headerMenu/addPost/addPostInnerSection.scss';
+            @import './components/header/headerMenu/addPost/addPostText.scss';
+
     
     // post
     @import './components/post/post.scss';
