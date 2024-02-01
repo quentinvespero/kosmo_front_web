@@ -1,7 +1,7 @@
 .profileButton{
     @include buttonBehavior($white2, .95, .1s);
     @include flexVerticalCentered(row);
-    padding: 0.3rem .8rem 0.3rem 0.4rem;
+    padding: 0.3rem .7rem 0.3rem 0.3rem;
     border-radius: 3rem;
     column-gap: .5rem;
     white-space: pre;

@@ -31,7 +31,7 @@
         font-size: .7rem;
         border-radius: 3rem;
         @include transparent($transparentGrey5, $blur3);
-        color: $white5;
+        color: $white3;
 
         .characterCount-text{
             animation: slideFromLeft_characterCountText .4s ease-in-out;

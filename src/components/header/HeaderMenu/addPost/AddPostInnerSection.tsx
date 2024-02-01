@@ -10,10 +10,6 @@ const AddPostInnerSection:React.FC<AddPostInnerSectionProps> = ({addPostSelected
     
     const isDraftTrue = addPostSelectedInnerSection === 'draft'
 
-    const displayPropertySection1 = delayHidingElementDisplayProperty(!isDraftTrue, 0)
-    const displayPropertySection2 = delayHidingElementDisplayProperty(isDraftTrue, 0)
-
-
     return (
         <div className='addPostInnerSection'>
             <div 
@@ -22,7 +18,7 @@ const AddPostInnerSection:React.FC<AddPostInnerSectionProps> = ({addPostSelected
             >
                 <AddPostText addPostSelectedInnerSection={addPostSelectedInnerSection} />
                 <AddPostMedia addPostSelectedInnerSection={addPostSelectedInnerSection} />
-                {addPostSelectedInnerSection === 'poll' && <AddPostPoll addPostSelectedInnerSection={addPostSelectedInnerSection} />}
+                {/* {addPostSelectedInnerSection === 'poll' && <AddPostPoll addPostSelectedInnerSection={addPostSelectedInnerSection} />} */}
             </div>
             <div 
                 className={`addPostInnerSection-section2 ${isDraftTrue ? 'addPostInnerSection-open' : 'addPostInnerSection-closed'}`} 

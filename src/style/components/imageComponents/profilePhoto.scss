@@ -2,9 +2,12 @@
     display: flex;
     
     & > img {
-        width: 1.1rem;
-        height: 1.1rem;
+        width: 1rem;
+        height: 1rem;
         border-radius: 2rem;
-        filter: drop-shadow($shadow1);
+        // filter: drop-shadow($shadow6);
+        // border: $border1;
+        // box-shadow: $shadow1;
+        border: $border4;
     }
 }

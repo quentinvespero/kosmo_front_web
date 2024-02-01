@@ -1,8 +1,17 @@
 .addPostButton2{
-    content: url('/src/assets/plus.svg');
-    width: .7rem;
-    height: .7rem;
-    padding: .4rem;
+    // content: url('/src/assets/plus.svg');
+    @include flexVerticalCentered(row);
+    padding: .35rem .6rem;
     border-radius: 2rem;
     @include buttonBehavior($white2, .95, .1s);
+    color: $grey2;
+    font-size: .8rem;
+    column-gap: .5rem;
+    font-weight: 600;
+    height: 1rem;
+
+    & img {
+        width: .75rem;
+        height: .75rem;
+    }
 }

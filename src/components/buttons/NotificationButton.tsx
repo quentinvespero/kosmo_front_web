@@ -42,7 +42,8 @@ const NotificationButton:React.FC<NotificationButtonProps & HandleClickHeaderMen
 
     return (
         <div className='notificationButton' onClick={() => handleClick && handleClick('notification')}>
-            <div className="notificationButton-bell"></div>
+            {/* <div className="notificationButton-bell"></div> */}
+            <img className="notificationButton-bell" src="/src/assets/icons/icon_bell_grey2.svg" alt="" />
             {isNewNotification && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>}
             {/* <div className='notificationButton-true'></div> */}
             {/* {notifications && notifications.length > 0 && <NotificationPanel notifications={notifications}/>} */}

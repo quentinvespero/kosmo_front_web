@@ -4,10 +4,11 @@
     border-radius: 2rem;
     @include buttonBehavior($white2, .95, .1s);
     position: relative;
-    column-gap: .3rem;
+    column-gap: .4rem;
+    // height: 1rem;
 
     & .notificationButton-bell{
-        content: url('/src/assets/bell2.svg');
+        // content: url('/src/assets/bell2.svg');
         width: .8rem;
         height: .8rem;
     }

@@ -17,7 +17,7 @@
         border-radius: 1rem;
         box-shadow: $shadow2;
         @include flexVerticalCentered(row);
-        column-gap: 1rem;
+        column-gap: .8rem;
         align-self: flex-end;
         @include transparent($transparentGrey1, $blur2);
         border: $border1;
