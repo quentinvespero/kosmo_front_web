@@ -18,14 +18,14 @@ const PointCounter:React.FC<PointCounterProps & ScreenProps> = ({screenFormat, i
     //     }
     // }, [isHidden])
 
-    const displayProperty2 = delayHidingElementDisplayProperty(!isHidden, 170)
+    const displayProperty = delayHidingElementDisplayProperty(!isHidden, 170)
 
     return (
         <div 
             className={`pointCounter ${isHidden ? 'pointCounter-hidden' : 'pointCounter-visible'}`}
             style={{
                 alignSelf: screenFormat === 'mobile' ? 'center' : '',
-                display: displayProperty2
+                display: displayProperty
                 // animation: screenFormat === 'mobile' && isSearchFieldSelectedOnMobile ? 'slideFromRight2 .7s ease-in-out' : ''
                 // animation: screenFormat === 'mobile' && isVisible ? 'slideFromRight2 .7s ease-in-out' : ''
             }}    

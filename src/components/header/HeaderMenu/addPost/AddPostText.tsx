@@ -30,9 +30,9 @@ const AddPostText:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSec
                 value={postText}
                 maxLength={maxCharacter}
                 onChange={handleTextChange}
-                style={{paddingBottom: usedCharacters > 450 ? '1.8rem' : ''}}
+                style={{paddingBottom: usedCharacters > 449 ? '1.8rem' : ''}}
             ></textarea>
-            {usedCharacters > 450 && 
+            {usedCharacters > 449 && 
                 <div 
                     className="characterCount"
                     style={{background: usedCharacters === 500 ? '#972d3b' : ''}}

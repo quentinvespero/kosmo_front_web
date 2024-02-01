@@ -4,6 +4,13 @@
     font-size: .7rem;
     height: 3rem;
     margin-top: .3rem;
-    box-shadow: $innerShadow3;
-    @include buttonBehavior($grey4, .97, .2s)
+    // box-shadow: $innerShadow3;
+    @include buttonBehavior($grey2, .97, .2s)
+}
+
+.addPostMedia-open{
+    animation: slideFromTop .4s ease-in-out;
+}
+.addPostMedia-closed{
+    animation: verticalSlide1 .3s ease-in-out;
 }
