@@ -4,6 +4,7 @@ import FollowButton from '../buttons/FollowButton'
 import PointCounter from '../header/PointCounter'
 import jsondata from '../../assets/bdd.json'
 import { ScreenProps } from '../../interfaces/interfaces'
+import ProfilePhoto from '../imageComponents/ProfilePhoto'
 
 const Profile:React.FC<ScreenProps> = ({screenFormat}) => {
 
@@ -20,7 +21,8 @@ const Profile:React.FC<ScreenProps> = ({screenFormat}) => {
                 <div className="profile-innerSection1">
                     <div className="profile-innerSection1-top">
                         <div className="profile-innerSection1-imageAndCounter">
-                            <img src={profilePictureUrl} alt="profilePicture" />
+                            {/* <img src={profilePictureUrl} alt="profilePicture" /> */}
+                            <ProfilePhoto imagePath={profilePictureUrl}/>
                             <PointCounter/>
                         </div>
                         <div className="profile-name">
