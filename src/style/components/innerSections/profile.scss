@@ -9,7 +9,7 @@
         display: flex;
         flex-direction: column;
         row-gap: .5rem;
-
+        
         & .profile-innerSection1 {
             background: $grey2;
             padding: 2rem;
@@ -17,6 +17,7 @@
             display: flex;
             flex-direction: column;
             row-gap: 2.2rem;
+            border: $border1;
 
             & .profile-innerSection1-top {
                 display: flex;

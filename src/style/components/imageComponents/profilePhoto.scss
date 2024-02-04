@@ -1,13 +1,31 @@
-.profilePhoto{
-    display: flex;
+// css rules for profilePhoto in HeaderMenu
+.profileButton {
+
+    .profilePhoto {
+        display: flex;
+        
+        & > img {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 2rem;
+            // filter: drop-shadow($shadow6);
+            // border: $border1;
+            // box-shadow: $shadow1;
+            border: $border4;
+        }
+    }
+}
+
+// css rules for profilePhoto in Profile
+.profile-innerSection1-imageAndCounter {
     
-    & > img {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 2rem;
-        // filter: drop-shadow($shadow6);
-        // border: $border1;
-        // box-shadow: $shadow1;
-        border: $border4;
+    & .profilePhoto {
+
+        & img {
+            width: 6rem;
+            // height: 2rem;
+            border-radius: 3rem;
+            border: $border3;
+        }
     }
 }
