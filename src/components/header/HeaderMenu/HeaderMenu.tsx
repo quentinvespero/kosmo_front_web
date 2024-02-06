@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HeaderMenuProps } from '../../../interfaces/headerInterfaces'
+// import { HeaderMenuProps } from '../../../interfaces/headerInterfaces'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import PointCounter from '../PointCounter'
 import NotificationButton from '../../buttons/NotificationButton'
@@ -7,6 +7,7 @@ import AddPostButton2 from '../../buttons/AddPostButton2'
 import ProfileButton from '../../buttons/ProfileButton'
 import HeaderMenuPanel from './HeaderMenuPanel'
 import ExpandButton from '../../buttons/ExpandButton'
+import { HeaderMenuProps } from '../../../interfaces/headerMenuInterfaces'
 
 type SelectedElement = "" | "notification" | "addPost" | "user"
 

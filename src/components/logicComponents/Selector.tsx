@@ -5,6 +5,7 @@ const Selector:React.FC<SelectorProps> = ({headerMenuPanelSelectedElement, setHe
 
     const handleClick = (valueClicked:'addPost'|'notification'|'user') => {
         if (setHeaderMenuPanelSelectedElement) {
+            console.log(valueClicked)
             setHeaderMenuPanelSelectedElement(valueClicked)
         }   
     }

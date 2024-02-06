@@ -1,7 +1,8 @@
 import React from 'react'
 import ButtonWithIcon from '../../buttons/ButtonWithIcon'
+import { HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
 
-const UserSettingsPanel = () => {
+const UserSettingsPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelSelectedElement}) => {
     return (
         <div className='userSettingsPanel'>
             <ButtonWithIcon buttonText='userSettings-manage_feeds' buttonIcon='icon_manageFeeds_white2'/>

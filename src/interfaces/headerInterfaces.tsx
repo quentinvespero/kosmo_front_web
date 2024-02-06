@@ -8,19 +8,19 @@ export interface HeaderProps {
     currentPage?: HomeProps['currentPage']
 }
 
-export interface HeaderMenuProps {
+// export interface HeaderMenuProps {
     
-}
-export interface HeaderMenuPanelProps {
-    headerMenuPanelOpen: boolean
-    headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user' | ''
-    setHeaderMenuPanelOpen?: (type:boolean) => void
-    setHeaderMenuPanelSelectedElement?: (type:'notification' | 'addPost' | 'user' | '') => void
-}
+// }
+// export interface HeaderMenuPanelProps {
+//     headerMenuPanelOpen: boolean
+//     headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user' | ''
+//     setHeaderMenuPanelOpen?: (type:boolean) => void
+//     setHeaderMenuPanelSelectedElement?: (type:'notification' | 'addPost' | 'user' | '') => void
+// }
 
-export interface NotificationPanelProps {
-    notificationsContent?: string[]
-}
+// export interface NotificationPanelProps {
+//     notificationsContent?: string[]
+// }
 
 export interface SearchFieldProps {
     // below, this is the type of setIsSearchFieldSelectedOnMobile 🤷🏻‍♂️

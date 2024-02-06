@@ -1,7 +1,8 @@
 import React from 'react'
-import { NotificationPanelProps } from '../../../interfaces/headerInterfaces'
+// import { NotificationPanelProps } from '../../../interfaces/headerInterfaces'
+import { HeaderMenuPanelProps, NotificationPanelProps } from '../../../interfaces/headerMenuInterfaces'
 
-const NotificationPanel:React.FC<NotificationPanelProps> = ({notificationsContent}) => {
+const NotificationPanel:React.FC<NotificationPanelProps & HeaderMenuPanelProps> = ({notificationsContent}) => {
     return (
         <div className='notificationPanel'>
             <div className="notificationPanel-element">

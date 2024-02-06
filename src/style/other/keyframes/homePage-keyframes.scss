@@ -340,15 +340,16 @@
 @keyframes verticalSlide4 {
     0% {
         opacity: 0;
-        transform: translateY(-10rem);
-        // margin-bottom: -5rem;
+        transform: translateY(-1.5rem);
+        margin-bottom: -1.5rem;
     }
-    // 50%{
-    //     transform: translateY(.2rem);
-    // }
+    50%{
+        transform: translateY(.2rem);
+        margin-bottom: .2rem;
+    }
     100% {
         opacity: 1;
         transform: translateY(0);
-        // margin-bottom: 0rem;
+        margin-bottom: 0rem;
     }
 }

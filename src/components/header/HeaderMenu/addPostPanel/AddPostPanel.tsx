@@ -3,8 +3,9 @@ import ButtonWithIcon from '../../../buttons/ButtonWithIcon'
 import AddPostPanelInnerSection from './AddPostPanelInnerSection'
 import AddPostPanelSectionButton from './AddPostPanelButton'
 import { AddPostPanelInnerSectionProps } from '../../../../interfaces/addPostPanelInterfaces'
+import { HeaderMenuPanelProps } from '../../../../interfaces/headerMenuInterfaces'
 
-const AddPostPanel = () => {
+const AddPostPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelSelectedElement}) => {
 
     const [addPostPanelSelectedInnerSection, setAddPostPanelSelectedInnerSection] = useState<AddPostPanelInnerSectionProps['addPostPanelSelectedInnerSection']>('text')
 
