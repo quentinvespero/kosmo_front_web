@@ -20,15 +20,9 @@
     & .headerMenuPanel-elements{
         padding: .7rem;
         background: $transparentGrey8;
-        // background: $grey4;
         border-radius: .7rem;
         box-shadow: $shadow5;
-
-        & .headerMenuPanel-user {
-            animation: slideFromTop .4s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
+        animation: verticalSlide3 .4s ease-in-out;
     }
 }
 

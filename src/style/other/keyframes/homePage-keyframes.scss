@@ -336,3 +336,19 @@
     }
 }
 
+// animation for panels notification/addPost/user in HeaderMenu panel
+@keyframes verticalSlide3 {
+    0% {
+        opacity: 0;
+        transform: translateY(-10rem);
+        // margin-bottom: -5rem;
+    }
+    // 50%{
+    //     transform: translateY(.2rem);
+    // }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        // margin-bottom: 0rem;
+    }
+}
