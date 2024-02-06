@@ -1,4 +1,4 @@
-.addPostDraft{
+.addPostPanelDraft{
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -8,7 +8,7 @@
     width: 100%;
     border-radius: .5rem;
 
-    & .addPostDraft-items{
+    & .addPostPanelDraft-items{
         padding: .5rem .7rem;
         @include buttonBehavior($grey2, .95, .1s);
         border-radius: .5rem;

@@ -22,7 +22,9 @@
         background: $transparentGrey8;
         border-radius: .7rem;
         box-shadow: $shadow5;
-        animation: verticalSlide3 .4s ease-in-out;
+    }
+    & .headerMenuPanel-elements-open{
+        animation: verticalSlide4 .4s ease-in-out;
     }
 }
 

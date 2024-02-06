@@ -1,26 +1,25 @@
-.addPostInnerSection{
+.addPostPanelInnerSection{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    // row-gap: 1rem;
 
-    .addPostInnerSection-section1 {
+    .addPostPanelInnerSection-section1 {
         display: flex;
         flex-grow: 1;
         flex-direction: column;
         row-gap: .3rem;
     }
 
-    .addPostInnerSection-section2 {
+    .addPostPanelInnerSection-section2 {
         display: flex;
         // flex-grow: 1;
     }
 
-    .addPostInnerSection-open {
+    .addPostPanelInnerSection-open {
         animation: verticalSlide3 .3s ease-in-out;
         // animation-delay: .2s;
     }
-    .addPostInnerSection-closed {
+    .addPostPanelInnerSection-closed {
         // animation: verticalSlide2 .25s ease-in-out;
         // animation-delay: .2s;
     }

@@ -1,4 +1,4 @@
-.addPostMedia {
+.addPostPanelMedia {
     padding: 1rem;
     border-radius: .5rem;
     font-size: .7rem;
@@ -8,9 +8,9 @@
     @include buttonBehavior($grey2, .97, .2s)
 }
 
-.addPostMedia-open{
+.addPostPanelMedia-open{
     animation: slideFromTop .4s ease-in-out;
 }
-.addPostMedia-closed{
+.addPostPanelMedia-closed{
     animation: verticalSlide1 .3s ease-in-out;
 }

@@ -24,7 +24,7 @@
 }
 
 // used for the photo/video/poll buttons in headerMenu
-.buttonWithIcon-addPostSectionButton{
+.buttonWithIcon-addPostPanelSectionButton{
     @include flexVerticalCentered(column);
     @include buttonBehavior2($grey4, .9, .1s);
     row-gap: .5rem;
@@ -39,7 +39,7 @@
 }
 
 // used for the blue post button in headerMenu
-.buttonWithIcon-addPostSectionBottomPost{
+.buttonWithIcon-addPostPanelSectionBottomPost{
     @include flexVerticalCentered(row-reverse);
     @include buttonBehavior($blue, .95, .1s);
     column-gap: .5rem;
@@ -49,7 +49,7 @@
     font-weight: 700;
 }
 
-.buttonWithIcon-addPostSectionBottomDraft{
+.buttonWithIcon-addPostPanelSectionBottomDraft{
     @include flexVerticalCentered(row-reverse);
     @include buttonBehavior2($grey4, .95, .1s);
     padding: .4rem .6rem;

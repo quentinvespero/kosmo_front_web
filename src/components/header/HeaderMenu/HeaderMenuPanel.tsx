@@ -3,14 +3,17 @@ import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
 import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './NotificationPanel'
-import AddPost from './addPost/AddPost'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 import UserSettingsPanel from './UserSettingsPanel'
+import AddPostPanel from './addPostPanel/AddPostPanel'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen, setHeaderMenuPanelSelectedElement}) => {
 
     // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden by 200ms
     const displayProperty = delayHidingElementDisplayProperty(headerMenuPanelOpen, 200)
+
+    // function for showing/hiding elements (notification, addPost, userSettings) in the headerMenuPanel-elements
+    // const displayProperty2 = delayHidingElementDisplayProperty(headerMenuPanelOpen, 200)
 
     return (
         <div 
@@ -18,8 +21,12 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             style={{display: displayProperty}}
         >
             <Selector headerMenuPanelSelectedElement={headerMenuPanelSelectedElement} setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}/>
-            <div className="headerMenuPanel-elements">
-                {headerMenuPanelSelectedElement ==='addPost' && <AddPost/>}
+            <div 
+                className="headerMenuPanel-elements"
+                // className={`headerMenuPanel-elements ${}`}
+                // style={{display:displayProperty2}}
+            >
+                {headerMenuPanelSelectedElement ==='addPost' && <AddPostPanel/>}
                 {headerMenuPanelSelectedElement ==='notification' && <NotificationPanel/>}
                 {headerMenuPanelSelectedElement ==='user' && <UserSettingsPanel/>}
             </div>

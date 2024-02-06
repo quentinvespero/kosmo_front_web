@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { AddPostInnerSectionProps } from '../../../../interfaces/addPostInterfaces'
+import { AddPostPanelInnerSectionProps } from '../../../../interfaces/addPostPanelInterfaces'
 
-const AddPostText:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSection}) => {
+const AddPostPanelText:React.FC<AddPostPanelInnerSectionProps> = ({addPostPanelSelectedInnerSection}) => {
 
     // the amount of characters tat can be used to make a post
     const maxCharacter = 500
@@ -23,7 +23,7 @@ const AddPostText:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSec
     }
 
     return (
-        <div className='addPostText'>
+        <div className='addPostPanelText'>
             <textarea
                 name="test"
                 placeholder='express yourself here..'
@@ -45,4 +45,4 @@ const AddPostText:React.FC<AddPostInnerSectionProps> = ({addPostSelectedInnerSec
     )
 }
 
-export default AddPostText
+export default AddPostPanelText

@@ -28,13 +28,13 @@
         @import './components/header/headerMenu/headerMenuPanel.scss';
         @import './components/header/headerMenu/userSettingsPanel.scss';
         
-            // addPost
-            @import './components/header/headerMenu/addPost/addPost.scss';
-            @import './components/header/headerMenu/addPost/addPostDraft.scss';
-            @import './components/header/headerMenu/addPost/addPostInnerSection.scss';
-            @import './components/header/headerMenu/addPost/addPostText.scss';
-            @import './components/header/headerMenu/addPost/addPostMedia.scss';
-            @import './components/header/headerMenu/addPost/addPostPoll.scss';
+            // addPostPanel
+            @import './components/header/headerMenu/addPostPanel/addPostPanel.scss';
+            @import './components/header/headerMenu/addPostPanel/addPostPanelDraft.scss';
+            @import './components/header/headerMenu/addPostPanel/addPostPanelInnerSection.scss';
+            @import './components/header/headerMenu/addPostPanel/addPostPanelText.scss';
+            @import './components/header/headerMenu/addPostPanel/addPostPanelMedia.scss';
+            @import './components/header/headerMenu/addPostPanel/addPostPanelPoll.scss';
     
     // post
     @import './components/post/post.scss';
