@@ -21,14 +21,10 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             style={{display: displayProperty}}
         >
             <Selector headerMenuPanelSelectedElement={headerMenuPanelSelectedElement} setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}/>
-            <div 
-                className="headerMenuPanel-elements"
-                // className={`headerMenuPanel-elements ${}`}
-                // style={{display:displayProperty2}}
-            >
-                {headerMenuPanelSelectedElement ==='addPost' && <AddPostPanel/>}
-                {headerMenuPanelSelectedElement ==='notification' && <NotificationPanel/>}
-                {headerMenuPanelSelectedElement ==='user' && <UserSettingsPanel/>}
+            <div className="headerMenuPanel-elements">
+                <AddPostPanel/>
+                <NotificationPanel/>
+                <UserSettingsPanel/>
             </div>
             {/* <CloseButton setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/> */}
         </div>
