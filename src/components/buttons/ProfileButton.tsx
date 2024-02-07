@@ -40,8 +40,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             `}
             // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
             onClick={
-                // () => handleClick && locationContext === 'headerMenu' && handleClick('user')
-                () => handleClick && locationContext === 'headerMenu' ? handleClick('user') : handleClick('user')
+                () => handleClick && locationContext === 'headerMenu' && handleClick('user')
             }
         >
             {locationContext !== 'feedSelector' &&

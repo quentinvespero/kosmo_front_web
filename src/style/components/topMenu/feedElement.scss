@@ -1,10 +1,11 @@
 & .feedElement{
     padding: .5rem 1rem;
     border-radius: 3rem;
-    cursor: pointer;
-    @include transition(.1s);
+    // cursor: pointer;
+    // @include transition(.1s);
     white-space: pre;
     display: flex;
+    @include buttonBehavior2($grey1, .95, .1s);
     
     &:hover{
         background: $grey1;

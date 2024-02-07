@@ -15,25 +15,25 @@ const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat,
         <div className='feedSelector' style={{
             flexWrap: screenFormat === 'mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
         }}>
-            {/* <div 
+            <div 
                 className={`feedElements feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`} 
                 onClick={() => handleFeedChoice('profile')}
             >
                 {screenFormat != 'mobile' && 'Profile'}
-            </div> */}
-            <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/>
+            </div>
+            {/* <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/> */}
             {jsonData && 
             jsonData.feeds.length > 0 &&
             jsonData.feeds.map((feed) => (
-                <div
-                    key={feed._id}
-                    className={`feedElements ${feed._id} ${selectedFeed === feed._id ? 'feedElements-selected' : ''}`}
-                    onClick={() => handleFeedChoice(feed._id)}
-                >
-                    {feed.name}
-                </div>
+                <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed} feedData={feed}/>
+                // <div
+                //     key={feed._id}
+                //     className={`feedElements ${feed._id} ${selectedFeed === feed._id ? 'feedElements-selected' : ''}`}
+                //     onClick={() => handleFeedChoice(feed._id)}
+                // >
+                //     {feed.name}
+                // </div>
             ))}
-            <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed}/>
         </div>
     )
 }

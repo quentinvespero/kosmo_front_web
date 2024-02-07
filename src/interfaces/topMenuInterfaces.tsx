@@ -1,3 +1,4 @@
+import { DatasInterfaces, Feed } from "./datasInterfaces"
 import { ScreenProps } from "./interfaces"
 
 // DesktopMenu component props
@@ -19,5 +20,6 @@ export interface FeedSelectorProps {
 export interface FeedElementProps {
     handleClick: (selectedElement:string) => void
     selectedFeed: FeedSelectorProps['selectedFeed']
-    
+    feedData: Feed
+    // feedData: DatasInterfaces['feeds']
 }

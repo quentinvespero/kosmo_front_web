@@ -60,7 +60,7 @@
     }
 
 // --- feed
-    interface Feed {
+    export interface Feed {
         _id: string
         name: string
         private: boolean
