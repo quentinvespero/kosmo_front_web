@@ -21,6 +21,7 @@ const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat,
             >
                 {screenFormat != 'mobile' && 'Profile'}
             </div>
+            <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed}/>
             {/* <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/> */}
             {jsonData && 
             jsonData.feeds.length > 0 &&
