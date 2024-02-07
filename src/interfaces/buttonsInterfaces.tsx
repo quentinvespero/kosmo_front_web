@@ -1,4 +1,5 @@
-import { HeaderMenuPanelProps } from "./headerInterfaces"
+// import { HeaderMenuPanelProps } from "./headerInterfaces"
+import { HandleClickHeaderMenuButtonsInterface, HeaderMenuPanelProps } from "./headerMenuInterfaces"
 import { FeedSelectorProps, ScreenProps } from "./interfaces"
 
 // buttonType1 props
@@ -57,7 +58,7 @@ export interface ProfileButtonProps {
     handleFeedChoice?: () => void
     locationContext: 'feedSelector' | 'headerMenu' | 'post'
     // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
-    handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
+    handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
 export interface AddPostButton2Props {
@@ -81,11 +82,11 @@ export interface CloseButtonProps {
 }
 
 // interface for all the buttons in the headerMenu
-export interface HandleClickHeaderMenuButtonsInterface {
-    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
-}
+// export interface HandleClickHeaderMenuButtonsInterface {
+//     handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+// }
 
-export interface ExpandButtonProps {
-    headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
-    setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
-}
+// export interface ExpandButtonProps {
+//     headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
+//     setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
+// }

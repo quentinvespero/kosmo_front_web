@@ -38,10 +38,10 @@
     & .feedElements-profile-selected:hover{
         background: $grey4;
     }
-    & .feedElements-profile::before{
-        content: url('../assets/profile.svg');
-        height: 0.7rem;
-    }
+    // & .feedElements-profile::before{
+    //     content: url('../assets/profile.svg');
+    //     height: 0.7rem;
+    // }
 
 
     & .feedElements-selected{

@@ -1,6 +1,8 @@
 import React from 'react'
-import { FeedSelectorProps, ScreenProps } from '../interfaces/interfaces'
-import jsonData from '../../src/assets/bdd.json'
+import { FeedSelectorProps, ScreenProps } from '../../interfaces/interfaces'
+import jsonData from '../../assets/bdd.json'
+import ProfileButton from '../buttons/ProfileButton'
+import FeedElement from './FeedElement'
 
 const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed }) => {
 
@@ -13,12 +15,13 @@ const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat,
         <div className='feedSelector' style={{
             flexWrap: screenFormat === 'mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
         }}>
-            <div 
+            {/* <div 
                 className={`feedElements feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`} 
                 onClick={() => handleFeedChoice('profile')}
             >
                 {screenFormat != 'mobile' && 'Profile'}
-            </div>
+            </div> */}
+            <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/>
             {jsonData && 
             jsonData.feeds.length > 0 &&
             jsonData.feeds.map((feed) => (
@@ -30,6 +33,7 @@ const FeedSelector: React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat,
                     {feed.name}
                 </div>
             ))}
+            <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed}/>
         </div>
     )
 }

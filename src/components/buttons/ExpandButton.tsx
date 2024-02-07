@@ -1,5 +1,6 @@
 import React from 'react'
-import { ExpandButtonProps, HandleClickHeaderMenuButtonsInterface } from '../../interfaces/buttonsInterfaces'
+import { ExpandButtonProps } from '../../interfaces/headerMenuInterfaces'
+// import { ExpandButtonProps, HandleClickHeaderMenuButtonsInterface } from '../../interfaces/buttonsInterfaces'
 
 const ExpandButton:React.FC<ExpandButtonProps> = ({headerMenuPanelOpen, setHeaderMenuPanelOpen}) => {
 

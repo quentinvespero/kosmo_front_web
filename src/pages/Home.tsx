@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/header/Header'
-import TopMenu from '../components/TopMenu'
+import TopMenu from '../components/topMenu/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'

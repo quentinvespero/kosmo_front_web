@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { ScreenProps } from '../../interfaces/interfaces'
-import { HandleClickHeaderMenuButtonsInterface, ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
+// import { HandleClickHeaderMenuButtonsInterface, ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
+import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
+import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 
 const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick}) => {
 
@@ -18,26 +20,29 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     }, [])
 
     // in the context of profileButton being in the feedSelector, can be used to change the value of selectedFeed
-    const handleFeedChoice = (feedId: string) => {
-        if (setSelectedFeed) {
-            setSelectedFeed(feedId)
-        }
-    }
+    // const handleFeedChoice = (feedId: string) => {
+    //     if (setSelectedFeed) {
+    //         setSelectedFeed(feedId)
+    //     }
+    // }
 
     // function that will be used to display a menu under it in the headerMenu, that will display some quick parameters/others. Such as toggling night/light mode, and all..
-    const showingPanelMenu = () => {
+    // const showingPanelMenu = () => {
 
-    }
+    // }
 
     return (
         <div 
             className={`profileButton
-                ${locationContext === 'feedSelector' && `feedElements feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`}
+                ${locationContext === 'feedSelector' && `feedElements profileButton-feedSelector feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`}
                 ${locationContext === 'headerMenu' && 'profileButton-headerMenu'}
                 ${locationContext === 'post' && 'profileButton-post'}
             `}
             // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
-            onClick={() => handleClick && handleClick('user')}
+            onClick={
+                // () => handleClick && locationContext === 'headerMenu' && handleClick('user')
+                () => handleClick && locationContext === 'headerMenu' ? handleClick('user') : handleClick('user')
+            }
         >
             {locationContext !== 'feedSelector' &&
             <ProfilePhoto 

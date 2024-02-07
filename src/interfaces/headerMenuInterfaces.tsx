@@ -15,3 +15,13 @@ export interface NotificationPanelProps {
 export interface HeaderMenuPanelElementProps {
     elementType: HeaderMenuPanelProps['headerMenuPanelSelectedElement']
 }
+
+// interface for all the buttons in the headerMenu
+export interface HandleClickHeaderMenuButtonsInterface {
+    handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+}
+
+export interface ExpandButtonProps {
+    headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
+    setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
+}

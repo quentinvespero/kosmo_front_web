@@ -1,4 +1,15 @@
 .profileButton{
+    // @include buttonBehavior($white2, .95, .1s);
+    // @include flexVerticalCentered(row);
+    // padding: 0.3rem .7rem 0.3rem 0.3rem;
+    // border-radius: 3rem;
+    // column-gap: .5rem;
+    // white-space: pre;
+    // font-size: .8rem;
+    // color: $grey2;
+    // font-weight: 700;
+}
+.profileButton-headerMenu{
     @include buttonBehavior($white2, .95, .1s);
     @include flexVerticalCentered(row);
     padding: 0.3rem .7rem 0.3rem 0.3rem;
@@ -15,20 +26,26 @@
 .feedElements-profile-selected:hover{
     background: $grey4;
 }
-// .profileButton::before {
-//     content: '';
-//     background: url('/src/assets/icons/profile_icon_grey2.svg') no-repeat center center;
-//     height: .8rem;
-//     width: .8rem;
-//     background-size: contain;
+
+// .feedElements-profile::before{
+//     content: url('/src/assets/icons/profile_icon_white2.svg');
+//     height: 0.7rem;
 // }
-.feedElements-profile::before{
-    content: url('/src/assets/icons/profile_icon_white2.svg');
-    height: 0.7rem;
-}
 
 .profileButton-post{
-    @include buttonBehavior($grey2, .95, .15s);
+    @include buttonBehavior2($grey2, .95, .15s);
     align-self: flex-start;
     color: $white1;
+    
+    @include flexVerticalCentered(row);
+    padding: 0.3rem .7rem 0.3rem 0.3rem;
+    border-radius: 3rem;
+    column-gap: .5rem;
+    white-space: pre;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.profileButton-feedSelector{
+    // background: $grey3;
 }

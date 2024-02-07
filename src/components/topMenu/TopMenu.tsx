@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import SearchField from './header/SearchField'
+import SearchField from '../header/SearchField'
 import FeedSelector from './FeedSelector'
-import { ScreenProps, TopMenuProps } from '../interfaces/interfaces'
+import { ScreenProps, TopMenuProps } from '../../interfaces/interfaces'
 
 const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed}) => {
 

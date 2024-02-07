@@ -98,12 +98,12 @@ export interface ScreenProps {
 export interface FeedSelectorProps {
     screenFormat?: ScreenProps['screenFormat']
     topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
-    selectedFeed: string
+    selectedFeed: 'profile' | string
     setSelectedFeed: (selectedFeed:string) => void
 }
 
 export interface InnerSectionProps {
-    selectedFeed?: string
+    selectedFeed?: FeedSelectorProps['selectedFeed']
 }
 
 // props redundant that can be used everywhere in the app

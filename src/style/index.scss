@@ -52,10 +52,6 @@
     @import './components/rightPanel/rightPanel.scss';
     @import './components/rightPanel/trendSection.scss';
     @import './components/rightPanel/suggestionSection.scss';
-    
-    @import './components/feed.scss';
-    @import './components/feedSelector.scss';
-    @import './components/topMenu.scss';
 
     // innerSections
     @import './components/innerSections/profile.scss';
@@ -69,6 +65,14 @@
 
     // logicComponents
     @import './components/logicComponents/selector.scss';
+
+    // topMenu
+    @import './components/topMenu/feedSelector.scss';
+    @import './components/topMenu/topMenu.scss';
+
+    @import './components/feed.scss';
+    // @import './components/feedSelector.scss';
+    // @import './components/topMenu.scss';
 
 // pages
 
