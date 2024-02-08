@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 // import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
 import CloseButton from '../../buttons/CloseButton'
@@ -8,6 +8,7 @@ import UserSettingsPanel from './UserSettingsPanel'
 import AddPostPanel from './addPostPanel/AddPostPanel'
 import { HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
 import HeaderMenuPanelElement from './HeaderMenuPanelElement'
+import outsideClick from '../../../functions/outsideClick'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen, setHeaderMenuPanelSelectedElement}) => {
 
@@ -21,6 +22,7 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
         <div 
             className={`headerMenuPanel ${headerMenuPanelOpen ? 'headerMenuPanel-open' : 'headerMenuPanel-closed'}`}
             style={{display: displayProperty}}
+            // ref={ref}
         >
             <Selector headerMenuPanelSelectedElement={headerMenuPanelSelectedElement} setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}/>
             {/* <div className="headerMenuPanel-elements">

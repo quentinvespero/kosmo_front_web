@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 // import { HeaderMenuProps } from '../../../interfaces/headerInterfaces'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import PointCounter from '../PointCounter'
@@ -8,6 +8,7 @@ import ProfileButton from '../../buttons/ProfileButton'
 import HeaderMenuPanel from './HeaderMenuPanel'
 import ExpandButton from '../../buttons/ExpandButton'
 import { HeaderMenuProps } from '../../../interfaces/headerMenuInterfaces'
+import outsideClick from '../../../functions/outsideClick'
 
 type SelectedElement = "" | "notification" | "addPost" | "user"
 
@@ -19,6 +20,10 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
     // following state of the selected category/element in the panel menu (can be 'notification', 'others', maybe post creation..)
     const [headerMenuPanelSelectedElement, setHeaderMenuPanelSelectedElement] = useState<SelectedElement>('user')
 
+    // setting the ref element that will then be used as a parameter in the function outsideClick
+    const ref = useRef<HTMLDivElement>(null)
+
+    // function to handle the click on the buttons and show up the different sections of the headerMenu panel (notification, user, addPost)
     const handleClick = (selectedElement:SelectedElement) =>{
         if (headerMenuPanelSelectedElement === selectedElement) {
             setHeaderMenuPanelOpen(!headerMenuPanelOpen)
@@ -29,8 +34,14 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
         }
     }
 
+    // function to handle the click outside headerMenu (used with the ref property given to the div headerMenu), that will hide the headerMenuPanel
+    outsideClick(ref, () => setHeaderMenuPanelOpen(false))
+
     return (
-        <div className='headerMenu'>
+        <div 
+            className='headerMenu'
+            ref={ref}
+        >
             <div className="headerMenu-elements">
                 <AddPostButton2 handleClick={handleClick}/>
                 <NotificationButton handleClick={handleClick}/>
