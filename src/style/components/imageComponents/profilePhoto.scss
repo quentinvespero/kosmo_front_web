@@ -8,10 +8,8 @@
             width: 1rem;
             height: 1rem;
             border-radius: 2rem;
-            // filter: drop-shadow($shadow6);
-            // border: $border1;
-            // box-shadow: $shadow1;
-            border: $border4;
+            box-shadow: $shadow6;
+            border: $border5;
         }
     }
 }
@@ -20,11 +18,23 @@
 .profile-innerSection1-imageAndCounter {
     
     & .profilePhoto {
-
+        
         & img {
             width: 6rem;
-            border-radius: 3rem;
-            border: $border3;
+            border-radius: 6rem;
+            border: $border6;
+        }
+    }
+}
+
+// css rules for profilePhoto in FeedSelector
+.profileButton-feedSelector{
+    & .profilePhoto{
+        & img {
+            border: none;
+            border-radius: 0rem;
+            height: .9rem;
+            width: .9rem;
         }
     }
 }

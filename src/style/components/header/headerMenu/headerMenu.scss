@@ -22,9 +22,11 @@
         @include transparent($transparentGrey1, $blur2);
         border: $border1;
         @include transition(.15s);
+        height: 1.8rem;
 
         & > *{
-            box-shadow: $shadow1
+            box-shadow: $shadow1;
+            // height: 100%;
         }
     }
 }

@@ -20,12 +20,12 @@
     color: $grey2;
     font-weight: 700;
 }
-.feedElements-profile-selected{
-    background: $grey4;
-}
-.feedElements-profile-selected:hover{
-    background: $grey4;
-}
+// .feedElements-profile-selected{
+//     background: $grey4;
+// }
+// .feedElements-profile-selected:hover{
+//     background: $grey4;
+// }
 
 // .feedElements-profile::before{
 //     content: url('/src/assets/icons/profile_icon_white2.svg');
@@ -48,4 +48,6 @@
 
 .profileButton-feedSelector{
     // background: $grey3;
+    @include flexVerticalCentered(row);
+    column-gap: .7rem;
 }

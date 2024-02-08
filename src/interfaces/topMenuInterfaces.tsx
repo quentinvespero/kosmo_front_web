@@ -1,3 +1,4 @@
+import { ProfileButtonProps } from "./buttonsInterfaces"
 import { DatasInterfaces, Feed } from "./datasInterfaces"
 import { ScreenProps } from "./interfaces"
 
@@ -22,4 +23,5 @@ export interface FeedElementProps {
     selectedFeed: FeedSelectorProps['selectedFeed']
     feedData?: Feed
     // feedData: DatasInterfaces['feeds']
+    locationContext?:ProfileButtonProps['locationContext']
 }

@@ -34,30 +34,33 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     return (
         <div 
             className={`profileButton
-                ${locationContext === 'feedSelector' && `feedElements profileButton-feedSelector feedElements-profile ${selectedFeed === 'profile' ? 'feedElements-profile-selected' : ''}`}
+                ${locationContext === 'feedSelector' && 'profileButton-feedSelector'}
                 ${locationContext === 'headerMenu' && 'profileButton-headerMenu'}
                 ${locationContext === 'post' && 'profileButton-post'}
             `}
             // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
-            onClick={
-                () => handleClick && locationContext === 'headerMenu' && handleClick('user')
-            }
+            onClick={() => handleClick && locationContext === 'headerMenu' && handleClick('user')}
         >
-            {locationContext !== 'feedSelector' &&
-            <ProfilePhoto 
-                imagePath={userData && userData.users && userData.users[0].userAdditionalInformations.profilePicture || ''}
-            />
-            }
+
+                <ProfilePhoto 
+                    imagePath={
+                        userData && 
+                        locationContext !== 'feedSelector' 
+                            ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || '/src/assets/icons/profile_icon_white2.svg' 
+                            : '/src/assets/icons/profile_icon_white2.svg'
+                    }
+                />
+
             
-            {locationContext === 'headerMenu' 
-                ?
-                    userData &&
-                    userData.users &&
-                    screenFormat != 'mobile' && 
-                    userData.users[0].userBaseInformations.username
-                :
-                    locationContext === 'post' && 'userTest'
+            {/* below is the different text to display, depending on the context */}
+            {locationContext === 'headerMenu' && 
+                userData &&
+                userData.users &&
+                screenFormat != 'mobile' && 
+                userData.users[0].userBaseInformations.username
             }
+            {locationContext === 'feedSelector' && 'profile'}
+            {locationContext === 'post' && 'userTest'}
         </div>
     )
 }

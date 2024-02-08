@@ -1,36 +1,31 @@
-& .feedElement{
-    padding: .5rem 1rem;
+.feedElement{
+    @include buttonBehavior2($grey1, .95, .1s);
+    padding: .4rem 1rem;
     border-radius: 3rem;
     // cursor: pointer;
     // @include transition(.1s);
     white-space: pre;
     display: flex;
-    @include buttonBehavior2($grey1, .95, .1s);
-    
-    &:hover{
-        background: $grey1;
-    }
-    &:active{
-        transform: scale(.92);
-    }
 }
 
-& .feedElement-profile{
-    gap: 1rem;
-}
-& .feedElement-profile-selected{
-    background: $grey4;
-}
-& .feedElement-profile-selected:hover{
-    background: $grey4;
-}
+// .feedElement-profile{
+//     gap: 1rem;
+//     display: flex;
+//     flex-direction: row;
+// }
+// .feedElement-profile-selected{
+//     background: $grey4;
+// }
+// .feedElement-profile-selected:hover{
+//     background: $grey4;
+// }
 // & .feedElement-profile::before{
 //     content: url('../assets/profile.svg');
 //     height: 0.7rem;
 // }
 
 
-& .feedElement-selected{
+.feedElement-selected{
     background: $grey4;
     
     &:hover{
