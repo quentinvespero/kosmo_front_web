@@ -176,6 +176,9 @@ input[type="search"] {
 input[type="search"]::-webkit-search-cancel-button {
     display: none;
 }
+input:focus{
+    outline: none;
+}
 strong{
     font-weight: 800;
 }
