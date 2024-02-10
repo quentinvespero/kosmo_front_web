@@ -1,13 +1,15 @@
 .searchField{
     @include flexVerticalCentered(row);
     // width: 60%;
-    background: $grey4;
+    // background: $grey4;
+    background: $transparentGrey8;
     border-radius: 3.5rem;
     // border: .25rem solid $grey1;
-    transition: .5s ease-in-out;
-    color: $white;
+    // transition: .2s ease-in-out;
+    @include transition(.5s);
+    color: $white2;
     font-family: 'sen', Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     // padding: .5rem .6rem .5rem 1.3rem;
     padding: 0.4rem 0.5rem 0.4rem 1rem;
     // place-content: space-between;
@@ -15,6 +17,7 @@
     // transition: border .2s ease-in-out;
     // border: $border2;
     box-shadow: $innerShadow3;
+    // box-shadow: $shadow5;
 
     & .searchField:hover{
         // border: .25rem solid $grey2;
@@ -22,27 +25,25 @@
         
     // ----- input
     & input{
-        background: $grey4;
-        color: $white;
+        // background: $grey4;
+        background: $transparentMax;
+        color: $white2;
         font-family: 'sen', Arial, Helvetica, sans-serif;
         font-size: 1rem;
         max-width: 9.5rem;
         flex-grow: 1;
     }
-    & input:focus{
-        outline: none;
-        // background: $grey2;
-    }
 
     & input::placeholder{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-family: 'sen';
         color: $grey1;
     }
 
     // ----- textarea
     & textarea{
-        background: $grey4;
+        // background: $grey4;
+        background: $transparentGrey8;
         color: $white;
         font-family: 'sen';
         font-size: 1.2rem;

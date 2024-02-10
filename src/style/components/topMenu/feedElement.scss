@@ -1,5 +1,5 @@
 .feedElement{
-    @include buttonBehavior2($grey1, .95, .1s);
+    @include buttonBehavior2($grey2, .95, .1s);
     padding: .4rem 1rem;
     border-radius: 3rem;
     // cursor: pointer;

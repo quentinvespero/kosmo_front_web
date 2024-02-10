@@ -33,14 +33,15 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
 
     return (
         <div 
-            className='topMenu' 
+            // className='topMenu' 
+            className={`topMenu ${topmenuIsSticky && 'topMenu-sticky'}`} 
             style={{ 
-                position: topmenuIsSticky ? 'fixed' : 'relative', 
-                top: topmenuIsSticky ? '.5rem' : '0rem', 
+                // position: topmenuIsSticky ? 'fixed' : 'relative', 
+                // top: topmenuIsSticky ? '.5rem' : '0rem', 
                 margin: screenFormat==='mobile' && topmenuIsSticky ? '0rem .5rem' : '',
-                animation: topmenuIsSticky ? 'bounce .4s ease-in-out' : 'unset',
-                boxShadow: topmenuIsSticky ? '0rem 0rem 3rem #2C2C2C' : '',
-                background: topmenuIsSticky ? '#3C3C3Ca8' : '#3C3C3C',
+                // animation: topmenuIsSticky ? 'bounce .4s ease-in-out' : 'unset',
+                // boxShadow: topmenuIsSticky ? '0rem 0rem 3rem #2C2C2C' : '',
+                // background: topmenuIsSticky ? '#3C3C3Ca8' : '#3C3C3C',
                 maxWidth: topmenuIsSticky && screenFormat === 'mobile' ? '90%' : '',
                 borderRadius: screenFormat ==='mobile' ? '1rem' : '4rem',
                 padding: screenFormat ==='mobile' ? '.7rem' : '.25rem'
