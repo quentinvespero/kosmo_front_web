@@ -1,7 +1,13 @@
+import { DatasInterfaces, Post } from "./datasInterfaces"
 import { ScreenProps } from "./interfaces"
 
 export interface PostProps {
     postId: string
+    // isPostSelected?: boolean
+    
+    // props to prepare the usage of the id to check whether the id of the post is the same as the one already selected or not before changing the value of isPostSelected
+    idSelectedPost: Post['_id']
+    setIdSelectedPost: () => void
 }
 
 // post interactions - button Up / Down vote
@@ -38,3 +44,7 @@ export interface UpDownVoteElementsProps {
         isCountersBeingHide?: boolean
         setIsCountersBeingHide?: (isCountersBeingHide:boolean) => void
     }
+
+export interface PostContentProps {
+    isPostSelected:boolean
+}

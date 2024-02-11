@@ -10,3 +10,7 @@ export interface EntryPageProps {
     lightFadingDesktop?: boolean
     currentPage?: HomeProps['currentPage']
 }
+
+export interface BackgroundLayerProps {
+    isVisible: boolean
+}

@@ -12,5 +12,6 @@ export interface TrendSectionProps {
 
 // RightPanel component props
 export interface RightPanelProps {
-    // isVisible: boolean
+    isToggled?: boolean
+    
 }

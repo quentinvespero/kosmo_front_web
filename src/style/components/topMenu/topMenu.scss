@@ -19,4 +19,5 @@
     // background: ;
     // column-gap: .5rem;
     @include transparent($transparentGrey2, $blur2);
+    z-index: 10;
 }

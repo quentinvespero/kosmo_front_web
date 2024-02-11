@@ -7,7 +7,7 @@ import { RightPanelProps } from '../../interfaces/rightPanelInterfaces'
 import HideRightPanelButton from '../buttons/HideRightPanelButton'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
 
-const RightPanel:React.FC<RightPanelProps> = ({}) => {
+const RightPanel:React.FC<RightPanelProps> = ({isToggled }) => {
 
     const [datas, setDatas] = useState<RightPanelContent | null>(null)
 

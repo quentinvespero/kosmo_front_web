@@ -29,7 +29,7 @@
     }
 
 // --- post
-    interface Post {
+    export interface Post {
         _id:string
         author: string
         tags: string[]

@@ -25,7 +25,7 @@
     ],
     "posts": [
         {
-            "_id": "5f36dccf9bfr7694b4653c6a",
+            "_id": "5f36dccf9bfr7694b4653c6a1",
             "author": "user1",
             "tags": ["tag1", "tag2"],
             "content": {
@@ -40,7 +40,7 @@
             "interactionsSection": "interaction1"
         },
         {
-            "_id": "5f36dccf9bfr7694b4653c6a",
+            "_id": "5f36dccf9bfr7694b4653c6a2",
             "author": "user1",
             "tags": ["tag1", "tag2"],
             "content": {
@@ -55,7 +55,7 @@
             "interactionsSection": "interaction1"
         },
         {
-            "_id": "5f36dccf9bfr7694b4653c6a",
+            "_id": "5f36dccf9bfr7694b4653c6a3",
             "author": "user1",
             "tags": ["tag1", "tag2"],
             "content": {
@@ -70,7 +70,7 @@
             "interactionsSection": "interaction1"
         },
         {
-            "_id": "5f36dccf9bfr7694b4653c6a",
+            "_id": "5f36dccf9bfr7694b4653c6a4",
             "author": "user1",
             "tags": ["tag1", "tag2"],
             "content": {

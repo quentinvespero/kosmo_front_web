@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
+import BackgroundLayer from './pages/BackgroundLayer'
 
 const App = () => {
     // state to follow the current page displayed
@@ -14,6 +15,9 @@ const App = () => {
 
     // variable to follow if the device is in dark or light mode
     const [isDeviceInDarkMode, setIsDeviceInDarkMode] = useState(true)
+
+    // variable to follow the state of BackgroundLayer
+    const [isBackgroundLayerVIsible, setIsBackgroundLayerVIsible] = useState(false)
     
     // function to handle the change of the current page component to render
     const handlePageChange = () => {
@@ -70,6 +74,7 @@ const App = () => {
             {currentPage === 'home' && 
                 <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>
             }
+            <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
         </div>
     )
 }

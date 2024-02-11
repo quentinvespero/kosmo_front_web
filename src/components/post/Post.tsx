@@ -6,7 +6,7 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import { PostProps } from '../../interfaces/postInterfaces'
 import ProfileButton from '../buttons/ProfileButton'
 
-const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId }) => {
+const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost }) => {
 
     // ⬇ 31/12/23 - example of fetches to use when backend will be ready ⬇
 
@@ -37,14 +37,30 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId }) => {
     //         .then()
     // })
 
+    // follow state of the post being selected to show details of it
+    const [isPostSelected, setIsPostSelected] = useState(false)
+
+    const handleClick = () => {
+        if (postId !== idSelectedPost) {
+            setIsPostSelected(!isPostSelected)
+            setIdSelectedPost(postId)
+        }
+        else{
+            setIsPostSelected(!isPostSelected)
+        }
+    }
+
     return (
-        <div className='post'>
+        <div 
+            className={`post ${isPostSelected ? 'post-selected' : ''}`}
+            onClick={handleClick}
+        >
             <div className="innerPost" style={{
                 maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
             }}>
                 <ProfileButton locationContext='post'/>
                 <div className="innerPost-content">
-                    <PostContent/>
+                    <PostContent isPostSelected={isPostSelected}/>
                     <PostThemeElements/>
                 </div>
             </div>

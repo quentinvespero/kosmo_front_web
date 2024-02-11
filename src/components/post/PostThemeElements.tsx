@@ -6,7 +6,7 @@ const PostThemeElements = () => {
         <div className='postThemeElements'>
             <ButtonType1 interactionType='theme' buttonText='#theme1'/>
             <ButtonType1 interactionType='theme' buttonText='#thesdlkfme2'/>
-            <ButtonType1 interactionType='theme' buttonText='#zefheruhf'/>
+            {/* <ButtonType1 interactionType='theme' buttonText='#zefheruhf'/> */}
         </div>
     )
 }
