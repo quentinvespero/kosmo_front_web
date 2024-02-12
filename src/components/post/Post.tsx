@@ -42,18 +42,19 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
 
     const handleClick = () => {
         if (postId !== idSelectedPost) {
-            setIsPostSelected(!isPostSelected)
+            setIsPostSelected(true)
             setIdSelectedPost(postId)
         }
         else{
-            setIsPostSelected(!isPostSelected)
+            setIsPostSelected(false)
+            setIdSelectedPost('')
         }
     }
 
     return (
         <div 
             className={`post ${isPostSelected ? 'post-selected' : ''}`}
-            // onClick={handleClick}
+            onClick={handleClick}
         >
             <div className="innerPost" style={{
                 maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
