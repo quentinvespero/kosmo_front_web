@@ -8,7 +8,7 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
     const [datas, setDatas] = useState<DatasInterfaces | null>(null)
 
     // follow the state of the post being selected to show more details about it
-    const [idSelectedPost, setIdSelectedPost] = useState<DatasInterfaces|null>('')
+    const [idSelectedPost, setIdSelectedPost] = useState<string>('')
 
     useEffect(() => {
         fetch('src/assets/bdd.json')

@@ -7,7 +7,7 @@ export interface PostProps {
     
     // props to prepare the usage of the id to check whether the id of the post is the same as the one already selected or not before changing the value of isPostSelected
     idSelectedPost: Post['_id']
-    setIdSelectedPost: () => void
+    setIdSelectedPost: (type:string) => void
 }
 
 // post interactions - button Up / Down vote
