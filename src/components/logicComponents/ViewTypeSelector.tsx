@@ -1,19 +1,14 @@
 import React from 'react'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
+import ViewTypeButton from '../innerSections/innerSectionHome/ViewTypeButton'
 
 const ViewTypeSelector:React.FC<ViewTypeSelectorProps> = ({viewType, setViewType}) => {
-
-    const handleClick = () => {
-        // setViewType()
-    }
-
     return (
         <div className='viewTypeSelector'>
-            <div className={`viewTypeSelector-element `}>
-                <img src="" alt="" />
-            </div>
-            <ButtonWithIcon buttonText='' buttonIcon='./src/assets/icons/icon_arrowBottom_white2.svg'/>
+            <ViewTypeButton buttonIcon='icon_bell_grey2' buttonText='' viewType={viewType} setViewType={setViewType} />
+            <ViewTypeButton buttonIcon='icon_bell_grey2' buttonText='' viewType={viewType} setViewType={setViewType} />
+            <ViewTypeButton buttonIcon='icon_bell_grey2' buttonText='' viewType={viewType} setViewType={setViewType} />
         </div>
     )
 }
