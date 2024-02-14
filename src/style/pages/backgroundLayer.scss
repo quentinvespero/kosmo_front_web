@@ -7,7 +7,11 @@
     // @include transparent($transparentGrey2, $blur3);
     z-index: 5;
     display: none;
+    @include transition(.15s)
 }
 .backgroundLayer-visible{
-
+    display: block;
+    height: 100%;
+    width: 100%;
+    @include transparent($transparentGrey1, $blur3)
 }

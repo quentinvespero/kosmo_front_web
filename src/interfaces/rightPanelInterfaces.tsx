@@ -13,5 +13,5 @@ export interface TrendSectionProps {
 // RightPanel component props
 export interface RightPanelProps {
     isToggled?: boolean
-    
+    idSelectedPost?:string
 }

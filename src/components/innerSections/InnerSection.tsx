@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
-import { InnerSectionProps, ScreenProps } from '../../interfaces/interfaces'
+// import { InnerSectionProps, ScreenProps } from '../../interfaces/interfaces'
 import Feed from './Feed'
 import RightPanel from '../rightPanel/RightPanel'
 import Profile from './Profile'
+import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import { ScreenProps } from '../../interfaces/interfaces'
+import InnerSectionHome from './InnerSectionHome'
 
 const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat}) => {
+
     return (
         <div className='innerSection'>
 
             {selectedFeed && 
             selectedFeed.includes('feed') && 
-                <div className="innerSection-home">
-                    <Feed screenFormat={screenFormat}/>
-                    {selectedFeed && screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
-                </div>
+                // <div className="innerSection-home">
+                //     <Feed screenFormat={screenFormat}/>
+                //     {selectedFeed && screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
+                // </div>
+                <InnerSectionHome screenFormat={screenFormat} selectedFeed={selectedFeed}/>
             }
 
             {selectedFeed === 'profile' && 

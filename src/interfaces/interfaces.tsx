@@ -102,9 +102,9 @@ export interface FeedSelectorProps {
     setSelectedFeed: (selectedFeed:string) => void
 }
 
-export interface InnerSectionProps {
-    selectedFeed?: FeedSelectorProps['selectedFeed']
-}
+// export interface InnerSectionProps {
+//     selectedFeed?: FeedSelectorProps['selectedFeed']
+// }
 
 // props redundant that can be used everywhere in the app
 export interface GeneralProps{

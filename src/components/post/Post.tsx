@@ -38,28 +38,28 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
     // })
 
     // follow state of the post being selected to show details of it
-    const [isPostSelected, setIsPostSelected] = useState(false)
+    // const [isPostSelected, setIsPostSelected] = useState(false)
+    const isPostSelected = idSelectedPost === postId
 
     const handleClick = () => {
-        if (idSelectedPost === '') {
-            setIsPostSelected(true)
-            setIdSelectedPost(postId)
-        }
-        else {
-            if (idSelectedPost !== postId) {
+        if (setIdSelectedPost) {
+            if (idSelectedPost === '') {
                 setIdSelectedPost(postId)
-                setIsPostSelected(true)
             }
-            else{
-                setIsPostSelected(false)
-                setIdSelectedPost('')
+            else {
+                if (idSelectedPost !== postId) {
+                    setIdSelectedPost(postId)
+                }
+                else{
+                    setIdSelectedPost('')
+                }
             }
         }
     }
 
     return (
         <div 
-            className={`post ${idSelectedPost === postId ? 'post-selected' : ''}`}
+            className={`post ${isPostSelected ? 'post-selected' : ''}`}
             onClick={handleClick}
         >
             <div className="innerPost" style={{

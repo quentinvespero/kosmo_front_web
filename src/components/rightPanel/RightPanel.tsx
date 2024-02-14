@@ -6,8 +6,9 @@ import { RightPanelContent } from '../../interfaces/datasInterfaces'
 import { RightPanelProps } from '../../interfaces/rightPanelInterfaces'
 import HideRightPanelButton from '../buttons/HideRightPanelButton'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
+import Post from '../post/Post'
 
-const RightPanel:React.FC<RightPanelProps> = ({isToggled }) => {
+const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost }) => {
 
     const [datas, setDatas] = useState<RightPanelContent | null>(null)
 
@@ -20,16 +21,15 @@ const RightPanel:React.FC<RightPanelProps> = ({isToggled }) => {
     },[])
 
     return (
-        <div className='rightPanel'>
+        <div className={`rightPanel ${idSelectedPost ? 'rightPanel-postDetails' : ''}`}>
             <HideRightPanelButton isRightPanelVisible={isRightPanelVisible} setIsRightPanelVisible={setIsRightPanelVisible}/>
             <div 
                 className={`rightPanel-elements ${isRightPanelVisible ? 'rightPanel-elements-visible' : 'rightPanel-elements-hidden'}`}
-                style={{
-                    display: displayProperty
-                }}
+                style={{display: displayProperty}}
             >
-                {datas && <TrendSection datas={datas}/>}
-                {datas && <SuggestionSection datas={datas}/>}
+                {idSelectedPost && <Post postId={idSelectedPost}/>}
+                {!idSelectedPost && datas && <TrendSection datas={datas}/>}
+                {!idSelectedPost && datas && <SuggestionSection datas={datas}/>}
             </div>
         </div>
     )

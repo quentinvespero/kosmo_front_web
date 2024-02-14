@@ -3,7 +3,7 @@ import { BackgroundLayerProps } from '../interfaces/pagesInterfaces'
 
 const BackgroundLayer:React.FC<BackgroundLayerProps> = ({isVisible}) => {
     return (
-        <div className={`backgroundLayer ${isVisible && 'BackgroundLayer-visible'}`}>
+        <div className={`backgroundLayer ${isVisible && 'backgroundLayer-visible'}`}>
             
         </div>
     )

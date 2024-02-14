@@ -68,13 +68,13 @@ const App = () => {
 
     return (
         <div className='app'>
+            <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
             {currentPage === 'entry' &&
                 <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>
             }
             {currentPage === 'home' && 
                 <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>
             }
-            <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
         </div>
     )
 }
