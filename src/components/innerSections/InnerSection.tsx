@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 // import { InnerSectionProps, ScreenProps } from '../../interfaces/interfaces'
-import Feed from './Feed'
+import Feed from './innerSectionHome/Feed'
 import RightPanel from '../rightPanel/RightPanel'
 import Profile from './Profile'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ScreenProps } from '../../interfaces/interfaces'
-import InnerSectionHome from './InnerSectionHome'
+import InnerSectionHome from './innerSectionHome/InnerSectionHome'
 
 const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat}) => {
 

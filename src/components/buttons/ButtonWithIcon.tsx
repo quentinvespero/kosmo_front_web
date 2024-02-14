@@ -1,11 +1,12 @@
 import React from 'react'
 import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
+// explanation buttonText props : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
+// - locationOfTheButton will then be used to give the button a personalised class
+// - purposeOfTheButton will be used for the text of the button
+
 const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) => {
 
-    // explanation buttonText : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
-    // - locationOfTheButton will then be used to give the button a personalised class
-    // - purposeOfTheButton will be used for the text of the button
 
     // splitting the value of buttonText props
     const splitButtonText = buttonText.split('-')
@@ -29,7 +30,7 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
     }
 
     return (
-        <div className={`buttonWithIcon buttonWithIcon-${buttonLocation}`}>
+        <div className={`buttonWithIcon buttonWithIcon-${buttonLocation}`} title={textOfTheButton}>
             <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}
                 alt={`${textOfTheButton} image`} 

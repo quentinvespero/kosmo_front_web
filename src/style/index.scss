@@ -56,7 +56,11 @@
     // innerSections
     @import './components/innerSections/profile.scss';
     @import './components/innerSections/innerSection.scss';
-    @import './components/innerSections/innerSectionHome.scss';
+
+        // innerSectionHome
+        @import './components/innerSections/innerSectionHome/innerSectionHome.scss';
+        @import './components/innerSections/innerSectionHome/feed.scss';
+        @import './components/innerSections/innerSectionHome/viewTypeButton.scss';
     
     // textComponents
     @import './components/textComponent/textField.scss';
@@ -66,13 +70,14 @@
 
     // logicComponents
     @import './components/logicComponents/selector.scss';
+    @import './components/logicComponents/viewTypeSelector.scss';
 
     // topMenu
     @import './components/topMenu/feedSelector.scss';
     @import './components/topMenu/topMenu.scss';
     @import './components/topMenu/feedElement.scss';
 
-    @import './components/feed.scss';
+    // @import './components/feed.scss';
     // @import './components/feedSelector.scss';
     // @import './components/topMenu.scss';
 

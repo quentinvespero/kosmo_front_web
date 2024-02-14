@@ -1,5 +1,5 @@
 import React from 'react'
-import Feed from './Feed'
+import Feed from './innerSectionHome/Feed'
 import FollowButton from '../buttons/FollowButton'
 import PointCounter from '../header/PointCounter'
 import jsondata from '../../assets/bdd.json'

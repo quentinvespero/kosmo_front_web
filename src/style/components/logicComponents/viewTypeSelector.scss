@@ -1,0 +1,10 @@
+.viewTypeSelector{
+    @include flexVerticalCentered(row);
+    background: $grey4;
+    align-self: flex-start;
+    // padding: .7rem 1.1rem;
+    padding: .25rem;
+    border-radius: 5rem;
+    column-gap: .5rem;
+    border: $border7;
+}

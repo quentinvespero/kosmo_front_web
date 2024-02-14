@@ -43,17 +43,7 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
 
     const handleClick = () => {
         if (setIdSelectedPost) {
-            if (idSelectedPost === '') {
-                setIdSelectedPost(postId)
-            }
-            else {
-                if (idSelectedPost !== postId) {
-                    setIdSelectedPost(postId)
-                }
-                else{
-                    setIdSelectedPost('')
-                }
-            }
+            setIdSelectedPost(idSelectedPost !== postId ? postId : '')
         }
     }
 
