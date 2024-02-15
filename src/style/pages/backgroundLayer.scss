@@ -1,17 +1,19 @@
 .backgroundLayer{
     position: absolute;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     // height: 100vh;
     // width: 100vw;
+    // align-items: normal;
     // @include transparent($transparentGrey2, $blur3);
     z-index: 5;
     display: none;
-    @include transition(.15s)
+    @include transition(.15s);
+    overflow: hidden;
 }
 .backgroundLayer-visible{
     display: block;
-    height: 100%;
-    width: 100%;
-    @include transparent($transparentGrey1, $blur3)
+    height: 100vh;
+    width: 100vh;
+    @include transparent($transparentGrey1, $blur3);
 }

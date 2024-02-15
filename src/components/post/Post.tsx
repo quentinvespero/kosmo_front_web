@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
@@ -41,14 +41,26 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
     // const [isPostSelected, setIsPostSelected] = useState(false)
     const isPostSelected = idSelectedPost === postId
 
-    const handleClick = () => {
-        if (setIdSelectedPost) {
-            setIdSelectedPost(idSelectedPost !== postId ? postId : '')
+    // below, this will be used to identify the Post when clicking on it, and avoid triggering the function handleClick when clicking on its inner components
+    const postRef = useRef<HTMLDivElement>(null)
+
+    // function to handle the click on the post and make it selected
+    const handleClick = (event:React.MouseEvent<HTMLDivElement>) => {
+        
+        console.log(event.target)
+        console.log(postRef)
+
+        if (postRef.current && postRef.current === event.target) {
+            console.log(event.target)
+            if (setIdSelectedPost) {
+                setIdSelectedPost(idSelectedPost !== postId ? postId : '')
+            }
         }
     }
 
     return (
         <div 
+            ref={postRef}
             className={`post ${isPostSelected ? 'post-selected' : ''}`}
             onClick={handleClick}
         >

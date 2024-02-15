@@ -10,7 +10,7 @@ const ViewTypeButton:React.FC<ViewTypeButtonProps> = ({selectedViewType, setSele
     }
 
     const buttonIcon = buttonViewType+'_view_white2'
-    // the answer to why the string below contain a '-' is in the component ButtonWithIcon
+    // the answer to the question why the string below contain a '-' is in the component ButtonWithIcon
     const buttonText = 'viewTypeButton-'+buttonViewType
 
     return (
