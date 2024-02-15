@@ -47,7 +47,15 @@ const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, i
     const interactionTypeClass = `buttonType1 ${interactionType && interactionTypeMap[interactionType].class} ${isActive ? 'buttonType1-active' : ''}`
 
     return (
-        <div className={interactionTypeClass} onClick={onClick}>
+        <div 
+            className={interactionTypeClass} 
+            onClick={(e) => {
+                if (onClick) {
+                    onClick()
+                }
+                e.stopPropagation()
+            }} 
+        >
             
             {/* p element will show up only if buttonText has a value */}
             {buttonText && buttonText === 'Enter Kosmo_' 

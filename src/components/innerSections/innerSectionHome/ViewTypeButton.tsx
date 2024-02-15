@@ -1,22 +1,25 @@
 import React from 'react'
 import { ViewTypeButtonProps } from '../../../interfaces/innerSectionsInterfaces'
 import ButtonWithIcon from '../../buttons/ButtonWithIcon'
+import HoveringDescription from '../../textComponents/HoveringDescription'
 
-const ViewTypeButton:React.FC<ViewTypeButtonProps> = ({viewType, setViewType, buttonView}) => {
+const ViewTypeButton:React.FC<ViewTypeButtonProps> = ({selectedViewType, setSelectedViewType, buttonViewType}) => {
 
     const handleClick = () => {
-        // setViewType()
+        setSelectedViewType(buttonViewType)
     }
 
-    const buttonIcon = buttonView+'_view_white2'
-    const buttonText = 'viewTypeButton-'+buttonView
+    const buttonIcon = buttonViewType+'_view_white2'
+    // the answer to why the string below contain a '-' is in the component ButtonWithIcon
+    const buttonText = 'viewTypeButton-'+buttonViewType
 
     return (
         <div 
-            className={`viewTypeButton ${buttonText.includes(viewType) ? 'viewTypeButton-selected' : ''}`}
+            className={`viewTypeButton ${buttonText.includes(selectedViewType) ? 'viewTypeButton-selected' : ''}`}
             onClick={handleClick}
         >
             <ButtonWithIcon buttonText={buttonText} buttonIcon={buttonIcon}/>
+            {/* <HoveringDescription text='test ezj hze iu rhfejz rhgflieh er jghlkjdf hgkl jezhgjk h'/> */}
         </div>
     )
 }

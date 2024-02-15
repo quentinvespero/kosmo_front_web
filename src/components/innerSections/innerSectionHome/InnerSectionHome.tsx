@@ -8,12 +8,12 @@ import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 
 const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHomeProps> = ({selectedFeed, screenFormat, idSelectedPost}) => {
 
-    const [viewType, setViewType] = useState<ViewTypeSelectorProps['viewType']>('basic')
+    const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regular')
 
     return (
         <div className='innerSectionHome'>
             <div className="innerSectionHome-feed">
-                {screenFormat !== 'mobile' && <ViewTypeSelector viewType={viewType} setViewType={setViewType}/>}
+                {screenFormat !== 'mobile' && <ViewTypeSelector selectedViewType={selectedViewType} setSelectedViewType={setSelectedViewType}/>}
                 <Feed screenFormat={screenFormat}/>
             </div>
             {selectedFeed && 

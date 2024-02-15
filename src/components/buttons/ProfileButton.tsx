@@ -39,7 +39,11 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                 ${locationContext === 'post' && 'profileButton-post'}
             `}
             // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
-            onClick={() => handleClick && locationContext === 'headerMenu' && handleClick('user')}
+            onClick={(e) => {
+                handleClick && locationContext === 'headerMenu' && handleClick('user')
+                e.stopPropagation()
+            }}
+            aria-label='profile button'
         >
 
                 <ProfilePhoto 

@@ -17,7 +17,7 @@ export interface InnerSectionHomeProps {
 export interface ViewTypeButtonProps {
     // buttonText:ButtonWithIconProps['buttonText']
     // buttonIcon:ButtonWithIconProps['buttonIcon']
-    viewType: ViewTypeSelectorProps['viewType']
-    setViewType: ViewTypeSelectorProps['setViewType']
-    buttonView: ViewTypeSelectorProps['viewType']
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+    setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
+    buttonViewType: ViewTypeSelectorProps['selectedViewType']
 }
