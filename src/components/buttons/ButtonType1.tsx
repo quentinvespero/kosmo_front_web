@@ -53,7 +53,7 @@ const ButtonType1: React.FC<ButtonType1Props> = ({buttonText, interactionType, i
                 if (onClick) {
                     onClick()
                 }
-                e.stopPropagation()
+                // e.stopPropagation()
             }} 
         >
             
