@@ -4,13 +4,26 @@
     color: $grey1;
     font-size: .7rem;
     font-weight: 600;
-    padding: .3rem .5rem .3rem 1rem;
+    padding: .3rem .6rem .3rem .7rem;
     border-radius: 0rem 3rem 3rem 0rem;
     align-self: center;
-    z-index: 0;
-    margin-left: -.7rem;
-    animation: slideFromLeft .2s ease-in-out;
+    // z-index: 0;
+    margin-left: -.45rem;
+    // animation: slideFromLeft .2s ease-in-out;
+    // width: 2rem;
+
+}
+.counter-visible{
+    // visibility: visible;
+    opacity: 1;
+    animation: counter_showingUp .2s ease-in-out;
+}
+.counter-beingHide {
+    animation: counter_hidding .15s ease-in-out;
 }
 .counter-hidden{
-    animation: slideFromRight .15s ease-in-out;
+    // visibility: hidden;
+    opacity: 0;
+    // width: 1rem;
+    // animation: slideFromRight .15s ease-in-out;
 }

@@ -1,0 +1,21 @@
+.feedRegular {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+    @include transition(.15s);
+    // animation: slideFromBottom .25s ease-in-out;
+    // margin-bottom: 2rem;
+    // gap: 1rem;
+}
+
+.feedRegular-desktop {
+    gap: 3rem 2rem;
+}
+.feedRegular-mobile {
+    gap: 3rem 1.5rem;
+}
+.feedRegular-tablet {
+    gap: 3rem 1.5rem;
+}

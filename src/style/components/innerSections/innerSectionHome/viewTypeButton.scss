@@ -21,3 +21,13 @@
 .viewTypeButton-selected{
     background: $grey1;
 }
+.viewTypeButton-desktop{
+
+    & .buttonWithIcon{
+        
+        img {
+            width: .9rem;
+            height: .9rem;
+        }
+    }
+}

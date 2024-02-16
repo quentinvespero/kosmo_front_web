@@ -2,8 +2,9 @@ import React from 'react'
 import { ViewTypeButtonProps } from '../../../interfaces/innerSectionsInterfaces'
 import ButtonWithIcon from '../../buttons/ButtonWithIcon'
 import HoveringDescription from '../../textComponents/HoveringDescription'
+import { ScreenProps } from '../../../interfaces/interfaces'
 
-const ViewTypeButton:React.FC<ViewTypeButtonProps> = ({selectedViewType, setSelectedViewType, buttonViewType}) => {
+const ViewTypeButton:React.FC<ViewTypeButtonProps & ScreenProps> = ({selectedViewType, setSelectedViewType, buttonViewType, screenFormat}) => {
 
     const handleClick = () => {
         setSelectedViewType(buttonViewType)
@@ -15,7 +16,10 @@ const ViewTypeButton:React.FC<ViewTypeButtonProps> = ({selectedViewType, setSele
 
     return (
         <div 
-            className={`viewTypeButton ${buttonText.includes(selectedViewType) ? 'viewTypeButton-selected' : ''}`}
+            className={`viewTypeButton 
+                ${buttonText.includes(selectedViewType) ? 'viewTypeButton-selected' : ''}
+                ${screenFormat === 'desktop' ? 'viewTypeButton-desktop' : ''}
+            `}
             onClick={handleClick}
         >
             <ButtonWithIcon buttonText={buttonText} buttonIcon={buttonIcon}/>

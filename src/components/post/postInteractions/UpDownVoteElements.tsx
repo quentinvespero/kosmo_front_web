@@ -33,11 +33,18 @@ const UpDownVoteElements: React.FC<UpDownVoteElementsProps> = ({
                 onClick={handleInteractionChoice} 
                 isActive={interactionType === interactionChoice}
             />
-            {isCountersVisible && <Counter 
+            {/* {isCountersVisible && <Counter 
                 isCountersVisible={isCountersVisible} 
                 setIsCountersVisible={setIsCountersVisible} 
                 isCountersBeingHide={isCountersBeingHide} 
-                setIsCountersBeingHide={setIsCountersBeingHide}/>}
+                setIsCountersBeingHide={setIsCountersBeingHide}
+            />} */}
+            <Counter 
+                isCountersVisible={isCountersVisible} 
+                setIsCountersVisible={setIsCountersVisible} 
+                isCountersBeingHide={isCountersBeingHide} 
+                setIsCountersBeingHide={setIsCountersBeingHide}
+            />
         </div>
     )
 }

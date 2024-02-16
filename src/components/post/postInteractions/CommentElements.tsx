@@ -10,11 +10,16 @@ const CommentElements: React.FC<CommentElementsProps & ScreenProps> = ({ isCount
             // left: screenFormat== 'tablet' || 'mobile' ? '9.5rem' : '13rem'
         }}>
             <ButtonType1 buttonText='comment' interactionType='comment'/>
-            {isCountersVisible && <Counter 
+            {/* {isCountersVisible && <Counter 
                 isCountersVisible={isCountersVisible} 
                 setIsCountersVisible={setIsCountersVisible}
                 isCountersBeingHide={isCountersBeingHide} 
-            />}
+            />} */}
+            <Counter 
+                isCountersVisible={isCountersVisible} 
+                setIsCountersVisible={setIsCountersVisible}
+                isCountersBeingHide={isCountersBeingHide} 
+            />
         </div>
     )
 }

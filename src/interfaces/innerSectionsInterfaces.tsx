@@ -21,3 +21,7 @@ export interface ViewTypeButtonProps {
     setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
     buttonViewType: ViewTypeSelectorProps['selectedViewType']
 }
+
+export interface FeedProps {
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+}

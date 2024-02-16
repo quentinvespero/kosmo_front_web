@@ -6,7 +6,7 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import { PostProps } from '../../interfaces/postInterfaces'
 import ProfileButton from '../buttons/ProfileButton'
 
-const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost }) => {
+const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType }) => {
 
     // ⬇ 31/12/23 - example of fetches to use when backend will be ready ⬇
 
@@ -61,19 +61,27 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
     return (
         <div 
             ref={postRef}
-            className={`post ${isPostSelected ? 'post-selected' : ''}`}
-            onClick={handleClick}
+            className={`post 
+                ${isPostSelected ? 'post-selected' : ''}
+                ${selectedViewType && selectedViewType === 'details' || selectedViewType === 'columns' ? 'post-compactFormat' : 'post-regularFormat'}
+            `}
+            // onClick={handleClick}
         >
-            <div className="innerPost" style={{
-                maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
-            }}>
+            <div 
+                className={`innerPost
+                    ${screenFormat != 'desktop' && selectedViewType ==='regular' ? 'innerPost-smallScreen' : ''}
+                `} 
+                // style={{
+                //     maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
+                // }}
+            >
                 <ProfileButton locationContext='post'/>
                 <div className="innerPost-content">
                     <PostContent isPostSelected={isPostSelected}/>
                     <PostThemeElements/>
                 </div>
             </div>
-            <PostInteractions screenFormat={ screenFormat }/>
+            <PostInteractions screenFormat={ screenFormat } selectedViewType={selectedViewType}/>
         </div>
     )
 }

@@ -1,0 +1,21 @@
+.feedDetails{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    flex-grow: 1;
+
+    & .feedDetailsView-postsSection {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        overflow: scroll;
+        background: $grey4;
+        padding: 1rem;
+        border-radius: 1rem;
+        height: 50vh;
+        width: 25rem;
+        border: $border7;
+        // box-shadow: $innerShadow5;
+        // padding-bottom: 3rem;
+    }
+}

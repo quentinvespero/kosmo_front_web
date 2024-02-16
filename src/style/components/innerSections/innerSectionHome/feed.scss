@@ -5,14 +5,21 @@
     align-items: flex-start;
     flex-grow: 1;
     @include transition(.15s);
-    animation: slideFromBottom .25s ease-in-out;
-    margin-bottom: 2rem;
+    // animation: slideFromBottom .25s ease-in-out;
+    // margin-bottom: 2rem;
+
+    // css for the feedViews (columns, details, regular)
+    & > *{
+        animation: slideFromBottom .25s ease-in-out;
+    }
 }
 .feed-loadingPost{
     flex-grow: 1;
     text-align: center;
     animation: slideFromBottom .7s ease-in-out;
 }
+
+// style for the letters that show up hen loading a post
 .feed-glitterElement1{
     animation: 
         letterGlitering1 1s ease-in-out, 

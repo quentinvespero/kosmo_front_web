@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Post from '../../post/Post'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import { DatasInterfaces } from '../../../interfaces/datasInterfaces'
+import FeedDetails from './feedViews/FeedDetails'
+import FeedRegular from './feedViews/FeedRegular'
+import FeedColums from './feedViews/FeedColumns'
+import { FeedProps } from '../../../interfaces/innerSectionsInterfaces'
 
-const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
+const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}) => {
 
     const [datas, setDatas] = useState<DatasInterfaces | null>(null)
 
@@ -33,14 +37,10 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
     }
 
     return (
-        <div 
-            className='feed'
-            style={{
-                gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2rem',
-                // maxWidth: screenFormat === 'desktop' ? '75%' : ''
-            }}
+        <div className='feed'
+            // style={{gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2rem'}}
         >
-            {datas &&
+            {/* {datas &&
             datas.posts && 
             datas.posts.map((post) => (
                 <Post 
@@ -50,7 +50,30 @@ const Feed:React.FC<ScreenProps> = ({screenFormat}) => {
                     idSelectedPost={idSelectedPost} 
                     setIdSelectedPost={setIdSelectedPost} 
                 />
-            ))}
+            ))} */}
+
+            {selectedViewType === 'details' && screenFormat !== 'mobile' && <FeedDetails 
+                posts={datas.posts} 
+                screenFormat={screenFormat} 
+                idSelectedPost={idSelectedPost} 
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />}
+
+            {selectedViewType === 'regular' && <FeedRegular 
+                posts={datas.posts} 
+                screenFormat={screenFormat} 
+                idSelectedPost={idSelectedPost} 
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />}
+            {selectedViewType === 'columns' && screenFormat !== 'mobile' && <FeedColums 
+                posts={datas.posts} 
+                screenFormat={screenFormat} 
+                idSelectedPost={idSelectedPost} 
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />}
         </div>
     )
 }

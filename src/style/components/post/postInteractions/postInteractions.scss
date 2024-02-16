@@ -1,8 +1,44 @@
-.postInteractions{
+// .postInteractions{
+.postInteractions-regular{
     @include flexVerticalCentered(row);
     // position: absolute;
     transform: translateY(1.7rem);
     // justify-content: space-evenly;
     margin-left: 1.5rem;
     margin-top: -2.7rem;
+    column-gap: .5rem;
+}
+.postInteractions-compact {
+    @include flexVerticalCentered(row);
+    background: $grey3;
+    padding: .2rem 1rem .2rem .3rem;
+    border: $border1;
+    border-radius: 5rem;
+    column-gap: .5rem;
+    align-self: flex-start;
+    
+    & .upDownVoteElements, .commentElements{
+
+        & .buttonType1-upvote, .buttonType1-downvote {
+            display: flex;
+            padding: .4rem;
+
+            & .buttonType1-image{
+                display: flex;
+
+                svg{
+                    width: .9rem;
+                    height: .9rem;
+                }
+            }
+        }
+
+        & .buttonType1-comment {
+            padding: .5rem .7rem;
+        }
+
+        & p{
+            font-size: .62rem;
+        }
+    }
 }
