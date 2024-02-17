@@ -10,3 +10,7 @@ export interface FeedViewsInterfaces {
     setIdSelectedPost: (type:string) => void
     selectedViewType: ViewTypeSelectorProps['selectedViewType']
 }
+
+// export interface FeedColumnProps {
+//     columnToShow:[string]
+// }

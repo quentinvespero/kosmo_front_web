@@ -2,12 +2,13 @@ import React from 'react'
 import { FeedViewsInterfaces } from '../../../../interfaces/feedViewsInterfaces'
 import { ScreenProps } from '../../../../interfaces/interfaces'
 import Post from '../../../post/Post'
+import FeedColumn from './FeedColumn'
 
 const FeedColums:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
-        <div className='feedViews feedColums'>
-            <div className="test">columns</div>
-            {posts && 
+        <div className='feedViews feedColumsView'>
+            {/* <div className="test">columns</div> */}
+            {/* {posts && 
                 posts.map((post) => (
                 <Post
                     key={post._id} 
@@ -17,7 +18,49 @@ const FeedColums:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFo
                     setIdSelectedPost={setIdSelectedPost}
                     selectedViewType={selectedViewType} 
                 />
-            ))}
+            ))} */}
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
         </div>
     )
 }

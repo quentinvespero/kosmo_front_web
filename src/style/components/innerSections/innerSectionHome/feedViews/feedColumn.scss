@@ -1,0 +1,12 @@
+.feedColumn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    // overflow: scroll;
+    background: $grey4;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 50vh;
+    width: 30%;
+    border: $border7;
+}
