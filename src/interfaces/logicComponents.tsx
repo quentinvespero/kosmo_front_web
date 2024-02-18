@@ -8,6 +8,6 @@ export interface SelectorProps {
 }
 
 export interface ViewTypeSelectorProps {
-    selectedViewType: 'regular' | 'columns' | 'details'
+    selectedViewType: 'regularView' | 'columnsView' | 'detailsView'
     setSelectedViewType: (type:ViewTypeSelectorProps['selectedViewType']) => void
 }

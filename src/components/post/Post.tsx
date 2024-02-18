@@ -63,13 +63,13 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
             ref={postRef}
             className={`post 
                 ${isPostSelected ? 'post-selected' : ''}
-                ${selectedViewType && selectedViewType === 'details' || selectedViewType === 'columns' ? 'post-compactFormat' : 'post-regularFormat'}
+                ${selectedViewType && selectedViewType === 'detailsView' || selectedViewType === 'columnsView' ? 'post-compactFormat' : 'post-regularFormat'}
             `}
             // onClick={handleClick}
         >
             <div 
                 className={`innerPost
-                    ${screenFormat != 'desktop' && selectedViewType ==='regular' ? 'innerPost-smallScreen' : ''}
+                    ${screenFormat != 'desktop' && selectedViewType ==='regularView' ? 'innerPost-smallScreen' : ''}
                 `} 
                 // style={{
                 //     maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'

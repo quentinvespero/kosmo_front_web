@@ -4,9 +4,9 @@ import { ScreenProps } from '../../../../interfaces/interfaces'
 import Post from '../../../post/Post'
 import FeedColumn from './FeedColumn'
 
-const FeedColums:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
+const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
-        <div className='feedViews feedColumsView'>
+        <div className='feedViews feedColumnsView'>
             {/* <div className="test">columns</div> */}
             {/* {posts && 
                 posts.map((post) => (
@@ -47,22 +47,8 @@ const FeedColums:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFo
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />
-            <FeedColumn 
-                posts={posts}
-                screenFormat={screenFormat}
-                idSelectedPost={idSelectedPost}
-                setIdSelectedPost={setIdSelectedPost}
-                selectedViewType={selectedViewType}
-            />
-            <FeedColumn 
-                posts={posts}
-                screenFormat={screenFormat}
-                idSelectedPost={idSelectedPost}
-                setIdSelectedPost={setIdSelectedPost}
-                selectedViewType={selectedViewType}
-            />
         </div>
     )
 }
 
-export default FeedColums
+export default FeedColumnsView

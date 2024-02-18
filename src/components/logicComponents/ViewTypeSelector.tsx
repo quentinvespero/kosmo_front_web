@@ -8,19 +8,19 @@ const ViewTypeSelector:React.FC<ViewTypeSelectorProps & ScreenProps> = ({selecte
     return (
         <div className='viewTypeSelector'>
             <ViewTypeButton 
-                buttonViewType='regular' 
+                buttonViewType='regularView' 
                 selectedViewType={selectedViewType} 
                 setSelectedViewType={setSelectedViewType} 
                 screenFormat={screenFormat}
             />
             <ViewTypeButton 
-                buttonViewType='details' 
+                buttonViewType='detailsView' 
                 selectedViewType={selectedViewType} 
                 setSelectedViewType={setSelectedViewType} 
                 screenFormat={screenFormat}
             />
             <ViewTypeButton 
-                buttonViewType='columns' 
+                buttonViewType='columnsView' 
                 selectedViewType={selectedViewType} 
                 setSelectedViewType={setSelectedViewType} 
                 screenFormat={screenFormat}

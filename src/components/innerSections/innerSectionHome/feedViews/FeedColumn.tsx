@@ -1,10 +1,12 @@
 import React from 'react'
 import { FeedViewsInterfaces } from '../../../../interfaces/feedViewsInterfaces'
 import Post from '../../../post/Post'
+import SearchField from '../../../header/SearchField'
 
 const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
         <div className='feedColumn'>
+            <SearchField/>
             {posts && 
                 posts.map((post) => (
                 <Post

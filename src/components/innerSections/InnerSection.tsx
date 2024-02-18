@@ -10,7 +10,11 @@ import InnerSectionHome from './innerSectionHome/InnerSectionHome'
 const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat}) => {
 
     return (
-        <div className='innerSection'>
+        <div 
+            className={`innerSection 
+                ${selectedFeed === 'profile' ? 'innerSection-profile' : ''}
+            `}
+        >
 
             {selectedFeed && 
             selectedFeed.includes('feed') && 
@@ -22,9 +26,10 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
             }
 
             {selectedFeed === 'profile' && 
-                <div className="innerSection-profile">
-                    <Profile screenFormat={screenFormat}/>
-                </div>
+                // <div className="innerSection-profile">
+                //     <Profile screenFormat={screenFormat}/>
+                // </div>
+                <Profile screenFormat={screenFormat}/>
             }
         </div>
     )

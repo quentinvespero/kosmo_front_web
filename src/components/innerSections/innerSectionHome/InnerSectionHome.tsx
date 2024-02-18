@@ -9,7 +9,7 @@ import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHomeProps> = ({selectedFeed, screenFormat, idSelectedPost}) => {
 
     // following the state of the selected view in feed (details, columns, regular)
-    const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regular')
+    const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
 
     return (
         <div className='innerSectionHome'>

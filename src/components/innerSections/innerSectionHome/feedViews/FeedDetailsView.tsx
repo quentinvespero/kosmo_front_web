@@ -4,9 +4,9 @@ import { ScreenProps } from '../../../../interfaces/interfaces'
 import Post from '../../../post/Post'
 import FeedDetailsPanel from './FeedDetailsPanel'
 
-const FeedDetails:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
+const FeedDetailsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
-        <div className='feedViews feedDetails'>
+        <div className='feedViews feedDetailsView'>
             {/* <div className="test">details</div> */}
             <div className="feedDetailsView-postsSection">
                 {posts && 
@@ -26,4 +26,4 @@ const FeedDetails:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenF
     )
 }
 
-export default FeedDetails
+export default FeedDetailsView

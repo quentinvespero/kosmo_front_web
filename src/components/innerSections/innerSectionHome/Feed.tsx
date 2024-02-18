@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Post from '../../post/Post'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import { DatasInterfaces } from '../../../interfaces/datasInterfaces'
-import FeedDetails from './feedViews/FeedDetails'
-import FeedRegular from './feedViews/FeedRegular'
-import FeedColums from './feedViews/FeedColumns'
+import FeedDetailsView from './feedViews/FeedDetailsView'
+import FeedRegularView from './feedViews/FeedRegularView'
+import FeedColumnsView from './feedViews/FeedColumnsView'
 import { FeedProps } from '../../../interfaces/innerSectionsInterfaces'
 
 const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}) => {
@@ -52,7 +52,7 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
                 />
             ))} */}
 
-            {selectedViewType === 'details' && screenFormat !== 'mobile' && <FeedDetails 
+            {selectedViewType === 'detailsView' && screenFormat !== 'mobile' && <FeedDetailsView 
                 posts={datas.posts} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 
@@ -60,14 +60,14 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
                 selectedViewType={selectedViewType}
             />}
 
-            {selectedViewType === 'regular' && <FeedRegular 
+            {selectedViewType === 'regularView' && <FeedRegularView 
                 posts={datas.posts} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />}
-            {selectedViewType === 'columns' && screenFormat !== 'mobile' && <FeedColums 
+            {selectedViewType === 'columnsView' && screenFormat !== 'mobile' && <FeedColumnsView 
                 posts={datas.posts} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 

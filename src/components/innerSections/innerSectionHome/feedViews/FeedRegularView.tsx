@@ -3,12 +3,12 @@ import { FeedViewsInterfaces } from '../../../../interfaces/feedViewsInterfaces'
 import Post from '../../../post/Post'
 import { ScreenProps } from '../../../../interfaces/interfaces'
 
-const FeedRegular:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
+const FeedRegularView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
-        <div className={`feedViews feedRegular 
-            ${screenFormat === 'desktop' ? 'feedRegular-desktop' : ''}
-            ${screenFormat === 'mobile' ? 'feedRegular-mobile' : ''}
-            ${screenFormat === 'tablet' ? 'feedRegular-tablet' : ''}
+        <div className={`feedViews feedRegularView
+            ${screenFormat === 'desktop' ? 'feedRegularView-desktop' : ''}
+            ${screenFormat === 'mobile' ? 'feedRegularView-mobile' : ''}
+            ${screenFormat === 'tablet' ? 'feedRegularView-tablet' : ''}
             `}
         >
             {/* <div className="test">regular</div> */}
@@ -27,4 +27,4 @@ const FeedRegular:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenF
     )
 }
 
-export default FeedRegular
+export default FeedRegularView

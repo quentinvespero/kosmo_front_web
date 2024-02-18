@@ -10,7 +10,7 @@ const ViewTypeButton:React.FC<ViewTypeButtonProps & ScreenProps> = ({selectedVie
         setSelectedViewType(buttonViewType)
     }
 
-    const buttonIcon = buttonViewType+'_view_white2'
+    const buttonIcon = buttonViewType+'_white2'
     // the answer to the question why the string below contain a '-' is in the component ButtonWithIcon
     const buttonText = 'viewTypeButton-'+buttonViewType
 

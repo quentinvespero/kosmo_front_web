@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { HandleClickHeaderMenuButtonsInterface, NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
+import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
 import NotificationPanel from '../header/HeaderMenu/NotificationPanel'
+import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 
 const NotificationButton:React.FC<NotificationButtonProps & HandleClickHeaderMenuButtonsInterface> = ({handleClick}) => {
     

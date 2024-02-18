@@ -1,4 +1,4 @@
-.feedRegular {
+.feedRegularView {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,12 +10,12 @@
     // gap: 1rem;
 }
 
-.feedRegular-desktop {
+.feedRegularView-desktop {
     gap: 3rem 2rem;
 }
-.feedRegular-mobile {
+.feedRegularView-mobile {
     gap: 3rem 1.5rem;
 }
-.feedRegular-tablet {
+.feedRegularView-tablet {
     gap: 3rem 1.5rem;
 }
