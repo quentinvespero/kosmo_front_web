@@ -1,21 +1,7 @@
 .innerSection {
     display: flex;
-    // flex-direction: row;
-    // gap: 1rem;
-    // align-self: center;
-    // justify-content: space-between;
-    // animation: slideFromBottom .5s ease-in-out;
     @include transition(.1s);
     flex-grow: 1;
-
-    // & .innerSection-home {
-    //     @include transition(.1s);
-    //     display: flex;
-    //     flex-direction: row;
-    //     gap: 1rem;
-    //     align-self: center;
-    //     justify-content: space-between;
-    // }
 }
 .innerSection-profile {
     @include transition(.1s);

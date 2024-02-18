@@ -12,10 +12,14 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
 
     return (
         <div 
-            className={`header ${currentPage === 'entry' ? 'header-entryPage' : ''}`}
-            style={
-                currentPage ==='entry' ? {marginTop: currentPage === 'entry' && screenFormat === 'mobile' ? '5rem' : '2.5rem'} : {}
-            }
+            className={`header 
+                ${currentPage === 'entry' ? 'header-entryPage' : ''}
+                ${currentPage === 'entry' && screenFormat === 'mobile' ? 'header-entryPage-mobileScreen' : ''}
+                ${screenFormat === 'mobile' && currentPage !== 'entry' ? 'header-mobileScreen' : ''}
+            `}
+            // style={
+            //     currentPage ==='entry' ? {marginTop: screenFormat === 'mobile' ? '5rem' : '2.5rem'} : {}
+            // }
         >
 
             {currentPage === 'home' && 
@@ -31,13 +35,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                     }}
                 >
                     <h1 className='projectTitle'>Kosmo Project.</h1>
-                    <div 
-                        className="innerHeader-section1"
-                        style={{
-                            alignSelf: screenFormat !=='mobile' ? 'flex-end' : 'auto',
-                            // justifyContent: screenFormat ==='mobile' && isSearchFieldSelectedOnMobile ? 'center' : 'space-between'
-                        }}
-                    >
+                    <div className="innerHeader-section1">
                         {screenFormat === 'mobile' && 
                             <SearchField 
                                 setIsSearchFieldSelectedOnMobile={setIsSearchFieldSelectedOnMobile} 
@@ -66,7 +64,7 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                 <div 
                     className="innerHeader-entryPage"
                     style={{
-                        marginLeft: screenFormat !== 'mobile' ? '2rem' : '0rem',
+                        // marginLeft: screenFormat !== 'mobile' ? '2rem' : '0rem',
                         justifyContent: screenFormat === 'mobile' ? 'center' : ''
                     }}
                 >

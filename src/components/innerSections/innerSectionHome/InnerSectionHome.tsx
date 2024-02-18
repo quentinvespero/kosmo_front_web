@@ -12,18 +12,29 @@ const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHo
     const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
 
     return (
-        <div className='innerSectionHome'>
+        <div 
+            className={`innerSectionHome
+                ${selectedViewType === 'regularView' ? 'innerSectionHome-regularView' : ''}
+                ${selectedViewType === 'detailsView' ? 'innerSectionHome-detailsView' : ''}
+                ${selectedViewType === 'columnsView' ? 'innerSectionHome-columnsView' : ''}
+            `}
+        >
             <div className="innerSectionHome-feed">
                 {screenFormat !== 'mobile' && <ViewTypeSelector selectedViewType={selectedViewType} setSelectedViewType={setSelectedViewType} screenFormat={screenFormat}/>}
                 <Feed screenFormat={screenFormat} selectedViewType={selectedViewType}/>
             </div>
+
             {selectedFeed && 
+                selectedViewType !== 'columnsView' &&
                 screenFormat === 'desktop' && 
                 selectedFeed.includes('feed') && 
                 !idSelectedPost &&
                 <RightPanel/>
             }
+
+            {/* ⬇ below, an idea of the right panel being showing up being triggered if a post is being selected */}
             {selectedFeed && 
+                selectedViewType !== 'columnsView' &&
                 screenFormat === 'desktop' && 
                 selectedFeed.includes('feed') && 
                 idSelectedPost && 

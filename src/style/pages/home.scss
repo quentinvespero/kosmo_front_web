@@ -1,12 +1,17 @@
 .home {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    // padding: 2rem;
     @include transition(.1s);
     z-index: 1;
+    row-gap: 3rem;
     
     & .fillTheGap {
         height: 3.9rem;
         @include transition(.1s)
     }
+}
+.home-mobileScreen {
+    row-gap: 2rem;
+    padding: .8rem;
 }

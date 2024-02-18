@@ -6,6 +6,8 @@
     align-self: center;
     justify-content: space-between;
     flex-grow: 1;
+    overflow-x: scroll;
+    // width: 100%;
 
     & .innerSectionHome-feed{
         display: flex;
@@ -13,4 +15,14 @@
         row-gap: 1rem;
         flex-grow: 1;
     }
+}
+
+.innerSectionHome-regularView{
+    padding: 0rem 1rem;
+}
+.innerSectionHome-detailsView{
+    padding: 0rem 1rem;
+}
+.innerSectionHome-columnsView{
+    // height: 100vh;
 }

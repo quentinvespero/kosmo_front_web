@@ -16,7 +16,7 @@ const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, scr
 
     // managing inner sections
     // 14/01/24 : not really used at the moment. will think about using it to keep track of the innerSection, same as for currentPage for a lower level
-    const [currentInnerSection, setCurrentInnerSection] = useState({})
+    const [currentInnerSection, setCurrentInnerSection] = useState('')
 
     // animation when entering this screen
     useEffect(() => {
@@ -29,10 +29,13 @@ const Home: React.FC< HomeProps & ScreenProps> = ({ animation, setAnimation, scr
 
     return (
         <div 
-            className={`home ${screenFormat ? 'pageAnimationFadeIn' : ''}`}
-            style={{
-                rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
-            }}
+            className={`home 
+                ${screenFormat ? 'pageAnimationFadeIn' : ''}
+                ${screenFormat === 'mobile' ? 'home-mobileScreen' : ''}
+            `}
+            // style={{
+            //     rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
+            // }}
         >
             <Header 
                 screenFormat={screenFormat}

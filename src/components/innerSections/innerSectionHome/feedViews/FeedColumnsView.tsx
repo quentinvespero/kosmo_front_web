@@ -3,6 +3,7 @@ import { FeedViewsInterfaces } from '../../../../interfaces/feedViewsInterfaces'
 import { ScreenProps } from '../../../../interfaces/interfaces'
 import Post from '../../../post/Post'
 import FeedColumn from './FeedColumn'
+import AddFeedButton from './AddFeedButton'
 
 const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (
@@ -26,7 +27,7 @@ const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />
-            <FeedColumn 
+            {/* <FeedColumn 
                 posts={posts}
                 screenFormat={screenFormat}
                 idSelectedPost={idSelectedPost}
@@ -60,7 +61,8 @@ const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                 idSelectedPost={idSelectedPost}
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
-            />
+            /> */}
+            <AddFeedButton/>
         </div>
     )
 }

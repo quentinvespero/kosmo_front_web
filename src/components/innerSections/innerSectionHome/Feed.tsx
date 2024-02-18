@@ -37,8 +37,12 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
     }
 
     return (
-        <div className='feed'
-            // style={{gap: screenFormat !== 'desktop' ? '3rem 1.5rem' : '3rem 2rem'}}
+        <div 
+            className={`feed
+                ${selectedViewType === 'regularView' ? 'feed-regularView' : ''}
+                ${selectedViewType === 'detailsView' ? 'feed-detailsView' : ''}
+                ${selectedViewType === 'columnsView' ? 'feed-columnsView' : ''}
+            `}
         >
             {/* {datas &&
             datas.posts && 
