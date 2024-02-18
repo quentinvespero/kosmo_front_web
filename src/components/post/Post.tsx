@@ -75,10 +75,12 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
                 //     maxWidth: screenFormat!='desktop' ? '19rem' : '22rem'
                 // }}
             >
-                <ProfileButton locationContext='post'/>
+                <div className="innerPost-topSection">
+                    <ProfileButton locationContext='post'/>
+                    <PostThemeElements/>
+                </div>
                 <div className="innerPost-content">
                     <PostContent isPostSelected={isPostSelected}/>
-                    <PostThemeElements/>
                 </div>
             </div>
             <PostInteractions screenFormat={ screenFormat } selectedViewType={selectedViewType}/>
