@@ -1,3 +1,4 @@
+import { ButtonWithIconProps } from "./buttonsInterfaces";
 import { DatasInterfaces } from "./datasInterfaces";
 import { ScreenProps } from "./interfaces";
 import { ViewTypeSelectorProps } from "./logicComponents";
@@ -14,3 +15,14 @@ export interface FeedViewsInterfaces {
 // export interface FeedColumnProps {
 //     columnToShow:[string]
 // }
+
+export interface FeedColumnButtonProps {
+    buttonIcon: ButtonWithIconProps['buttonIcon']
+    buttonText: ButtonWithIconProps['buttonText']
+    isFilterPanelVisible?: boolean
+    setIsFilterPanelVisible?: (type:boolean) => void
+}
+
+export interface FilterPanelProps{
+    isFilterPanelVisible: boolean
+}

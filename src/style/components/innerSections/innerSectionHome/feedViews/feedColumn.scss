@@ -3,14 +3,36 @@
     flex-direction: column;
     row-gap: .7rem;
     // overflow-y: scroll;
-    background: $grey4;
-    padding: .7rem;
     border-radius: .7rem .7rem 0rem 0rem;
     // height: 50vh;
     width: 20rem;
-    border: $border7;
-    border-bottom: none;
-    padding-bottom: 0;
+    // border-bottom: none;
+    // padding-bottom: 0;
+
+    & .feedColumn-buttons{
+        @include flexVerticalCentered(row);
+        column-gap: .4rem;
+        align-self: center;
+
+        & .searchField {
+            align-self: flex-start;
+            background: $transparentGrey2;
+            color: $grey4;
+            // border-radius: .5rem;
+    
+            & .buttonType1-search{
+                padding: .3rem;
+                // border-radius: .3rem;
+                
+                & .buttonType1-image {
+                    display: flex;
+                    align-items: center;
+                    height: .9rem;
+                    width: .9rem;
+                }
+            }
+        }
+    }
     
     & .feedColumn-posts{
         display: flex;
@@ -20,16 +42,9 @@
         border-radius: .7rem .7rem 0rem 0rem;
         // box-shadow: $innerShadow6;
         // padding: .5rem;
-        padding-bottom: 1rem;
-    }
-
-    & .searchField {
-        align-self: flex-start;
-        background: $grey5;
-        // border-radius: .7rem;
-
-        & .buttonType1-search{
-            padding: .3rem;
-        }
+        background: $grey4;
+        border: $border1;
+        padding: .7rem;
+        border-bottom: none;
     }
 }

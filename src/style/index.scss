@@ -69,6 +69,8 @@
             @import './components/innerSections/innerSectionHome/feedViews/feedRegularView.scss';
             @import './components/innerSections/innerSectionHome/feedViews/feedDetailsPanel.scss';
             @import './components/innerSections/innerSectionHome/feedViews/addFeedButton.scss';
+            @import './components/innerSections/innerSectionHome/feedViews/feedColumnButton.scss';
+            @import './components/innerSections/innerSectionHome/feedViews/filterPanel.scss';
     
     // textComponents
     @import './components/textComponent/textField.scss';
@@ -106,6 +108,7 @@
         @import './other/keyframes/entryPage-keyframes.scss';
         @import './other/keyframes/homePage-keyframes.scss';
         @import './other/keyframes/post-keyframes.scss';
+        @import './other/keyframes/viewType-keyframes.scss';
 
 
 // responsive - Have to insert it at the end so it can bypass the eventual previous rules

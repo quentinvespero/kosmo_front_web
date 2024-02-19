@@ -1,0 +1,29 @@
+.feedColumnButton{
+    // padding: .5rem;
+    // @include buttonBehavior($grey1, .9, .1s);
+    // border-radius: 5rem;
+    animation: zoomEffect1 1s ease-in-out;
+    
+    & .buttonWithIcon-feedColumnButton{
+        padding: .45rem;
+        @include buttonBehavior($white6, .9, .1s);
+        border-radius: 5rem;
+        
+        & img{
+            width: .8rem;
+            height: .8rem;
+        }
+    }
+}
+.buttonWithIcon-feedColumnButton_filter{
+    padding: .5rem;
+    @include buttonBehavior($grey3, .9, .1s);
+    border-radius: .25rem;
+    border-radius: .5rem;
+    box-shadow: $innerShadow3;
+    
+    & img{
+        width: .8rem;
+        height: .8rem;
+    }
+}
