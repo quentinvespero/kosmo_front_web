@@ -1,13 +1,35 @@
 .feedColumn {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
-    overflow-y: scroll;
+    row-gap: .7rem;
+    // overflow-y: scroll;
     background: $grey4;
-    padding: 1rem;
+    padding: .7rem;
     border-radius: .7rem .7rem 0rem 0rem;
     // height: 50vh;
     width: 20rem;
     border: $border7;
     border-bottom: none;
+    padding-bottom: 0;
+    
+    & .feedColumn-posts{
+        display: flex;
+        flex-direction: column;
+        row-gap: .7rem;
+        overflow-y: scroll;
+        border-radius: .7rem .7rem 0rem 0rem;
+        // box-shadow: $innerShadow6;
+        // padding: .5rem;
+        padding-bottom: 1rem;
+    }
+
+    & .searchField {
+        align-self: flex-start;
+        background: $grey5;
+        // border-radius: .7rem;
+
+        & .buttonType1-search{
+            padding: .3rem;
+        }
+    }
 }

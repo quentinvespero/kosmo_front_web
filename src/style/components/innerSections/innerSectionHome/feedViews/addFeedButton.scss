@@ -2,7 +2,13 @@
     display: flex;
     align-self: center;
     // background: $blue;
-    padding: 1rem;
+    padding: .6rem;
     border-radius: 5rem;
-    @include buttonBehavior($blue, .9, .1s)
+    @include buttonBehavior($blue, .95, .1s);
+    border: $border6;
+    margin: 0rem 1.5rem;
+
+    & .buttonWithIcon-addFeedButton{
+        display: flex;
+    }
 }

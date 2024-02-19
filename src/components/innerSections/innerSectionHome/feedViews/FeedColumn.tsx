@@ -7,17 +7,19 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
     return (
         <div className='feedColumn'>
             <SearchField/>
-            {posts && 
-                posts.map((post) => (
-                <Post
-                    key={post._id} 
-                    screenFormat={screenFormat} 
-                    postId={post._id} 
-                    idSelectedPost={idSelectedPost} 
-                    setIdSelectedPost={setIdSelectedPost}
-                    selectedViewType={selectedViewType} 
-                />
-            ))}
+            <div className="feedColumn-posts">
+                {posts && 
+                    posts.map((post) => (
+                    <Post
+                        key={post._id} 
+                        screenFormat={screenFormat} 
+                        postId={post._id} 
+                        idSelectedPost={idSelectedPost} 
+                        setIdSelectedPost={setIdSelectedPost}
+                        selectedViewType={selectedViewType} 
+                    />
+                ))}
+            </div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
-// explanation buttonText props : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
+// explanation **buttonText props** : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
 // - locationOfTheButton will then be used to give the button a personalised class
 // - purposeOfTheButton will be used for the text of the button
 

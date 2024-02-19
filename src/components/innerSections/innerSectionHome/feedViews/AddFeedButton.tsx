@@ -4,7 +4,7 @@ import ButtonWithIcon from '../../../buttons/ButtonWithIcon'
 const AddFeedButton = () => {
     return (
         <div className='addFeedButton'>
-            {/* <ButtonWithIcon /> */}
+            <ButtonWithIcon buttonIcon='plus_white2' buttonText='addFeedButton-'/>
         </div>
     )
 }
