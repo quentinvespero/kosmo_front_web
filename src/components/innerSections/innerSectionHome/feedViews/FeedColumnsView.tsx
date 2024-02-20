@@ -41,7 +41,28 @@ const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
             {/* <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
                 posts={posts}
                 screenFormat={screenFormat}
                 idSelectedPost={idSelectedPost}
@@ -49,6 +70,13 @@ const FeedColumnsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                 selectedViewType={selectedViewType}
             /> */}
             {/* <FeedColumn 
+                posts={posts}
+                screenFormat={screenFormat}
+                idSelectedPost={idSelectedPost}
+                setIdSelectedPost={setIdSelectedPost}
+                selectedViewType={selectedViewType}
+            />
+            <FeedColumn 
                 posts={posts}
                 screenFormat={screenFormat}
                 idSelectedPost={idSelectedPost}
