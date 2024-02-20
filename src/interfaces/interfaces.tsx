@@ -1,6 +1,8 @@
 // post
 // 14/01/24 : ⬇️ deprecated, this has been moved to the interface file relative to post : postInterfaces
 
+import { ViewTypeSelectorProps } from "./logicComponents"
+
     // post interactions - button Up / Down vote
     // export interface UpDownVoteElementsProps {
     //     interactionType: 'upvote' | 'downvote'
@@ -71,6 +73,7 @@ export interface TopMenuProps {
     screenFormat: ScreenProps['screenFormat']
     selectedFeed: FeedSelectorProps['selectedFeed']
     setSelectedFeed: FeedSelectorProps['setSelectedFeed']
+    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
 }
 
 // // Header component props

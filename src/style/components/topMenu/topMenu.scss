@@ -6,11 +6,16 @@
     @include transition(.2s);
     column-gap: .5rem;
     border: $border1;
-    animation: zoomEffect2 .5s ease-in-out;
 
     position: relative;
     top: 0rem;
     background: $transparentGrey1;
+}
+.topMenu-visible{
+    animation: zoomEffect2 .5s ease-in-out;
+}
+.topMenu-hidden{
+    animation: zoomEffect3 .5s ease-in-out;
 }
 .topMenu-sticky{
     position: fixed;

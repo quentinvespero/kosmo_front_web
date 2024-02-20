@@ -7,7 +7,7 @@ import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ScreenProps } from '../../interfaces/interfaces'
 import InnerSectionHome from './innerSectionHome/InnerSectionHome'
 
-const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat}) => {
+const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat, selectedViewType, setSelectedViewType}) => {
 
     return (
         <div 
@@ -22,7 +22,12 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
                 //     <Feed screenFormat={screenFormat}/>
                 //     {selectedFeed && screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
                 // </div>
-                <InnerSectionHome screenFormat={screenFormat} selectedFeed={selectedFeed}/>
+                <InnerSectionHome 
+                    screenFormat={screenFormat} 
+                    selectedFeed={selectedFeed}
+                    selectedViewType={selectedViewType}
+                    setSelectedViewType={setSelectedViewType}
+                />
             }
 
             {selectedFeed === 'profile' && 

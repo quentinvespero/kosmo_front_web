@@ -5,6 +5,8 @@ import { FeedSelectorProps } from "./topMenuInterfaces";
 
 export interface InnerSectionProps {
     selectedFeed?: FeedSelectorProps['selectedFeed']
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+    setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
 }
 
 export interface InnerSectionHomeProps {
@@ -12,6 +14,8 @@ export interface InnerSectionHomeProps {
     // selectedPostId?:Post['_id']
     idSelectedPost?:string
     // viewType: 'basic' | 'columns' | 'details'
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+    setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
 }
 
 export interface ViewTypeButtonProps {

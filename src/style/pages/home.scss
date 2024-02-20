@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     // padding: 2rem;
-    @include transition(.1s);
+    @include transition(.3s);
     z-index: 1;
     row-gap: 3rem;
     
@@ -14,4 +14,8 @@
 .home-mobileScreen {
     row-gap: 2rem;
     padding: .8rem;
+}
+
+.home-columnsView{
+    row-gap: 0rem;
 }
