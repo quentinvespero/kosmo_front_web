@@ -54,8 +54,8 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
                         </div>}
+                        {hasClickedOnEnter && <LoginAndRegister/>}
                     </div>
-                    {hasClickedOnEnter && <LoginAndRegister/>}
                     {!hasClickedOnEnter && <div className="entryPage-description">
                         <p className="entryPage-description-texts">Get into the Field.</p>
                         <div className="verticalSpace"></div>
