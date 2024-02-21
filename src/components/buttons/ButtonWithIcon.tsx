@@ -5,7 +5,7 @@ import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 // - locationOfTheButton will then be used to give the button a personalised class
 // - purposeOfTheButton will be used for the text of the button
 
-const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) => {
+const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, functionToPass, className}) => {
 
 
     // splitting the value of buttonText props
@@ -18,7 +18,7 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
     let buttonLocation = ''
 
     if (splitButtonText.length === 1) {
-        console.log('No hyphen "-" found in buttonText')
+        // console.log('No hyphen "-" found in buttonText')
 
         // using the whole text of buttonText anyway
         textOfTheButton = buttonText
@@ -30,12 +30,17 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText}) 
     }
 
     return (
-        <div className={`buttonWithIcon buttonWithIcon-${buttonLocation}`} title={textOfTheButton}>
-            <img
+        <div 
+            className={`buttonWithIcon buttonWithIcon-${className ? className : buttonLocation}`} 
+            title={textOfTheButton}
+            onClick={functionToPass}
+        >
+            {buttonIcon && <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}
                 alt={`${textOfTheButton} image`} 
-            />
+            />}
             <p>{textOfTheButton}</p>
+            
         </div>
     )
 }

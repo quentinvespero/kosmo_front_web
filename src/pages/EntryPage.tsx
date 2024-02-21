@@ -3,6 +3,7 @@ import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
 import { EntryPageProps } from "../interfaces/pagesInterfaces"
 import { ScreenProps } from "../interfaces/interfaces"
+import LoginAndRegister from "../components/innerSections/LoginAndRegister"
 
 const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat, currentPage }) => {
 
@@ -19,6 +20,8 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
 
     const [colorLightAnimation, setColorLightAnimation] = useState(false)
     const [entryPageAnimation, setEntryPageAnimation] = useState(false)
+
+    const [hasClickedOnEnter, setHasClickedOnEnter] = useState(false)
 
     useEffect(() => {
         if (animation) {
@@ -42,23 +45,25 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                 <div className="entryPage-innerElements">
                     <Header screenFormat={screenFormat} currentPage={currentPage}/>
                     <div className="entryPage-centerSection">
-                        <div 
+                        {!hasClickedOnEnter && <div 
                             className='entryPage-buttonSection' 
                             // onMouseEnter={handleButtonHovering} 
                             // onMouseLeave={handleButtonLeaving}
-                            onClick={pageSelection}
+                            // onClick={pageSelection}
+                            onClick={() => setHasClickedOnEnter(true)}
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
-                        </div>
+                        </div>}
                     </div>
-                    <div className="entryPage-description">
+                    {hasClickedOnEnter && <LoginAndRegister/>}
+                    {!hasClickedOnEnter && <div className="entryPage-description">
                         <p className="entryPage-description-texts">Get into the Field.</p>
                         <div className="verticalSpace"></div>
                         <p className="entryPage-description-texts">Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
                         <p className="entryPage-description-texts">A space where your time would feel well-spent.</p>
                         <div className="verticalSpace"></div>
                         <p className="entryPage-description-texts">By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

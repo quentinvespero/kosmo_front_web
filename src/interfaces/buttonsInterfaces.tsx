@@ -69,7 +69,9 @@ export interface AddPostButton2Props {
 export interface ButtonWithIconProps {
     // buttonText: 'settings' | 'manage_feeds' | 'bookmarks'
     buttonText: string
-    buttonIcon: string
+    buttonIcon?: string
+    functionToPass?: () => void
+    className?:string
 }
 
 export interface HideRightPanelButtonProps {
