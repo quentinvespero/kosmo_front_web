@@ -3,7 +3,7 @@ import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
 import { EntryPageProps } from "../interfaces/pagesInterfaces"
 import { ScreenProps } from "../interfaces/interfaces"
-import LoginAndRegister from "../components/innerSections/LoginAndRegister"
+import LoginAndRegister from "../components/loginAndRegister/LoginAndRegister"
 
 const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, animation, screenFormat, currentPage }) => {
 
@@ -23,6 +23,8 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
 
     const [hasClickedOnEnter, setHasClickedOnEnter] = useState(false)
 
+    const [showingLoginAndRegister, setShowingLoginAndRegister] = useState(false)
+
     useEffect(() => {
         if (animation) {
             setColorLightAnimation(true)
@@ -38,6 +40,13 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
         }
     }, [animation])
 
+    const handleClick = () => {
+        setShowingLoginAndRegister(true)
+        setTimeout(() => {
+            setHasClickedOnEnter(true)
+        }, 250)
+    }
+
     return (
         <div className={`entryPage ${entryPageAnimation ? 'pageAnimationFadeOut' : ''}`}>
             <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
@@ -46,17 +55,20 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                     <Header screenFormat={screenFormat} currentPage={currentPage}/>
                     <div className="entryPage-centerSection">
                         {!hasClickedOnEnter && <div 
-                            className='entryPage-buttonSection' 
+                            className={`entryPage-buttonSection ${showingLoginAndRegister ? 'entryPage-buttonSection-hidding' : ''}`}
                             // onMouseEnter={handleButtonHovering} 
                             // onMouseLeave={handleButtonLeaving}
                             // onClick={pageSelection}
-                            onClick={() => setHasClickedOnEnter(true)}
+                            onClick={handleClick}
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
                         </div>}
                         {hasClickedOnEnter && <LoginAndRegister/>}
                     </div>
-                    {!hasClickedOnEnter && <div className="entryPage-description">
+                    {!hasClickedOnEnter && 
+                    <div 
+                        className={`entryPage-description ${showingLoginAndRegister ? 'entryPage-description-hidding' : ''}`}
+                    >
                         <p className="entryPage-description-texts">Get into the Field.</p>
                         <div className="verticalSpace"></div>
                         <p className="entryPage-description-texts">Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>

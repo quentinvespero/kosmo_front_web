@@ -43,6 +43,10 @@
                 row-gap: 2rem;
                 justify-content: space-evenly;
                 margin: 0rem 1rem;
+
+                & .entryPage-buttonSection-hidding{
+                    animation: zoomEffect4 .3s ease-in-out;
+                }
             }
             
             & .entryPage-description{
@@ -62,6 +66,9 @@
                 & > .verticalSpace {
                     margin: .7rem 0rem;
                 }
+            }
+            & .entryPage-description-hidding{
+                animation: zoomEffect5 .3s ease-in-out;
             }
         }
     }

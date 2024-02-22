@@ -70,7 +70,7 @@ export interface ButtonWithIconProps {
     // buttonText: 'settings' | 'manage_feeds' | 'bookmarks'
     buttonText: string
     buttonIcon?: string
-    functionToPass?: () => void
+    // functionToPass?: () => void
     className?:string
 }
 

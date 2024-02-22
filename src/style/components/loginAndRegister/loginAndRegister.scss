@@ -1,0 +1,33 @@
+.loginAndRegister{
+    display: flex;
+    flex-direction: column;
+    animation: zoomEffect2 .25s ease-in-out;
+    @include transition(.2s);
+    row-gap: 1rem;
+    color: $white3;
+
+    // & .loginAndRegister-panel{
+    //     display: flex;
+    //     flex-direction: column;
+    //     @include transition(.2s);
+    //     @include transparent($transparentWhite2, $blur2);
+    //     border-radius: .5rem;
+    //     padding: 1.5rem 2rem;
+    //     border: $border1;
+
+    // }
+    
+    // & .loginAndRegister-buttons{
+    //     display: flex;
+    //     flex-direction: row;
+    //     column-gap: 1rem;
+    //     align-self: flex-end;
+
+    //     & .loginAndRegister-choices{
+    //         display: flex;
+    //         flex-direction: row;
+    //         column-gap: 1rem;
+    //         align-self: center;
+    //     }
+    // }
+}

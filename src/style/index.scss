@@ -56,7 +56,6 @@
     // innerSections
     @import './components/innerSections/profile.scss';
     @import './components/innerSections/innerSection.scss';
-    @import './components/innerSections/loginAndRegister.scss';
 
         // innerSectionHome
         @import './components/innerSections/innerSectionHome/innerSectionHome.scss';
@@ -76,6 +75,13 @@
     // textComponents
     @import './components/textComponent/textField.scss';
     @import './components/textComponent/hoveringDescription.scss';
+
+    // loginAndRegister
+    @import './components/loginAndRegister/loginAndRegister.scss';
+    @import './components/loginAndRegister/login.scss';
+    @import './components/loginAndRegister/register.scss';
+    @import './components/loginAndRegister/loginAndRegisterButton.scss';
+    @import './components/loginAndRegister/askPanel.scss';
 
     // imageComponents
     @import './components/imageComponents/profilePhoto.scss';

@@ -5,7 +5,7 @@ import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 // - locationOfTheButton will then be used to give the button a personalised class
 // - purposeOfTheButton will be used for the text of the button
 
-const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, functionToPass, className}) => {
+const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className}) => {
 
 
     // splitting the value of buttonText props
@@ -33,7 +33,7 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, f
         <div 
             className={`buttonWithIcon buttonWithIcon-${className ? className : buttonLocation}`} 
             title={textOfTheButton}
-            onClick={functionToPass}
+            // onClick={functionToPass}
         >
             {buttonIcon && <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}

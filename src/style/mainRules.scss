@@ -63,6 +63,7 @@ $border6 : solid .15rem $transparentWhite2;
 $border7 : solid .15rem $transparent;
 $border8 : solid .2rem $transparent;
 $border9 : solid .15rem $transparentGrey1;
+$border10 : solid .15rem $white4;
 
 // -------- main fonts
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -152,9 +153,6 @@ li {
     list-style: none;
 }
 
-input[type="checkbox"] {
-    margin: 0 .5rem;
-}
 
 h1{
     font-size: 1.7rem;
@@ -173,6 +171,9 @@ button{
     margin: 0;
 }
 
+input[type="checkbox"] {
+    margin: 0 .5rem;
+}
 input[type="search"] {
     appearance: none;
     border: none;
@@ -184,6 +185,12 @@ input[type="search"]::-webkit-search-cancel-button {
 input:focus{
     outline: none;
 }
+input[type='text']{
+    border: none;
+    // border-radius: .3rem;
+    font-family: 'sen','saira', Arial, Helvetica, sans-serif;
+}
+
 strong{
     font-weight: 800;
 }
