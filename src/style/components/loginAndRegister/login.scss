@@ -1,75 +1,31 @@
 .login{
-    display: flex;
-    flex-direction: column;
-    min-width: 25rem;
-    animation: zoomEffect2 .25s ease-in-out;
-    row-gap: 1rem;
     
-    & .login-content{
-        border: $border1;
-        display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
-        @include transparent($transparentWhite2, $blur2);
-        padding: 1.5rem 2rem;
-        border-radius: .3rem;
-
-        & .login-fields {
-            display: flex;
-            flex-direction: column;
-            row-gap: .5rem;
-
-            & p{
-                // @include transparent($transparent, $blur3);
-                // padding: .2rem;
-                // border-radius: .2rem;
-                color: $grey3;
-
-            }
-
-            & input {
-                border: $border6;
-                border-radius: .5rem;
-                padding: .5rem .7rem;
-                background: $transparentGrey8;
-                color: $white2;
-                height: 1.1rem;
-            }
-            & input:focus {
-                border: $border10;
-            }
-        }
-        & .login-mail{
-            
-        }
-        & .login-password{
-
-        }
-        & .login-forgottenPassword{
-            display: flex;
-            align-self: flex-end;
-            margin-top: 1rem;
-            // padding: .1rem .5rem;
-            // border-radius: .2rem;
-            font-size: .8rem;            
-            
-            & .buttonWithIcon-forgottenPassword{
-                column-gap: .5rem;
-                @include flexVerticalCentered(row);
-                @include buttonBehavior($grey2, 1, .1s);
-                padding: .1rem .5rem;
-                border-radius: .2rem;
-                border: $border1;
-                
-                & img {
-                    width: .7rem;
-                    height: .7rem;
-                }
-            }
-        }
+    & .login-mail{
+        
     }
-    & .login-buttons{
+    & .login-password{
+
+    }
+    & .login-forgottenPassword{
         display: flex;
         align-self: flex-end;
+        margin-top: 1rem;
+        // padding: .1rem .5rem;
+        // border-radius: .2rem;
+        font-size: .8rem;            
+        
+        & .buttonWithIcon-forgottenPassword{
+            column-gap: .5rem;
+            @include flexVerticalCentered(row);
+            @include buttonBehavior($grey2, 1, .1s);
+            padding: .1rem .5rem;
+            border-radius: .2rem;
+            border: $border1;
+            
+            & img {
+                width: .7rem;
+                height: .7rem;
+            }
+        }
     }
 }

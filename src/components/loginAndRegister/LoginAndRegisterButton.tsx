@@ -2,12 +2,21 @@ import React from 'react'
 import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
 
-const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setHaveAnAccount}) => {
+const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel}) => {
 
     const handleClick = () => {
-        setHaveAnAccount && setHaveAnAccount(buttonText.includes('yes') ? true : false)
-        if (buttonText.includes('Enter')) {
-            console.log('clicked on enter --> submitting login')
+        // for yes and no buttons
+        if (!buttonText.includes('enter') && !buttonText.includes('return')) {
+            // setHaveAnAccount && setHaveAnAccount(buttonText.includes('yes') ? true : false)
+            setSelectedPanel && setSelectedPanel(buttonText.includes('yes') ? 'login' : 'register')
+        }
+        // for enter and return buttons
+        else {
+            // setHaveAnAccount && setHaveAnAccount(buttonText.includes('return') && null)
+            if (buttonText.includes('return')) {
+                // setHaveAnAccount && setHaveAnAccount(null)
+                setSelectedPanel && setSelectedPanel('ask')
+            }
         }
     }
 
@@ -16,11 +25,12 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
             className={`loginAndRegisterButton 
                 ${buttonText.includes('yes') ? 'loginAndRegisterButton-choice loginAndRegisterButton-yes' : ''}
                 ${buttonText.includes('no') ? 'loginAndRegisterButton-choice loginAndRegisterButton-no' : ''}
-                ${buttonText.includes('Enter') ? 'loginAndRegisterButton-enter' : ''}
+                ${buttonText.includes('enter') ? 'loginAndRegisterButton-enter' : ''}
+                ${buttonText.includes('return') ? 'loginAndRegisterButton-return' : ''}
             `}
             onClick={handleClick}
         >
-            <ButtonWithIcon buttonText={buttonText}/>
+            <ButtonWithIcon buttonText={buttonText} buttonIcon={buttonText.includes('return') ? 'return_grey4' : ''}/>
         </div>
     )
 }

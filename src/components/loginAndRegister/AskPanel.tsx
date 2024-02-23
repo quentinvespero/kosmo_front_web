@@ -1,14 +1,14 @@
 import React from 'react'
-import { LoginAndRegisterAskPanelProps } from '../../interfaces/loginAndRegisterInterfaces'
+import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
 import LoginAndRegisterButton from './LoginAndRegisterButton'
 
-const AskPanel:React.FC<LoginAndRegisterAskPanelProps> = ({setHaveAnAccount}) => {
+const AskPanel:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel}) => {
     return (
         <div className='askPanel'>
             <h2>Do you own an account on here ?</h2>
             <div className="loginAndRegister-choices">
-                <LoginAndRegisterButton buttonText='loginAndRegisterButton-yes' setHaveAnAccount={setHaveAnAccount}/>
-                <LoginAndRegisterButton buttonText='loginAndRegisterButton-no' setHaveAnAccount={setHaveAnAccount}/>
+                <LoginAndRegisterButton buttonText='loginAndRegisterButton-yes' setSelectedPanel={setSelectedPanel}/>
+                <LoginAndRegisterButton buttonText='loginAndRegisterButton-no' setSelectedPanel={setSelectedPanel}/>
             </div>
         </div>
     )

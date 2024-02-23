@@ -1,13 +1,18 @@
 export interface LoginAndRegisterProps{
-    haveAnAccount: true | false | null
+    selectedPanel: 'register'|'login'|'ask'
 }
 
 export interface LoginAndRegisterButtonProps{
     buttonText: string
-    // haveAnAccount:boolean | null
-    setHaveAnAccount?: React.Dispatch<React.SetStateAction<LoginAndRegisterProps['haveAnAccount']>>
+    setSelectedPanel?:LoginAndRegisterPanelsProps['setSelectedPanel']
 }
 
-export interface LoginAndRegisterAskPanelProps{
-    setHaveAnAccount:LoginAndRegisterButtonProps['setHaveAnAccount']
+export interface LoginAndRegisterPanelsProps {
+    setSelectedPanel:React.Dispatch<React.SetStateAction<LoginAndRegisterProps['selectedPanel']>>
+}
+
+export interface LoginAndRegisterFieldProps {
+    fieldType: 'text' | 'password'
+    placeHolderValue:string
+    textDescription:string
 }

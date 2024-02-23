@@ -3,6 +3,7 @@
     flex-direction: column;
     row-gap: 1rem;
     color: $grey3;
+    animation: zoomEffect2 .25s ease-in-out;
 
     & h2 {
         display: flex;

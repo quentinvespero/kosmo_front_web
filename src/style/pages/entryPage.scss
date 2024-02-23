@@ -35,6 +35,7 @@
             align-items: normal;
             height: 100vh;
             width: 100vw;
+            min-height: 35rem;
         
             & .entryPage-centerSection{
                 @include flexVerticalCentered(column-reverse);
