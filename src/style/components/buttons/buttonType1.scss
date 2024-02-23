@@ -97,6 +97,7 @@
     // animation: gradientTransparentBackground 15s ease-in-out infinite alternate;
     position: relative;
     overflow: hidden;
+    border-radius: .2rem;
 
     &:hover{
         // background: $grey4 !important;

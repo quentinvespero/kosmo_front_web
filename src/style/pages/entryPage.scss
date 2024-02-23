@@ -62,6 +62,18 @@
                     padding: .4rem;
                     width: fit-content;
                     font-size: 1rem;
+                    border-radius: .2rem;
+                }
+                & > .entryPage-description-text-personalized-1{
+                    // border-radius: .2rem .2rem .2rem .2rem;
+                    // border-end-start-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+                & > .entryPage-description-text-personalized-2{
+                    // border-radius: 0rem 0 .2rem .2rem;
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+                    margin-top: -.1rem;
                 }
                 & > .verticalSpace {
                     margin: .7rem 0rem;

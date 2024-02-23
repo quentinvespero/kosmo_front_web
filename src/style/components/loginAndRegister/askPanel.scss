@@ -10,8 +10,9 @@
         @include transition(.2s);
         @include transparent($transparentWhite2, $blur2);
         border-radius: .3rem;
-        padding: 1rem 2rem;
+        padding: .8rem 1.5rem;
         border: $border1;
+        font-weight: 400;
     }
     .loginAndRegister-choices{
         @include flexVerticalCentered(row);

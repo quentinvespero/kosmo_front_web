@@ -1,24 +1,25 @@
 .loginAndRegisterButton{
     padding: .5rem 2rem;
     border-radius: 0.3rem;
-    border: $border3;
+    border: $border7;
     color: $white1;
     @include transition(.2s);
+    background: $grey4;
     
     // & :hover{
     //     color: $white3;
     // }
 }
 .loginAndRegisterButton-choice{
-    
+    // background: $transparentGrey6;
 }
 .loginAndRegisterButton-yes{
-    @include buttonBehavior($pink, 1, .1s);
+    @include buttonBehavior2($pink, 1, .15s);
 }
 .loginAndRegisterButton-no{
-    @include buttonBehavior($blue, 1, .1s);
+    @include buttonBehavior2($blue, 1, .15s);
 }
 .loginAndRegisterButton-enter{
     // @include transparent($pink, $blur2);
-    @include buttonBehavior($pink, 1, .1s);
+    @include buttonBehavior2($pink, 1, .15s);
 }

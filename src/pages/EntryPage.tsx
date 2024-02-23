@@ -71,8 +71,8 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                     >
                         <p className="entryPage-description-texts">Get into the Field.</p>
                         <div className="verticalSpace"></div>
-                        <p className="entryPage-description-texts">Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
-                        <p className="entryPage-description-texts">A space where your time would feel well-spent.</p>
+                        <p className="entryPage-description-texts entryPage-description-text-personalized-1">Kosmo aims to be a quality-focused social network, providing a comfortable and enriching space.</p>
+                        <p className="entryPage-description-texts entryPage-description-text-personalized-2">A space where your time would feel well-spent.</p>
                         <div className="verticalSpace"></div>
                         <p className="entryPage-description-texts">By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
                     </div>}
