@@ -21,7 +21,8 @@
         @include transition(.5s);
     }
     & .colorLight-off{
-        opacity: 10%;
+        opacity: 0%;
+        // display: none;
     }
     
     & .entryPage-backgroundLayer{

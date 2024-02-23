@@ -33,11 +33,15 @@
     
     padding: .5rem;
     border-radius: 5rem;
-    border: $border7;
+    border: $border1;
     @include transition(.1s);
     // background: $transparentGrey1;
 
     & .buttonWithIcon > p{
         display: none;
+    }
+    &:hover{
+        filter: invert(1);
+        border: $border2;
     }
 }

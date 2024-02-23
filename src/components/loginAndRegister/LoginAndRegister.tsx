@@ -4,8 +4,10 @@ import LoginAndRegisterButton from './LoginAndRegisterButton'
 import Login from './Login'
 import Register from './Register'
 import AskPanel from './AskPanel'
+import { ScreenProps } from '../../interfaces/interfaces'
+import { LoginAndRegisterProps } from '../../interfaces/loginAndRegisterInterfaces'
 
-const LoginAndRegister = () => {
+const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenFormat, pageSelection}) => {
 
     // following the state for the choice between login and register
     // const [haveAnAccount, setHaveAnAccount] = useState<true | false | null>(null)
@@ -20,7 +22,8 @@ const LoginAndRegister = () => {
             {selectedPanel ==='register' && <Register setSelectedPanel={setSelectedPanel}/>}
             {selectedPanel !== 'ask' && <div className="loginAndRegister-buttons">
                 <LoginAndRegisterButton buttonText='return' setSelectedPanel={setSelectedPanel}/>
-                <LoginAndRegisterButton buttonText='enter'/>
+                <LoginAndRegisterButton buttonText='enter' pageSelection={pageSelection}/>
+                {/* <LoginAndRegisterButton buttonText='enter'/> */}
             </div>}
         </div>
     )

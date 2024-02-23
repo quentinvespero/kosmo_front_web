@@ -2,7 +2,7 @@ import React from 'react'
 import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
 
-const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel}) => {
+const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, pageSelection}) => {
 
     const handleClick = () => {
         // for yes and no buttons
@@ -17,6 +17,9 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                 // setHaveAnAccount && setHaveAnAccount(null)
                 setSelectedPanel && setSelectedPanel('ask')
             }
+            else {
+                pageSelection && pageSelection()
+            }
         }
     }
 
@@ -30,7 +33,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
             `}
             onClick={handleClick}
         >
-            <ButtonWithIcon buttonText={buttonText} buttonIcon={buttonText.includes('return') ? 'return_grey4' : ''}/>
+            <ButtonWithIcon buttonText={buttonText.includes('enter') ? 'bypass signing in 👀' : buttonText} buttonIcon={buttonText.includes('return') ? 'return_grey4' : ''}/>
         </div>
     )
 }

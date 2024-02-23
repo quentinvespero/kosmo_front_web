@@ -22,8 +22,9 @@
     }
 
     & .loginAndRegister-buttons{
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
+        @include flexVerticalCentered(row);
         place-content: space-between;
         animation: zoomEffect2 .4s ease-in-out;
     }

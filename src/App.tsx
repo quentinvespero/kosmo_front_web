@@ -24,7 +24,7 @@ const App = () => {
         setAnimation(true)
         setTimeout(() => {
             setCurrentPage('home')
-        }, 500)
+        }, 650)
     }
 
     // function to set the value of screenFormat based on the width of the window

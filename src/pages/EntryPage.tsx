@@ -30,16 +30,17 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
             setColorLightAnimation(true)
             setTimeout(() => {
                 setEntryPageAnimation(true)
-            }, 500)
+            }, 600)
         }
         else {
             setEntryPageAnimation(false)
             setTimeout(() => {
                 setColorLightAnimation(false)
-            }, 500)
+            }, 600)
         }
     }, [animation])
 
+    // show the login and register panels
     const handleClick = () => {
         setShowingLoginAndRegister(true)
         setTimeout(() => {
@@ -63,7 +64,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
                         </div>}
-                        {hasClickedOnEnter && <LoginAndRegister/>}
+                        {hasClickedOnEnter && <LoginAndRegister pageSelection={pageSelection}/>}
                     </div>
                     {!hasClickedOnEnter && 
                     <div 
