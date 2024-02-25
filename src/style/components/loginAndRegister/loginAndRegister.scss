@@ -19,6 +19,12 @@
         @include transparent($transparentWhite2, $blur3);
         padding: 1.5rem 2rem;
         border-radius: .3rem;
+        
+        & h3 {
+            color: $grey4;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
     }
 
     & .loginAndRegister-buttons{

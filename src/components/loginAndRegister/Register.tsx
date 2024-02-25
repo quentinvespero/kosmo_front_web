@@ -5,6 +5,7 @@ import LoginAndRegisterField from './LoginAndRegisterField'
 const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel}) => {
     return (
         <div className='register loginAndRegister-panels'>
+            <h3>Let's create an account then</h3>
             <LoginAndRegisterField textDescription='Username' fieldType='text' placeHolderValue='Type a username'/>
             <LoginAndRegisterField textDescription='Mail address' fieldType='text' placeHolderValue='Type a mail address'/>
             <LoginAndRegisterField textDescription='Password' fieldType='password' placeHolderValue='Type a password'/>
