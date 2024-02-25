@@ -21,7 +21,7 @@ const FeedDetailsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                     />
                 ))}
             </div>
-            <FeedDetailsPanel/>
+            <FeedDetailsPanel idSelectedPost={idSelectedPost}/>
         </div>
     )
 }

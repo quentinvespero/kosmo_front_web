@@ -9,6 +9,7 @@
     @include transparent($transparentWhite1, 1rem);
     @include transition(.1s);
     cursor: pointer;
+    animation: zoomEffect1 .25s ease-in-out;
 
     &:hover{
         background: darken($transparentWhite1, 4%);

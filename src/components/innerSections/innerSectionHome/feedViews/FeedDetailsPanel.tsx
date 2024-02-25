@@ -1,9 +1,13 @@
 import React from 'react'
+import { FeedDetailsPanelProps } from '../../../../interfaces/feedViewsInterfaces'
 
-const FeedDetailsPanel = () => {
+const FeedDetailsPanel:React.FC<FeedDetailsPanelProps> = ({idSelectedPost}) => {
+
+    fetch
+
     return (
         <div className='feedDetailsPanel'>
-            TEST
+            {idSelectedPost}
         </div>
     )
 }

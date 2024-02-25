@@ -18,10 +18,6 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
 
             {selectedFeed && 
             selectedFeed.includes('feed') && 
-                // <div className="innerSection-home">
-                //     <Feed screenFormat={screenFormat}/>
-                //     {selectedFeed && screenFormat === 'desktop' && selectedFeed.includes('feed') && <RightPanel/>}
-                // </div>
                 <InnerSectionHome 
                     screenFormat={screenFormat} 
                     selectedFeed={selectedFeed}
@@ -31,9 +27,6 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
             }
 
             {selectedFeed === 'profile' && 
-                // <div className="innerSection-profile">
-                //     <Profile screenFormat={screenFormat}/>
-                // </div>
                 <Profile screenFormat={screenFormat}/>
             }
         </div>

@@ -44,17 +44,6 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
                 ${selectedViewType === 'columnsView' ? 'feed-columnsView' : ''}
             `}
         >
-            {/* {datas &&
-            datas.posts && 
-            datas.posts.map((post) => (
-                <Post 
-                    key={post._id} 
-                    screenFormat={screenFormat} 
-                    postId={post._id} 
-                    idSelectedPost={idSelectedPost} 
-                    setIdSelectedPost={setIdSelectedPost} 
-                />
-            ))} */}
 
             {selectedViewType === 'detailsView' && screenFormat !== 'mobile' && <FeedDetailsView 
                 posts={datas.posts} 

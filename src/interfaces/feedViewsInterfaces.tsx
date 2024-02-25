@@ -12,10 +12,6 @@ export interface FeedViewsInterfaces {
     selectedViewType: ViewTypeSelectorProps['selectedViewType']
 }
 
-// export interface FeedColumnProps {
-//     columnToShow:[string]
-// }
-
 export interface FeedColumnButtonProps {
     buttonIcon: ButtonWithIconProps['buttonIcon']
     buttonText: ButtonWithIconProps['buttonText']
@@ -25,4 +21,8 @@ export interface FeedColumnButtonProps {
 
 export interface FilterPanelProps{
     isFilterPanelVisible: boolean
+}
+
+export interface FeedDetailsPanelProps {
+    idSelectedPost: FeedViewsInterfaces['idSelectedPost']
 }

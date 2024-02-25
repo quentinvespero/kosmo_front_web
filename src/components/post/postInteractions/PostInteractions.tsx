@@ -20,7 +20,6 @@ const PostInteractions:React.FC<ScreenProps & PostInteractionsProps> = ({screenF
             className={`postInteractions 
                 ${selectedViewType && selectedViewType === 'detailsView' || selectedViewType === 'columnsView' ? 'postInteractions-compact' : 'postInteractions-regular'}
             `}
-            // style={{columnGap: isCountersVisible ? '.72rem' : '2.7rem'}}
             // onClick={(e) => e.stopPropagation()}
         >
             <UpDownVoteElements 
