@@ -21,10 +21,10 @@
     }
     
     & .rightPanel-elements-visible{
-        animation: slideFromRight3 .3s ease-in-out;
+        animation: slideFromRight3 .5s ease-in-out;
     }
     & .rightPanel-elements-hidden{
-        animation: slideFromLeft_rightPanel .3s ease-in-out;
+        animation: slideFromLeft_rightPanel .5s ease-in-out;
     }
 }
 .rightPanel-detailsView > .rightPanel-elements{

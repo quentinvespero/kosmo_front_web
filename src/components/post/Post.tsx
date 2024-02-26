@@ -6,7 +6,7 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import { PostProps } from '../../interfaces/postInterfaces'
 import ProfileButton from '../buttons/ProfileButton'
 
-const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType }) => {
+const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType, postLayout }) => {
 
     // follow state of the post being selected to show details of it
     const isPostSelected = idSelectedPost === postId
@@ -34,7 +34,10 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
         <div 
             className={`post 
                 ${isPostSelected ? 'post-selected' : ''}
-                ${selectedViewType && selectedViewType === 'detailsView' || selectedViewType === 'columnsView' ? 'post-compactFormat' : 'post-regularFormat'}
+                
+                ${postLayout && postLayout === 'compact' ? 'post-compactFormat' : '' }
+                ${postLayout && postLayout === 'regular' ? 'post-regularFormat' : '' }
+                ${postLayout && postLayout === 'detail' ? 'post-detailFormat' : '' }
             `}
             onClick={handleClick}
         >
@@ -51,7 +54,7 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
                     <PostContent isPostSelected={isPostSelected}/>
                 </div>
             </div>
-            <PostInteractions screenFormat={ screenFormat } selectedViewType={selectedViewType}/>
+            <PostInteractions screenFormat={ screenFormat } selectedViewType={selectedViewType} postLayout={postLayout}/>
         </div>
     )
 }

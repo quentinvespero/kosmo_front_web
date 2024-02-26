@@ -4,7 +4,7 @@ import UpDownVoteElements from './UpDownVoteElements'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import { PostInteractionsProps } from '../../../interfaces/postInterfaces'
 
-const PostInteractions:React.FC<ScreenProps & PostInteractionsProps> = ({screenFormat, selectedViewType}) => {
+const PostInteractions:React.FC<ScreenProps & PostInteractionsProps> = ({screenFormat, selectedViewType, postLayout}) => {
 
     // defining the "shape" of interactionChoice, explicitely indicating that it will have the string value upvote, downvote or none. And that by default, it takes the value 'none'
     const [interactionChoice, setInteractionChoice] = React.useState<'upvote' | 'downvote' | 'none'>('none')
@@ -18,7 +18,10 @@ const PostInteractions:React.FC<ScreenProps & PostInteractionsProps> = ({screenF
     return (
         <div 
             className={`postInteractions 
-                ${selectedViewType && selectedViewType === 'detailsView' || selectedViewType === 'columnsView' ? 'postInteractions-compact' : 'postInteractions-regular'}
+
+                ${postLayout && postLayout === 'compact' ? 'postInteractions-compact' : ''}
+                ${postLayout && postLayout === 'regular' ? 'postInteractions-regular' : ''}
+                ${postLayout && postLayout === 'detail' ? 'postInteractions-detail postInteractions-compact' : ''}
             `}
             // onClick={(e) => e.stopPropagation()}
         >

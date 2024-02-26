@@ -5,7 +5,7 @@
     flex-grow: 1;
     justify-content: center;
     height: 100%;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
 
     & .feedDetailsView-postsSection {
         display: flex;
@@ -20,5 +20,6 @@
         border: $border7;
         // box-shadow: $innerShadow5;
         // z-index: 3;
+        min-width: 20rem;
     }
 }

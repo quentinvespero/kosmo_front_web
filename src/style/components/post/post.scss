@@ -68,6 +68,7 @@
     border-radius: .8rem;
     border: $border1;
     row-gap: .3rem;
+    min-width: 16rem;
 
     & .innerPost {
         row-gap: .3rem;
@@ -83,4 +84,11 @@
             row-gap: .3rem;
         }
     }
+}
+
+.post-detailFormat{
+    padding: .4rem .8rem;
+    font-size: .85rem;
+    row-gap: .3rem;
+    min-width: 16rem;
 }

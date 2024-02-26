@@ -10,6 +10,7 @@ export interface PostProps {
     idSelectedPost?: Post['_id']
     setIdSelectedPost?: (type:string) => void
     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+    postLayout?: 'regular' | 'compact' | 'detail'
 }
 
 // post interactions - button Up / Down vote
@@ -53,4 +54,5 @@ export interface PostContentProps {
 
 export interface PostInteractionsProps {
     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+    postLayout?:PostProps['postLayout']
 }

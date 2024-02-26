@@ -33,7 +33,8 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
                         postId={post._id} 
                         idSelectedPost={idSelectedPost} 
                         setIdSelectedPost={setIdSelectedPost}
-                        selectedViewType={selectedViewType} 
+                        selectedViewType={selectedViewType}
+                        postLayout='compact'
                     />
                 ))}
             </div>

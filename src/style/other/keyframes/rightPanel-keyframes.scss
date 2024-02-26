@@ -21,13 +21,13 @@
         // transform: translateX(0rem);
         margin-right: 0rem;
     }
-    50%{
-        // transform: translateX(-.5rem);
-        margin-right: .5rem;
-    }
+    // 50%{
+    //     // transform: translateX(-.5rem);
+    //     margin-right: .5rem;
+    // }
     100% {
         opacity: 0;
-        // transform: translateX(10rem);
+        transform: translateX(25rem);
         margin-right: -15rem;
     }
 }

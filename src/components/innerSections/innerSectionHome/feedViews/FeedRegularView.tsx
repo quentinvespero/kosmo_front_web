@@ -21,6 +21,7 @@ const FeedRegularView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, scr
                     idSelectedPost={idSelectedPost} 
                     setIdSelectedPost={setIdSelectedPost} 
                     selectedViewType={selectedViewType}
+                    postLayout='regular'
                 />
             ))}
         </div>
