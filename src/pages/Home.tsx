@@ -37,6 +37,8 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 ${screenFormat ? 'pageAnimationFadeIn' : ''}
                 ${screenFormat === 'mobile' ? 'home-mobileScreen' : ''}
                 ${selectedViewType === 'columnsView' ? 'home-columnsView' : ''}
+                ${selectedViewType === 'detailsView' ? 'home-detailsView' : ''}
+                ${selectedViewType === 'regularView' ? 'home-regularView' : ''}
             `}
             // style={{
             //     rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'

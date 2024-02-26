@@ -1,4 +1,5 @@
 import { RightPanelContent } from "./datasInterfaces"
+import { ViewTypeSelectorProps } from "./logicComponents"
 
 // SuggestionSection component props
 export interface SuggestionSectionProps {
@@ -14,4 +15,5 @@ export interface TrendSectionProps {
 export interface RightPanelProps {
     isToggled?: boolean
     idSelectedPost?:string
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
 }

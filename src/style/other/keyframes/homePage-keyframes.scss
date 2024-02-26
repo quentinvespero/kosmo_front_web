@@ -193,28 +193,6 @@
     }
 }
 
-// is used for the right panel element, for it to show up with a slide animation
-@keyframes slideFromRight3 {
-    0% {
-        opacity: 0;
-        transform: translateX(3rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes slideFromLeft_rightPanel {
-    0% {
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(2rem);
-    }
-}
-
 // is used for the headerMenu panel
 @keyframes slideFromTop {
     0% {

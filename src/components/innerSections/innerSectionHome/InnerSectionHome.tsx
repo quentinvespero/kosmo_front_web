@@ -29,17 +29,17 @@ const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHo
                 screenFormat === 'desktop' && 
                 selectedFeed.includes('feed') && 
                 !idSelectedPost &&
-                <RightPanel/>
+                <RightPanel selectedViewType={selectedViewType}/>
             }
 
             {/* ⬇ below, an idea of the right panel being showing up being triggered if a post is being selected */}
-            {selectedFeed && 
+            {/* {selectedFeed && 
                 selectedViewType !== 'columnsView' &&
                 screenFormat === 'desktop' && 
                 selectedFeed.includes('feed') && 
                 idSelectedPost && 
                 <RightPanel idSelectedPost={idSelectedPost} />
-            }
+            } */}
         </div>
     )
 }

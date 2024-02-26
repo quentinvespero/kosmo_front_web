@@ -6,21 +6,28 @@
     row-gap: 1rem;
     @include transition(.15s);
     // border-left: $border1;
-
+    
     & .rightPanel-elements{
         display: flex;
         flex-direction: column;
         row-gap: 3rem;
-        padding: .5rem 1.5rem;
+        padding: 1.5rem;
         border-left: $border1;
         // min-width: 25%;
         width: 17rem;
+        background: $grey4;
+        border-radius: 1rem;
+        border: $border7;
     }
     
     & .rightPanel-elements-visible{
         animation: slideFromRight3 .3s ease-in-out;
     }
     & .rightPanel-elements-hidden{
-        animation: slideFromLeft_rightPanel .25s ease-in-out;
+        animation: slideFromLeft_rightPanel .3s ease-in-out;
     }
+}
+.rightPanel-detailsView > .rightPanel-elements{
+    height: 100%;
+    overflow-y: scroll;
 }

@@ -8,7 +8,7 @@ import HideRightPanelButton from '../buttons/HideRightPanelButton'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
 import Post from '../post/Post'
 
-const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost }) => {
+const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost, selectedViewType }) => {
 
     const [datas, setDatas] = useState<RightPanelContent | null>(null)
 
@@ -21,7 +21,12 @@ const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost }) => {
     },[])
 
     return (
-        <div className={`rightPanel ${idSelectedPost ? 'rightPanel-postDetails' : ''}`}>
+        <div 
+            className={`rightPanel 
+                ${idSelectedPost ? 'rightPanel-postDetails' : ''}
+                ${selectedViewType === 'detailsView' ? 'rightPanel-detailsView' : ''}
+            `}
+        >
             <HideRightPanelButton isRightPanelVisible={isRightPanelVisible} setIsRightPanelVisible={setIsRightPanelVisible}/>
             <div 
                 className={`rightPanel-elements ${isRightPanelVisible ? 'rightPanel-elements-visible' : 'rightPanel-elements-hidden'}`}

@@ -20,10 +20,13 @@
 }
 .innerSectionHome-detailsView{
     padding: 0rem 1rem;
+    margin-bottom: 1rem;
+    height: 74vh;
 }
 .innerSectionHome-columnsView{
     // height: 100vh;
     width: 100%;
+    margin-top: -1rem;
     
     & .innerSectionHome-feed{
         width: 100%;

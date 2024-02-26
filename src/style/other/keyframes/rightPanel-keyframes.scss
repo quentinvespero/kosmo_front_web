@@ -1,0 +1,33 @@
+// is used for the right panel element, for it to show up with a slide animation
+@keyframes slideFromRight3 {
+    0% {
+        opacity: 0;
+        // transform: translateX(10rem);
+        margin-right: -15rem;
+    }
+    50%{
+        // transform: translateX(-.5rem);
+        margin-right: 1rem;
+    }
+    100% {
+        opacity: 1;
+        // transform: translateX(0rem);
+        margin-right: 0rem;
+    }
+}
+@keyframes slideFromLeft_rightPanel {
+    0% {
+        opacity: 1;
+        // transform: translateX(0rem);
+        margin-right: 0rem;
+    }
+    50%{
+        // transform: translateX(-.5rem);
+        margin-right: .5rem;
+    }
+    100% {
+        opacity: 0;
+        // transform: translateX(10rem);
+        margin-right: -15rem;
+    }
+}
