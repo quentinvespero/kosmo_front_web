@@ -15,8 +15,6 @@ const FeedDetailsPanel:React.FC<FeedDetailsPanelProps> = ({idSelectedPost}) => {
             .catch(error => console.error('Error:', error))
     }, [])
 
-    
-
     return (
         <div className='feedDetailsPanel'>
             <Post 
@@ -25,7 +23,8 @@ const FeedDetailsPanel:React.FC<FeedDetailsPanelProps> = ({idSelectedPost}) => {
                 idSelectedPost={idSelectedPost}
                 postLayout='detail'
             />
-            {idSelectedPost}
+            
+            <p>{idSelectedPost}</p>
         </div>
     )
 }

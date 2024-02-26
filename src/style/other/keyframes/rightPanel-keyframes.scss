@@ -1,12 +1,29 @@
 // is used for the right panel element, for it to show up with a slide animation
-@keyframes slideFromRight3 {
+@keyframes showingUp_rightPanel {
     0% {
         opacity: 0;
-        // transform: translateX(10rem);
-        margin-right: -15rem;
+        transform: translateX(17rem);
+        // margin-right: -17rem;
     }
     50%{
-        // transform: translateX(-.5rem);
+        transform: translateX(-1rem);
+        // margin-right: 1rem;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+        // margin-right: 0rem;
+    }
+}
+
+@keyframes slideFromRight_rightPanel {
+    0% {
+        opacity: 0;
+        // transform: translateX(17rem);
+        margin-right: -17rem;
+    }
+    50%{
+        // transform: translateX(-1rem);
         margin-right: 1rem;
     }
     100% {
@@ -19,15 +36,11 @@
     0% {
         opacity: 1;
         // transform: translateX(0rem);
-        margin-right: 0rem;
+        // margin-right: 0rem;
     }
-    // 50%{
-    //     // transform: translateX(-.5rem);
-    //     margin-right: .5rem;
-    // }
     100% {
         opacity: 0;
-        transform: translateX(25rem);
-        margin-right: -15rem;
+        // transform: translateX(5rem);
+        margin-right: -17rem;
     }
 }

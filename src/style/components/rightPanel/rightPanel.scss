@@ -18,13 +18,14 @@
         background: $grey4;
         border-radius: 1rem;
         border: $border7;
+        // animation: showingUp_rightPanel .4s ease-in-out;
     }
     
     & .rightPanel-elements-visible{
-        animation: slideFromRight3 .5s ease-in-out;
+        animation: slideFromRight_rightPanel .4s ease-in-out;
     }
     & .rightPanel-elements-hidden{
-        animation: slideFromLeft_rightPanel .5s ease-in-out;
+        animation: slideFromLeft_rightPanel .4s ease-in-out;
     }
 }
 .rightPanel-detailsView > .rightPanel-elements{
