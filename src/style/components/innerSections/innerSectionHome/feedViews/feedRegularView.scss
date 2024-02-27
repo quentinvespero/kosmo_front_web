@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     // justify-content: center;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     flex-grow: 1;
     @include transition(.15s);
