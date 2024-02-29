@@ -56,3 +56,7 @@ export interface PostInteractionsProps {
     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
     postLayout?:PostProps['postLayout']
 }
+
+export interface CommentProps {
+    idPost:Post['_id']
+}
