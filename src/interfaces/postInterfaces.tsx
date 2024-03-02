@@ -58,5 +58,5 @@ export interface PostInteractionsProps {
 }
 
 export interface CommentProps {
-    idPost:Post['_id']
+    parentElementId:Post['_id']
 }
