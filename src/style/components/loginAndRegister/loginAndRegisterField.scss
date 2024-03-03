@@ -8,7 +8,7 @@
     }
     
     & input {
-        @include transition(.1s);
+        @include transition(.2s);
         // font-family: 'sen','saira', Arial, Helvetica, sans-serif;
         border: $border6;
         border-radius: .3rem;
@@ -18,7 +18,7 @@
         font-weight: 500;
     }
     & input:focus {
-        border: $border9;
+        border: $border11;
         // box-shadow: $innerShadow2;
     }
 }

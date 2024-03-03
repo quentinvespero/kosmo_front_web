@@ -14,7 +14,7 @@ export interface LoginAndRegisterPanelsProps {
 }
 
 export interface LoginAndRegisterFieldProps {
-    fieldType: 'text' | 'password'
+    fieldType: 'text' | 'password' | 'date'
     placeHolderValue:string
     textDescription:string
 }

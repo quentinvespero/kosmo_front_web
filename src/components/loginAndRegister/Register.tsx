@@ -10,6 +10,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel}) => {
             <LoginAndRegisterField textDescription='Mail address' fieldType='text' placeHolderValue='Type a mail address'/>
             <LoginAndRegisterField textDescription='Password' fieldType='password' placeHolderValue='Type a password'/>
             <LoginAndRegisterField textDescription='Password verification' fieldType='password' placeHolderValue='Type the password a 2nd time'/>
+            <LoginAndRegisterField textDescription='How old are you ?' fieldType='date' placeHolderValue='' />
         </div>
     )
 }
