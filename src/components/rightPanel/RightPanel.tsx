@@ -25,6 +25,7 @@ const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost, select
             className={`rightPanel 
                 ${idSelectedPost ? 'rightPanel-postDetails' : ''}
                 ${selectedViewType === 'detailsView' ? 'rightPanel-detailsView' : ''}
+                ${selectedViewType === 'columnsView' ? 'rightPanel-columnView' : ''}
             `}
         >
             <HideRightPanelButton isRightPanelVisible={isRightPanelVisible} setIsRightPanelVisible={setIsRightPanelVisible}/>

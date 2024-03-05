@@ -25,7 +25,7 @@ const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHo
             </div>
 
             {selectedFeed && 
-                selectedViewType !== 'columnsView' &&
+                // selectedViewType !== 'columnsView' &&
                 screenFormat === 'desktop' && 
                 selectedFeed.includes('feed') && 
                 !idSelectedPost &&
