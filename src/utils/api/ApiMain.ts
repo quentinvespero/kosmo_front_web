@@ -7,4 +7,6 @@ import axios from 'axios'
 //     }
 // })
 
-const {data} = use(axios.get(`${}`))
+// const {data} = use(axios.get(`${}`))
+
+// const {data, error, isLoading}

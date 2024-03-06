@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 import BackgroundLayer from './pages/BackgroundLayer'
@@ -68,6 +68,7 @@ const App = () => {
 
     return (
         <div className='app'>
+            <Suspense fallback={<h1>loading</h1>}></Suspense>
             <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
             {currentPage === 'entry' &&
                 <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>
