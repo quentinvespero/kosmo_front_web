@@ -68,6 +68,7 @@ const App = () => {
 
     return (
         <div className='app'>
+            {/* <p>{import.meta.env.VITE_APP_TITLE}</p> */}
             <Suspense fallback={<h1>loading</h1>}></Suspense>
             <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
             {currentPage === 'entry' &&
