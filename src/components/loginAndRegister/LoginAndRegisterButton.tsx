@@ -2,7 +2,7 @@ import React from 'react'
 import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
 
-const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, pageSelection}) => {
+const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, pageSelection, selectedPanel}) => {
 
     const handleClick = () => {
         // for yes and no buttons
@@ -30,6 +30,8 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                 ${buttonText.includes('no') ? 'loginAndRegisterButton-choice loginAndRegisterButton-no' : ''}
                 ${buttonText.includes('enter') ? 'loginAndRegisterButton-enter' : ''}
                 ${buttonText.includes('return') ? 'loginAndRegisterButton-return' : ''}
+                ${selectedPanel === 'login' ? 'loginAndRegisterButton-login' : ''}
+                ${selectedPanel === 'register' ? 'loginAndRegisterButton-register' : ''}
             `}
             onClick={handleClick}
         >

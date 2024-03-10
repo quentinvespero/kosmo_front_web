@@ -69,14 +69,15 @@ const App = () => {
     return (
         <div className='app'>
             {/* <p>{import.meta.env.VITE_APP_TITLE}</p> */}
-            <Suspense fallback={<h1>loading</h1>}></Suspense>
-            <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
-            {currentPage === 'entry' &&
-                <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>
-            }
-            {currentPage === 'home' && 
-                <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>
-            }
+            <Suspense fallback={<h1>loading</h1>}>
+                <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
+                {currentPage === 'entry' &&
+                    <EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>
+                }
+                {currentPage === 'home' && 
+                    <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>
+                }
+            </Suspense>
         </div>
     )
 }
