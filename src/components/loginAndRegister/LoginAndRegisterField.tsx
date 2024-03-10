@@ -24,7 +24,7 @@ const LoginAndRegisterField:React.FC<LoginAndRegisterFieldProps> = ({fieldType, 
             <input 
                 type={fieldType} 
                 placeholder={placeHolderValue}
-                onChange={onchange}
+                onChange={onchange()}
                 name={givingName()}
             />
         </div>
