@@ -19,31 +19,31 @@
 @keyframes slideFromRight_rightPanel {
     0% {
         opacity: 0;
-        // transform: translateX(7rem);
+        transform: translateX(7rem);
         // margin-right: -7rem;
-        margin-left: -17rem;
+        // margin-left: -17rem;
     }
     50%{
-        // transform: translateX(-1rem);
+        transform: translateX(-.5rem);
         // margin-right: 1rem;
-        margin-left: 1rem;
+        // margin-left: 1rem;
     }
     100% {
         opacity: 1;
-        // transform: translateX(0rem);
+        transform: translateX(0rem);
         // margin-right: 0rem;
-        margin-left: 0;
+        // margin-left: 0;
     }
 }
 @keyframes slideFromLeft_rightPanel {
     0% {
         opacity: 1;
-        // transform: translateX(0rem);
-        margin-left: 0rem;
+        transform: translateX(0rem);
+        // margin-left: 0rem;
     }
     100% {
         opacity: 0;
         transform: translateX(17rem);
-        margin-left: -17rem;
+        // margin-left: -17rem;
     }
 }

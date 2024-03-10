@@ -2,27 +2,38 @@
 const baseUrl = `${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}`
 
 // fetch function used as the base for the requests below
-const baseFetch = async (url: string, options?: RequestInit) => {
+const baseFetch = async (urlEndpoint: string, options?: RequestInit) => {
+    try {
+        // here we are fetching the backend with the endpoint (baseUrl + urlEndpoint parameter) and wait for its response that we'll assign to responseFromBackend
+        const responseFromBackend = await fetch(`${baseUrl}${urlEndpoint}`, options)
+        
+        // when we receive the data in responseFromBackend, we parse it into json format
+        const dataReceived = await responseFromBackend.json()
     
-    // here we are fetching the backend with the endpoint (baseUrl + url parameter) and wait for its response that we'll assign to responseFromBackend
-    const responseFromBackend = await fetch(`${baseUrl}${url}`, options)
-    
-    const data = await responseFromBackend.json()
-
-    if (!responseFromBackend.ok) {
-        throw new Error(data.message || 'it seems like an error occured while fetching the datas...')
+        if (!responseFromBackend.ok) {
+            throw new Error(dataReceived.message || 'it seems like an error occured while fetching the datas...')
+        }
+        return dataReceived        
     }
-    return data
+    catch (error) {
+        console.error('Fetch error:', error);
+        throw new Error('Network error or API is down');
+    }
 }
 
 // get request (that use fetcher above)
-export const get = (url: string) => baseFetch(url)
+export const get = (urlEndpoint: string) => baseFetch(urlEndpoint)
 
-// higher-order function to handle the different type when sending datas
-const sendWithData = (method: 'POST' | 'PUT' | 'PATCH') => (url: string, data: any) => baseFetch(url, {
+// HOF to handle the different methods when sending datas 
+// 1 - sendWithData take a parameter POST, PUT or PATCH
+    // 1a - when it receive a parameter, it returns a function.
+// 2 - the returned function takes 2 parameters, the urlEndpoint, which is the given endpoint, and dataToSend, which is the data that we'll send to the backend
+// This function is the one that we'll gonna give parameters to when using post(), put() or patch() outside of here in components
+    // 2a this function execute the function baseFetch and give it the previously given parameters, 
+const sendWithData = (method: 'POST' | 'PUT' | 'PATCH') => (urlEndpoint: string, dataToSend: any) => baseFetch(urlEndpoint, {
     method,
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
+    body: JSON.stringify(dataToSend)
 })
 
 // requests with data
@@ -31,4 +42,4 @@ export const put = sendWithData('PUT')
 export const patch = sendWithData('PATCH')
 
 // delete request
-export const del = (url:string) => baseFetch(url, { method: 'DELETE'})
+export const del = (urlEndpoint:string) => baseFetch(urlEndpoint, { method: 'DELETE'})
