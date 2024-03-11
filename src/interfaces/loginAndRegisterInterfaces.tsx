@@ -26,4 +26,5 @@ export interface LoginAndRegisterFieldProps {
     // fieldsValues?:LoginAndRegisterPanelsProps['fieldsValues']
     setFieldsValues?:LoginAndRegisterPanelsProps['setFieldsValues']
     onChange: React.ChangeEventHandler<HTMLElement>
+    name: 'username' | 'mailAdress' | 'password' | 'birthdate'
 }
