@@ -23,6 +23,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFi
                 placeHolderValue='Type your username' 
                 setFieldsValues={setFieldsValues}
                 onChange={handleFieldChange}
+                name='username'
             />
             <LoginAndRegisterField 
                 textDescription='Mail address' 
@@ -30,6 +31,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFi
                 placeHolderValue='Type your mail address' 
                 setFieldsValues={setFieldsValues}
                 onChange={handleFieldChange}
+                name='mailAddress'
             />
             <LoginAndRegisterField 
                 textDescription='Password' 
@@ -37,6 +39,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFi
                 placeHolderValue='Type your password' 
                 setFieldsValues={setFieldsValues}
                 onChange={handleFieldChange}
+                name='password'
             />
             <LoginAndRegisterField 
                 textDescription='Password verification' 
@@ -44,6 +47,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFi
                 placeHolderValue='Type your password a 2nd time' 
                 setFieldsValues={setFieldsValues}
                 onChange={handleFieldChange}
+                name='password'
             />
             <LoginAndRegisterField 
                 textDescription='How old are you ?' 
@@ -51,6 +55,7 @@ const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFi
                 placeHolderValue='' 
                 setFieldsValues={setFieldsValues}
                 onChange={handleFieldChange}
+                name='birthdate'
             />
         </div>
     )
