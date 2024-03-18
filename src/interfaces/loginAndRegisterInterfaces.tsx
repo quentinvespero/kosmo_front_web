@@ -16,6 +16,7 @@ export interface LoginAndRegisterButtonProps{
 export interface LoginAndRegisterPanelsProps {
     setSelectedPanel:React.Dispatch<React.SetStateAction<'register'|'login'|'ask'>>
     fieldsValues?:DatasInterfaces['users']|null
+    // setFieldsValues?:(type:DatasInterfaces['users']) => void
     setFieldsValues?:(type:DatasInterfaces['users']) => void
 }
 
@@ -24,7 +25,7 @@ export interface LoginAndRegisterFieldProps {
     placeHolderValue:string
     textDescription:string
     // fieldsValues?:LoginAndRegisterPanelsProps['fieldsValues']
-    setFieldsValues?:LoginAndRegisterPanelsProps['setFieldsValues']
+    // setFieldsValues?:LoginAndRegisterPanelsProps['setFieldsValues']
     onChange: React.ChangeEventHandler<HTMLElement>
-    name: 'username' | 'mailAddress' | 'password' | 'birthdate'
+    name: 'username' | 'mailAddress' | 'password' | 'password2' | 'birthdate'
 }
