@@ -1,9 +1,9 @@
 import useSWR from "swr"
-import { DatasInterfaces } from "../../interfaces/datasInterfaces"
+import { DatasInterfaces, UserBaseInformations } from "../../interfaces/datasInterfaces"
 import { del, get, post, put } from "./fetcher"
 
 // getting user informations
-export const fetchUserInformations = (userId:DatasInterfaces['users']) => {
+export const fetchUserInformations = (userId:Partial<DatasInterfaces['users']>) => {
     
     const {data, error, mutate} = useSWR(`/user/${userId}`, get)
 
@@ -16,9 +16,9 @@ export const fetchUserInformations = (userId:DatasInterfaces['users']) => {
 }
 
 // create a user
-export const createUser = async (userData:DatasInterfaces['users']) => {
+export const createUser = async (userData:UserBaseInformations) => {
     try {
-        const response = await post('/users', userData)
+        const response = await post('/register', userData)
         return response
     }
     catch (error) {

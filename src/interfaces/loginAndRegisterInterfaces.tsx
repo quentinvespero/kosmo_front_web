@@ -7,7 +7,7 @@ export interface LoginAndRegisterProps{
 
 export interface LoginAndRegisterButtonProps{
     // buttonText: string
-    buttonText: 'enter' | 'return' | 'yes' | 'no'
+    buttonText: 'enter' | 'return' | 'yes' | 'no' | 'register' | 'login'
     setSelectedPanel?:LoginAndRegisterPanelsProps['setSelectedPanel']
     pageSelection?: LoginAndRegisterProps['pageSelection']
     selectedPanel?: 'register'|'login'|'ask'

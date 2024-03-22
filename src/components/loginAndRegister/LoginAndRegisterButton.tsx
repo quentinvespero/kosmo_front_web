@@ -1,15 +1,34 @@
 import React from 'react'
 import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
+import { createUser } from '../../utils/api/UserFetches'
+import { useAuth } from '../../utils/api/authentification/useAuth'
+import { UserBaseInformations } from '../../interfaces/datasInterfaces'
 
 const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, pageSelection, selectedPanel, fieldsValues}) => {
+
+    // get the register function with the "{}", from useAuth hook
+    const {register} = useAuth()
 
     // list actions for each button based on buttonText
     const buttonActions = {
         'yes': () => setSelectedPanel && setSelectedPanel('login'),
         'no': () => setSelectedPanel && setSelectedPanel('register'),
         'enter': () => pageSelection && pageSelection(),
-        'return': () => setSelectedPanel && setSelectedPanel('ask')
+        'return': () => setSelectedPanel && setSelectedPanel('ask'),
+        'register': async () => {
+            if (fieldsValues) {
+                try {
+                    console.log('la value de fieldsValues ✌🏻: ',fieldsValues)
+                    await register(fieldsValues as UserBaseInformations)
+                    console.log('Registration successful')
+                }
+                catch (error) {
+                    console.error('Registration error:', error)
+                }
+            }
+        },
+        'login': () => console.log('login')
     }
 
     // list class mappings for each button based on buttonText
@@ -41,12 +60,12 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
         Object.keys(buttonClassMappings).forEach(key => {
             
             // we use 'as' to cast the key to buttonClassKey type
-            const typedKey = key as buttonClassKey
+            const keyWithType = key as buttonClassKey
 
-            if (buttonText.includes(typedKey) || selectedPanel === typedKey) {
+            if (buttonText.includes(keyWithType) || selectedPanel === keyWithType) {
                 
                 // adding the class name from buttonClassMappings to the className variable
-                className += ` ${buttonClassMappings[typedKey]}`
+                className += ` ${buttonClassMappings[keyWithType]}`
             }
         })
         // returning the className variable
