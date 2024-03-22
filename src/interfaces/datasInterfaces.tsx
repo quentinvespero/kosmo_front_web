@@ -7,9 +7,9 @@
         userAdditionalInformations: UserAdditionalInformations
         userSocialInformations: UserSocialInformations
     }
-    interface UserBaseInformations {
+    export interface UserBaseInformations {
         username: string
-        mailAdress: string
+        mailAddress: string
         password: string
         birthdate: string
     }

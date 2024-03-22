@@ -1,4 +1,4 @@
-import { DatasInterfaces } from "./datasInterfaces"
+import { DatasInterfaces, UserBaseInformations } from "./datasInterfaces"
 
 export interface LoginAndRegisterProps{
     // selectedPanel: 'register'|'login'|'ask'
@@ -6,7 +6,8 @@ export interface LoginAndRegisterProps{
 }
 
 export interface LoginAndRegisterButtonProps{
-    buttonText: string
+    // buttonText: string
+    buttonText: 'enter' | 'return' | 'yes' | 'no'
     setSelectedPanel?:LoginAndRegisterPanelsProps['setSelectedPanel']
     pageSelection?: LoginAndRegisterProps['pageSelection']
     selectedPanel?: 'register'|'login'|'ask'
@@ -15,9 +16,9 @@ export interface LoginAndRegisterButtonProps{
 
 export interface LoginAndRegisterPanelsProps {
     setSelectedPanel:React.Dispatch<React.SetStateAction<'register'|'login'|'ask'>>
-    fieldsValues?:DatasInterfaces['users']|null
-    // setFieldsValues?:(type:DatasInterfaces['users']) => void
-    setFieldsValues?:(type:DatasInterfaces['users']) => void
+    fieldsValues?:Partial<UserBaseInformations | null>
+    // setFieldsValues?:(type:UserBaseInformations | null) => void
+    setFieldsValues?:React.Dispatch<React.SetStateAction<Partial<UserBaseInformations | null>>>
 }
 
 export interface LoginAndRegisterFieldProps {

@@ -7,8 +7,8 @@ const AskPanel:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel}) => {
         <div className='askPanel'>
             <h2>Do you own an account on here ?</h2>
             <div className="loginAndRegister-choices">
-                <LoginAndRegisterButton buttonText='loginAndRegisterButton-yes' setSelectedPanel={setSelectedPanel}/>
-                <LoginAndRegisterButton buttonText='loginAndRegisterButton-no' setSelectedPanel={setSelectedPanel}/>
+                <LoginAndRegisterButton buttonText='yes' setSelectedPanel={setSelectedPanel}/>
+                <LoginAndRegisterButton buttonText='no' setSelectedPanel={setSelectedPanel}/>
             </div>
         </div>
     )

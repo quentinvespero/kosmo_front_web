@@ -5,8 +5,8 @@ import Login from './Login'
 import Register from './Register'
 import AskPanel from './AskPanel'
 import { ScreenProps } from '../../interfaces/interfaces'
-import { LoginAndRegisterProps } from '../../interfaces/loginAndRegisterInterfaces'
-import { DatasInterfaces } from '../../interfaces/datasInterfaces'
+import { LoginAndRegisterFieldProps, LoginAndRegisterProps } from '../../interfaces/loginAndRegisterInterfaces'
+import { DatasInterfaces, UserBaseInformations } from '../../interfaces/datasInterfaces'
 
 const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenFormat, pageSelection}) => {
 
@@ -17,7 +17,7 @@ const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenF
     const [selectedPanel, setSelectedPanel] = useState<'register'|'login'|'ask'>('ask')
 
     // 10/03/24 : state to get the values from Register or Login and pass it to LoginAndRegisterButton
-    const [fieldsValues, setFieldsValues] = useState<DatasInterfaces['users']| null>(null)
+    const [fieldsValues, setFieldsValues] = useState<Partial<UserBaseInformations | null>>(null)
 
     return (
         <div className='loginAndRegister'>
