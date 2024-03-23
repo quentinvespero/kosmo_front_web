@@ -27,6 +27,9 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                     console.error('Registration error:', error)
                 }
             }
+            else {
+                console.error('Registration error: missing fields')
+            }
         },
         'login': () => console.log('login')
     }

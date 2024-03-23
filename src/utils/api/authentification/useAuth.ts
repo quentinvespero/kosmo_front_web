@@ -6,8 +6,11 @@ export const useAuth = () => {
 
     const register = async (userData: UserBaseInformations) => {
     
+        console.log('Registering user...')
+
         if (registerFieldsValidation(userData)){
             try {
+                console.log('Creating user...')
                 const response = await createUser(userData)
                 return response
             }
@@ -15,6 +18,10 @@ export const useAuth = () => {
                 console.error('Error creating user:', error)
                 throw error
             }
+        }
+        else {
+            console.error('Registration error: missing fields')
+            throw new Error('Missing fields')
         }
     }
     return { register }
