@@ -13,7 +13,7 @@ const baseFetch = async (urlEndpoint: string, options?: RequestInit) => {
         if (!responseFromBackend.ok) {
             throw new Error(dataReceived.message || 'it seems like an error occured while fetching the datas...')
         }
-        return dataReceived        
+        return dataReceived
     }
     catch (error) {
         console.error('Fetch error:', error);

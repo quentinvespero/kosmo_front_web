@@ -18,7 +18,7 @@ export const fetchUserInformations = (userId:Partial<DatasInterfaces['users']>) 
 // create a user
 export const createUser = async (userData:UserBaseInformations) => {
     try {
-        const response = await post('/register', userData)
+        const response = await post('/user/register', userData)
         return response
     }
     catch (error) {
@@ -30,7 +30,7 @@ export const createUser = async (userData:UserBaseInformations) => {
 // update a user
 export const updateUser = async (userId: DatasInterfaces['users'], userData: DatasInterfaces['users']) => {
     try {
-        const response = await put(`/users/${userId}`, userData)
+        const response = await put(`/user/${userId}`, userData)
         return response
     }
     catch (error) {
@@ -42,7 +42,7 @@ export const updateUser = async (userId: DatasInterfaces['users'], userData: Dat
 // delete a user
 export const deleteUser = async (userId: DatasInterfaces['users']) => {
     try {
-        const response = await del(`/users/${userId}`)
+        const response = await del(`/user/${userId}`)
         return response
     }
     catch (error) {
