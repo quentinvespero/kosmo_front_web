@@ -22,6 +22,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                     console.log('la value de fieldsValues ✌🏻: ',fieldsValues)
                     await register(fieldsValues as UserBaseInformations)
                     console.log('Registration successful')
+                    pageSelection && pageSelection()
                 }
                 catch (error) {
                     console.error('Registration error:', error)
@@ -40,8 +41,8 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
         'no': 'loginAndRegisterButton-choice loginAndRegisterButton-no',
         'enter': 'loginAndRegisterButton-enter',
         'return': 'loginAndRegisterButton-return',
-        'login': 'loginAndRegisterButton-login',
-        'register': 'loginAndRegisterButton-register'
+        'register': 'loginAndRegisterButton-register',
+        'login': 'loginAndRegisterButton-login'
     }
 
     // handle button click and execute the corresponding action based on buttonaActions and buttonText
@@ -65,7 +66,8 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
             // we use 'as' to cast the key to buttonClassKey type
             const keyWithType = key as buttonClassKey
 
-            if (buttonText.includes(keyWithType) || selectedPanel === keyWithType) {
+            // if (buttonText.includes(keyWithType) || selectedPanel === keyWithType) {
+            if (buttonText.includes(keyWithType)) {
                 
                 // adding the class name from buttonClassMappings to the className variable
                 className += ` ${buttonClassMappings[keyWithType]}`
@@ -80,7 +82,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
     // if buttonText is 'return', return a ButtonWithIcon component with buttonText 'return' and buttonIcon 'return_grey4'
     // if buttonText is neither 'enter' nor 'return', return a ButtonWithIcon component with buttonText equal to buttonText
     return (
-        <div className={getClassName()}onClick={handleClick}>
+        <div className={getClassName()} onClick={handleClick}>
             {buttonText === 'enter' ? (
                 <ButtonWithIcon buttonText='Bypass signing in 👀'/>
             ) 

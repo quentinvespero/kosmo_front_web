@@ -22,6 +22,13 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
     // following state of the view selected in feed
     const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
 
+    // searching for a way to reset the view to regularView when switching to mobile screen
+    useEffect(() => {
+        if (screenFormat === 'mobile') {
+            setSelectedViewType('regularView')
+        }
+    }, [screenFormat])
+
     // animation when entering this screen
     useEffect(() => {
         if (animation && setAnimation) {

@@ -1,12 +1,15 @@
 .loginAndRegisterButton{
-    
-}
-.loginAndRegisterButton-choice{
-    // background: $transparentGrey6;
     padding: .3rem 2rem;
     border-radius: 0.3rem;
     border: $border7;
     color: $white1;
+}
+.loginAndRegisterButton-choice{
+    // background: $transparentGrey6;
+    // padding: .3rem 2rem;
+    // border-radius: 0.3rem;
+    // border: $border7;
+    // color: $white1;
     @include transition(.2s);
     background: $grey4;
 }
@@ -20,10 +23,10 @@
     // @include transparent($pink, $blur2);
     @include buttonBehavior($grey4, .9, .1s);
     
-    padding: .3rem 2rem;
-    border-radius: 0.3rem;
-    border: $border7;
-    color: $white1;
+    // padding: .3rem 2rem;
+    // border-radius: 0.3rem;
+    // border: $border7;
+    // color: $white1;
     // @include transition(.2s);
     // background: $grey4;
 }
@@ -34,7 +37,7 @@
     padding: .5rem;
     border-radius: 5rem;
     border: $border1;
-    @include transition(.1s);
+    // @include transition(.1s);
     // background: $transparentGrey1;
 
     & .buttonWithIcon > p{
@@ -44,4 +47,8 @@
         filter: invert(1);
         border: $border2;
     }
+}
+
+.loginAndRegisterButton-register{
+    @include buttonBehavior($grey4, .9, .1s);
 }

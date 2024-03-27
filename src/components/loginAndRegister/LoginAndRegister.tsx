@@ -30,7 +30,8 @@ const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenF
             <div className="loginAndRegister-buttons">
                 <LoginAndRegisterButton buttonText='return' setSelectedPanel={setSelectedPanel}/>
                 <LoginAndRegisterButton buttonText='enter' pageSelection={pageSelection} selectedPanel={selectedPanel} fieldsValues={fieldsValues}/>
-                <LoginAndRegisterButton buttonText='register' pageSelection={pageSelection} fieldsValues={fieldsValues} selectedPanel={selectedPanel}/>
+                {selectedPanel === 'login' && <LoginAndRegisterButton buttonText='login' pageSelection={pageSelection} fieldsValues={fieldsValues} selectedPanel={selectedPanel}/>}
+                {selectedPanel === 'register' && <LoginAndRegisterButton buttonText='register' pageSelection={pageSelection} fieldsValues={fieldsValues} selectedPanel={selectedPanel}/>}
             </div>}
         </div>
     )
