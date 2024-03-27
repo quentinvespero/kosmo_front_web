@@ -3,7 +3,7 @@ import { LoginAndRegisterFieldProps, LoginAndRegisterPanelsProps } from '../../i
 import LoginAndRegisterField from './LoginAndRegisterField'
 import { DatasInterfaces, UserBaseInformations } from '../../interfaces/datasInterfaces'
 
-const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFieldsValues}) => {
+const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFieldsValues, screenFormat}) => {
 
     const handleFieldChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         

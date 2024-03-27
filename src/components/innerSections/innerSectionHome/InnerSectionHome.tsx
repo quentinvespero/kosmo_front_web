@@ -17,6 +17,7 @@ const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHo
                 ${selectedViewType === 'regularView' ? 'innerSectionHome-regularView' : ''}
                 ${selectedViewType === 'detailsView' ? 'innerSectionHome-detailsView' : ''}
                 ${selectedViewType === 'columnsView' ? 'innerSectionHome-columnsView' : ''}
+                ${screenFormat === 'mobile' ? 'innerSectionHome-mobile' : ''}
             `}
         >
             <div className="innerSectionHome-feed">

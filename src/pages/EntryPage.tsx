@@ -64,7 +64,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
                         >
                             <ButtonType1 buttonText='Enter Kosmo_' interactionType="entryButton"/>
                         </div>}
-                        {hasClickedOnEnter && <LoginAndRegister pageSelection={pageSelection}/>}
+                        {hasClickedOnEnter && <LoginAndRegister pageSelection={pageSelection} screenFormat={screenFormat}/>}
                     </div>
                     {!hasClickedOnEnter && 
                     <div 

@@ -5,11 +5,11 @@
     @include transition(.2s);
     row-gap: 1rem;
     color: $white3;
-
+    min-width: 30rem;
+    
     & .loginAndRegister-panels{
         display: flex;
         flex-direction: column;
-        min-width: 25rem;
         animation: zoomEffect2 .25s ease-in-out;
         row-gap: 1rem;
         border: $border1;
@@ -34,4 +34,8 @@
         place-content: space-between;
         animation: zoomEffect2 .4s ease-in-out;
     }
+}
+
+.loginAndRegister-mobile{
+    min-width: 10rem;
 }

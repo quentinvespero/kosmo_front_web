@@ -20,7 +20,9 @@ const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenF
     const [fieldsValues, setFieldsValues] = useState<Partial<UserBaseInformations | null>>(null)
 
     return (
-        <div className='loginAndRegister'>
+        <div 
+            className={`loginAndRegister ${screenFormat === 'mobile' ? 'loginAndRegister-mobile' : ''}`}
+        >
             {selectedPanel === 'ask' && <AskPanel setSelectedPanel={setSelectedPanel}/>}
             {selectedPanel === 'login' && <Login setSelectedPanel={setSelectedPanel} setFieldsValues={setFieldsValues}/>}
             {selectedPanel ==='register' && <Register setSelectedPanel={setSelectedPanel} setFieldsValues={setFieldsValues}/>}

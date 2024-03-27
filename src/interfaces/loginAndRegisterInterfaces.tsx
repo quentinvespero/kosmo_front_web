@@ -1,4 +1,5 @@
 import { DatasInterfaces, UserBaseInformations } from "./datasInterfaces"
+import { ScreenProps } from "./interfaces"
 
 export interface LoginAndRegisterProps{
     // selectedPanel: 'register'|'login'|'ask'
@@ -19,6 +20,7 @@ export interface LoginAndRegisterPanelsProps {
     fieldsValues?:Partial<UserBaseInformations | null>
     // setFieldsValues?:(type:UserBaseInformations | null) => void
     setFieldsValues?:React.Dispatch<React.SetStateAction<Partial<UserBaseInformations | null>>>
+    screenFormat?: ScreenProps['screenFormat']
 }
 
 export interface LoginAndRegisterFieldProps {
