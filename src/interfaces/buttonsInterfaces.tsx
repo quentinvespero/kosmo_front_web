@@ -49,7 +49,7 @@ export interface NotificationButtonProps {
     message?: string,
     read?:boolean
     // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
-    handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
+    handleClick:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
 export interface ProfileButtonProps {

@@ -30,6 +30,12 @@
             @include transition(.1s);
         }
     }
+    & .innerHeader-home-mobile{
+        margin: 2rem 0 0 0;
+    }
+    & .innerHeader-home-tablet{
+        margin: 0;
+    }
 }
 
 // ----- style for the entry screen

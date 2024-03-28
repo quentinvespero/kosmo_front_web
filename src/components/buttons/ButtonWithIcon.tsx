@@ -1,9 +1,10 @@
 import React from 'react'
 import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
-// explanation **buttonText props** : buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
-// - locationOfTheButton will then be used to give the button a personalised class
-// - purposeOfTheButton will be used for the text of the button
+// explanation buttonText props : 
+// buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
+// - locationOfTheButton will then be used to give the button a personalised class, considering "buttonWithIcon" is added at the beginning of the class, as such : "buttonWithIcon-locationOfTheButton"
+// - purposeOfTheButton will be used for the text of the button (the "_" will be replaced by a space)
 
 const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className}) => {
 
@@ -33,7 +34,6 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, c
         <div 
             className={`buttonWithIcon buttonWithIcon-${className ? className : buttonLocation}`} 
             title={textOfTheButton}
-            // onClick={functionToPass}
         >
             {buttonIcon && <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}

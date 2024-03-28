@@ -1,10 +1,10 @@
 .notificationButton {
-    @include flexVerticalCentered(row);
-    padding: .4rem;
-    border-radius: 2rem;
-    @include buttonBehavior($white2, .95, .1s);
-    position: relative;
-    column-gap: .4rem;
+    // @include flexVerticalCentered(row);
+    // padding: .4rem;
+    // border-radius: 2rem;
+    // @include buttonBehavior($white2, .95, .1s);
+    // position: relative;
+    // column-gap: .4rem;
     // height: 1rem;
 
     & .notificationButton-bell{

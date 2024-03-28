@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
 import NotificationPanel from '../header/HeaderMenu/NotificationPanel'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
+import HeaderMenuButton from '../header/HeaderMenu/HeaderMenuButton'
 
 const NotificationButton:React.FC<NotificationButtonProps & HandleClickHeaderMenuButtonsInterface> = ({handleClick}) => {
     
@@ -42,10 +43,12 @@ const NotificationButton:React.FC<NotificationButtonProps & HandleClickHeaderMen
     // }
 
     return (
-        <div className='notificationButton' onClick={() => handleClick && handleClick('notification')}>
+        // <div className='notificationButton' onClick={() => handleClick && handleClick('notification')}>
+        <div className='notificationButton'>
             {/* <div className="notificationButton-bell"></div> */}
-            <img className="notificationButton-bell" src="/src/assets/icons/icon_bell_grey2.svg" alt="" />
+            {/* <img className="notificationButton-bell" src="/src/assets/icons/icon_bell_grey2.svg" alt="" /> */}
             {isNewNotification && <div className={`notificationButton-true ${isNewNotification ? 'show' : ''}`}></div>}
+            <HeaderMenuButton onClick={() => handleClick('notification')} buttonIcon='icon_bell_grey2' className='-notification'/>
             {/* <div className='notificationButton-true'></div> */}
             {/* {notifications && notifications.length > 0 && <NotificationPanel notifications={notifications}/>} */}
             {/* {notificationPanelVisibility && <NotificationPanel notificationsContent={notificationsContent}/>} */}

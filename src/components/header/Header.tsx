@@ -24,14 +24,18 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
 
             {currentPage === 'home' && 
                 <div 
-                    className="innerHeader-home" 
+                    className={`innerHeader-home
+                        ${screenFormat === 'mobile' ? 'innerHeader-home-mobile' : ''}
+                        ${screenFormat === 'tablet' ? 'innerHeader-home-tablet' : ''}
+                        ${screenFormat === 'desktop' ? 'innerHeader-home-desktop' : ''}
+                    `}
                     style={{
                         flexDirection: screenFormat === 'mobile' ? 'column' : 'row',
                         rowGap: screenFormat === 'mobile' ? '3rem' : '',
                         alignItems: screenFormat === 'mobile' ? 'normal' : 'center',
                         justifyContent: screenFormat !== 'mobile' ? 'space-between' : '',
                         marginTop: screenFormat === 'mobile' ? '2rem' : '',
-                        margin: screenFormat !== 'mobile' ? '0 3rem 0 3rem' : '2rem 0rem 0 0rem'
+                        // margin: screenFormat !== 'mobile' ? '0 3rem 0 3rem' : '2rem 0 0 0'
                     }}
                 >
                     <h1 className='projectTitle'>Kosmo Project.</h1>

@@ -110,6 +110,15 @@ $border11 : solid .15rem $grey2;
         transform: scale($scale);
     }
 }
+@mixin buttonBehavior3($color, $scale, $transitionTime){
+    background: $color;
+    cursor: pointer;
+    @include transition($transitionTime);
+
+    &:active{
+        transform: scale($scale);
+    }
+}
 
 @mixin flexVerticalCentered($flexdirection){
     display: flex;
