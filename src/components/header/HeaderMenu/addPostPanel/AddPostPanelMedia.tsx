@@ -11,6 +11,7 @@ const AddPostPanelMedia:React.FC<AddPostPanelInnerSectionProps> = ({addPostPanel
             className={`addPostPanelMedia ${addPostPanelSelectedInnerSection === 'media' ? 'addPostPanelMedia-open' : 'addPostPanelMedia-closed'}`}
             style={{display: displayProperty}}
         >
+            <div className="addPostPanelMedia-closeButton">test</div>
             <p>{'Drop a file here, or click to import a file ;)'}</p>
         </div>
     )

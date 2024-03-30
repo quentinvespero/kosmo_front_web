@@ -7,6 +7,7 @@ import { HeaderMenuPanelProps } from '../../../../interfaces/headerMenuInterface
 
 const AddPostPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelSelectedElement}) => {
 
+    // state to manage the inner section of the addPostPanel (text, photo, video, poll)
     const [addPostPanelSelectedInnerSection, setAddPostPanelSelectedInnerSection] = useState<AddPostPanelInnerSectionProps['addPostPanelSelectedInnerSection']>('text')
 
     return (
