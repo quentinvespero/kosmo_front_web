@@ -25,19 +25,19 @@
 }
 
 // used for the photo/video/poll buttons in headerMenu
-.buttonWithIcon-addPostPanelSectionButton{
-    @include flexVerticalCentered(column);
-    @include buttonBehavior2($grey4, .9, .1s);
-    row-gap: .5rem;
-    border-radius: .5rem;
-    padding: .5rem;
-    font-size: .8rem;
+// .buttonWithIcon-addPostPanelSectionButton{
+//     // @include flexVerticalCentered(column);
+//     // row-gap: .5rem;
+//     // @include buttonBehavior2($grey4, .9, .1s);
+//     // border-radius: .5rem;
+//     // padding: .5rem;
+//     // font-size: .8rem;
 
-    & img {
-        width: .9rem;
-        height: .9rem;
-    }
-}
+//     // & img {
+//     //     width: .9rem;
+//     //     height: .9rem;
+//     // }
+// }
 
 // used for the blue post button in headerMenu
 .buttonWithIcon-addPostPanelSectionBottomPost{
@@ -50,16 +50,17 @@
     font-weight: 700;
 }
 
-.buttonWithIcon-addPostPanelSectionBottomDraft{
-    @include flexVerticalCentered(row-reverse);
-    @include buttonBehavior2($grey4, .95, .1s);
-    padding: .4rem .6rem;
-    column-gap: .5rem;
-    border-radius: .5rem;
-    font-size: .85rem;
+// used for the draft button in the bottom section
+// .buttonWithIcon-addPostPanelSectionBottomDraft{
+//     // @include flexVerticalCentered(row-reverse);
+//     // @include buttonBehavior2($grey4, .95, .1s);
+//     // padding: .4rem .6rem;
+//     // border-radius: .5rem;
+//     // font-size: .85rem;
+//     // column-gap: .5rem;
 
-    & img {
-        width: .8rem;
-        height: .8rem;
-    }
-}
+//     // & img {
+//     //     width: .8rem;
+//     //     height: .8rem;
+//     // }
+// }

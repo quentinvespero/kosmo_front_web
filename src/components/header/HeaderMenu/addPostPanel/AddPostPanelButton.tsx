@@ -7,13 +7,13 @@ const AddPostPanelButton:React.FC<AddPostPanelButtonProps> = ({buttonIcon, butto
     const handleClick = () => {
         if (setAddPostPanelSelectedInnerSection) {
             setAddPostPanelSelectedInnerSection(buttonPurpose)
-            console.log(buttonPurpose)
+            // console.log(buttonPurpose)
         }
     }
 
     return (
         <div 
-            className='addPostPanelButton'
+            className={`addPostPanelButton addPostPanelButton-${buttonPurpose}`}
             onClick={handleClick}
         >
             <ButtonWithIcon buttonIcon={buttonIcon} buttonText={buttonText}/>

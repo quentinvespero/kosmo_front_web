@@ -1,11 +1,14 @@
 .addPostPanelMedia {
-    padding: 1rem;
+    padding: .3rem;
     border-radius: .5rem;
     font-size: .7rem;
-    height: 3rem;
-    // margin-top: .3rem;
-    // box-shadow: $innerShadow3;
-    @include buttonBehavior($grey2, .97, .2s)
+    @include buttonBehavior($grey2, .97, .2s);
+    display: flex;
+    flex-direction: column;
+
+    p {
+        padding: .2rem 1rem 1.5rem 1rem;
+    }
 }
 
 .addPostPanelMedia-open{

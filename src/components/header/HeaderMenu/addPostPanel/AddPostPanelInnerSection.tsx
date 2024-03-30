@@ -17,7 +17,7 @@ const AddPostPanelInnerSection:React.FC<AddPostPanelInnerSectionProps> = ({addPo
                 style={{display: !isDraftTrue ? 'flex' : 'none'}}
             >
                 <AddPostPanelText addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} />
-                <AddPostPanelMedia addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} />
+                <AddPostPanelMedia addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} setAddPostPanelSelectedInnerSection={setAddPostPanelSelectedInnerSection}/>
                 {/* {addPostPanelSelectedInnerSection === 'poll' && <AddPostPanelPoll addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} />} */}
             </div>
             <div 
@@ -25,7 +25,7 @@ const AddPostPanelInnerSection:React.FC<AddPostPanelInnerSectionProps> = ({addPo
                 // style={{display: displayPropertySection2}}
                 style={{display: isDraftTrue ? 'flex' : 'none'}}
             >
-                <AddPostPanelDraft addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} />
+                <AddPostPanelDraft addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} setAddPostPanelSelectedInnerSection={setAddPostPanelSelectedInnerSection}/>
             </div>
         </div>
     )

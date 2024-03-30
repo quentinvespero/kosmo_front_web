@@ -1,0 +1,61 @@
+.addPostPanelButton {
+
+}
+
+// the three buttons (photo, video, poll) in the left column
+.addPostPanel-mediaButtons {
+
+    & .addPostPanelButton{
+        @include buttonBehavior2($grey4, .9, .1s);
+        border-radius: .5rem;
+        padding: .5rem;
+        font-size: .8rem;
+
+        & .buttonWithIcon {
+            @include flexVerticalCentered(column);
+            row-gap: .5rem;
+
+            & img {
+                width: .9rem;
+                height: .9rem;
+            }
+        }
+    }
+}
+
+// the draft button in the bottom of the section
+.addPostPanelButton-draft {
+    @include buttonBehavior2($grey4, .95, .1s);
+    padding: .4rem .6rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+
+    & .buttonWithIcon {
+        @include flexVerticalCentered(row-reverse);
+        column-gap: .5rem;
+
+        & img {
+            width: .8rem;
+            height: .8rem;
+        }
+    }
+}
+
+// the button to close the innerSection
+.addPostPanelButton-textOnly{
+    // margin: .25rem;
+    @include buttonBehavior2($grey4, .95, .1s);
+    place-self: end;
+    padding: .3rem;
+    border-radius: .25rem;
+
+    .buttonWithIcon {
+        p {
+            display: none;
+        }
+        img {
+            width: .7rem;
+            height: .7rem;
+        }
+    }
+}
