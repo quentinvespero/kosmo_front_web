@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NotificationButtonProps } from '../../interfaces/buttonsInterfaces'
-import NotificationPanel from '../header/HeaderMenu/NotificationPanel'
+import NotificationPanel from '../header/HeaderMenu/notificationPanel/NotificationPanel'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 import HeaderMenuButton from '../header/HeaderMenu/HeaderMenuButton'
 

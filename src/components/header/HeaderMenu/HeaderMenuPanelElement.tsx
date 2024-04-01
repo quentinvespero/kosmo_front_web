@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeaderMenuPanelElementProps, HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
-import NotificationPanel from './NotificationPanel'
+import NotificationPanel from './notificationPanel/NotificationPanel'
 import AddPostPanel from './addPostPanel/AddPostPanel'
 import UserSettingsPanel from './UserSettingsPanel'
 

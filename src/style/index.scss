@@ -24,7 +24,7 @@
     
         // headerMenu
         @import './components/header/headerMenu/headerMenu.scss';
-        @import './components/header/headerMenu/notificationPanel.scss';
+        // @import './components/header/headerMenu/notificationPanel.scss';
         @import './components/header/headerMenu/headerMenuPanel.scss';
         @import './components/header/headerMenu/userSettingsPanel.scss';
         @import './components/header/headerMenu/headerMenuPanelElement.scss';
@@ -38,6 +38,10 @@
             @import './components/header/headerMenu/addPostPanel/addPostPanelMedia.scss';
             @import './components/header/headerMenu/addPostPanel/addPostPanelPoll.scss';
             @import './components/header/headerMenu/addPostPanel/addPostPanelButton.scss';
+
+            // notification panel
+            @import './components/header/headerMenu/notificationPanel/notificationPanel.scss';
+            @import './components/header/headerMenu/notificationPanel/notificationElement.scss';
     
     // post
     @import './components/post/post.scss';
@@ -120,6 +124,7 @@
         @import './other/keyframes/post-keyframes.scss';
         @import './other/keyframes/viewType-keyframes.scss';
         @import './other/keyframes/rightPanel-keyframes.scss';
+        @import './other/keyframes/headerMenu-keyframes.scss';
 
 
 // responsive - Have to insert it at the end so it can bypass the eventual previous rules

@@ -5,6 +5,7 @@
     @include buttonBehavior($grey2, .97, .2s);
     display: flex;
     flex-direction: column;
+    row-gap: .3rem;
 
     p {
         padding: .2rem 1rem 1.5rem 1rem;

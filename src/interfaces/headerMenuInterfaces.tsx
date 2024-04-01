@@ -35,3 +35,7 @@ export interface HeaderMenuButtonProps {
     buttonIcon: string
     className: '-addPost' | '-notification' | '-user'
 }
+
+export interface NotificationElementProps {
+    notificationType: 'follow'|'comment'|''
+}
