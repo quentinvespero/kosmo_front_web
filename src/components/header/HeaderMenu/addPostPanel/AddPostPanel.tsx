@@ -45,7 +45,13 @@ const AddPostPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelSelectedEle
                     />
                     {/* <AddPostPanelSectionButton buttonIcon='icon_arrow3_white2' buttonText='addPostPanelSectionBottomPost-Post' addPostPanelSelectedInnerSection={addPostPanelSelectedInnerSection} setAddPostPanelSelectedInnerSection={setAddPostPanelSelectedInnerSection}/> */}
                     {/* <ButtonWithIcon buttonIcon='icon_drafts_white2' buttonText='addPostPanelSectionBottomDraft-drafts'/> */}
-                    <ButtonWithIcon buttonIcon='icon_arrow3_white2' buttonText='addPostPanelSectionBottomPost-Post'/>
+                    {/* <ButtonWithIcon buttonIcon='icon_arrow3_white2' buttonText='addPostPanelSectionBottomPost-Post'/> */}
+                    <AddPostPanelSectionButton 
+                        buttonIcon='icon_arrow3_white2' 
+                        buttonText='addPostPanelSectionButton-post' 
+                        setAddPostPanelSelectedInnerSection={setAddPostPanelSelectedInnerSection}
+                        buttonPurpose='post'
+                    />
                 </div>
             </div>
         </div>

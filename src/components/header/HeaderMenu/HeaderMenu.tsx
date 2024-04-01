@@ -47,12 +47,12 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
                 {/* <AddPostButton2 handleClick={handleClick}/> */}
                 {/* <ProfileButton locationContext='headerMenu' handleClick={handleClick}/> */}
                 {/* <NotificationButton handleClick={handleClick}/> */}
-                <ExpandButton headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/>
-                <div className="dot">•</div>
                 <HeaderMenuButton onClick={() => handleClick('addPost')} buttonText='Post' buttonIcon='plus_white2' className='-addPost'/>
                 <HeaderMenuButton onClick={() => handleClick('notification')} buttonIcon='bell_white2' className='-notification'/>
                 {/* <PointCounter/> */}
                 <HeaderMenuButton onClick={() => handleClick('user')} buttonIcon='settings_white2' className='-user'/>
+                <div className="dot">•</div>
+                <ExpandButton headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/>
             </div>
             <HeaderMenuPanel 
                 headerMenuPanelOpen={headerMenuPanelOpen} 

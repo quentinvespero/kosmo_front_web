@@ -41,6 +41,25 @@
     }
 }
 
+// button to publish a post in the bottom of the addPost section
+.addPostPanelButton-post{
+    @include buttonBehavior($blue, .95, .1s);
+    padding: .4rem .8rem;
+    border-radius: .5rem;
+    box-shadow: $innerShadow2;
+    font-weight: 700;
+
+    & .buttonWithIcon {
+        @include flexVerticalCentered(row-reverse);
+        column-gap: .5rem;
+
+        & img {
+            width: .8rem;
+            height: .8rem;
+        }
+    }
+}
+
 // the button to CLOSE the innerSection
 .addPostPanelButton-textOnly{
     @include buttonBehavior2($grey4, .95, .1s);

@@ -3,7 +3,7 @@ import { ButtonWithIconProps } from "./buttonsInterfaces"
 export interface AddPostPanelInnerSectionProps {
     
     // below, we consider that media could be whether media only or text+media
-    addPostPanelSelectedInnerSection: 'media'|'textOnly'|'poll'|'draft'
+    addPostPanelSelectedInnerSection: 'media'|'textOnly'|'poll'|'draft'|'post'
     
     // below, we indicate that setAddPostPanelSelectedInnerSection is of type react setStateAction and can take the values enumerated in addPostPanelSelectedInnerSection
     setAddPostPanelSelectedInnerSection?: React.Dispatch<React.SetStateAction<AddPostPanelInnerSectionProps['addPostPanelSelectedInnerSection']>>

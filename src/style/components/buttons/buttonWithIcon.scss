@@ -40,15 +40,15 @@
 // }
 
 // used for the blue post button in headerMenu
-.buttonWithIcon-addPostPanelSectionBottomPost{
-    @include flexVerticalCentered(row-reverse);
-    @include buttonBehavior($blue, .95, .1s);
-    column-gap: .5rem;
-    padding: .4rem .8rem;
-    border-radius: .5rem;
-    box-shadow: $innerShadow2;
-    font-weight: 700;
-}
+// .buttonWithIcon-addPostPanelSectionBottomPost{
+//     @include flexVerticalCentered(row-reverse);
+//     @include buttonBehavior($blue, .95, .1s);
+//     column-gap: .5rem;
+//     padding: .4rem .8rem;
+//     border-radius: .5rem;
+//     box-shadow: $innerShadow2;
+//     font-weight: 700;
+// }
 
 // used for the draft button in the bottom section
 // .buttonWithIcon-addPostPanelSectionBottomDraft{
