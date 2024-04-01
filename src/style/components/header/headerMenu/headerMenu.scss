@@ -14,7 +14,7 @@
     & .headerMenu-elements{
         position: relative;
         padding: .6rem;
-        border-radius: 1rem;
+        border-radius: .8rem;
         box-shadow: $shadow2;
         @include flexVerticalCentered(row);
         column-gap: .8rem;

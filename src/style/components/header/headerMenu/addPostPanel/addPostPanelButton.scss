@@ -41,21 +41,21 @@
     }
 }
 
-// the button to close the innerSection
+// the button to CLOSE the innerSection
 .addPostPanelButton-textOnly{
-    // margin: .25rem;
     @include buttonBehavior2($grey4, .95, .1s);
     place-self: end;
-    padding: .3rem;
+    padding: .4rem;
     border-radius: .25rem;
+    box-shadow: $innerShadow7;
 
     .buttonWithIcon {
         p {
             display: none;
         }
         img {
-            width: .7rem;
-            height: .7rem;
+            width: .6rem;
+            height: .6rem;
         }
     }
 }
