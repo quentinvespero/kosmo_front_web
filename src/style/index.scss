@@ -41,7 +41,8 @@
 
             // notification panel
             @import './components/header/headerMenu/notificationPanel/notificationPanel.scss';
-            @import './components/header/headerMenu/notificationPanel/notificationElement.scss';
+            @import './components/header/headerMenu/notificationPanel/notificationPanelElement.scss';
+            @import './components/header/headerMenu/notificationPanel/notificationPanelButton.scss';
     
     // post
     @import './components/post/post.scss';

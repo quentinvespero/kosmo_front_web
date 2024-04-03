@@ -8,10 +8,6 @@ export interface HeaderMenuPanelProps {
     setHeaderMenuPanelSelectedElement?: (type:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }
 
-export interface NotificationPanelProps {
-    notificationsContent?: string[]
-}
-
 export interface HeaderMenuPanelElementProps {
     elementType: HeaderMenuPanelProps['headerMenuPanelSelectedElement']
 }
@@ -34,8 +30,4 @@ export interface HeaderMenuButtonProps {
     buttonText?: 'Post'
     buttonIcon: string
     className: '-addPost' | '-notification' | '-user'
-}
-
-export interface NotificationElementProps {
-    notificationType: 'follow'|'comment'|''
 }

@@ -1,13 +1,17 @@
 import React from 'react'
 import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
-// explanation buttonText props : 
-// buttonText string have to be in this format "locationOfTheButton-purposeOfTheButton"
-// - locationOfTheButton will then be used to give the button a personalised class, considering "buttonWithIcon" is added at the beginning of the class, as such : "buttonWithIcon-locationOfTheButton"
-// - purposeOfTheButton will be used for the text of the button (the "_" will be replaced by a space)
+// ########## buttonText props ##########
+// format : "classNameOfTheButton-textInsideTheButton"
+// "buttonWithIcon" is added at the beginning of the class, as such : "buttonWithIcon-classNameOfTheButton"
+// - classNameOfTheButton will then be used to give the button a personalised class. 
+// - textInsideTheButton" will be used for the text of the button (the "_" will be replaced by a space)
+
+// ########## className props ##########
+// className props is optional, if buttonLocation is not given
+// it will give a class to the button, as such : "buttonWithIcon-className"
 
 const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className}) => {
-
 
     // splitting the value of buttonText props
     const splitButtonText = buttonText.split('-')

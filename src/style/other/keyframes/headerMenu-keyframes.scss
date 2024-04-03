@@ -1,24 +1,41 @@
-@keyframes notificationElement_keyframe_open {
+@keyframes notificationPanelElement_keyframe_open {
     0% {
         opacity: 0;
         margin-left: -1rem;
+    }
+    30%{
+        margin-left: 0;
         transform:scale(0);
     }
-    // 50%{
-    //     // transform:scale(1.2);
-    // }
+    60%{
+        transform:scale(1.2);
+    }
     100% {
         opacity: 1;
         transform:scale(1);
     }
 }
-@keyframes notificationElement_keyframe_close {
+@keyframes notificationPanelElement_keyframe_close {
     0% {
         opacity: 1;
     }
+    20%{
+        transform:scale(1.2);
+    }
+    60%{
+        transform: scale(0);
+        // opacity: 0;
+        // margin-left: 0;
+    }
+    65%{
+        margin-left: 0;
+    }
+    // 65%{
+    //     margin-left: .5rem;
+    // }
     100% {
+        transform: scale(0);
         opacity: 0;
-        transform:scale(0);
-        margin-left: -1rem;
+        margin-left: -2rem;
     }
 }
