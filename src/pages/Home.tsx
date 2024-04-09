@@ -6,6 +6,7 @@ import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'
 import { HomeProps } from '../interfaces/pagesInterfaces'
 import { ViewTypeSelectorProps } from '../interfaces/logicComponents'
+import BackgroundLayer from './BackgroundLayer'
 
 const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
 
@@ -51,6 +52,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
             //     rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
             // }}
         >
+            <BackgroundLayer isVisible={false} />
             <Header 
                 screenFormat={screenFormat}
                 selectedFeed={selectedFeed}
