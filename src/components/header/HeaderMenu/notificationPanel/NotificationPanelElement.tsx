@@ -19,7 +19,16 @@ const NotificationPanelElement:React.FC<NotificationPanelElementProps> = ({notif
         <div className={`notificationPanelElement ${notificationRead ? 'notificationPanelElement-read' : ''}`} onClick={handleClick}>
             <div className={`notificationDot ${notificationRead ? 'notificationDot-hidden' : ''}`} style={{display:displayProperty}}></div>
             <div className={`notificationPanelElement-innerSection ${notificationRead ? 'notificationPanelElement-innerSection-read' : ''}`}>
-                <div className="notificationPanelElement-icon"></div>
+                <div className="notificationPanelElement-description">
+                    <div className="notificationPanelElement-description-icon">
+                        {notificationType === 'comment' && <img src="" alt=""/>}
+                        {notificationType === 'follow' && <img src="" alt=""/>}
+                    </div>
+                    <div className="notificationPanelElement-description-text">
+                        {notificationType === 'comment' && <p>new comment</p>}
+                        {notificationType === 'follow' && <p>new follower</p>}
+                    </div>
+                </div>
                 <div className="notificationPanelElement-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, ipsum!</div>
             </div>
         </div>
