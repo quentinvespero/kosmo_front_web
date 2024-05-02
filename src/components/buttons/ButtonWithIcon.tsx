@@ -41,7 +41,7 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, c
         >
             {buttonIcon && <img
                 src={`./src/assets/icons/${buttonIcon}.svg`}
-                alt={`${textOfTheButton} image`} 
+                alt={`${textOfTheButton} icon`} 
             />}
             <p>{textOfTheButton}</p>
             

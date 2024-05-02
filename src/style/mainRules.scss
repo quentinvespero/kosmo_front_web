@@ -67,6 +67,7 @@ $border9 : solid .15rem $transparentGrey1;
 $border10 : solid .15rem $white4;
 $border11 : solid .15rem $grey2;
 $border12 : solid .3rem $transparentGrey1;
+$border13 : solid .07rem $transparent;
 
 // -------- main fonts
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -88,13 +89,13 @@ $border12 : solid .3rem $transparentGrey1;
     -webkit-backdrop-filter: blur($blur);
 }
 
-@mixin buttonBehavior($color, $scale, $transitionTime){
-    background: $color;
+@mixin buttonBehavior($backgroundColor, $scale, $transitionTime){
+    background: $backgroundColor;
     cursor: pointer;
     @include transition($transitionTime);
 
     &:hover{
-        background: darken($color, 4%);
+        background: darken($backgroundColor, 4%);
     }
     &:active{
         transform: scale($scale);
@@ -102,13 +103,13 @@ $border12 : solid .3rem $transparentGrey1;
 }
 
 // no background set by default, only on hover
-@mixin buttonBehavior2($color, $scale, $transitionTime){
+@mixin buttonBehavior2($backgroundColor, $scale, $transitionTime){
     cursor: pointer;
     @include transition($transitionTime);
 
     &:hover{
-        // background: $color;
-        background: darken($color, 3%);
+        // background: $backgroundColor;
+        background: darken($backgroundColor, 3%);
     }
     &:active{
         transform: scale($scale);
@@ -248,6 +249,9 @@ textarea {
     border-radius: .5rem;
     border: .05rem solid $white5;
     width: 80%;
+}
+.divider {
+
 }
 
 // animations that are showing up when loading a page, from entry to home for example

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { delayHidingElementDisplayProperty } from '../../../../functions/delayedToggle'
 import { NotificationPanelElementProps } from '../../../../interfaces/headerMenuInterfaces/notificationPanelInterfaces'
+import ButtonWithIcon from '../../../buttons/ButtonWithIcon'
 
 const NotificationPanelElement:React.FC<NotificationPanelElementProps> = ({notificationType}) => {
 
@@ -13,22 +14,14 @@ const NotificationPanelElement:React.FC<NotificationPanelElementProps> = ({notif
     }
 
     // call the function delayedToggle (in src/functions/delayedToggle) to delay when the component will be hidden by 200ms
-    const displayProperty = delayHidingElementDisplayProperty(!notificationRead, 480)
+    const displayProperty = delayHidingElementDisplayProperty(!notificationRead, 380)
 
     return (
         <div className={`notificationPanelElement ${notificationRead ? 'notificationPanelElement-read' : ''}`} onClick={handleClick}>
             <div className={`notificationDot ${notificationRead ? 'notificationDot-hidden' : ''}`} style={{display:displayProperty}}></div>
             <div className={`notificationPanelElement-innerSection ${notificationRead ? 'notificationPanelElement-innerSection-read' : ''}`}>
-                <div className="notificationPanelElement-description">
-                    <div className="notificationPanelElement-description-icon">
-                        {notificationType === 'comment' && <img src="" alt=""/>}
-                        {notificationType === 'follow' && <img src="" alt=""/>}
-                    </div>
-                    <div className="notificationPanelElement-description-text">
-                        {notificationType === 'comment' && <p>new comment</p>}
-                        {notificationType === 'follow' && <p>new follower</p>}
-                    </div>
-                </div>
+                <ButtonWithIcon buttonIcon='profile_icon_white2' className='notificationPanelElement-description' buttonText={notificationType}/>
+                <div className="divider"></div>
                 <div className="notificationPanelElement-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, ipsum!</div>
             </div>
         </div>

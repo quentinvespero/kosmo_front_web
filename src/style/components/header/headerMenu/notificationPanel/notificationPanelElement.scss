@@ -3,7 +3,7 @@
     // margin: .1rem;
     column-gap: .7rem;
     // @include transition(.2s);
-    @include buttonBehavior2($grey4, .98, .2s);
+    @include buttonBehavior2($grey4, .98, .1s);
     padding: .4rem;
     border-radius: .7rem;
     padding-left: .7rem;
@@ -24,7 +24,7 @@
         }
     }
     & .notificationDot-hidden{
-        animation: notificationPanelElement_keyframe_close .5s ease-in-out;
+        animation: notificationPanelElement_keyframe_close .4s ease-in-out;
         background: unset;
     }
 
@@ -34,9 +34,36 @@
         @include buttonBehavior2($grey1, 1, .2s);
         // box-shadow: $innerShadow4;
         background: $grey2;
+        display: flex;
+        flex-direction: column;
+        row-gap: .4rem;
+
+        & .buttonWithIcon-notificationPanelElement-description{
+            column-gap: .5rem;
+            @include flexVerticalCentered(row);
+            // @include buttonBehavior2($grey2, 1, .2s);
+            // padding: .2rem;
+            border-radius: .5rem;
+            align-self: flex-start;
+            margin-left: .3rem;
+
+            & img {
+                width: .5rem;
+                height: .5rem;
+            }
+            & p {
+                
+            }
+        }
+
+        & .divider {
+            border-top: $border13;
+        }
 
         & .notificationPanelElement-text{
             @include transition(.2s);
+            // border-top: $border1;
+            margin-left: .3rem;
         }
     }
     & .notificationPanelElement-innerSection-read{
@@ -48,6 +75,6 @@
 
 .notificationPanelElement-read {
     background: unset !important;
-    padding: 0;
-    margin: .2rem;
+    // padding: 0;
+    // margin: .2rem;
 }
