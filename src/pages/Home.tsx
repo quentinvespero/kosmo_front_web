@@ -44,9 +44,18 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
             className={`home 
                 ${screenFormat ? 'pageAnimationFadeIn' : ''}
                 ${screenFormat === 'mobile' ? 'home-mobileScreen' : ''}
+                
+                // rules relative to the feed views
                 ${selectedViewType === 'columnsView' ? 'home-columnsView' : ''}
                 ${selectedViewType === 'detailsView' ? 'home-detailsView' : ''}
                 ${selectedViewType === 'regularView' ? 'home-regularView' : ''}
+                
+                // rules relative to the inner sections
+
+                // 16/05/24 temporary, while setting up currentInnerSection
+                ${selectedFeed === 'profile' ? 'home-innerSection-profile' : ''}
+                // 16/05/24 the definite rule that will be used when currentInnerSection will be operational
+                ${currentInnerSection ==='profile' ? 'home-innerSection-profile' : ''}
             `}
             // style={{
             //     rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
