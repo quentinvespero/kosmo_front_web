@@ -6,7 +6,7 @@ import RightPanel from '../../rightPanel/RightPanel'
 import ViewTypeSelector from '../../logicComponents/ViewTypeSelector'
 import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 
-const InnerSectionHome:React.FC<InnerSectionProps & ScreenProps & InnerSectionHomeProps> = ({selectedFeed, screenFormat, idSelectedPost, selectedViewType, setSelectedViewType}) => {
+const InnerSectionHome:React.FC<ScreenProps & InnerSectionHomeProps> = ({selectedFeed, screenFormat, idSelectedPost, selectedViewType, setSelectedViewType, currentInnerSection}) => {
 
     // following the state of the selected view in feed (details, columns, regular)
     // const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')

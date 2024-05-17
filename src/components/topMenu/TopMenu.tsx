@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import SearchField from '../header/SearchField'
 import FeedSelector from './FeedSelector'
-import { ScreenProps, TopMenuProps } from '../../interfaces/interfaces'
+import { ScreenProps } from '../../interfaces/interfaces'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
+import { TopMenuProps } from '../../interfaces/topMenuInterfaces'
 
-const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType}) => {
+const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType, setCurrentInnerSection}) => {
 
     const displayProperty = delayHidingElementDisplayProperty(selectedViewType !== 'columnsView', 400)
 
@@ -47,6 +48,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
                 topmenuIsSticky={topmenuIsSticky} 
                 selectedFeed={selectedFeed} 
                 setSelectedFeed={setSelectedFeed}
+                setCurrentInnerSection={setCurrentInnerSection}
             />
         </div>
     )

@@ -1,7 +1,9 @@
 // post
 // 14/01/24 : ⬇️ deprecated, this has been moved to the interface file relative to post : postInterfaces
 
+import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ViewTypeSelectorProps } from "./logicComponents"
+import { TopMenuProps } from "./topMenuInterfaces"
 
     // post interactions - button Up / Down vote
     // export interface UpDownVoteElementsProps {
@@ -67,14 +69,14 @@ import { ViewTypeSelectorProps } from "./logicComponents"
 //     }
 
 // DesktopMenu component props
-export interface TopMenuProps {
-    setTopmenuIsSticky: (topmenuIsSticky:boolean) => void
-    topmenuIsSticky: boolean
-    screenFormat: ScreenProps['screenFormat']
-    selectedFeed: FeedSelectorProps['selectedFeed']
-    setSelectedFeed: FeedSelectorProps['setSelectedFeed']
-    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
-}
+// export interface TopMenuProps {
+//     setTopmenuIsSticky: (topmenuIsSticky:boolean) => void
+//     topmenuIsSticky: boolean
+//     screenFormat: ScreenProps['screenFormat']
+//     selectedFeed: FeedSelectorProps['selectedFeed']
+//     setSelectedFeed: FeedSelectorProps['setSelectedFeed']
+//     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+// }
 
 // // Header component props
 // 31/12/23 - deprecated
@@ -103,6 +105,7 @@ export interface FeedSelectorProps {
     topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
     selectedFeed: 'profile' | string
     setSelectedFeed: (selectedFeed:string) => void
+    setCurrentInnerSection: InnerSectionProps['setCurrentInnerSection']
 }
 
 // export interface InnerSectionProps {

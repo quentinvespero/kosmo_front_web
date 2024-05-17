@@ -7,6 +7,8 @@ export interface InnerSectionProps {
     selectedFeed?: FeedSelectorProps['selectedFeed']
     selectedViewType: ViewTypeSelectorProps['selectedViewType']
     setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
+    currentInnerSection: 'profile' | 'settings' | 'feedManagement' | 'bookmarks' | 'feed'
+    setCurrentInnerSection: React.Dispatch<React.SetStateAction<InnerSectionProps['currentInnerSection']>>
 }
 
 export interface InnerSectionHomeProps {
@@ -16,6 +18,8 @@ export interface InnerSectionHomeProps {
     // viewType: 'basic' | 'columns' | 'details'
     selectedViewType: ViewTypeSelectorProps['selectedViewType']
     setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
+    selectedFeed:InnerSectionProps['selectedFeed']
+    currentInnerSection: InnerSectionProps['currentInnerSection']
 }
 
 export interface ViewTypeButtonProps {

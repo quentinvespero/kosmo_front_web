@@ -7,6 +7,7 @@ import InnerSection from '../components/innerSections/InnerSection'
 import { HomeProps } from '../interfaces/pagesInterfaces'
 import { ViewTypeSelectorProps } from '../interfaces/logicComponents'
 import BackgroundLayer from './BackgroundLayer'
+import { InnerSectionProps } from '../interfaces/innerSectionsInterfaces'
 
 const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
 
@@ -18,7 +19,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
 
     // managing inner sections
     // 14/01/24 : not really used at the moment. will think about using it to keep track of the innerSection, same as for currentPage for a lower level
-    const [currentInnerSection, setCurrentInnerSection] = useState('')
+    const [currentInnerSection, setCurrentInnerSection] = useState<InnerSectionProps['currentInnerSection']>('feed')
 
     // following state of the view selected in feed
     const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
@@ -57,9 +58,6 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 // 16/05/24 the definite rule that will be used when currentInnerSection will be operational
                 ${currentInnerSection ==='profile' ? 'home-innerSection-profile' : ''}
             `}
-            // style={{
-            //     rowGap: screenFormat === 'mobile' ? '2rem' : '4rem'
-            // }}
         >
             <BackgroundLayer isVisible={false} />
             <Header 
@@ -75,12 +73,15 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 selectedFeed={selectedFeed}
                 setSelectedFeed={setSelectedFeed}
                 selectedViewType={selectedViewType}
+                setCurrentInnerSection={setCurrentInnerSection}
             />
             <InnerSection 
                 screenFormat={screenFormat} 
                 selectedFeed={selectedFeed}
                 selectedViewType={selectedViewType}
                 setSelectedViewType={setSelectedViewType}
+                currentInnerSection={currentInnerSection}
+                setCurrentInnerSection={setCurrentInnerSection}
             />
             {screenFormat ==='mobile' && <AddPostButton />}
         </div>

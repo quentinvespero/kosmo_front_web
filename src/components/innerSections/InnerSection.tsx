@@ -7,7 +7,7 @@ import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ScreenProps } from '../../interfaces/interfaces'
 import InnerSectionHome from './innerSectionHome/InnerSectionHome'
 
-const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat, selectedViewType, setSelectedViewType}) => {
+const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, screenFormat, selectedViewType, setSelectedViewType, currentInnerSection, setCurrentInnerSection}) => {
 
     return (
         <div 
@@ -23,6 +23,7 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
                     selectedFeed={selectedFeed}
                     selectedViewType={selectedViewType}
                     setSelectedViewType={setSelectedViewType}
+                    currentInnerSection={currentInnerSection}
                 />
             }
 

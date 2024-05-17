@@ -1,6 +1,8 @@
 import { ProfileButtonProps } from "./buttonsInterfaces"
 import { DatasInterfaces, Feed } from "./datasInterfaces"
+import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ScreenProps } from "./interfaces"
+import { ViewTypeSelectorProps } from "./logicComponents"
 
 // DesktopMenu component props
 export interface TopMenuProps {
@@ -9,6 +11,9 @@ export interface TopMenuProps {
     screenFormat: ScreenProps['screenFormat']
     selectedFeed: FeedSelectorProps['selectedFeed']
     setSelectedFeed: FeedSelectorProps['setSelectedFeed']
+    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+    // currentInnerSection: InnerSectionProps['currentInnerSection']
+    setCurrentInnerSection: InnerSectionProps['setCurrentInnerSection']
 }
 
 export interface FeedSelectorProps {
