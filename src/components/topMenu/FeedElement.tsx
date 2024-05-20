@@ -6,13 +6,9 @@ import ProfileButton from '../buttons/ProfileButton'
 const FeedElement:React.FC<FeedElementProps> = ({handleClick, selectedFeed, feedData, locationContext}) => {
     
     // if feedData is given, then it will use the id of the feed, if not, then it means it's the profile button
+    // 20/05/24 modification to remove the profile in order to give it the ability to change the innerSection through the props currentInnerSection
     const clickHandler = () => {
-        if (feedData) {
-            handleClick(feedData._id)
-        }
-        else {
-            handleClick('profile')
-        }
+        handleClick(feedData._id)
     }
 
     return (

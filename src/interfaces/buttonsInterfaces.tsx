@@ -1,5 +1,6 @@
 // import { HeaderMenuPanelProps } from "./headerInterfaces"
 import { HandleClickHeaderMenuButtonsInterface, HeaderMenuPanelProps } from "./headerMenuInterfaces"
+import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { FeedSelectorProps, ScreenProps } from "./interfaces"
 
 // buttonType1 props
@@ -59,6 +60,7 @@ export interface ProfileButtonProps {
     locationContext: 'feedSelector' | 'headerMenu' | 'post'
     // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
+    setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
 }
 
 export interface AddPostButton2Props {

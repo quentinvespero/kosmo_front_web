@@ -4,19 +4,21 @@ import jsonData from '../../assets/bdd.json'
 import ProfileButton from '../buttons/ProfileButton'
 import FeedElement from './FeedElement'
 
-const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed }) => {
+const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed, setCurrentInnerSection }) => {
 
     // changing the state of selected feed in home component
     const handleFeedChoice = (feedId: string) => {
         setSelectedFeed(feedId)
+        setCurrentInnerSection('feed')
     }
 
     return (
         <div className='feedSelector' style={{
             flexWrap: screenFormat === 'mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
         }}>
-            <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed} locationContext='feedSelector'/>
+            {/* <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed} locationContext='feedSelector'/> */}
             {/* <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/> */}
+            <ProfileButton locationContext='feedSelector' setCurrentInnerSection={setCurrentInnerSection}/>
             {jsonData && 
             jsonData.feeds.length > 0 &&
             jsonData.feeds.map((feed) => (

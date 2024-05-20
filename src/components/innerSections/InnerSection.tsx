@@ -16,8 +16,8 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
             `}
         >
 
-            {selectedFeed && 
-            selectedFeed.includes('feed') && 
+            {currentInnerSection && 
+            currentInnerSection === 'feed' && 
                 <InnerSectionHome 
                     screenFormat={screenFormat} 
                     selectedFeed={selectedFeed}
@@ -27,9 +27,8 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
                 />
             }
 
-            {selectedFeed === 'profile' && 
-                <Profile screenFormat={screenFormat}/>
-            }
+            {currentInnerSection === 'profile' && <Profile screenFormat={screenFormat}/>}
+
         </div>
     )
 }

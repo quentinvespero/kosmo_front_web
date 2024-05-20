@@ -6,7 +6,7 @@ import ProfilePhoto from '../imageComponents/ProfilePhoto'
 import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick}) => {
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick, setCurrentInnerSection}) => {
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces | null>(null)
@@ -42,6 +42,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             onClick={(e) => {
                 handleClick && locationContext === 'headerMenu' && handleClick('user')
                 locationContext === 'post' && e.stopPropagation()
+                setCurrentInnerSection && locationContext === 'feedSelector' && setCurrentInnerSection('profile')
             }}
             aria-label='profile button'
         >
@@ -56,7 +57,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                 />
 
             
-            {/* below is the different text to display, depending on the context */}
+            {/* ↓ below are the different texts to display, depending on the context (locationContext) ↓ */}
             {locationContext === 'headerMenu' && 
                 userData &&
                 userData.users &&

@@ -26,7 +26,7 @@ export interface FeedSelectorProps {
 export interface FeedElementProps {
     handleClick: (selectedElement:string) => void
     selectedFeed: FeedSelectorProps['selectedFeed']
-    feedData?: Feed
+    feedData: Feed
     // feedData: DatasInterfaces['feeds']
     locationContext?:ProfileButtonProps['locationContext']
 }
