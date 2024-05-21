@@ -1,12 +1,23 @@
 import React, { useState } from 'react'
-import { InnerSectionHomeProps, InnerSectionProps } from '../../../interfaces/innerSectionsInterfaces'
+import { InnerSectionProps } from '../../../interfaces/innerSectionsInterfaces'
 import Feed from './Feed'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import RightPanel from '../../rightPanel/RightPanel'
 import ViewTypeSelector from '../../logicComponents/ViewTypeSelector'
 import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 
-const InnerSectionHome:React.FC<ScreenProps & InnerSectionHomeProps> = ({selectedFeed, screenFormat, idSelectedPost, selectedViewType, setSelectedViewType, currentInnerSection}) => {
+export interface InnerSectionHomeProps {
+    // isPostSelected?:boolean
+    // selectedPostId?:Post['_id']
+    idSelectedPost?:string
+    // viewType: 'basic' | 'columns' | 'details'
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+    setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
+    // selectedFeed:InnerSectionProps['selectedFeed']
+    currentInnerSection: InnerSectionProps['currentInnerSection']
+}
+
+const InnerSectionHome:React.FC<ScreenProps & InnerSectionHomeProps> = ({screenFormat, idSelectedPost, selectedViewType, setSelectedViewType, currentInnerSection}) => {
 
     // following the state of the selected view in feed (details, columns, regular)
     // const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
@@ -25,22 +36,12 @@ const InnerSectionHome:React.FC<ScreenProps & InnerSectionHomeProps> = ({selecte
                 <Feed screenFormat={screenFormat} selectedViewType={selectedViewType}/>
             </div>
 
-            {selectedFeed && 
-                // selectedViewType !== 'columnsView' &&
+            {currentInnerSection && 
                 screenFormat === 'desktop' && 
-                selectedFeed.includes('feed') && 
+                currentInnerSection !== 'profile' && 
                 !idSelectedPost &&
                 <RightPanel selectedViewType={selectedViewType}/>
             }
-
-            {/* ⬇ below, an idea of the right panel being showing up being triggered if a post is being selected */}
-            {/* {selectedFeed && 
-                selectedViewType !== 'columnsView' &&
-                screenFormat === 'desktop' && 
-                selectedFeed.includes('feed') && 
-                idSelectedPost && 
-                <RightPanel idSelectedPost={idSelectedPost} />
-            } */}
         </div>
     )
 }

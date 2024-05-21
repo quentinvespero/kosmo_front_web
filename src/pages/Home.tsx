@@ -62,8 +62,9 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
             <BackgroundLayer isVisible={false} />
             <Header 
                 screenFormat={screenFormat}
-                selectedFeed={selectedFeed}
+                // selectedFeed={selectedFeed}
                 currentPage={currentPage}
+                currentInnerSection={currentInnerSection}
             />
             {topmenuIsSticky && <div className="fillTheGap"></div>}
             <TopMenu 

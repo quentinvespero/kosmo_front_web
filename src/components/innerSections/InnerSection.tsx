@@ -12,7 +12,7 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
     return (
         <div 
             className={`innerSection 
-                ${selectedFeed === 'profile' ? 'innerSection-profile' : ''}
+                ${currentInnerSection === 'profile' ? 'innerSection-profile' : ''}
             `}
         >
 
@@ -20,7 +20,7 @@ const InnerSection:React.FC<ScreenProps & InnerSectionProps> = ({selectedFeed, s
             currentInnerSection === 'feed' && 
                 <InnerSectionHome 
                     screenFormat={screenFormat} 
-                    selectedFeed={selectedFeed}
+                    // selectedFeed={selectedFeed}
                     selectedViewType={selectedViewType}
                     setSelectedViewType={setSelectedViewType}
                     currentInnerSection={currentInnerSection}

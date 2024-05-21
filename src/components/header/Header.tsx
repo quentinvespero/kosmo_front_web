@@ -2,10 +2,21 @@ import React, { useState } from 'react'
 import PointCounter from './PointCounter'
 import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
-import { HeaderProps } from '../../interfaces/headerInterfaces'
+// import { HeaderProps } from '../../interfaces/headerInterfaces'
 import HeaderMenu from './HeaderMenu/HeaderMenu'
+import { FeedSelectorProps } from '../topMenu/FeedSelector'
+import { HomeProps } from '../../interfaces/pagesInterfaces'
+import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 
-const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed, currentPage }) => {
+export interface HeaderProps {
+    // headerScreen: 'home' | 'entryPage' <-- deprecated in profit of currentScreen / currentPage
+    screenFormat: ScreenProps['screenFormat']
+    // selectedFeed?:FeedSelectorProps['selectedFeed']
+    currentPage: HomeProps['currentPage']
+    currentInnerSection:InnerSectionProps['currentInnerSection']
+}
+
+const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, currentPage, currentInnerSection }) => {
 
     // following the state of the search field. When the user select the search field while being on mobile format, it should hide the counter component, so that way the search field can go wider
     const [isSearchFieldSelectedOnMobile, setIsSearchFieldSelectedOnMobile] = useState(false)
@@ -48,14 +59,11 @@ const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, selectedFeed
                             />
                         }
                         
-                        {selectedFeed && 
-                            // selectedFeed.includes('feed') &&
-                            screenFormat === 'mobile' &&
-                            // isSearchFieldSelectedOnMobile === false &&
+                        {screenFormat === 'mobile' &&
                             <PointCounter 
                                 screenFormat={screenFormat} 
                                 isSearchFieldSelectedOnMobile={isSearchFieldSelectedOnMobile}
-                                isHidden={isSearchFieldSelectedOnMobile || !selectedFeed.includes('feed')}
+                                isHidden={isSearchFieldSelectedOnMobile || currentInnerSection === 'profile' }
                             />
                         }
                         
