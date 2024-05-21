@@ -3,10 +3,23 @@ import { ScreenProps } from '../../interfaces/interfaces'
 // import { HandleClickHeaderMenuButtonsInterface, ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
-import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
+// import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
+import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+// import { FeedSelectorProps } from '../../interfaces/topMenuInterfaces'
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, selectedFeed, setSelectedFeed, handleClick, setCurrentInnerSection}) => {
+export interface ProfileButtonProps {
+    // selectedFeed?:FeedSelectorProps['selectedFeed']
+    // setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
+    handleFeedChoice?: () => void
+    locationContext: 'feedSelector' | 'headerMenu' | 'post'
+    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+    handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
+    setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
+    currentInnerSection?:InnerSectionProps['currentInnerSection']
+}
+
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection}) => {
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces | null>(null)
@@ -19,24 +32,15 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             .catch(error => console.error('Error:', error))
     }, [])
 
-    // in the context of profileButton being in the feedSelector, can be used to change the value of selectedFeed
-    // const handleFeedChoice = (feedId: string) => {
-    //     if (setSelectedFeed) {
-    //         setSelectedFeed(feedId)
-    //     }
-    // }
-
-    // function that will be used to display a menu under it in the headerMenu, that will display some quick parameters/others. Such as toggling night/light mode, and all..
-    // const showingPanelMenu = () => {
-
-    // }
-
     return (
         <div 
             className={`profileButton
-                ${locationContext === 'feedSelector' && 'profileButton-feedSelector'}
-                ${locationContext === 'headerMenu' && 'profileButton-headerMenu'}
-                ${locationContext === 'post' && 'profileButton-post'}
+                ${locationContext === 'feedSelector' ? 'profileButton-feedSelector' : ''}
+                ${locationContext === 'feedSelector' && currentInnerSection === 'profile' ? 'profileButton-feedSelector-selected' : ''}
+
+                ${locationContext === 'headerMenu' ? 'profileButton-headerMenu' : ''}
+                
+                ${locationContext === 'post' ? 'profileButton-post' : ''}
             `}
             // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
             onClick={(e) => {

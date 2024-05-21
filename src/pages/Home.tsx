@@ -74,6 +74,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 setSelectedFeed={setSelectedFeed}
                 selectedViewType={selectedViewType}
                 setCurrentInnerSection={setCurrentInnerSection}
+                currentInnerSection={currentInnerSection}
             />
             <InnerSection 
                 screenFormat={screenFormat} 

@@ -1,11 +1,24 @@
 import React, { useEffect } from 'react'
 import SearchField from '../header/SearchField'
-import FeedSelector from './FeedSelector'
+import FeedSelector, { FeedSelectorProps } from './FeedSelector'
 import { ScreenProps } from '../../interfaces/interfaces'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
-import { TopMenuProps } from '../../interfaces/topMenuInterfaces'
+import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
+// import { TopMenuProps } from '../../interfaces/topMenuInterfaces'
 
-const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType, setCurrentInnerSection}) => {
+export interface TopMenuProps {
+    setTopmenuIsSticky: (topmenuIsSticky:boolean) => void
+    topmenuIsSticky: boolean
+    screenFormat: ScreenProps['screenFormat']
+    selectedFeed: FeedSelectorProps['selectedFeed']
+    setSelectedFeed: FeedSelectorProps['setSelectedFeed']
+    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+    currentInnerSection: InnerSectionProps['currentInnerSection']
+    setCurrentInnerSection: InnerSectionProps['setCurrentInnerSection']
+}
+
+const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType, setCurrentInnerSection, currentInnerSection}) => {
 
     const displayProperty = delayHidingElementDisplayProperty(selectedViewType !== 'columnsView', 400)
 
@@ -49,6 +62,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
                 selectedFeed={selectedFeed} 
                 setSelectedFeed={setSelectedFeed}
                 setCurrentInnerSection={setCurrentInnerSection}
+                currentInnerSection={currentInnerSection}
             />
         </div>
     )

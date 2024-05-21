@@ -1,7 +1,7 @@
 // import { HeaderMenuPanelProps } from "./headerInterfaces"
 import { HandleClickHeaderMenuButtonsInterface, HeaderMenuPanelProps } from "./headerMenuInterfaces"
 import { InnerSectionProps } from "./innerSectionsInterfaces"
-import { FeedSelectorProps, ScreenProps } from "./interfaces"
+import { ScreenProps } from "./interfaces"
 
 // buttonType1 props
 // 14/01/24 : I will update this component later but as for now, it's used for the :
@@ -53,15 +53,16 @@ export interface NotificationButtonProps {
     handleClick:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
-export interface ProfileButtonProps {
-    selectedFeed?:FeedSelectorProps['selectedFeed']
-    setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
-    handleFeedChoice?: () => void
-    locationContext: 'feedSelector' | 'headerMenu' | 'post'
-    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
-    handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
-    setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
-}
+// export interface ProfileButtonProps {
+//     selectedFeed?:FeedSelectorProps['selectedFeed']
+//     setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
+//     handleFeedChoice?: () => void
+//     locationContext: 'feedSelector' | 'headerMenu' | 'post'
+//     // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
+//     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
+//     setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
+//     currentInnerSection?:InnerSectionProps['currentInnerSection']
+// }
 
 export interface AddPostButton2Props {
     // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void

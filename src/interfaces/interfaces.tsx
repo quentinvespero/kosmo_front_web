@@ -3,7 +3,7 @@
 
 import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ViewTypeSelectorProps } from "./logicComponents"
-import { TopMenuProps } from "./topMenuInterfaces"
+// import { TopMenuProps } from "./topMenuInterfaces"
 
     // post interactions - button Up / Down vote
     // export interface UpDownVoteElementsProps {
@@ -100,13 +100,13 @@ export interface ScreenProps {
 }
 
 // FeedSelector component props
-export interface FeedSelectorProps {
-    screenFormat?: ScreenProps['screenFormat']
-    topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
-    selectedFeed: 'profile' | string
-    setSelectedFeed: (selectedFeed:string) => void
-    setCurrentInnerSection: InnerSectionProps['setCurrentInnerSection']
-}
+// export interface FeedSelectorProps {
+//     screenFormat?: ScreenProps['screenFormat']
+//     topmenuIsSticky?: TopMenuProps['topmenuIsSticky']
+//     selectedFeed: 'profile' | string
+//     setSelectedFeed: (selectedFeed:string) => void
+//     setCurrentInnerSection: InnerSectionProps['setCurrentInnerSection']
+// }
 
 // export interface InnerSectionProps {
 //     selectedFeed?: FeedSelectorProps['selectedFeed']
