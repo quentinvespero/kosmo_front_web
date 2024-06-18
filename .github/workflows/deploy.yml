@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,6 @@ jobs:
       env:
         HOST_PASSWORD: ${{ secrets.HOST_PASSWORD }}
         HOST_USERNAME: ${{ secrets.HOST_USERNAME }}
+        SERVER_PORT: ${{ secrets.SERVER_PORT }}
       run: |
-        # Deployment commands go here
-        scp -r ./dist user@example.com:/path/to/deploy
+        scp -P $SERVER_PORT -r ./dist ${{ secrets.HOST_USERNAME }}@example.com:/path/to/deploy
