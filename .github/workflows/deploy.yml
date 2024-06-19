@@ -18,5 +18,7 @@ jobs:
         HOST_PASSWORD: ${{ secrets.HOST_PASSWORD }}
         HOST_USERNAME: ${{ secrets.HOST_USERNAME }}
         SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SERVER_PATH: ${{ secrets.SERVER_PATH }}
       run: |
-        scp -P $SERVER_PORT -r ./dist ${{ secrets.HOST_USERNAME }}@example.com:/path/to/deploy
+        scp -P $SERVER_PORT -r ./dist $HOST_USERNAME@$SERVER_IP:$SERVER_PATH
