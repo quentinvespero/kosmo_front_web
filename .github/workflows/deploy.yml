@@ -24,4 +24,4 @@ jobs:
         SERVER_IP: ${{ secrets.SERVER_IP }}
         SERVER_PATH: ${{ secrets.SERVER_PATH }}
       run: |
-        rsync -avzr -e "ssh -p $SERVER_PORT" ./build/ $HOST_USERNAME@$SERVER_IP:$SERVER_PATH
+        rsync -avzr -e "ssh -p ${{ secrets.SERVER_PORT }}" ./build/ ${{ secrets.HOST_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_PATH }}
