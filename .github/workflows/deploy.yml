@@ -10,18 +10,15 @@ jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'}}
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v4
-    - name: setup ssh
-      uses: webfactory/ssh-agent@v0.9.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    
     - name: deploy to server
-      # env:
-      #   HOST_USERNAME: ${{ secrets.HOST_USERNAME }}
-      #   SERVER_PORT: ${{ secrets.SERVER_PORT }}
-      #   SERVER_IP: ${{ secrets.SERVER_IP }}
-      #   SERVER_PATH: ${{ secrets.SERVER_PATH }}
-      run: |
-        scp -P ${{ secrets.SERVER_PORT }} ./build/ ${{ secrets.HOST_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_PATH }}
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        BRANCH: build 
+        FOLDER: build 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MESSAGE: "Build: ({sha}) {msg}"
