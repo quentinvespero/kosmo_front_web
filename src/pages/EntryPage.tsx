@@ -53,7 +53,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ pageSelection, anim
             <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
-                    <Header screenFormat={screenFormat} currentPage={currentPage}/>
+                    <Header screenFormat={screenFormat} currentPage={currentPage} currentInnerSection=""/>
                     <div className="entryPage-centerSection">
                         {!hasClickedOnEnter && <div 
                             className={`entryPage-buttonSection ${showingLoginAndRegister ? 'entryPage-buttonSection-hidding' : ''}`}

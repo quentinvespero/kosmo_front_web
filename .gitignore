@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 # personal files
-archive
+# archive
 prompts_datas
 .env
