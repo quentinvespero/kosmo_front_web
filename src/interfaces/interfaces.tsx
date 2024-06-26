@@ -116,3 +116,7 @@ export interface ScreenProps {
 export interface GeneralProps{
     isVisible?: boolean
 }
+
+export interface GeneralTypes {
+    changeEvent: React.ChangeEvent<HTMLInputElement>
+}
