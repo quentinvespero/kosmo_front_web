@@ -1,5 +1,6 @@
 import React from 'react'
 import { HideRightPanelButtonProps } from '../../interfaces/buttonsInterfaces'
+import ButtonWithIcon from './ButtonWithIcon'
 // import '../../assets/icons/icon_arrow_white2.svg'
 
 const HideRightPanelButton:React.FC<HideRightPanelButtonProps> = ({isRightPanelVisible, setIsRightPanelVisible}) => {
@@ -9,13 +10,11 @@ const HideRightPanelButton:React.FC<HideRightPanelButtonProps> = ({isRightPanelV
     }
 
     return (
-        // <div className={`hideRightPanelButton ${ isRightPanelVisible ? 'hideRightPanelButton-open' : 'hideRightPanelButton-closed' }`} onClick={handleClick}>
-        <div className='hideRightPanelButton' onClick={handleClick}>
-            <img 
-                src="src/assets/icons/icon_arrow_white2.svg" 
-                alt="arrow icon" 
-                style={{ transform: isRightPanelVisible ? 'rotate(0deg)' : 'rotate(180deg)'}}
-            />
+        <div 
+            className={`hideRightPanelButton ${ isRightPanelVisible ? 'hideRightPanelButton-open' : 'hideRightPanelButton-closed' }`} 
+            onClick={handleClick}
+        >
+            <ButtonWithIcon buttonText='' buttonIcon='icon_arrow_white2' className='hideRightPanelButton'/>
         </div>
     )
 }

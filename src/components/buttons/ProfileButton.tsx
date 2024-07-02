@@ -42,7 +42,6 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                 
                 ${locationContext === 'post' ? 'profileButton-post' : ''}
             `}
-            // onClick={() => (locationContext ==='feedSelector' ? handleFeedChoice('profile') : showingPanelMenu() )}
             onClick={(e) => {
                 handleClick && locationContext === 'headerMenu' && handleClick('user')
                 locationContext === 'post' && e.stopPropagation()
