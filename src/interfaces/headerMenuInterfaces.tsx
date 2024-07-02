@@ -22,12 +22,12 @@ export interface ExpandButtonProps {
     setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
 }
 
-export interface HeaderMenuButtonProps {
-    // onClick: React.Dispatch<React.SetStateAction<HeaderMenuPanelProps['headerMenuPanelSelectedElement']>>
-    onClick: () => void
+// export interface HeaderMenuButtonProps {
+//     // onClick: React.Dispatch<React.SetStateAction<HeaderMenuPanelProps['headerMenuPanelSelectedElement']>>
+//     onClick: () => void
     
-    // below, we use a "-" because in the component ButtonWithIcon, it's the element that will be use to divide the
-    buttonText?: 'Post'
-    buttonIcon: string
-    className: '-addPost' | '-notification' | '-user'
-}
+//     // below, we use a "-" because in the component ButtonWithIcon, it's the element that will be use to divide the
+//     buttonText?: 'Post'
+//     buttonIcon: string
+//     className: '-addPost' | '-notification' | '-user'
+// }
