@@ -16,7 +16,7 @@ export interface FeedSelectorProps {
     currentInnerSection:InnerSectionProps['currentInnerSection']
 }
 
-const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed, setCurrentInnerSection, currentInnerSection}) => {
+const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, topmenuIsSticky, selectedFeed, setSelectedFeed, setCurrentInnerSection, currentInnerSection }) => {
 
     // changing the state of selected feed in home component
     const handleFeedChoice = (feedId: string) => {

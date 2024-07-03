@@ -75,6 +75,7 @@ export interface ButtonWithIconProps {
     buttonIcon?: string
     // functionToPass?: () => void
     className?:string
+    description?:string
 }
 
 export interface HideRightPanelButtonProps {

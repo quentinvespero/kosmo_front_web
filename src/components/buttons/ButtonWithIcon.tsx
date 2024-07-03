@@ -11,7 +11,10 @@ import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 // className props is optional, if buttonLocation is not given
 // it will give a class to the button, as such : "buttonWithIcon-className"
 
-const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className}) => {
+const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className, description}) => {
+
+    // path of the assets
+    const assetPath = './assets/icons/'
 
     // splitting the value of buttonText props
     const splitButtonText = buttonText.split('-')
@@ -30,18 +33,17 @@ const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, c
     }
     else {
         textOfTheButton = splitButtonText[1].replace(/_/g, ' ')
-    
         buttonLocation = splitButtonText[0]
     }
 
     return (
         <div 
             className={`buttonWithIcon buttonWithIcon-${className ? className : buttonLocation}`} 
-            title={textOfTheButton}
+            title={description ? description : textOfTheButton}
         >
             {buttonIcon && <img
-                src={`./src/assets/icons/${buttonIcon}.svg`}
-                alt={`${textOfTheButton} icon`} 
+                src={`${assetPath}${buttonIcon}.svg`}
+                alt={`${description ? description : textOfTheButton}`}
             />}
             <p>{textOfTheButton}</p>
             

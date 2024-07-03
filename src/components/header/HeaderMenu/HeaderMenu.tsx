@@ -6,12 +6,13 @@ import PointCounter from '../PointCounter'
 // import AddPostButton2 from '../../buttons/AddPostButton2'
 import ProfileButton from '../../buttons/ProfileButton'
 import HeaderMenuPanel from './HeaderMenuPanel'
-import ExpandButton from '../../buttons/ExpandButton'
+import ExpandButton from './HeaderMenuButtonExpand'
 import { HeaderMenuProps } from '../../../interfaces/headerMenuInterfaces'
 import outsideClick from '../../../functions/outsideClick'
 import HeaderMenuButton from './HeaderMenuButton'
+import HeaderMenuButtonExpand from './HeaderMenuButtonExpand'
 
-type SelectedElement = "" | "notification" | "addPost" | "user"
+type SelectedElement = "notification" | "addPost" | "user"
 
 const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
 
@@ -53,7 +54,7 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
                 <HeaderMenuButton onClick={() => handleClick('user')} buttonIcon='settings_white2' className='-user'/>
                 <div className="dot">•</div>
                 {/* <ExpandButton headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/> */}
-                <HeaderMenuButton onClick={() => handleClick('user')} buttonIcon='icon_arrowBottom_white2' className='-expand' />
+                <HeaderMenuButtonExpand headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen} />
             </div>
             <HeaderMenuPanel 
                 headerMenuPanelOpen={headerMenuPanelOpen} 

@@ -1,11 +1,17 @@
 import React from 'react'
-import { SelectorProps } from '../../interfaces/logicComponents'
+import { HeaderMenuPanelProps } from '../../interfaces/headerMenuInterfaces'
+// import { SelectorProps } from '../../interfaces/logicComponents'
+
+interface SelectorProps {
+    headerMenuPanelSelectedElement?: HeaderMenuPanelProps['headerMenuPanelSelectedElement']
+    setHeaderMenuPanelSelectedElement: HeaderMenuPanelProps['setHeaderMenuPanelSelectedElement']
+}
 
 const Selector:React.FC<SelectorProps> = ({headerMenuPanelSelectedElement, setHeaderMenuPanelSelectedElement}) => {
 
     const handleClick = (valueClicked:'addPost'|'notification'|'user') => {
-        if (setHeaderMenuPanelSelectedElement) {
-            console.log(valueClicked)
+        if (setHeaderMenuPanelSelectedElement && valueClicked) {
+            // console.log(valueClicked)
             setHeaderMenuPanelSelectedElement(valueClicked)
         }   
     }

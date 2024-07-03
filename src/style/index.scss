@@ -15,7 +15,7 @@
     @import './components/buttons/closeButton.scss';
     @import './components/buttons/hideRightPanelButton.scss';
     @import './components/buttons/buttonWithIcon.scss';
-    @import './components/buttons/expandButton.scss';
+    // @import './components/buttons/expandButton.scss';
 
     // header
     @import './components/header/header.scss';
@@ -29,6 +29,7 @@
         @import './components/header/headerMenu/userSettingsPanel.scss';
         @import './components/header/headerMenu/headerMenuPanelElement.scss';
         @import './components/header/headerMenu/headerMenuButton.scss';
+        @import './components/header/headerMenu/headerMenuButtonExpand.scss';
         
             // addPostPanel
             @import './components/header/headerMenu/addPostPanel/addPostPanel.scss';

@@ -7,16 +7,19 @@ $white4 : #bababa;
 $white5 : #a4a4a4;
 $white6 : #838383;
 $white : #dddddd; // <-- deprecated
+
 $grey1 : #5C5C5C;
 $grey2 : #3C3C3C;
 $grey3 : #2C2C2C;
 $grey4 : #1E1E1E;
 $grey5 : #0f0f0f;
+
 $pink : #E5A2CA;
 $blue : #7CB1FF;
 $red : #bc6785;
 $darkRed : #972d3b;
 $middleDarkRed : #b13355;
+
 $transparentGrey1: #5c5c5ca8;
 $transparentGrey2 : #3C3C3Ca8;
 $transparentGrey3 : #2c2c2c1a;
@@ -41,6 +44,7 @@ $shadow3 : 0rem 0rem .4rem .1rem $grey3;
 $shadow4 : 0rem 0rem 3rem 0rem $transparentGrey6;
 $shadow5 : 0rem 0rem .4rem 0rem $grey4;
 $shadow6 : 0rem 0rem .1rem $transparentGrey5;
+
 $innerShadow1 : inset 0rem 0rem .2rem .1rem $grey2;
 $innerShadow2 : inset 0rem 0rem 0rem .1rem $transparentGrey4;
 $innerShadow3 : inset 0 0 0 .1rem $grey2;

@@ -1,14 +1,14 @@
 import React, { useRef } from 'react'
-// import { HeaderMenuPanelProps } from '../../../interfaces/headerInterfaces'
 import Selector from '../../logicComponents/Selector'
-import CloseButton from '../../buttons/CloseButton'
+// import CloseButton from '../../buttons/CloseButton'
 import NotificationPanel from './notificationPanel/NotificationPanel'
 import { delayHidingElementDisplayProperty } from '../../../functions/delayedToggle'
 import UserSettingsPanel from './UserSettingsPanel'
 import AddPostPanel from './addPostPanel/AddPostPanel'
-import { HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
+// import { HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
 import HeaderMenuPanelElement from './HeaderMenuPanelElement'
 import outsideClick from '../../../functions/outsideClick'
+import { HeaderMenuPanelProps } from '../../../interfaces/headerMenuInterfaces'
 
 const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, headerMenuPanelSelectedElement, setHeaderMenuPanelOpen, setHeaderMenuPanelSelectedElement}) => {
 
@@ -25,11 +25,6 @@ const HeaderMenuPanel:React.FC<HeaderMenuPanelProps> = ({headerMenuPanelOpen, he
             // ref={ref}
         >
             <Selector headerMenuPanelSelectedElement={headerMenuPanelSelectedElement} setHeaderMenuPanelSelectedElement={setHeaderMenuPanelSelectedElement}/>
-            {/* <div className="headerMenuPanel-elements">
-                <AddPostPanel headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
-                <NotificationPanel headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
-                <UserSettingsPanel headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
-            </div> */}
             <HeaderMenuPanelElement elementType='addPost' headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
             <HeaderMenuPanelElement elementType='notification' headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>
             <HeaderMenuPanelElement elementType='user' headerMenuPanelSelectedElement={headerMenuPanelSelectedElement}/>

@@ -3,7 +3,7 @@ export interface HeaderMenuProps {
 }
 export interface HeaderMenuPanelProps {
     headerMenuPanelOpen?: boolean
-    headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user' | ''
+    headerMenuPanelSelectedElement: 'notification' | 'addPost' | 'user'
     setHeaderMenuPanelOpen?: (type:boolean) => void
     setHeaderMenuPanelSelectedElement?: (type:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }
@@ -17,9 +17,9 @@ export interface HandleClickHeaderMenuButtonsInterface {
     handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
 }
 
-export interface ExpandButtonProps {
-    headerMenuPanelOpen?: HeaderMenuPanelProps['headerMenuPanelOpen']
-    setHeaderMenuPanelOpen?: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
+export interface HeaderMenuButtonExpandProps {
+    headerMenuPanelOpen: HeaderMenuPanelProps['headerMenuPanelOpen']
+    setHeaderMenuPanelOpen: HeaderMenuPanelProps['setHeaderMenuPanelOpen']
 }
 
 // export interface HeaderMenuButtonProps {

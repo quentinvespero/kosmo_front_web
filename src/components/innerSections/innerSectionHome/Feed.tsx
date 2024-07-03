@@ -67,6 +67,7 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />}
+            
         </div>
     )
 }
