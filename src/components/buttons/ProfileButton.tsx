@@ -32,21 +32,44 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             .catch(error => console.error('Error:', error))
     }, [])
 
+    // function to handle the actions when click on the button
+    // - in header menu, it will trigger handleClick which is gonna change the section of the headerMenu, with the 'user' section
+    // - in post it will stop the propagation on the element itself
+    // - in feedSelector, it will change the innerSection to 'profile'
+    const handleClickActions = (e: { stopPropagation: () => any }) => {
+        locationContext === 'headerMenu' && handleClick && handleClick('user')
+        locationContext === 'post' && e.stopPropagation()
+        locationContext === 'feedSelector' && setCurrentInnerSection && setCurrentInnerSection('profile')
+    }
+
+    const profileButtonClasses = () => {
+        let classNames = 'profileButton'
+
+        if (locationContext === 'feedSelector') {
+            classNames += ' profileButton-feedSelector'
+            if (currentInnerSection === 'profile') {
+                classNames += ' profileButton-feedSelector-selected'
+            }
+        }
+        else if (locationContext === 'headerMenu') {
+            classNames += ' profileButton-headerMenu'
+        }
+        else if (locationContext === 'post') {
+            classNames += ' profileButton-post'
+        }
+        return classNames
+    }
+
     return (
         <div 
-            className={`profileButton
-                ${locationContext === 'feedSelector' ? 'profileButton-feedSelector' : ''}
-                ${locationContext === 'feedSelector' && currentInnerSection === 'profile' ? 'profileButton-feedSelector-selected' : ''}
-
-                ${locationContext === 'headerMenu' ? 'profileButton-headerMenu' : ''}
-                
-                ${locationContext === 'post' ? 'profileButton-post' : ''}
-            `}
-            onClick={(e) => {
-                handleClick && locationContext === 'headerMenu' && handleClick('user')
-                locationContext === 'post' && e.stopPropagation()
-                setCurrentInnerSection && locationContext === 'feedSelector' && setCurrentInnerSection('profile')
-            }}
+            // className={`profileButton
+            //     ${locationContext === 'feedSelector' ? 'profileButton-feedSelector' : ''}
+            //     ${locationContext === 'feedSelector' && currentInnerSection === 'profile' ? 'profileButton-feedSelector-selected' : ''}
+            //     ${locationContext === 'headerMenu' ? 'profileButton-headerMenu' : ''}
+            //     ${locationContext === 'post' ? 'profileButton-post' : ''}
+            // `}
+            className={profileButtonClasses()}
+            onClick={handleClickActions}
             aria-label='profile button'
         >
 
