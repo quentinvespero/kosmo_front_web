@@ -2,6 +2,7 @@
     "name": "kosmo_front_web",
     "private": true,
     "version": "0.0.0",
+    "homepage": "https://labo.quentinvespero.com/kosmo_webapp/",
     "type": "module",
     "scripts": {
         "dev": "vite",
