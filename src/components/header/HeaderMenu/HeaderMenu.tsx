@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import PointCounter from '../PointCounter'
 // import NotificationButton from '../../buttons/NotificationButton'
-import AddPostButton2 from '../../buttons/AddPostButton2'
+// import AddPostButton2 from '../../buttons/AddPostButton2'
 import ProfileButton from '../../buttons/ProfileButton'
 import HeaderMenuPanel from './HeaderMenuPanel'
 import ExpandButton from '../../buttons/ExpandButton'
@@ -52,7 +52,8 @@ const HeaderMenu:React.FC<HeaderMenuProps & ScreenProps> = ({screenFormat}) => {
                 {/* <PointCounter/> */}
                 <HeaderMenuButton onClick={() => handleClick('user')} buttonIcon='settings_white2' className='-user'/>
                 <div className="dot">•</div>
-                <ExpandButton headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/>
+                {/* <ExpandButton headerMenuPanelOpen={headerMenuPanelOpen} setHeaderMenuPanelOpen={setHeaderMenuPanelOpen}/> */}
+                <HeaderMenuButton onClick={() => handleClick('user')} buttonIcon='icon_arrowBottom_white2' className='-expand' />
             </div>
             <HeaderMenuPanel 
                 headerMenuPanelOpen={headerMenuPanelOpen} 

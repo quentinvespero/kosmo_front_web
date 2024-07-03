@@ -7,15 +7,11 @@
     animation: zoomEffect1 .4s ease-in-out;
     margin: 0.2rem;
 
-    & img {
-        height: .8rem;
+    & .buttonWithIcon-hideRightPanelButton > img {
         transition: .3s ease-in-out;
     }
 }
 
-.hideRightPanelButton-open > img {
-    transform: rotate(0deg);
-}
-.hideRightPanelButton-closed > img {
+.hideRightPanelButton-closed > .buttonWithIcon-hideRightPanelButton > img {
     transform: rotate(180deg);
 }
