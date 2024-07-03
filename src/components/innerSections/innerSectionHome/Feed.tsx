@@ -33,6 +33,7 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
             <span className="feed-glitterElement2 feed-glitterElement">.</span>
             <span className="feed-glitterElement1 feed-glitterElement">.</span>
             <span className="feed-glitterElement2 feed-glitterElement">.</span>
+            <span className="feed-glitterElement2 feed-glitterElement">.</span>
         </div>
     }
 
