@@ -54,8 +54,8 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                     imagePath={
                         userData && 
                         locationContext !== 'feedSelector' 
-                            ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || '/src/assets/icons/profile_icon_white2.svg' 
-                            : '/src/assets/icons/profile_icon_white2.svg'
+                            ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || './assets/icons/profile_icon_white2.svg' 
+                            : './assets/icons/profile_icon_white2.svg'
                     }
                 />
 

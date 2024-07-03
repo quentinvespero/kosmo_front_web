@@ -8,7 +8,7 @@ const ProfilePhoto:React.FC<ProfilePhotoProps> = ({imagePath}) => {
             ? 
                 <img src={imagePath} alt="profile photo" />
             :
-                <img src='/src/assets/icons/profile_icon_grey2.svg' alt='default image'/>
+                <img src='./assets/icons/profile_icon_grey2.svg' alt='default image'/>
             }
         </div>
     )
