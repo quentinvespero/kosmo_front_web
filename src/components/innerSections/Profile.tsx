@@ -22,7 +22,7 @@ const Profile:React.FC<ScreenProps> = ({screenFormat}) => {
                     <div className="profile-innerSection1-top">
                         <div className="profile-innerSection1-imageAndCounter">
                             {/* <img src={profilePictureUrl} alt="profilePicture" /> */}
-                            <ProfilePhoto imagePath={profilePictureUrl}/>
+                            <ProfilePhoto imageName={profilePictureUrl}/>
                             <PointCounter/>
                         </div>
                         <div className="profile-name">

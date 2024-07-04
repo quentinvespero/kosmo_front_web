@@ -1,6 +1,6 @@
 import React from 'react'
 // import { FeedElementProps } from '../../interfaces/topMenuInterfaces'
-import ProfileButton, { ProfileButtonProps } from '../buttons/ProfileButton'
+import { ProfileButtonProps } from '../buttons/ProfileButton'
 import { Feed } from '../../interfaces/datasInterfaces'
 import { FeedSelectorProps } from './FeedSelector'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'

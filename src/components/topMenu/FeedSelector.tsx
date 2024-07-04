@@ -28,8 +28,6 @@ const FeedSelector:React.FC<FeedSelectorProps & ScreenProps> = ({ screenFormat, 
         <div className='feedSelector' style={{
             flexWrap: screenFormat === 'mobile' && !topmenuIsSticky ? 'wrap' : 'unset',
         }}>
-            {/* <FeedElement handleClick={handleFeedChoice} selectedFeed={selectedFeed} locationContext='feedSelector'/> */}
-            {/* <ProfileButton locationContext='feedSelector' selectedFeed={selectedFeed} setSelectedFeed={setSelectedFeed} handleClick={handleFeedChoice}/> */}
             <ProfileButton locationContext='feedSelector' setCurrentInnerSection={setCurrentInnerSection} currentInnerSection={currentInnerSection}/>
             {jsonData && 
             jsonData.feeds.length > 0 &&

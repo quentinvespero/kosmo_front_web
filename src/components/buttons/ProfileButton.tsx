@@ -6,6 +6,7 @@ import ProfilePhoto from '../imageComponents/ProfilePhoto'
 // import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import ButtonWithIcon from './ButtonWithIcon'
 // import { FeedSelectorProps } from '../../interfaces/topMenuInterfaces'
 
 export interface ProfileButtonProps {
@@ -47,51 +48,69 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         if (locationContext === 'feedSelector') {
             classNames += ' profileButton-feedSelector'
-            if (currentInnerSection === 'profile') {
-                classNames += ' profileButton-feedSelector-selected'
-            }
+            if (currentInnerSection === 'profile') classNames += ' profileButton-feedSelector-selected'
         }
-        else if (locationContext === 'headerMenu') {
-            classNames += ' profileButton-headerMenu'
-        }
-        else if (locationContext === 'post') {
-            classNames += ' profileButton-post'
-        }
+        else if (locationContext === 'headerMenu') classNames += ' profileButton-headerMenu'
+        else if (locationContext === 'post') classNames += ' profileButton-post'
+        
         return classNames
+    }
+
+    const profileButtonText = () => {
+        let text = ''
+
+        if (locationContext === 'headerMenu' && userData && userData.users && screenFormat != 'mobile') text = userData.users[0].userBaseInformations.username
+        else if (locationContext === 'feedSelector') text ='profile'
+        else if (locationContext === 'post') text = 'userTest'
+
+        return text
+    }
+
+    const profileButtonImage = () => {
+        let image = ''
+
+        if (userData && userData.users) 
+            if (locationContext !== 'feedSelector') image = userData.users[0].userAdditionalInformations.profilePicture
+            else image = 'profile_icon_white2.svg'
+        else {
+            image = 'error'
+            console.log('error while trying to load profile image')
+        }
+
+        return image
     }
 
     return (
         <div 
-            // className={`profileButton
-            //     ${locationContext === 'feedSelector' ? 'profileButton-feedSelector' : ''}
-            //     ${locationContext === 'feedSelector' && currentInnerSection === 'profile' ? 'profileButton-feedSelector-selected' : ''}
-            //     ${locationContext === 'headerMenu' ? 'profileButton-headerMenu' : ''}
-            //     ${locationContext === 'post' ? 'profileButton-post' : ''}
-            // `}
             className={profileButtonClasses()}
             onClick={handleClickActions}
             aria-label='profile button'
         >
 
-                <ProfilePhoto 
-                    imagePath={
-                        userData && 
-                        locationContext !== 'feedSelector' 
-                            ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || './assets/icons/profile_icon_white2.svg' 
-                            : './assets/icons/profile_icon_white2.svg'
-                    }
-                />
+            {/* <ProfilePhoto 
+                imagePath={
+                    userData && 
+                    locationContext !== 'feedSelector' 
+                        ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || './assets/icons/profile_icon_white2.svg' 
+                        : './assets/icons/profile_icon_white2.svg'
+                }
+            /> */}
 
-            
+            <ProfilePhoto imageName={profileButtonImage()} />
+
             {/* ↓ below are the different texts to display, depending on the context (locationContext) ↓ */}
-            {locationContext === 'headerMenu' && 
+            {/* {locationContext === 'headerMenu' && 
                 userData &&
                 userData.users &&
                 screenFormat != 'mobile' && 
                 userData.users[0].userBaseInformations.username
             }
             {locationContext === 'feedSelector' && 'profile'}
-            {locationContext === 'post' && 'userTest'}
+            {locationContext === 'post' && 'userTest'} */}
+
+            {/* <ButtonWithIcon buttonText={profileButtonText()}/> */}
+            <p>{profileButtonText()}</p>
+
         </div>
     )
 }
