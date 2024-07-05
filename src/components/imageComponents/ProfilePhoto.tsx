@@ -1,6 +1,3 @@
-import React from 'react'
-// import { ProfilePhotoProps } from '../../interfaces/imageComponentsInterfaces'
-
 export interface ProfilePhotoProps {
     imageName:string
 }
@@ -21,12 +18,6 @@ const ProfilePhoto:React.FC<ProfilePhotoProps> = ({imageName}) => {
 
     return (
         <div className='profilePhoto'>
-            {/* {imagePath 
-            ? 
-                <img src={imagePath.includes('.png') ? assetsFolderPath+imagePath : imagePath} alt="profile photo" />
-            :
-                <img src='./assets/icons/profile_icon_white2.svg' alt='default image'/>
-            } */}
             <img src={assetsFolder()} alt={imageName ? imageName.includes('.png') ? 'profile image' : 'default image' : 'error while loading image'} />
         </div>
     )

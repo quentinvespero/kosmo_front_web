@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { ScreenProps } from '../../interfaces/interfaces'
-// import { HandleClickHeaderMenuButtonsInterface, ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
-// import { ProfileButtonProps } from '../../interfaces/buttonsInterfaces'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
-import ButtonWithIcon from './ButtonWithIcon'
-// import { FeedSelectorProps } from '../../interfaces/topMenuInterfaces'
 
 export interface ProfileButtonProps {
-    // selectedFeed?:FeedSelectorProps['selectedFeed']
-    // setSelectedFeed?:FeedSelectorProps['setSelectedFeed']
     handleFeedChoice?: () => void
     locationContext: 'feedSelector' | 'headerMenu' | 'post'
-    // handleClick?: (selectedElement:HeaderMenuPanelProps['headerMenuPanelSelectedElement']) => void
     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
     setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
     currentInnerSection?:InnerSectionProps['currentInnerSection']
@@ -24,6 +17,11 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces | null>(null)
+
+    // const for when in different context
+    const inHeaderMenuContext = locationContext === 'headerMenu'
+    const inPostContext = locationContext === 'post'
+    const inFeedSelectorContext = locationContext === 'feedSelector'
 
     // fetching the datas from the json file
     useEffect(() => {
@@ -35,42 +33,45 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
     // function to handle the actions when click on the button
     // - in header menu, it will trigger handleClick which is gonna change the section of the headerMenu, with the 'user' section
-    // - in post it will stop the propagation on the element itself
+    // - in post it will stop the propagation on the element itself, to avoid the effect on the parent element, post
     // - in feedSelector, it will change the innerSection to 'profile'
     const handleClickActions = (e: { stopPropagation: () => any }) => {
-        locationContext === 'headerMenu' && handleClick && handleClick('user')
-        locationContext === 'post' && e.stopPropagation()
-        locationContext === 'feedSelector' && setCurrentInnerSection && setCurrentInnerSection('profile')
+        inHeaderMenuContext && handleClick && handleClick('user')
+        inPostContext && e.stopPropagation()
+        inFeedSelectorContext && setCurrentInnerSection && setCurrentInnerSection('profile')
     }
 
+    // determining the class to give to the component
     const profileButtonClasses = () => {
         let classNames = 'profileButton'
 
-        if (locationContext === 'feedSelector') {
+        if (inFeedSelectorContext) {
             classNames += ' profileButton-feedSelector'
             if (currentInnerSection === 'profile') classNames += ' profileButton-feedSelector-selected'
         }
-        else if (locationContext === 'headerMenu') classNames += ' profileButton-headerMenu'
-        else if (locationContext === 'post') classNames += ' profileButton-post'
+        else if (inHeaderMenuContext) classNames += ' profileButton-headerMenu'
+        else if (inPostContext) classNames += ' profileButton-post'
         
         return classNames
     }
 
+    // determining the text to give to the component
     const profileButtonText = () => {
         let text = ''
 
-        if (locationContext === 'headerMenu' && userData && userData.users && screenFormat != 'mobile') text = userData.users[0].userBaseInformations.username
-        else if (locationContext === 'feedSelector') text ='profile'
-        else if (locationContext === 'post') text = 'userTest'
+        if (inHeaderMenuContext && userData && userData.users && screenFormat != 'mobile') text = userData.users[0].userBaseInformations.username
+        else if (inFeedSelectorContext) text ='profile'
+        else if (inPostContext) text = 'userTest'
 
         return text
     }
 
+    // determining the image to give to the component
     const profileButtonImage = () => {
         let image = ''
 
         if (userData && userData.users) 
-            if (locationContext !== 'feedSelector') image = userData.users[0].userAdditionalInformations.profilePicture
+            if (!inFeedSelectorContext) image = userData.users[0].userAdditionalInformations.profilePicture
             else image = 'profile_icon_white2.svg'
         else {
             image = 'error'
@@ -81,36 +82,9 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     }
 
     return (
-        <div 
-            className={profileButtonClasses()}
-            onClick={handleClickActions}
-            aria-label='profile button'
-        >
-
-            {/* <ProfilePhoto 
-                imagePath={
-                    userData && 
-                    locationContext !== 'feedSelector' 
-                        ? userData.users && userData.users[0].userAdditionalInformations.profilePicture || './assets/icons/profile_icon_white2.svg' 
-                        : './assets/icons/profile_icon_white2.svg'
-                }
-            /> */}
-
+        <div className={profileButtonClasses()} onClick={handleClickActions} aria-label='profile button'>
             <ProfilePhoto imageName={profileButtonImage()} />
-
-            {/* ↓ below are the different texts to display, depending on the context (locationContext) ↓ */}
-            {/* {locationContext === 'headerMenu' && 
-                userData &&
-                userData.users &&
-                screenFormat != 'mobile' && 
-                userData.users[0].userBaseInformations.username
-            }
-            {locationContext === 'feedSelector' && 'profile'}
-            {locationContext === 'post' && 'userTest'} */}
-
-            {/* <ButtonWithIcon buttonText={profileButtonText()}/> */}
             <p>{profileButtonText()}</p>
-
         </div>
     )
 }
