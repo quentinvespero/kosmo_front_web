@@ -25,10 +25,28 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
     // fetching the datas from the json file
     useEffect(() => {
-        fetch('src/assets/bdd.json')
-            .then(response => response.json())
-            .then(datas => setUserData(datas))
-            .catch(error => console.error('Error:', error))
+
+        const fetchingProfileImage = async () => {
+            try {
+                const response = await fetch('src/assets/bdd.json')
+                if (!response.ok) throw new Error('Problem while attempting to fetch')
+                const datas = await response.json()
+                // console.log('fetched datas :',datas.users[0].userAdditionalInformations.profilePicture)
+
+                setUserData(datas)
+            } 
+            catch (error) {
+                console.error('error while fetching data', error)
+            }
+        }
+
+        fetchingProfileImage()
+
+        // fetch('src/assets/bdd.json')
+        //     .then(response => response.json())
+        //     .then(datas => setUserData(datas))
+        //     .catch(error => console.error('Error:', error))
+
     }, [])
 
     // function to handle the actions when click on the button
@@ -75,7 +93,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             else image = 'profile_icon_white2.svg'
         else {
             image = 'error'
-            console.log('error while trying to load profile image')
+            console.log('error while trying to load profile image',image,userData,locationContext)
         }
 
         return image

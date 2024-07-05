@@ -21,12 +21,16 @@
         align-self: flex-end;
         @include transparent($transparentGrey1, $blur2);
         border: $border1;
-        @include transition(.15s);
+        @include transition(.4s);
         // height: 1.8rem;
 
         // & > *{
         //     box-shadow: $shadow1;
         //     // height: 100%;
         // }
+
+        &:hover{
+            transform: scale(1.1);
+        }
     }
 }
