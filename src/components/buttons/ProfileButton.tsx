@@ -16,7 +16,7 @@ export interface ProfileButtonProps {
 const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection}) => {
 
     // storing the path of the image
-    const [userData, setUserData] = useState<DatasInterfaces | null>(null)
+    const [userData, setUserData] = useState<DatasInterfaces>()
 
     // const for when in different context
     const inHeaderMenuContext = locationContext === 'headerMenu'
