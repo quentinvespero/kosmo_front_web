@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 // import { InnerSectionProps, ScreenProps } from '../../interfaces/interfaces'
 import Feed from './innerSectionHome/Feed'
-import RightPanel from '../rightPanel/RightPanel'
 import Profile from './Profile'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ScreenProps } from '../../interfaces/interfaces'

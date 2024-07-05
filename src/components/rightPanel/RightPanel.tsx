@@ -3,12 +3,19 @@ import TrendSection from './TrendSection'
 import SuggestionSection from './SuggestionSection'
 import jsonData from '../../assets/bdd.json'
 import { RightPanelContent } from '../../interfaces/datasInterfaces'
-import { RightPanelProps } from '../../interfaces/rightPanelInterfaces'
+// import { RightPanelProps } from '../../interfaces/rightPanelInterfaces'
 import HideRightPanelButton from '../buttons/HideRightPanelButton'
 import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
 import Post from '../post/Post'
+import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
 
-const RightPanel:React.FC<RightPanelProps> = ({isToggled, idSelectedPost, selectedViewType }) => {
+export interface RightPanelProps {
+    isToggled?: boolean
+    idSelectedPost?:string
+    selectedViewType: ViewTypeSelectorProps['selectedViewType']
+}
+
+const RightPanel:React.FC<RightPanelProps> = ({ isToggled, idSelectedPost, selectedViewType }) => {
 
     const [datas, setDatas] = useState<RightPanelContent | null>(null)
 
