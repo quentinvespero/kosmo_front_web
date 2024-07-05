@@ -1,28 +1,30 @@
 // is used for the TopMenu when scrolling down and when it get fixed on top of the screen
 @keyframes bounce {
     0% {
-        // transform: translateY(0rem);
-        top: 3rem;
-        opacity: 0;
+        transform: translateY(-15rem);
+        // opacity: 0;
     }
     50% {
-        // transform: translateY(0rem);
-        opacity: 1;
+        // top: 3rem;
+        // transform: translateY(1rem);
     }
     100% {
+        transform: translateY(0rem);
+        // opacity: 1;
         // transform: translateY(0rem);
     }
 }
 @keyframes bounce2 {
     0% {
-        top: 8rem;
         opacity: 0;
+        top: 10rem;
     }
     50% {
         // transform: translateY(0rem);
         // opacity: 1;
     }
     100% {
+        opacity: 1;
         // transform: translateY(0rem);
     }
 }
