@@ -44,7 +44,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
     return (
         <div
             className={`topMenu 
-                ${topmenuIsSticky ? 'topMenu-sticky' : ''}
+                ${screenFormat !=='mobile' ? topmenuIsSticky ? 'topMenu-sticky' : 'topMenu-notSticky' : ''}
                 ${selectedViewType === 'columnsView' ? 'topMenu-hidden' : 'topMenu-visible'}
             `} 
             style={{

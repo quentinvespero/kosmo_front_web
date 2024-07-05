@@ -3,19 +3,23 @@
     align-self: center;
     flex-direction: row;
     z-index: 2;
-    @include transition(.2s);
+    @include transition(.3s);
     column-gap: .5rem;
     border: $border1;
-
     position: relative;
-    top: 0rem;
-    background: $transparentGrey1;
+    background: $grey1;
 }
 .topMenu-visible{
     animation: zoomEffect2 .5s ease-in-out;
 }
 .topMenu-hidden{
     animation: zoomEffect3 .5s ease-in-out;
+}
+.topMenu-notSticky {
+    position: absolute;
+    top: 8rem;
+    // transform: translateY(-52rem);
+    // animation: bounce2 .4s ease-in-out;
 }
 .topMenu-sticky{
     position: fixed;

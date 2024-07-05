@@ -66,7 +66,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 currentPage={currentPage}
                 currentInnerSection={currentInnerSection}
             />
-            {topmenuIsSticky && <div className="fillTheGap"></div>}
+            {/* {topmenuIsSticky && <div className="fillTheGap"></div>} */}
             <TopMenu 
                 setTopmenuIsSticky={setTopmenuIsSticky} 
                 topmenuIsSticky={topmenuIsSticky} 
