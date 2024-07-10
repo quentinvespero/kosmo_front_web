@@ -28,11 +28,12 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
             setTopmenuIsSticky(false)
         }
         else {
-            setTopmenuIsSticky(window.scrollY >= 185)
+            // setTopmenuIsSticky(window.scrollY >= 185)
+            setTopmenuIsSticky(window.scrollY >= 200)
         }
     }
 
-    // get the value of the scroll
+    // getting the value of scroll
     useEffect(() =>{
         window.addEventListener('scroll', handleScroll)
 
@@ -56,6 +57,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
             }}
         >
             {screenFormat !=='mobile' && <SearchField/>}
+
             <FeedSelector 
                 screenFormat={screenFormat} 
                 topmenuIsSticky={topmenuIsSticky} 

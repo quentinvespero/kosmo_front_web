@@ -18,14 +18,13 @@
 .topMenu-notSticky {
     position: absolute;
     top: 8rem;
+    // animation: zoomEffect2 .5s ease-in-out;
 }
 .topMenu-sticky{
     position: fixed;
     top: .3rem;
     animation: bounce .4s ease-in-out;
     box-shadow: $shadow4;
-    // background: ;
-    // column-gap: .5rem;
     @include transparent($transparentGrey2, $blur2);
     z-index: 4;
 }

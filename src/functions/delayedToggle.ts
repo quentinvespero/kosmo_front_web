@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react'
 // ! be sure to always set the delay of this function shorter than the delay of the animation, to avoid animation to show up before it receive the 'none' !
 // - booleanVariable : a boolean variable that should trigger the hidding
 // - delay : the delay time in ms
-export const delayHidingElementDisplayProperty = (booleanVariable: boolean, delay: number): 'flex' | 'none' => {
+// - returnResponse : used to indicate the function to return a boolean instead of 'flex' : 'none'
+export const delayHidingElementDisplayProperty = (booleanVariable: boolean, delay: number, returnResponse?:boolean): 'flex' | 'none' => {
 
     const [displayValue, setDisplayValue] = useState<boolean>(booleanVariable)
 
@@ -26,5 +27,24 @@ export const delayHidingElementDisplayProperty = (booleanVariable: boolean, dela
         }
     }, [booleanVariable, delay])
 
+    // if (returnResponse) return displayValue ? true : false
     return displayValue ? 'flex' : 'none'
+}
+
+export const delayBooleanResponse = (booleanVariable:boolean, delay:number) : boolean => {
+    
+    const [booleanValue, setBooleanValue] = useState<boolean>(booleanVariable)
+
+    useEffect(() => {
+        let timeoutDelay: number | null
+
+        if (booleanVariable) setBooleanValue(true)
+        else timeoutDelay = window.setTimeout(() => setBooleanValue(false), delay)
+
+        return () => {
+            if (timeoutDelay) clearTimeout(timeoutDelay)
+        }
+    },[booleanVariable, delay])
+
+    return booleanValue
 }
