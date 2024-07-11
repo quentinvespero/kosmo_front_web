@@ -4,12 +4,12 @@
     // padding: 2rem;
     @include transition(.5s);
     z-index: 1;
-    row-gap: 7rem;
+    row-gap: 3rem;
     
-    // & .fillTheGap {
-    //     height: 3.9rem;
-    //     @include transition(.1s)
-    // }
+    & .fillTheGap {
+        height: 5rem;
+        @include transition(.1s)
+    }
 }
 .home-mobileScreen {
     row-gap: 2rem;
@@ -20,9 +20,13 @@
     row-gap: 1rem;
 }
 .home-detailsView{
-    row-gap: 6rem;
+    row-gap: 2rem;
 }
 
 .home-innerSection-profile{
-    row-gap: 7rem;
+    row-gap: 3rem;
+}
+
+.home-topMenuIsSticky{
+    row-gap: 5rem;
 }

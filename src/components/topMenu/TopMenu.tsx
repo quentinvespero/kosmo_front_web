@@ -20,8 +20,9 @@ export interface TopMenuProps {
 
 const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType, setCurrentInnerSection, currentInnerSection}) => {
 
-    const displayProperty = delayHidingElementDisplayProperty(selectedViewType !== 'columnsView', 400)
+    // const displayProperty = delayHidingElementDisplayProperty(selectedViewType !== 'columnsView', 400)
     const delayedTopMenuIsSticky = delayBooleanResponse(topmenuIsSticky,280)
+    const delayedHidingTopMenu = delayBooleanResponse(selectedViewType !== 'columnsView',400)
 
     // the function used to handle the scroll, and then use its value as part of the function to define if the TopMenu is sticky or not
     const handleScroll = () => {
@@ -46,7 +47,7 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
     return (
         <div
             className={`topMenu 
-                ${screenFormat !=='mobile' ? topmenuIsSticky ? 'topMenu-sticky' : 'topMenu-notSticky' : ''}
+                ${selectedViewType !== 'columnsView' ? topmenuIsSticky ? 'topMenu-sticky' : '': ''}
                 ${selectedViewType === 'columnsView' ? 'topMenu-hidden' : 'topMenu-visible'}
             `} 
             style={{
@@ -54,7 +55,8 @@ const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topme
                 maxWidth: topmenuIsSticky && screenFormat === 'mobile' ? '90%' : '',
                 borderRadius: screenFormat ==='mobile' ? '1rem' : '4rem',
                 padding: screenFormat ==='mobile' ? '.7rem' : '.25rem',
-                display: displayProperty
+                // display: displayProperty
+                display: delayedHidingTopMenu ? 'flex' : 'none'
             }}
         >
             {screenFormat !=='mobile' && <SearchField/>}

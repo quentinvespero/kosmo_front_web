@@ -347,18 +347,3 @@
         transform: scale(1);  
     }
 }
-// for topMenu hidden
-@keyframes zoomEffect3 {
-    0%{
-        opacity: 1;
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.03);
-    }
-    100%{
-        opacity: 0;
-        margin-top: -4rem;
-        transform: scale(.5);
-    }
-}

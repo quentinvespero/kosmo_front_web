@@ -53,6 +53,9 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 
                 // rules relative to the inner sections
 
+                // rules relative to topMenu
+                ${topmenuIsSticky ? 'home-topMenuIsSticky' : ''}
+
                 // 16/05/24 temporary, while setting up currentInnerSection
                 ${selectedFeed === 'profile' ? 'home-innerSection-profile' : ''}
                 // 16/05/24 the definite rule that will be used when currentInnerSection will be operational

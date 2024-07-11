@@ -6,41 +6,40 @@
     @include transition(.3s);
     column-gap: .5rem;
     border: $border1;
-    position: relative;
+    // position: relative;
     background: $grey1;
 }
 .topMenu-visible{
-    animation: zoomEffect2 .5s ease-in-out;
+    animation: topMenu-visible .5s ease-in-out;
 }
 .topMenu-hidden{
-    animation: zoomEffect3 .5s ease-in-out;
+    animation: topMenu-hidden .5s ease-in-out;
+    // transform: scale(.5);
 }
 .topMenu-sticky{
     position: fixed;
     top: .3rem;
-    animation: slideToBottom .5s ease-in-out;
+    animation: topMenu-sticky .5s ease-in-out;
     box-shadow: $shadow4;
     @include transparent($transparentGrey2, $blur2);
     z-index: 4;
 }
 .topMenu-notSticky {
-    position: absolute;
-    top: 8rem;
-    // animation: slideToTop .3s ease-in-out;
+    // animation: topMenu-notSticky .3s ease-in-out;
 }
 
-@keyframes slideToTop {
-    0% {
-        top: 11.5rem;
-    }
-    100% {
-        top: 8rem;
-    }
-}
-@keyframes slideToBottom {
+// @keyframes topMenu-notSticky {
+//     0% {
+//         top: 11.5rem;
+//     }
+//     100% {
+//         top: 8rem;
+//     }
+// }
+@keyframes topMenu-sticky {
     0% {
         // transform: translateY(-15rem);
-        top: -10rem;
+        top: -5rem;
     }
     50% {
         // transform: translateY(-17rem);
@@ -52,12 +51,45 @@
     }
 }
 // is used for the TopMenu when scrolling down and when it get fixed on top of the screen
-@keyframes bounce2 {
-    0% {
+// @keyframes topMenu-bounce2 {
+//     0% {
+//         opacity: 0;
+//         top: 10rem;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+
+// for topMenu visible
+@keyframes topMenu-visible {
+    0%{
         opacity: 0;
-        top: 10rem;
+        transform: scale(.5);
+        margin-top: -4rem;
     }
-    100% {
+    50%{
+        transform: scale(1.03);
+    }
+    100%{
         opacity: 1;
+        // margin-top: 1rem;
+        transform: scale(1);  
+    }
+}
+// for topMenu hidden
+@keyframes topMenu-hidden {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.03);
+    }
+    100%{
+        opacity: 0;
+        margin-top: -4rem;
+        // height: 0rem;
+        transform: scale(.5);
     }
 }
