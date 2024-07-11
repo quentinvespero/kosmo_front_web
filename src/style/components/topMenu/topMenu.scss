@@ -15,16 +15,49 @@
 .topMenu-hidden{
     animation: zoomEffect3 .5s ease-in-out;
 }
-.topMenu-notSticky {
-    position: absolute;
-    top: 8rem;
-    // animation: zoomEffect2 .5s ease-in-out;
-}
 .topMenu-sticky{
     position: fixed;
     top: .3rem;
-    animation: bounce .4s ease-in-out;
+    animation: slideToBottom .5s ease-in-out;
     box-shadow: $shadow4;
     @include transparent($transparentGrey2, $blur2);
     z-index: 4;
+}
+.topMenu-notSticky {
+    position: absolute;
+    top: 8rem;
+    // animation: slideToTop .3s ease-in-out;
+}
+
+@keyframes slideToTop {
+    0% {
+        top: 11.5rem;
+    }
+    100% {
+        top: 8rem;
+    }
+}
+@keyframes slideToBottom {
+    0% {
+        // transform: translateY(-15rem);
+        top: -10rem;
+    }
+    50% {
+        // transform: translateY(-17rem);
+        top: 1.5rem;
+    }
+    100% {
+        // transform: translateY(0rem);
+        top: .3rem;
+    }
+}
+// is used for the TopMenu when scrolling down and when it get fixed on top of the screen
+@keyframes bounce2 {
+    0% {
+        opacity: 0;
+        top: 10rem;
+    }
+    100% {
+        opacity: 1;
+    }
 }

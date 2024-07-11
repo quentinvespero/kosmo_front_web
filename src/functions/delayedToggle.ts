@@ -31,7 +31,10 @@ export const delayHidingElementDisplayProperty = (booleanVariable: boolean, dela
     return displayValue ? 'flex' : 'none'
 }
 
-export const delayBooleanResponse = (booleanVariable:boolean, delay:number) : boolean => {
+// function that receive a boolean variable as a parameter, as well as a delay in ms. When the given variable is set to false, this function will return false, but after the given delay
+// - booleanVariable : the boolean variable, that is going to change
+// - delay : the delay after which the false should be returned by the function
+export const delayBooleanResponse = (booleanVariable:boolean, delayBeforeReturningFalse:number) : boolean => {
     
     const [booleanValue, setBooleanValue] = useState<boolean>(booleanVariable)
 
@@ -39,12 +42,13 @@ export const delayBooleanResponse = (booleanVariable:boolean, delay:number) : bo
         let timeoutDelay: number | null
 
         if (booleanVariable) setBooleanValue(true)
-        else timeoutDelay = window.setTimeout(() => setBooleanValue(false), delay)
+        else timeoutDelay = window.setTimeout(() => setBooleanValue(false), delayBeforeReturningFalse)
 
+        // cleanup function to prevent memory leaks
         return () => {
             if (timeoutDelay) clearTimeout(timeoutDelay)
         }
-    },[booleanVariable, delay])
+    },[booleanVariable, delayBeforeReturningFalse])
 
     return booleanValue
 }

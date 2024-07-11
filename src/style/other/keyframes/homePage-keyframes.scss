@@ -1,26 +1,3 @@
-// is used for the TopMenu when scrolling down and when it get fixed on top of the screen
-@keyframes bounce {
-    0% {
-        transform: translateY(-15rem);
-        // opacity: 0;
-    }
-    100% {
-        transform: translateY(0rem);
-        // opacity: 1;
-        // transform: translateY(0rem);
-    }
-}
-@keyframes bounce2 {
-    0% {
-        opacity: 0;
-        top: 10rem;
-    }
-    100% {
-        opacity: 1;
-        // transform: translateY(0rem);
-    }
-}
-
 // is used for the counters to show up
 @keyframes slideFromLeft {
     0% {

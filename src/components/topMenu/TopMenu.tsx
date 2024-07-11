@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import SearchField from '../header/SearchField'
 import FeedSelector, { FeedSelectorProps } from './FeedSelector'
 import { ScreenProps } from '../../interfaces/interfaces'
-import { delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
+import { delayBooleanResponse, delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
 // import { TopMenuProps } from '../../interfaces/topMenuInterfaces'
@@ -21,6 +21,7 @@ export interface TopMenuProps {
 const TopMenu:React.FC<TopMenuProps & ScreenProps> = ({setTopmenuIsSticky, topmenuIsSticky, screenFormat, selectedFeed, setSelectedFeed, selectedViewType, setCurrentInnerSection, currentInnerSection}) => {
 
     const displayProperty = delayHidingElementDisplayProperty(selectedViewType !== 'columnsView', 400)
+    const delayedTopMenuIsSticky = delayBooleanResponse(topmenuIsSticky,280)
 
     // the function used to handle the scroll, and then use its value as part of the function to define if the TopMenu is sticky or not
     const handleScroll = () => {
