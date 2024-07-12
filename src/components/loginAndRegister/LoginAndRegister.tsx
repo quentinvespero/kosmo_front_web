@@ -39,13 +39,18 @@ const LoginAndRegister:React.FC<ScreenProps & LoginAndRegisterProps> = ({screenF
             {selectedPanel === 'ask' && <AskPanel setSelectedPanel={setSelectedPanel}/>}
             {selectedPanel === 'login' && <Login setSelectedPanel={setSelectedPanel} setFieldsValues={setFieldsValues}/>}
             {selectedPanel ==='register' && <Register setSelectedPanel={setSelectedPanel} setFieldsValues={setFieldsValues}/>}
+            
             {selectedPanel !== 'ask' && 
-            <div className="loginAndRegister-buttons">
-                <LoginAndRegisterButton buttonText='return' setSelectedPanel={setSelectedPanel}/>
-                <LoginAndRegisterButton buttonText='enter' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues}/>
-                {selectedPanel === 'login' && <LoginAndRegisterButton buttonText='login' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues} />}
-                {selectedPanel === 'register' && <LoginAndRegisterButton buttonText='register' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues} />}
-            </div>}
+                <div className="loginAndRegister-buttons">
+
+                    <LoginAndRegisterButton buttonText='return' setSelectedPanel={setSelectedPanel}/>
+                    <LoginAndRegisterButton buttonText='enter' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues}/>
+
+                    {selectedPanel === 'login' && <LoginAndRegisterButton buttonText='login' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues} />}                
+                    {selectedPanel === 'register' && <LoginAndRegisterButton buttonText='register' setCurrentPage={setCurrentPage} fieldsValues={fieldsValues} />}
+
+                </div>
+            }
         </div>
     )
 }

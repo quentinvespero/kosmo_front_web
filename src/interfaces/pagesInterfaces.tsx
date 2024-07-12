@@ -16,3 +16,7 @@ import { ScreenProps } from "./interfaces"
 export interface BackgroundLayerProps {
     isVisible: boolean
 }
+
+export interface PagesProps {
+    transitionBetweenPagesTriggered: boolean
+}

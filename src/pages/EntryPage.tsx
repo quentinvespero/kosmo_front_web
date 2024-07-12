@@ -1,48 +1,43 @@
 import React, { useEffect, useState } from "react"
 import ButtonType1 from "../components/buttons/ButtonType1"
 import Header from "../components/header/Header"
-// import { EntryPageProps } from "../interfaces/pagesInterfaces"
 import { ScreenProps } from "../interfaces/interfaces"
 import LoginAndRegister from "../components/loginAndRegister/LoginAndRegister"
 import { delayBooleanResponse } from "../functions/delayedToggle"
 import { AppProps } from "../App"
+import { PagesProps } from "../interfaces/pagesInterfaces"
 
 export interface EntryPageProps {
-    // pageSelection: () => void
     screenFormat?: ScreenProps['screenFormat']
-    lightFadingDesktop?: boolean
+    // lightFadingDesktop?: boolean
     currentPage: AppProps['currentPage']
     setCurrentPage: AppProps['setCurrentPage']
 }
 
-const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ animation, screenFormat, currentPage, setCurrentPage }) => {
+const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animation, screenFormat, currentPage, setCurrentPage, transitionBetweenPagesTriggered }) => {
 
-    // 
-    const [colorLightAnimation, setColorLightAnimation] = useState(false)
+    // variable to follow the state of the background light (on / off)
+    const [backgroundLightState, setBackgroundLightState] = useState(false)
 
+    // variable to follow the state of the page (if it's currently transitionning to an other page or not)
     const [entryPageAnimation, setEntryPageAnimation] = useState(false)
 
     const [hasClickedOnEnter, setHasClickedOnEnter] = useState(false)
 
     const [showingLoginAndRegister, setShowingLoginAndRegister] = useState(false)
 
-    const delayPageTransition = delayBooleanResponse(currentPage == 'entry', 900)
+    // const delayPageTransition = delayBooleanResponse(currentPage == 'entry', 900)
 
     useEffect(() => {
-        if (animation) {
-            setColorLightAnimation(true)
-            setTimeout(() => {
-                setEntryPageAnimation(true)
-            }, 600)
-            // setEntryPageAnimation(delayBooleanResponse(!animation,600))
+        if (transitionBetweenPagesTriggered) {
+            setBackgroundLightState(false)
+            setTimeout(() => setEntryPageAnimation(true), 700)
         }
         else {
             setEntryPageAnimation(false)
-            setTimeout(() => {
-                setColorLightAnimation(false)
-            }, 600)
+            setTimeout(() => setBackgroundLightState(true), 500)
         }
-    }, [animation])
+    }, [transitionBetweenPagesTriggered])
 
     // show the login and register panels
     const handleClick = () => {
@@ -53,8 +48,8 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps> = ({ animation, screenFo
     }
 
     return (
-        <div className={`entryPage ${entryPageAnimation ? 'pageAnimationFadeOut' : ''}`}>
-            <div className={`entryPage-colorLight ${colorLightAnimation && 'colorLight-off'}`}></div>
+        <div className={`entryPage ${entryPageAnimation ? 'transitionDisappearing' : 'pageTransitionAppearing'}`}>
+            <div className={`entryPage-colorLight ${backgroundLightState ? 'colorLight-on' : 'colorLight-off'}`}></div>
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
                     

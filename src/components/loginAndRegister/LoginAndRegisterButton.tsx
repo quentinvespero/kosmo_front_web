@@ -1,5 +1,4 @@
 import React from 'react'
-// import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
 import { createUser } from '../../utils/api/UserFetches'
 import { useAuth } from '../../utils/api/authentification/useAuth'

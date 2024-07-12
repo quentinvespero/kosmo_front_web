@@ -1,7 +1,7 @@
 .entryPage{
     position: relative;
     overflow: hidden;
-    @include transition(.1s);
+    @include transition(.4s);
     
     & .entryPage-colorLight{
         position: absolute;
@@ -17,12 +17,15 @@
         animation: move 20s ease-in-out infinite alternate, 
             gradientBackground 15s infinite alternate, 
             sizeChanging 15s infinite alternate;
-        opacity: 100%;
-        @include transition(.5s);
+        opacity: 0%;
+        @include transition(.45s);
     }
-    & .colorLight-off{
+    & .colorLight-off {
         opacity: 0%;
         // display: none;
+    }
+    & .colorLight-on {
+        opacity: 100%;
     }
     
     & .entryPage-backgroundLayer{
