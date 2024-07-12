@@ -75,7 +75,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 ${currentInnerSection ==='profile' ? 'home-innerSection-profile' : ''}
             `}
         >
-            <BackgroundLayer isVisible={false} />
+            {/* <BackgroundLayer isVisible={false} /> */}
 
             <Header 
                 screenFormat={screenFormat}

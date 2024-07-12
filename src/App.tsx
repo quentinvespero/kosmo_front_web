@@ -11,7 +11,7 @@ export interface AppProps {
 
 const App = () => {
     // state to follow the current page displayed
-    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('entry')
+    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('home')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
@@ -79,7 +79,7 @@ const App = () => {
             
             <Suspense fallback={<h1>loading</h1>}>
             
-                <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
+                {/* <BackgroundLayer isVisible={isBackgroundLayerVIsible}/> */}
 
                 {currentPage === 'entry' &&
                     <EntryPage 
