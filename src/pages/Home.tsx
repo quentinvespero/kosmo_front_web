@@ -4,10 +4,17 @@ import TopMenu from '../components/topMenu/TopMenu'
 import AddPostButton from '../components/buttons/AddPostButton'
 import { ScreenProps } from '../interfaces/interfaces'
 import InnerSection from '../components/innerSections/InnerSection'
-import { HomeProps } from '../interfaces/pagesInterfaces'
+// import { HomeProps } from '../interfaces/pagesInterfaces'
 import { ViewTypeSelectorProps } from '../interfaces/logicComponents'
 import BackgroundLayer from './BackgroundLayer'
 import { InnerSectionProps } from '../interfaces/innerSectionsInterfaces'
+import { delayBooleanResponse } from '../functions/delayedToggle'
+import { AppProps } from '../App'
+
+export interface HomeProps {
+    currentPage: AppProps['currentPage']
+    setCurrentPage: AppProps['setCurrentPage']
+}
 
 const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
 
@@ -23,6 +30,9 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
 
     // following state of the view selected in feed
     const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
+
+    // delay when transitionning to an other page
+    // const delayHomeTransition = delayBooleanResponse(currentPage !== 'home',900)
 
     // searching for a way to reset the view to regularView when switching to mobile screen
     useEffect(() => {
@@ -40,6 +50,14 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
         }
     })
 
+    const classesToApply = () : string => {
+        let classes = 'home'
+
+        if (currentPage === 'home') classes += ''
+
+        return classes
+    }
+
     return (
         <div 
             className={`home 
@@ -50,11 +68,6 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 ${selectedViewType === 'columnsView' ? 'home-columnsView' : ''}
                 ${selectedViewType === 'detailsView' ? 'home-detailsView' : ''}
                 ${selectedViewType === 'regularView' ? 'home-regularView' : ''}
-                
-                // rules relative to the inner sections
-
-                // rules relative to topMenu
-                ${topmenuIsSticky ? 'home-topMenuIsSticky' : ''}
 
                 // 16/05/24 temporary, while setting up currentInnerSection
                 ${selectedFeed === 'profile' ? 'home-innerSection-profile' : ''}
@@ -63,13 +76,16 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
             `}
         >
             <BackgroundLayer isVisible={false} />
+
             <Header 
                 screenFormat={screenFormat}
                 // selectedFeed={selectedFeed}
                 currentPage={currentPage}
                 currentInnerSection={currentInnerSection}
             />
+
             {/* {topmenuIsSticky && <div className="fillTheGap"></div>} */}
+            
             <TopMenu 
                 setTopmenuIsSticky={setTopmenuIsSticky} 
                 topmenuIsSticky={topmenuIsSticky} 
@@ -80,6 +96,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 setCurrentInnerSection={setCurrentInnerSection}
                 currentInnerSection={currentInnerSection}
             />
+            
             <InnerSection 
                 screenFormat={screenFormat} 
                 selectedFeed={selectedFeed}
@@ -88,6 +105,7 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
                 currentInnerSection={currentInnerSection}
                 setCurrentInnerSection={setCurrentInnerSection}
             />
+            
             {screenFormat ==='mobile' && <AddPostButton />}
         </div>
     )

@@ -5,6 +5,7 @@
     @include transition(.5s);
     z-index: 1;
     row-gap: 3rem;
+    animation: fadeOutAnimation .5s forwards;
     
     & .fillTheGap {
         height: 5rem;

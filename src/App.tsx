@@ -2,10 +2,16 @@ import React, { Suspense, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 import BackgroundLayer from './pages/BackgroundLayer'
+import { delayResponse } from './functions/delayedToggle'
+
+export interface AppProps {
+    currentPage: 'home' | 'entry'
+    setCurrentPage: React.Dispatch<React.SetStateAction<'home'|'entry'>>
+}
 
 const App = () => {
     // state to follow the current page displayed
-    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('home')
+    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('entry')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
@@ -19,11 +25,11 @@ const App = () => {
     // variable to follow the state of BackgroundLayer
     const [isBackgroundLayerVIsible, setIsBackgroundLayerVIsible] = useState(false)
     
-    // function to handle the change of the current page component to render
-    const handlePageChange = () => {
+    // function to handle the change of the page, with a delay
+    const handlePageChange = (page:'home'|'entry') => {
         setAnimation(true)
         setTimeout(() => {
-            setCurrentPage('home')
+            setCurrentPage(page)
         }, 650)
     }
 
@@ -50,7 +56,7 @@ const App = () => {
         }
     }, [])
 
-    // function to "track" if the device is in dark mode or not, and change the value of isDeviceInDarkMode accordingly
+    // function to "track" if the device is in dark mode or not, and change the value of isDeviceInDarkMode props accordingly
     // ---- 29/12/23 ---- for now, this function and the related variables aren't used yet
     // In a second time, it will be used  in childs components
     useEffect(() => {
@@ -69,13 +75,33 @@ const App = () => {
     return (
         <div className='app'>
             {/* <p>{import.meta.env.VITE_APP_TITLE}</p> */}
+            
             <Suspense fallback={<h1>loading</h1>}>
+            
                 <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
 
-                {currentPage === 'entry' &&<EntryPage pageSelection={handlePageChange} animation={animation} screenFormat={screenFormat} currentPage={currentPage}/>}
-                {currentPage === 'home' && <Home screenFormat={screenFormat} animation={animation} setAnimation={setAnimation} currentPage={currentPage}/>}
+                {currentPage === 'entry' &&
+                    <EntryPage 
+                        pageSelection={handlePageChange} 
+                        animation={animation} 
+                        screenFormat={screenFormat} 
+                        currentPage={currentPage}
+                        setCurrentPage={() => handlePageChange('home')}
+                    />
+                }
+                
+                {currentPage === 'home' && 
+                    <Home 
+                        screenFormat={screenFormat} 
+                        animation={animation} 
+                        setAnimation={setAnimation} 
+                        currentPage={currentPage}
+                        setCurrentPage={() => handlePageChange('home')}
+                    />
+                }
                 
             </Suspense>
+
         </div>
     )
 }

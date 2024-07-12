@@ -1,7 +1,8 @@
 import React from 'react'
-import { LoginAndRegisterFieldProps, LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
+// import { LoginAndRegisterFieldProps, LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
 import LoginAndRegisterField from './LoginAndRegisterField'
 import { DatasInterfaces, UserBaseInformations } from '../../interfaces/datasInterfaces'
+import { LoginAndRegisterPanelsProps } from './LoginAndRegister'
 
 const Register:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFieldsValues, screenFormat}) => {
 

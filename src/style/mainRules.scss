@@ -259,9 +259,9 @@ textarea {
 }
 
 // animations that are showing up when loading a page, from entry to home for example
-.pageAnimationFadeOut {
+.pageTransitionIn {
     animation: fadeOutAnimation .5s forwards;
 }
-.pageAnimationFadeIn {
+.pageTransitionOut {
     animation: fadeInAnimation 1s forwards;
 }

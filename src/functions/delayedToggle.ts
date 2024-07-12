@@ -52,3 +52,25 @@ export const delayBooleanResponse = (booleanVariable:boolean, delayBeforeReturni
 
     return booleanValue
 }
+
+// function to return a given value, according to the value of a given boolean variable, after a given delay in ms, if the given variable is set to true
+// - booleanVariable : the boolean variable that will trigger the function if true
+// - delayBeforeReturningValue : the delay before returning the given value if the given boolean variable is true
+// - valueToReturn : the value that the function has to return. Can be any types.
+export const delayResponse = (booleanVariable:boolean, delayBeforeReturningValue:number, valueToReturn:any) : boolean => {
+    
+    const [value, setValue] = useState<any>()
+
+    useEffect(() => {
+        let timeoutDelay: number | null
+
+        if (booleanVariable) timeoutDelay = window.setTimeout(() => setValue(valueToReturn), delayBeforeReturningValue)
+
+        // cleanup function to prevent memory leaks
+        return () => {
+            if (timeoutDelay) clearTimeout(timeoutDelay)
+        }
+    },[booleanVariable, delayBeforeReturningValue])
+
+    return value
+}

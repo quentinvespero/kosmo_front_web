@@ -1,9 +1,10 @@
 import React from 'react'
 import LoginAndRegisterButton from './LoginAndRegisterButton'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
-import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
+// import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
 import LoginAndRegisterField from './LoginAndRegisterField'
 import { handleFieldChange } from './functions'
+import { LoginAndRegisterPanelsProps } from './LoginAndRegister'
 
 const Login:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel, setFieldsValues}) => {
 

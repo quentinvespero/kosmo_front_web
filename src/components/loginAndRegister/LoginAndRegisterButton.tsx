@@ -1,11 +1,20 @@
 import React from 'react'
-import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
+// import { LoginAndRegisterButtonProps } from '../../interfaces/loginAndRegisterInterfaces'
 import ButtonWithIcon from '../buttons/ButtonWithIcon'
 import { createUser } from '../../utils/api/UserFetches'
 import { useAuth } from '../../utils/api/authentification/useAuth'
 import { UserBaseInformations } from '../../interfaces/datasInterfaces'
+import { LoginAndRegisterPanelsProps, LoginAndRegisterProps } from './LoginAndRegister'
+import { AppProps } from '../../App'
 
-const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, pageSelection, selectedPanel, fieldsValues}) => {
+export interface LoginAndRegisterButtonProps{
+    buttonText: 'enter' | 'return' | 'yes' | 'no' | 'register' | 'login'
+    setSelectedPanel?:LoginAndRegisterPanelsProps['setSelectedPanel']
+    setCurrentPage?: AppProps['setCurrentPage']
+    fieldsValues?:LoginAndRegisterPanelsProps['fieldsValues']
+}
+
+const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonText, setSelectedPanel, setCurrentPage, fieldsValues}) => {
 
     // get the register function with the "{}", from useAuth hook
     const {register} = useAuth()
@@ -14,7 +23,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
     const buttonActions = {
         'yes': () => setSelectedPanel && setSelectedPanel('login'),
         'no': () => setSelectedPanel && setSelectedPanel('register'),
-        'enter': () => pageSelection && pageSelection(),
+        'enter': () => setCurrentPage && setCurrentPage('home'),
         'return': () => setSelectedPanel && setSelectedPanel('ask'),
         'register': async () => {
             if (fieldsValues) {
@@ -22,7 +31,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                     console.log('la value de fieldsValues ✌🏻: ',fieldsValues)
                     await register(fieldsValues as UserBaseInformations)
                     console.log('Registration successful')
-                    pageSelection && pageSelection()
+                    setCurrentPage && setCurrentPage('home')
                 }
                 catch (error) {
                     console.error('Registration error:', error)
@@ -83,6 +92,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
     // if buttonText is neither 'enter' nor 'return', return a ButtonWithIcon component with buttonText equal to buttonText
     return (
         <div className={getClassName()} onClick={handleClick}>
+            
             {buttonText === 'enter' ? (
                 <ButtonWithIcon buttonText='Bypass signing in 👀'/>
             ) 
@@ -91,6 +101,7 @@ const LoginAndRegisterButton:React.FC<LoginAndRegisterButtonProps> = ({buttonTex
                 ) : (
                 <ButtonWithIcon buttonText={buttonText}/>
             )}
+
         </div>
     )
 }
