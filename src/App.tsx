@@ -11,7 +11,7 @@ export interface AppProps {
 
 const App = () => {
     // state to follow the current page displayed
-    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('home')
+    const [currentPage, setCurrentPage] = useState<'home'| 'entry'>('entry')
 
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')

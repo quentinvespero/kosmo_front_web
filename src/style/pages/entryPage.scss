@@ -2,6 +2,8 @@
     position: relative;
     overflow: hidden;
     @include transition(.4s);
+    // opacity: 100%;
+    // animation: transitionAppearing .6s;
     
     & .entryPage-colorLight{
         position: absolute;

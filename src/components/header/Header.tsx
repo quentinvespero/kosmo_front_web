@@ -2,18 +2,15 @@ import React, { useState } from 'react'
 import PointCounter from './PointCounter'
 import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
-// import { HeaderProps } from '../../interfaces/headerInterfaces'
 import HeaderMenu from './HeaderMenu/HeaderMenu'
 import { FeedSelectorProps } from '../topMenu/FeedSelector'
-import { HomeProps } from '../../interfaces/pagesInterfaces'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import { HomeProps } from '../../pages/Home'
 
 export interface HeaderProps {
-    // headerScreen: 'home' | 'entryPage' <-- deprecated in profit of currentScreen / currentPage
     screenFormat: ScreenProps['screenFormat']
-    // selectedFeed?:FeedSelectorProps['selectedFeed']
     currentPage: HomeProps['currentPage']
-    currentInnerSection:InnerSectionProps['currentInnerSection']
+    currentInnerSection?:InnerSectionProps['currentInnerSection']
 }
 
 const Header:React.FC<HeaderProps & ScreenProps> = ({ screenFormat, currentPage, currentInnerSection }) => {

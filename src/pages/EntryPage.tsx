@@ -18,7 +18,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     const [backgroundLightState, setBackgroundLightState] = useState(false)
 
     // variable to follow the state of the page (if it's currently transitionning to an other page or not)
-    const [entryPageAnimation, setEntryPageAnimation] = useState(false)
+    const [entryPageAnimationTriggered, setEntryPageAnimationTriggered] = useState<null | boolean>(null)
 
     // state for keeping track of whether the user has clicked on the "enter Kosmo" button or not.
     const [hasClickedOnEnterKosmo, setHasClickedOnEnterKosmo] = useState(false)
@@ -30,11 +30,11 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     useEffect(() => {
         if (transitionBetweenPagesTriggered) {
             setBackgroundLightState(false)
-            setTimeout(() => setEntryPageAnimation(true), 700)
+            setTimeout(() => setEntryPageAnimationTriggered(true), 500)
         }
         else {
-            setEntryPageAnimation(false)
-            setTimeout(() => setBackgroundLightState(true), 500)
+            setEntryPageAnimationTriggered(false)
+            setTimeout(() => setBackgroundLightState(true), 1100)
         }
     }, [transitionBetweenPagesTriggered])
 
@@ -45,14 +45,15 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     }
 
     return (
-        <div className={`entryPage ${entryPageAnimation ? 'transitionDisappearing' : 'pageTransitionAppearing'}`}>
+        // <div className={`entryPage ${entryPageAnimationTriggered ? 'pageTransitionDisappearing' : 'pageTransitionAppearing'}`}>
+        <div className={`entryPage ${entryPageAnimationTriggered !== null ? entryPageAnimationTriggered === true ? 'pageTransitionDisappearing' : 'pageTransitionAppearing' : ''}`}>
             
             <div className={`entryPage-colorLight ${backgroundLightState ? 'colorLight-on' : 'colorLight-off'}`}></div>
             
             <div className="entryPage-backgroundLayer">
                 <div className="entryPage-innerElements">
                     
-                    <Header screenFormat={screenFormat} currentPage={currentPage} currentInnerSection=""/>
+                    <Header screenFormat={screenFormat} currentPage={currentPage}/>
                     
                     <div className="entryPage-centerSection">
                         
@@ -77,6 +78,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
                             <div className="verticalSpace"></div>
                             <p className="entryPage-description-texts">By putting humans first in my reflections, I designed the features to encourage online civility and reduce influence and hatred.</p>
                         </div>
+
                     }
 
                 </div>
