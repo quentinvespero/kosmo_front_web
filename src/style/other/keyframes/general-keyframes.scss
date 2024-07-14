@@ -13,10 +13,10 @@
 @keyframes transitionAppearing {
     0%{
         opacity: 0%;
-        transform: scale(.95);
+        transform: scale(.9);
     }
-    100%{
-        transform: scale(1);
+
+    100%{        transform: scale(1);
         opacity: 100%;
     }
 }
