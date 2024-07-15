@@ -18,7 +18,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     const [backgroundLightState, setBackgroundLightState] = useState(false)
 
     // variable to follow the state of the page (if it's currently transitionning to an other page or not)
-    const [entryPageAnimationTriggered, setEntryPageAnimationTriggered] = useState<null | boolean>(null)
+    const [entryPageAnimationTriggered, setEntryPageAnimationTriggered] = useState(false)
 
     // state for keeping track of whether the user has clicked on the "enter Kosmo" button or not.
     const [hasClickedOnEnterKosmo, setHasClickedOnEnterKosmo] = useState(false)
@@ -45,8 +45,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     }
 
     return (
-        // <div className={`entryPage ${entryPageAnimationTriggered ? 'pageTransitionDisappearing' : 'pageTransitionAppearing'}`}>
-        <div className={`entryPage ${entryPageAnimationTriggered !== null ? entryPageAnimationTriggered === true ? 'pageTransitionDisappearing' : 'pageTransitionAppearing' : ''}`}>
+        <div className={`entryPage ${entryPageAnimationTriggered === true ? 'pageTransitionDisappearing' : 'pageTransitionAppearing'}`}>
             
             <div className={`entryPage-colorLight ${backgroundLightState ? 'colorLight-on' : 'colorLight-off'}`}></div>
             

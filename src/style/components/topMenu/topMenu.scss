@@ -28,14 +28,6 @@
     // animation: topMenu-notSticky .3s ease-in-out;
 }
 
-// @keyframes topMenu-notSticky {
-//     0% {
-//         top: 11.5rem;
-//     }
-//     100% {
-//         top: 8rem;
-//     }
-// }
 @keyframes topMenu-sticky {
     0% {
         // transform: translateY(-15rem);
@@ -50,16 +42,6 @@
         top: .3rem;
     }
 }
-// is used for the TopMenu when scrolling down and when it get fixed on top of the screen
-// @keyframes topMenu-bounce2 {
-//     0% {
-//         opacity: 0;
-//         top: 10rem;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
 
 // for topMenu visible
 @keyframes topMenu-visible {
@@ -73,7 +55,6 @@
     }
     100%{
         opacity: 1;
-        // margin-top: 1rem;
         transform: scale(1);  
     }
 }
@@ -89,7 +70,6 @@
     100%{
         opacity: 0;
         margin-top: -4rem;
-        // height: 0rem;
         transform: scale(.5);
     }
 }

@@ -5,7 +5,7 @@
     @include transition(.5s);
     z-index: 1;
     row-gap: 3rem;
-    animation: transitionAppearing .6s;
+    // animation: transitionAppearing .6s;
     
     & .fillTheGap {
         height: 5rem;

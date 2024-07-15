@@ -50,31 +50,31 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
         }
     })
 
+    // the classes that will be applied to the component
     const classesToApply = () : string => {
         let classes = 'home'
 
-        if (currentPage === 'home') classes += ''
+        if (currentPage === 'home') classes += ' pageTransitionAppearing'
+        if (screenFormat === 'mobile') classes += ' home-mobileScreen'
+        if (currentInnerSection === 'profile') classes += ' home-innerSection-profile'
+        
+        switch (selectedViewType) {
+            case 'columnsView':
+                classes += ' home-columnsView'
+                break
+            case 'detailsView':
+                classes += ' home-detailsView'
+                break
+            case 'regularView':
+                classes += ' home-regularView'
+                break
+        }
 
         return classes
     }
 
     return (
-        <div 
-            className={`home 
-                ${screenFormat ? 'pageAnimationFadeIn' : ''}
-                ${screenFormat === 'mobile' ? 'home-mobileScreen' : ''}
-                
-                // rules relative to the feed views
-                ${selectedViewType === 'columnsView' ? 'home-columnsView' : ''}
-                ${selectedViewType === 'detailsView' ? 'home-detailsView' : ''}
-                ${selectedViewType === 'regularView' ? 'home-regularView' : ''}
-
-                // 16/05/24 temporary, while setting up currentInnerSection
-                ${selectedFeed === 'profile' ? 'home-innerSection-profile' : ''}
-                // 16/05/24 the definite rule that will be used when currentInnerSection will be operational
-                ${currentInnerSection ==='profile' ? 'home-innerSection-profile' : ''}
-            `}
-        >
+        <div className={classesToApply()}>
             {/* <BackgroundLayer isVisible={false} /> */}
 
             <Header 
