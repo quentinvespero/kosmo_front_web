@@ -2,7 +2,6 @@ import React, { Suspense, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 import BackgroundLayer from './pages/BackgroundLayer'
-import { delayResponse } from './functions/delayedToggle'
 
 export interface AppProps {
     currentPage: 'home' | 'entry'
@@ -16,8 +15,9 @@ const App = () => {
     // defining the screen format
     const [screenFormat, setScreenFormat] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
 
+    // 17/07/24 : state not useful anymore, will have to remove it
     // defining animation when switching to a different screens of the app
-    const [animation, setAnimation] = useState(true)
+    // const [animation, setAnimation] = useState(true)
 
     // variable to follow if the device is in dark or light mode
     const [isDeviceInDarkMode, setIsDeviceInDarkMode] = useState(true)
@@ -31,7 +31,10 @@ const App = () => {
     // function to handle the change of the page, with a delay
     const handlePageChange = (page:'home'|'entry') => {
         setTransitionBetweenPagesTriggered(true)
-        setTimeout(() => setCurrentPage(page), 800)
+        setTimeout(() => {
+            setCurrentPage(page)
+            setTransitionBetweenPagesTriggered(false)
+        }, 800)
     }
 
     // function to set the value of screenFormat based on the width of the window
@@ -79,12 +82,12 @@ const App = () => {
             
             <Suspense fallback={<h1>loading</h1>}>
             
-                {/* <BackgroundLayer isVisible={isBackgroundLayerVIsible}/> */}
+                <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
 
                 {currentPage === 'entry' &&
                     <EntryPage 
                         // pageSelection={handlePageChange} 
-                        animation={animation} 
+                        // animation={animation} 
                         screenFormat={screenFormat} 
                         currentPage={currentPage}
                         setCurrentPage={handlePageChange}
@@ -95,10 +98,11 @@ const App = () => {
                 {currentPage === 'home' && 
                     <Home 
                         screenFormat={screenFormat} 
-                        animation={animation} 
-                        setAnimation={setAnimation} 
+                        // animation={animation} 
+                        // setAnimation={setAnimation} 
                         currentPage={currentPage}
                         setCurrentPage={handlePageChange}
+                        transitionBetweenPagesTriggered={transitionBetweenPagesTriggered}
                     />
                 }
                 

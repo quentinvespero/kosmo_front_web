@@ -6,13 +6,13 @@ import LoginAndRegister from "../components/loginAndRegister/LoginAndRegister"
 import { AppProps } from "../App"
 import { PagesProps } from "../interfaces/pagesInterfaces"
 
-export interface EntryPageProps {
-    screenFormat?: ScreenProps['screenFormat']
-    currentPage: AppProps['currentPage']
-    setCurrentPage: AppProps['setCurrentPage']
-}
+// export interface EntryPageProps {
+//     // screenFormat: ScreenProps['screenFormat']
+//     currentPage: AppProps['currentPage']
+//     setCurrentPage: AppProps['setCurrentPage']
+// }
 
-const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animation, screenFormat, currentPage, setCurrentPage, transitionBetweenPagesTriggered }) => {
+const EntryPage: React.FC<PagesProps> = ({ screenFormat, currentPage, setCurrentPage, transitionBetweenPagesTriggered }) => {
 
     // variable to follow the state of the background light (on / off)
     const [backgroundLightState, setBackgroundLightState] = useState(false)
@@ -45,7 +45,7 @@ const EntryPage: React.FC<EntryPageProps & ScreenProps & PagesProps> = ({ animat
     }
 
     return (
-        <div className={`entryPage ${entryPageAnimationTriggered === true ? 'pageTransitionDisappearing' : 'pageTransitionAppearing'}`}>
+        <div className={`entryPage ${entryPageAnimationTriggered === true ? 'pageTransitionDisappearing' : 'pageTransition'}`}>
             
             <div className={`entryPage-colorLight ${backgroundLightState ? 'colorLight-on' : 'colorLight-off'}`}></div>
             

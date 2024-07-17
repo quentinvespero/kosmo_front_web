@@ -19,4 +19,7 @@ export interface BackgroundLayerProps {
 
 export interface PagesProps {
     transitionBetweenPagesTriggered: boolean
+    screenFormat: ScreenProps['screenFormat']
+    currentPage: AppProps['currentPage']
+    setCurrentPage: AppProps['setCurrentPage']
 }

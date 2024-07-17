@@ -10,13 +10,14 @@ import BackgroundLayer from './BackgroundLayer'
 import { InnerSectionProps } from '../interfaces/innerSectionsInterfaces'
 import { delayBooleanResponse } from '../functions/delayedToggle'
 import { AppProps } from '../App'
+import { PagesProps } from '../interfaces/pagesInterfaces'
 
-export interface HomeProps {
-    currentPage: AppProps['currentPage']
-    setCurrentPage: AppProps['setCurrentPage']
-}
+// export interface HomeProps {
+//     currentPage: AppProps['currentPage']
+//     setCurrentPage: AppProps['setCurrentPage']
+// }
 
-const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, screenFormat, currentPage }) => {
+const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetweenPagesTriggered }) => {
 
     // defining if top menu is sticky or not
     const [topmenuIsSticky, setTopmenuIsSticky] = useState(false)
@@ -42,19 +43,23 @@ const Home: React.FC<HomeProps & ScreenProps> = ({ animation, setAnimation, scre
     }, [screenFormat])
 
     // animation when entering this screen
-    useEffect(() => {
-        if (animation && setAnimation) {
-            setTimeout(() => {
-                setAnimation(false)
-            }, 500)
-        }
-    })
+    // useEffect(() => {
+    //     if (animation && setAnimation) {
+    //         setTimeout(() => {
+    //             setAnimation(false)
+    //         }, 500)
+    //     }
+    // })
 
     // the classes that will be applied to the component
     const classesToApply = () : string => {
         let classes = 'home'
 
-        if (currentPage === 'home') classes += ' pageTransitionAppearing'
+        // if we are on the page Home, and the transition to an other page is triggered, then the class to make it disapear via a fadeout, while be applied.
+        // Otherwise, the usual pageTransition is apllied and add a fadeIn animation when the page component is loaded
+        if (currentPage === 'home' && transitionBetweenPagesTriggered) classes += ' pageTransitionDisappearing'
+        else classes += ' pageTransition'
+
         if (screenFormat === 'mobile') classes += ' home-mobileScreen'
         if (currentInnerSection === 'profile') classes += ' home-innerSection-profile'
         
