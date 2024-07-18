@@ -32,6 +32,9 @@ const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetwe
     // following state of the view selected in feed
     const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
 
+    // state to follow height of the TopMenu, to adapt the height given to fillTheGap
+    const [topMenuHeight, setTopMenuHeight] = useState<number>(0)
+
     // delay when transitionning to an other page
     // const delayHomeTransition = delayBooleanResponse(currentPage !== 'home',900)
 
@@ -63,6 +66,9 @@ const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetwe
         if (screenFormat === 'mobile') classes += ' home-mobileScreen'
         if (currentInnerSection === 'profile') classes += ' home-innerSection-profile'
         
+        // if (topmenuIsSticky) classes += ' home-topMenuIsSticky'
+        // else if (!topmenuIsSticky && selectedViewType === 'regularView' ) classes += ' home-topMenuNotSticky-noTransition'
+        
         switch (selectedViewType) {
             case 'columnsView':
                 classes += ' home-columnsView'
@@ -89,7 +95,7 @@ const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetwe
                 currentInnerSection={currentInnerSection}
             />
 
-            {/* {topmenuIsSticky && <div className="fillTheGap"></div>} */}
+            {topmenuIsSticky && <div className="fillTheGap" style={{height:topMenuHeight}}></div>}
             
             <TopMenu 
                 setTopmenuIsSticky={setTopmenuIsSticky} 
@@ -100,6 +106,7 @@ const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetwe
                 selectedViewType={selectedViewType}
                 setCurrentInnerSection={setCurrentInnerSection}
                 currentInnerSection={currentInnerSection}
+                setTopMenuHeight={setTopMenuHeight}
             />
             
             <InnerSection 

@@ -18,8 +18,8 @@
 }
 .topMenu-sticky{
     position: fixed;
-    top: .3rem;
-    animation: topMenu-sticky .5s ease-in-out;
+    top: .4rem;
+    animation: topMenu-sticky .6s ease-in-out;
     box-shadow: $shadow4;
     @include transparent($transparentGrey2, $blur2);
     z-index: 4;
@@ -31,11 +31,11 @@
 @keyframes topMenu-sticky {
     0% {
         // transform: translateY(-15rem);
-        top: -5rem;
+        top: -8rem;
     }
-    50% {
+    70% {
         // transform: translateY(-17rem);
-        top: 1.5rem;
+        top: 1rem;
     }
     100% {
         // transform: translateY(0rem);
@@ -48,7 +48,7 @@
     0%{
         opacity: 0;
         transform: scale(.5);
-        margin-top: -4rem;
+        // margin-top: -4rem;
     }
     50%{
         transform: scale(1.03);

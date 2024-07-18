@@ -18,6 +18,8 @@ const EntryPage: React.FC<PagesProps> = ({ screenFormat, currentPage, setCurrent
     const [backgroundLightState, setBackgroundLightState] = useState(false)
 
     // variable to follow the state of the page (if it's currently transitionning to an other page or not)
+    // I have to use such state additionally to transitionBetweenPagesTriggered because I have to differ the animation of the background light and the page itself,
+    // ...otherwise the opacity style in the keyframe of the animation will messup the blur effect.
     const [entryPageAnimationTriggered, setEntryPageAnimationTriggered] = useState(false)
 
     // state for keeping track of whether the user has clicked on the "enter Kosmo" button or not.

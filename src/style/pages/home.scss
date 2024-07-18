@@ -3,13 +3,14 @@
     flex-direction: column;
     // padding: 2rem;
     @include transition(.5s);
+    // transition: all ease-in-out .2s;
     z-index: 1;
     row-gap: 3rem;
     // animation: transitionAppearing .6s;
     
     & .fillTheGap {
-        height: 5rem;
-        @include transition(.1s)
+        height: 3.3rem;
+        // @include transition(.0s)
     }
 }
 .home-mobileScreen {
@@ -28,6 +29,16 @@
     row-gap: 3rem;
 }
 
-.home-topMenuIsSticky{
-    row-gap: 5rem;
-}
+// the purpose of those 2 following classes are to avoid transition to occur when scrolling up/down 
+//... when the topMenu is sticky, otherwise it will create some issues
+// .home-topMenuIsSticky{
+//     // margin-top: 6rem;
+//     // transition: margin-top 0s;
+//     // transition: row-gap 0s;
+//     row-gap: 6rem;
+// }
+// .home-topMenuNotSticky-noTransition{
+//     // margin-top: 0;
+//     // transition: margin-top 0s;
+//     // transition: row-gap 0s;
+// }
