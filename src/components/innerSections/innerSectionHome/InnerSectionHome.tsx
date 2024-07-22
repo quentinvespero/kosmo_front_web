@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { InnerSectionProps } from '../../../interfaces/innerSectionsInterfaces'
+// import { InnerSectionProps } from '../../../interfaces/innerSectionsInterfaces'
 import Feed from './Feed'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import RightPanel from '../../rightPanel/RightPanel'
 import ViewTypeSelector from '../../logicComponents/ViewTypeSelector'
 import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
+import { InnerSectionProps } from '../InnerSection'
 
 export interface InnerSectionHomeProps {
     // isPostSelected?:boolean

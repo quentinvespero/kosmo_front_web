@@ -6,22 +6,24 @@ import FeedDetailsView from './feedViews/FeedDetailsView'
 import FeedRegularView from './feedViews/FeedRegularView'
 import FeedColumnsView from './feedViews/FeedColumnsView'
 import { FeedProps } from '../../../interfaces/innerSectionsInterfaces'
+import { PostInterfaces } from '../../../interfaces/datas/postsDataInterfaces'
 
 const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}) => {
 
-    const [datas, setDatas] = useState<DatasInterfaces | null>(null)
+    const [postsData, setPostsData] = useState<PostInterfaces | null>(null)
 
     // follow the state of the post being selected to show more details about it
     const [idSelectedPost, setIdSelectedPost] = useState<string>('')
 
     useEffect(() => {
-        fetch('src/assets/bdd.json')
+        // fetch('src/assets/bdd.json')
+        fetch('./assets/jsons/posts.json')
             .then(response => response.json())
-            .then(datas => setDatas(datas))
-            .catch(error => console.error('Error:', error))
+            .then(postsData => setPostsData(postsData.posts))
+            .catch(error => console.error('Error while trying to fetch the posts:', error))
     }, [])
 
-    if (!datas) {
+    if (!postsData) {
         return <div className='feed-loadingPost'>
             <span className="feed-glitterElement1 feed-glitterElement">l</span>
             <span className="feed-glitterElement2 feed-glitterElement">o</span>
@@ -46,23 +48,24 @@ const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}
             `}
         >
 
-            {selectedViewType === 'detailsView' && screenFormat !== 'mobile' && <FeedDetailsView 
-                posts={datas.posts} 
+            {selectedViewType === 'regularView' && <FeedRegularView 
+                posts={postsData} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />}
 
-            {selectedViewType === 'regularView' && <FeedRegularView 
-                posts={datas.posts} 
+            {selectedViewType === 'detailsView' && screenFormat !== 'mobile' && <FeedDetailsView 
+                posts={postsData} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 
                 setIdSelectedPost={setIdSelectedPost}
                 selectedViewType={selectedViewType}
             />}
+
             {selectedViewType === 'columnsView' && screenFormat !== 'mobile' && <FeedColumnsView 
-                posts={datas.posts} 
+                posts={postsData} 
                 screenFormat={screenFormat} 
                 idSelectedPost={idSelectedPost} 
                 setIdSelectedPost={setIdSelectedPost}

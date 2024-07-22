@@ -4,13 +4,13 @@ import { Post } from "./datasInterfaces";
 import { ViewTypeSelectorProps } from "./logicComponents";
 // import { FeedSelectorProps } from "./topMenuInterfaces";
 
-export interface InnerSectionProps {
-    selectedFeed?: FeedSelectorProps['selectedFeed']
-    selectedViewType: ViewTypeSelectorProps['selectedViewType']
-    setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
-    currentInnerSection: 'profile' | 'settings' | 'feedManagement' | 'bookmarks' | 'feed' | ''
-    setCurrentInnerSection: React.Dispatch<React.SetStateAction<InnerSectionProps['currentInnerSection']>>
-}
+// export interface InnerSectionProps {
+//     selectedFeed?: FeedSelectorProps['selectedFeed']
+//     selectedViewType: ViewTypeSelectorProps['selectedViewType']
+//     setSelectedViewType: ViewTypeSelectorProps['setSelectedViewType']
+//     currentInnerSection: 'profile' | 'settings' | 'feedManagement' | 'bookmarks' | 'feed' | ''
+//     setCurrentInnerSection: React.Dispatch<React.SetStateAction<InnerSectionProps['currentInnerSection']>>
+// }
 
 // export interface InnerSectionHomeProps {
 //     // isPostSelected?:boolean
