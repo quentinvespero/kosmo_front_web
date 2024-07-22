@@ -4,6 +4,7 @@ import Post from '../../../post/Post'
 import SearchField from '../../../header/SearchField'
 import FeedColumnButton from './FeedColumnButton'
 import FilterPanel from './FilterPanel'
+import PostsFeedMapper from '../PostsFeedMapper'
 
 const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
 
@@ -27,7 +28,16 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
 
             <FilterPanel isFilterPanelVisible={isFilterPanelVisible}/>
             
-            <div className="feedColumn-posts">
+            <PostsFeedMapper
+                posts={posts} 
+                screenFormat={screenFormat} 
+                postLayout='compact' 
+                idSelectedPost={idSelectedPost} 
+                setIdSelectedPost={setIdSelectedPost} 
+                selectedViewType={selectedViewType} 
+            />
+
+            {/* <div className="feedColumn-posts">
                 {posts.map((post) => (
                     <Post
                         key={post._id} 
@@ -39,7 +49,7 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
                         postLayout='compact'
                     />
                 ))}
-            </div>
+            </div> */}
 
         </div>
     )
