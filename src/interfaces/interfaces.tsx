@@ -1,7 +1,7 @@
 // post
 // 14/01/24 : ⬇️ deprecated, this has been moved to the interface file relative to post : postInterfaces
 
-import { InnerSectionProps } from "./innerSectionsInterfaces"
+// import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ViewTypeSelectorProps } from "./logicComponents"
 // import { TopMenuProps } from "./topMenuInterfaces"
 

@@ -1,12 +1,12 @@
 import { ButtonWithIconProps } from "./buttonsInterfaces";
-import { PostInterfaces } from "./datas/postsDataInterfaces";
+import { PostInterfaces, PostsInterfaces } from "./datas/postsDataInterfaces";
 import { DatasInterfaces } from "./datasInterfaces";
 import { ScreenProps } from "./interfaces";
 import { ViewTypeSelectorProps } from "./logicComponents";
 // import { ViewTypeSelectorProps } from "./logicComponents";
 
 export interface FeedViewsInterfaces {
-    posts: PostInterfaces
+    posts: PostsInterfaces['posts']
     screenFormat: ScreenProps['screenFormat']
     idSelectedPost: string
     setIdSelectedPost: (type:string) => void

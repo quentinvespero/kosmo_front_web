@@ -1,3 +1,7 @@
+export interface PostsInterfaces {
+    posts:[PostInterfaces]
+}
+
 export interface PostInterfaces {
     _id:string
     author: string

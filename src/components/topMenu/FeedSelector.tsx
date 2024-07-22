@@ -3,8 +3,9 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import jsonData from '../../assets/bdd.json'
 import ProfileButton from '../buttons/ProfileButton'
 import FeedElement from './FeedElement'
-import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+// import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { TopMenuProps } from './TopMenu'
+import { InnerSectionProps } from '../innerSections/InnerSection'
 // import { TopMenuProps } from '../../interfaces/topMenuInterfaces'
 
 export interface FeedSelectorProps {

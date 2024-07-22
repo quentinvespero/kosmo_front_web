@@ -6,11 +6,11 @@ import FeedDetailsView from './feedViews/FeedDetailsView'
 import FeedRegularView from './feedViews/FeedRegularView'
 import FeedColumnsView from './feedViews/FeedColumnsView'
 import { FeedProps } from '../../../interfaces/innerSectionsInterfaces'
-import { PostInterfaces } from '../../../interfaces/datas/postsDataInterfaces'
+import { PostInterfaces, PostsInterfaces } from '../../../interfaces/datas/postsDataInterfaces'
 
 const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}) => {
 
-    const [postsData, setPostsData] = useState<PostInterfaces | null>(null)
+    const [postsData, setPostsData] = useState<PostsInterfaces['posts'] | null>(null)
 
     // follow the state of the post being selected to show more details about it
     const [idSelectedPost, setIdSelectedPost] = useState<string>('')

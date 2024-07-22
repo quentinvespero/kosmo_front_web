@@ -2,7 +2,7 @@ import { ProfileButtonProps } from "../components/buttons/ProfileButton"
 import { FeedSelectorProps } from "../components/topMenu/FeedSelector"
 // import { ProfileButtonProps } from "./buttonsInterfaces"
 import { DatasInterfaces, Feed } from "./datasInterfaces"
-import { InnerSectionProps } from "./innerSectionsInterfaces"
+// import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ScreenProps } from "./interfaces"
 import { ViewTypeSelectorProps } from "./logicComponents"
 

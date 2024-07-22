@@ -3,7 +3,8 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
-import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import { InnerSectionProps } from '../innerSections/InnerSection'
+// import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 
 export interface ProfileButtonProps {
     handleFeedChoice?: () => void

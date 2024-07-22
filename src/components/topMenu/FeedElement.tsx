@@ -3,7 +3,8 @@ import React from 'react'
 import { ProfileButtonProps } from '../buttons/ProfileButton'
 import { Feed } from '../../interfaces/datasInterfaces'
 import { FeedSelectorProps } from './FeedSelector'
-import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+import { InnerSectionProps } from '../innerSections/InnerSection'
+// import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 
 export interface FeedElementProps {
     handleClick: (selectedElement:string) => void

@@ -11,6 +11,7 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
 
     return (
         <div className='feedColumn'>
+            
             <div className="feedColumn-buttons">
                 <FeedColumnButton 
                     buttonIcon='filter_white2' 
@@ -23,10 +24,11 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
                 <FeedColumnButton buttonIcon='clean_white2' buttonText='feedColumnButton-'/>
                 {/* <FeedColumnButton buttonIcon='' buttonText='feedColumnButton-'/> */}
             </div>
+
             <FilterPanel isFilterPanelVisible={isFilterPanelVisible}/>
+            
             <div className="feedColumn-posts">
-                {posts && 
-                    posts.map((post) => (
+                {posts.map((post) => (
                     <Post
                         key={post._id} 
                         screenFormat={screenFormat} 
@@ -38,6 +40,7 @@ const FeedColumn:React.FC<FeedViewsInterfaces> = ({posts, screenFormat, idSelect
                     />
                 ))}
             </div>
+
         </div>
     )
 }

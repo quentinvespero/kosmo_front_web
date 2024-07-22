@@ -3,8 +3,9 @@ import SearchField from '../header/SearchField'
 import FeedSelector, { FeedSelectorProps } from './FeedSelector'
 import { ScreenProps } from '../../interfaces/interfaces'
 import { delayBooleanResponse, delayHidingElementDisplayProperty } from '../../functions/delayedToggle'
-import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+// import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
+import { InnerSectionProps } from '../innerSections/InnerSection'
 
 export interface TopMenuProps {
     setTopmenuIsSticky: (topmenuIsSticky:boolean) => void

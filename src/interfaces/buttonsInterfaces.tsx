@@ -1,6 +1,6 @@
 // import { HeaderMenuPanelProps } from "./headerInterfaces"
 import { HandleClickHeaderMenuButtonsInterface, HeaderMenuPanelProps } from "./headerMenuInterfaces"
-import { InnerSectionProps } from "./innerSectionsInterfaces"
+// import { InnerSectionProps } from "./innerSectionsInterfaces"
 import { ScreenProps } from "./interfaces"
 
 // buttonType1 props

@@ -1,17 +1,18 @@
+import { PostProps } from "../components/post/Post"
 import { DatasInterfaces, Post } from "./datasInterfaces"
 import { ScreenProps } from "./interfaces"
 import { ViewTypeSelectorProps } from "./logicComponents"
 
-export interface PostProps {
-    postId: string
-    // isPostSelected?: boolean
+// export interface PostProps {
+//     postId: string
+//     // isPostSelected?: boolean
     
-    // props to prepare the usage of the id to check whether the id of the post is the same as the one already selected or not before changing the value of isPostSelected
-    idSelectedPost?: Post['_id']
-    setIdSelectedPost?: (type:string) => void
-    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
-    postLayout?: 'regular' | 'compact' | 'detail'
-}
+//     // props to prepare the usage of the id to check whether the id of the post is the same as the one already selected or not before changing the value of isPostSelected
+//     idSelectedPost?: Post['_id']
+//     setIdSelectedPost?: (type:string) => void
+//     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+//     postLayout?: 'regular' | 'compact' | 'detail'
+// }
 
 // post interactions - button Up / Down vote
 export interface UpDownVoteElementsProps {

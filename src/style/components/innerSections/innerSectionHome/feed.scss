@@ -1,12 +1,8 @@
 .feed{
     display: flex;
-    // flex-flow: wrap;
     justify-content: center;
-    // align-items: flex-start;
     flex-grow: 1;
     @include transition(.15s);
-    // animation: slideFromBottom .25s ease-in-out;
-    // margin-bottom: 2rem;
 
     // css for the feedViews (columns, details, regular)
     & > *{
@@ -19,16 +15,13 @@
     animation: slideFromBottom .7s ease-in-out;
 }
 .feed-regularView{
-    // padding: 1rem;
     align-items: flex-start;
 }
 .feed-detailsView{
     height: 100%;
     overflow: hidden;
-    // margin-bottom: 1rem;
 }
 .feed-columnsView{
-    // overflow-x: scroll;
     width: 100%;
 }
 

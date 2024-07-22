@@ -4,8 +4,9 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import SearchField from './SearchField'
 import HeaderMenu from './HeaderMenu/HeaderMenu'
 import { FeedSelectorProps } from '../topMenu/FeedSelector'
-import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
+// import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
 import { AppProps } from '../../App'
+import { InnerSectionProps } from '../innerSections/InnerSection'
 
 export interface HeaderProps {
     screenFormat: ScreenProps['screenFormat']

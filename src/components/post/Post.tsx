@@ -3,8 +3,21 @@ import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
 import { ScreenProps } from '../../interfaces/interfaces'
-import { PostProps } from '../../interfaces/postInterfaces'
+// import { PostProps } from '../../interfaces/postInterfaces'
 import ProfileButton from '../buttons/ProfileButton'
+import { PostInterfaces } from '../../interfaces/datas/postsDataInterfaces'
+import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
+
+export interface PostProps {
+    postId: string
+    // isPostSelected?: boolean
+    
+    // props to prepare the usage of the id to check whether the id of the post is the same as the one already selected or not before changing the value of isPostSelected
+    idSelectedPost?: PostInterfaces['_id']
+    setIdSelectedPost?: (type:string) => void
+    selectedViewType?: ViewTypeSelectorProps['selectedViewType']
+    postLayout?: 'regular' | 'compact' | 'detail'
+}
 
 const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType, postLayout }) => {
 
