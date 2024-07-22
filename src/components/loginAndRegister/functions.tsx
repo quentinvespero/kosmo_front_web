@@ -1,4 +1,4 @@
-import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
+import { LoginAndRegisterPanelsProps } from "./LoginAndRegister"
 
 // function to store the value of the fields in the prop fieldsValues using setFieldsValues
 export const handleFieldChange = (e:React.ChangeEvent<HTMLInputElement>, setFieldsValues:LoginAndRegisterPanelsProps['setFieldsValues']) => {

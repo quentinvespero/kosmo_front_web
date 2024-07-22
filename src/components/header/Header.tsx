@@ -5,11 +5,11 @@ import SearchField from './SearchField'
 import HeaderMenu from './HeaderMenu/HeaderMenu'
 import { FeedSelectorProps } from '../topMenu/FeedSelector'
 import { InnerSectionProps } from '../../interfaces/innerSectionsInterfaces'
-import { HomeProps } from '../../pages/Home'
+import { AppProps } from '../../App'
 
 export interface HeaderProps {
     screenFormat: ScreenProps['screenFormat']
-    currentPage: HomeProps['currentPage']
+    currentPage: AppProps['currentPage']
     currentInnerSection?:InnerSectionProps['currentInnerSection']
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
-import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
+// import { LoginAndRegisterPanelsProps } from '../../interfaces/loginAndRegisterInterfaces'
 import LoginAndRegisterButton from './LoginAndRegisterButton'
+import { LoginAndRegisterPanelsProps } from './LoginAndRegister'
 
 const AskPanel:React.FC<LoginAndRegisterPanelsProps> = ({setSelectedPanel}) => {
     return (
