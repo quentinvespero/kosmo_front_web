@@ -12,12 +12,18 @@ export interface ProfileButtonProps {
     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
     setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
     currentInnerSection?:InnerSectionProps['currentInnerSection']
+    postUser?:string
 }
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection}) => {
+interface usersMinimalInfoTypes {
+    username:string
+    profilePicture:string
+}
+
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection, postUser}) => {
 
     // storing the path of the image
-    const [userData, setUserData] = useState<DatasInterfaces>()
+    const [userData, setUserData] = useState<DatasInterfaces | usersMinimalInfoTypes>()
 
     // const for when in different context
     const inHeaderMenuContext = locationContext === 'headerMenu'
@@ -28,8 +34,11 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     useEffect(() => {
 
         const fetchingProfileImage = async () => {
+
+            let routes = inPostContext ? './assets/jsons/user/usersMinimalInfo.json' : 'src/assets/bdd.json'
+
             try {
-                const response = await fetch('src/assets/bdd.json')
+                const response = await fetch(routes)
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
                 const datas = await response.json()
                 // console.log('fetched datas :',datas.users[0].userAdditionalInformations.profilePicture)
@@ -55,9 +64,21 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     // - in post it will stop the propagation on the element itself, to avoid the effect on the parent element, post
     // - in feedSelector, it will change the innerSection to 'profile'
     const handleClickActions = (e: { stopPropagation: () => any }) => {
-        inHeaderMenuContext && handleClick && handleClick('user')
-        inPostContext && e.stopPropagation()
-        inFeedSelectorContext && setCurrentInnerSection && setCurrentInnerSection('profile')
+
+        // below, just wondering whether I should use switch or single line operation
+
+        switch (locationContext) {
+            case 'feedSelector':setCurrentInnerSection && setCurrentInnerSection('profile')
+                break
+            case 'headerMenu':handleClick && handleClick('user')
+                break
+            case 'post':e.stopPropagation()
+                break
+        }
+
+        // inHeaderMenuContext && handleClick && handleClick('user')
+        // inPostContext && e.stopPropagation()
+        // inFeedSelectorContext && setCurrentInnerSection && setCurrentInnerSection('profile')
     }
 
     // determining the class to give to the component
@@ -80,7 +101,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         if (inHeaderMenuContext && userData && userData.users && screenFormat != 'mobile') text = userData.users[0].userBaseInformations.username
         else if (inFeedSelectorContext) text ='profile'
-        else if (inPostContext) text = 'userTest'
+        else if (inPostContext && postUser) text = postUser
 
         return text
     }
@@ -89,9 +110,19 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     const profileButtonImage = () => {
         let image = ''
 
-        if (userData && userData.users) 
+        switch (locationContext) {
+            case 'feedSelector': image = 'profile_icon_white2.svg'
+                break
+            case 'headerMenu': if (userData?.users) image = userData.users[0].userAdditionalInformations.profilePicture
+                break
+            case 'post': if (userData)
+                break
+        }
+
+        if (inHeaderMenuContext && userData?.users) 
             if (!inFeedSelectorContext) image = userData.users[0].userAdditionalInformations.profilePicture
             else image = 'profile_icon_white2.svg'
+        else if (inPostContext) 
         else {
             image = 'error'
             console.log('error while trying to load profile image',image,userData,locationContext)

@@ -54,6 +54,7 @@ const PostsFeedMapper:React.FC<PostsFeedMapperProps & ScreenProps> = ({posts, sc
                     setIdSelectedPost={setIdSelectedPost} 
                     selectedViewType={selectedViewType}
                     postLayout={postLayout}
+                    postUser={post.author}
                 />
             ))}
         </div>

@@ -8,7 +8,7 @@ export interface ProfilePhotoProps {
 // image name have to be given with its name+ extension (in .png, .jpg or .svg). Exemple : image1.png
 const ProfilePhoto:React.FC<ProfilePhotoProps> = ({imageName}) => {
 
-    // // the image name gatthered from the fetch
+    // // the image name gathered from the fetch
     // const [profilePhoto, setProfilePhoto] = useState<string>()
 
     // // fetching the profile photo

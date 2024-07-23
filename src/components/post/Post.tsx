@@ -17,9 +17,10 @@ export interface PostProps {
     setIdSelectedPost?: (type:string) => void
     selectedViewType?: ViewTypeSelectorProps['selectedViewType']
     postLayout?: 'regular' | 'compact' | 'detail'
+    postUser: string
 }
 
-const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType, postLayout }) => {
+const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelectedPost, setIdSelectedPost, selectedViewType, postLayout, postUser }) => {
 
     // follow state of the post being selected to show details of it
     const isPostSelected = idSelectedPost === postId
@@ -60,7 +61,7 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
                 `}
             >
                 <div className="innerPost-topSection">
-                    <ProfileButton locationContext='post'/>
+                    <ProfileButton locationContext='post' postUser={postUser} />
                     <PostThemeElements/>
                 </div>
                 <div className="innerPost-content">
