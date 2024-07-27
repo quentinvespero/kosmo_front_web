@@ -43,7 +43,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                 const response = await fetch(routes)
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
                 const datas = await response.json()
-                console.log(`fetched datas profileButton :,${routes},${datas[postUser].username}`)
+                console.log(`fetched datas profileButton : ${routes} ${datas[postUser].username}`)
 
                 setUserData(datas)
             } 
