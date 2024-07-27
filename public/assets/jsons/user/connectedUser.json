@@ -1,0 +1,22 @@
+{
+    "userBaseInformations": {
+        "username": "user1",
+        "mailAdress": "user1@example.com",
+        "password": "password1",
+        "birthdate": "1990-01-01"
+    },
+    "userAdditionalInformations": {
+        "location": "Paris",
+        "bio": "Hello, I'm user1!",
+        "profilePicture": "profile1.png",
+        "link": "http://example.com/user1",
+        "userFeeds": ["feed1", "feed2"]
+    },
+    "userSocialInformations": {
+        "followers": ["user2", "user3"],
+        "following": ["user4", "user5"],
+        "pointsCount": 50,
+        "upvotedPosts": ["post1", "post2"],
+        "bookmarkedPosts": ["post3", "post4"]
+    }
+}

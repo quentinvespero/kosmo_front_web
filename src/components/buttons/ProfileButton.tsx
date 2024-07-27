@@ -15,15 +15,17 @@ export interface ProfileButtonProps {
     postUser?:string
 }
 
-interface usersMinimalInfoTypes {
-    username:string
-    profilePicture:string
+interface usersMinimalInfosTypes {
+    string:{
+        username:string
+        profilePicture:string
+    }
 }
 
 const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection, postUser}) => {
 
     // storing the path of the image
-    const [userData, setUserData] = useState<DatasInterfaces | usersMinimalInfoTypes>()
+    const [userData, setUserData] = useState<DatasInterfaces['users'] | usersMinimalInfosTypes>()
 
     // const for when in different context
     const inHeaderMenuContext = locationContext === 'headerMenu'
@@ -35,13 +37,13 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         const fetchingProfileImage = async () => {
 
-            let routes = inPostContext ? './assets/jsons/user/usersMinimalInfo.json' : 'src/assets/bdd.json'
+            let routes = inPostContext ? './assets/jsons/user/usersMinimalInfos.json' : './assets/jsons/user/connectedUser.jsons'
 
             try {
                 const response = await fetch(routes)
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
                 const datas = await response.json()
-                // console.log('fetched datas :',datas.users[0].userAdditionalInformations.profilePicture)
+                console.log(`fetched datas profileButton :,${routes},${datas[postUser].username}`)
 
                 setUserData(datas)
             } 
@@ -99,9 +101,14 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     const profileButtonText = () => {
         let text = ''
 
-        if (inHeaderMenuContext && userData && userData.users && screenFormat != 'mobile') text = userData.users[0].userBaseInformations.username
-        else if (inFeedSelectorContext) text ='profile'
-        else if (inPostContext && postUser) text = postUser
+        switch (locationContext) {
+            case 'feedSelector': text ='profile'
+                break;
+            case 'post': if (postUser) text = postUser
+                break;
+            case 'headerMenu': if (userData && screenFormat != 'mobile') text = userData[0]
+                break;
+        }
 
         return text
     }
@@ -113,20 +120,20 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
         switch (locationContext) {
             case 'feedSelector': image = 'profile_icon_white2.svg'
                 break
-            case 'headerMenu': if (userData?.users) image = userData.users[0].userAdditionalInformations.profilePicture
+            case 'headerMenu': if (userData) image = userData[0].userAdditionalInformations
                 break
             case 'post': if (userData)
                 break
         }
 
-        if (inHeaderMenuContext && userData?.users) 
-            if (!inFeedSelectorContext) image = userData.users[0].userAdditionalInformations.profilePicture
-            else image = 'profile_icon_white2.svg'
-        else if (inPostContext) 
-        else {
-            image = 'error'
-            console.log('error while trying to load profile image',image,userData,locationContext)
-        }
+        // if (inHeaderMenuContext && userData?.users) 
+        //     if (!inFeedSelectorContext) image = userData.users[0].userAdditionalInformations.profilePicture
+        //     else image = 'profile_icon_white2.svg'
+        // else if (inPostContext) 
+        // else {
+        //     image = 'error'
+        //     console.log('error while trying to load profile image',image,userData,locationContext)
+        // }
 
         return image
     }
