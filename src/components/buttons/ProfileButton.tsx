@@ -12,7 +12,7 @@ export interface ProfileButtonProps {
     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
     setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
     currentInnerSection?:InnerSectionProps['currentInnerSection']
-    postUser?:string
+    postUsername?:string
 }
 
 interface usersMinimalInfosTypes {
@@ -22,7 +22,7 @@ interface usersMinimalInfosTypes {
     }
 }
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection, postUser}) => {
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection, postUsername}) => {
 
     // storing the path of the image
     const [userData, setUserData] = useState<DatasInterfaces['users'] | usersMinimalInfosTypes>()
@@ -43,7 +43,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
                 const response = await fetch(routes)
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
                 const datas = await response.json()
-                console.log(`fetched datas profileButton : ${routes} ${datas[postUser].username}`)
+                console.log(`fetched datas profileButton : ${routes} ${postUsername && datas[postUsername].username}`)
 
                 setUserData(datas)
             } 
@@ -104,7 +104,8 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
         switch (locationContext) {
             case 'feedSelector': text ='profile'
                 break;
-            case 'post': if (postUser) text = postUser
+            // case 'post': if (postUsername && userData) text = userData[postUsername].username
+            case 'post': if (postUsername && userData) text = postUsername
                 break;
             case 'headerMenu': if (userData && screenFormat != 'mobile') text = userData[0]
                 break;
