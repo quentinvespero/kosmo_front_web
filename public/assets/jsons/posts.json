@@ -2,7 +2,7 @@
     "posts": [
         {
             "_id": "5f36dccf9bfr7694b4653c6a1",
-            "author": "user1",
+            "author": "user5",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",

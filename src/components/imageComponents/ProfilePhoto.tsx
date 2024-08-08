@@ -33,7 +33,7 @@ const ProfilePhoto:React.FC<ProfilePhotoProps> = ({imageName}) => {
 
     // function to adapt the path, depending on the extension given in the prop imageName
     const profilePhotoPath = () => {
-        const imgPath = './src/assets/img/'
+        const imgPath = './assets/imgs/'
         const svgIconsPath = './assets/icons/'
 
         if (imageName && !imageName.includes('error') && imageName.includes('.png') || imageName.includes('.jpg')) return imgPath+imageName

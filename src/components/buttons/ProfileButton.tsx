@@ -12,20 +12,29 @@ export interface ProfileButtonProps {
     handleClick?: HandleClickHeaderMenuButtonsInterface['handleClick']
     setCurrentInnerSection?:InnerSectionProps['setCurrentInnerSection']
     currentInnerSection?:InnerSectionProps['currentInnerSection']
-    postUsername?:string
+    postUsername:string
 }
 
 interface usersMinimalInfosTypes {
-    string:{
-        username:string
-        profilePicture:string
-    }
+    // string:{
+    //     username:string
+    //     profilePicture:string
+    // }
+    username:string
+    profilePicture:string
 }
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({screenFormat, locationContext, handleClick, setCurrentInnerSection, currentInnerSection, postUsername}) => {
+const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({
+    screenFormat, 
+    locationContext, 
+    handleClick, 
+    setCurrentInnerSection, 
+    currentInnerSection, 
+    postUsername
+}) => {
 
-    // storing the path of the image
-    const [userData, setUserData] = useState<DatasInterfaces['users'] | usersMinimalInfosTypes>()
+    // storing informations about the user from the fetch
+    const [userData, setUserData] = useState<usersMinimalInfosTypes>()
 
     // const for when in different context
     const inHeaderMenuContext = locationContext === 'headerMenu'
@@ -37,18 +46,23 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         const fetchingProfileImage = async () => {
 
-            let routes = inPostContext ? './assets/jsons/user/usersMinimalInfos.json' : './assets/jsons/user/connectedUser.jsons'
+            // let routes = inPostContext ? './assets/jsons/user/usersMinimalInfos.json' : './assets/jsons/user/connectedUser.jsons'
 
             try {
-                const response = await fetch(routes)
+                const response = await fetch('./assets/jsons/user/usersMinimalInfos.json')
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
-                const datas = await response.json()
-                console.log(`fetched datas profileButton : ${routes} ${postUsername && datas[postUsername].username}`)
+                const fetchedDatas = await response.json()
+                console.log(`fetched datas profileButton : ${fetchedDatas[postUsername].username} 'in the context : ' ${locationContext}`)
 
-                setUserData(datas)
+                try {
+                    setUserData(fetchedDatas[postUsername])
+                }
+                catch (error) {
+                    console.error('issue in attempt to index user using postUsername props', error, locationContext)
+                }
             } 
             catch (error) {
-                console.error('error while fetching data', error)
+                console.error('error while fetching data', error, locationContext)
             }
         }
 
@@ -103,12 +117,12 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         switch (locationContext) {
             case 'feedSelector': text ='profile'
-                break;
+                break
             // case 'post': if (postUsername && userData) text = userData[postUsername].username
-            case 'post': if (postUsername && userData) text = postUsername
-                break;
-            case 'headerMenu': if (userData && screenFormat != 'mobile') text = userData[0]
-                break;
+            case 'post': if (userData) text = userData.username
+                break
+            // case 'headerMenu': if (userData && screenFormat != 'mobile') text = userData
+            //     break;
         }
 
         return text
@@ -121,9 +135,9 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
         switch (locationContext) {
             case 'feedSelector': image = 'profile_icon_white2.svg'
                 break
-            case 'headerMenu': if (userData) image = userData[0].userAdditionalInformations
-                break
-            case 'post': if (userData)
+            // case 'headerMenu': if (userData) image = userData[0].userAdditionalInformations
+            //     break
+            case 'post': if (userData) image = userData.profilePicture
                 break
         }
 
