@@ -2,7 +2,7 @@ import React from "react"
 
 export interface ButtonWithImageProps {
     buttonText?: string
-    buttonImage?: string
+    imageName?: string
     className?:string
     description?:string
 }
@@ -10,12 +10,12 @@ export interface ButtonWithImageProps {
 ////////////////////////////////////////////
 // Guide Props
 ////////////////////////////////////////////
-// buttonImage : give full name of file. Exemple : image1.png
+// imageName : give full name of file. Exemple : image1.png
 // buttonText : 
 // description : if not given, will use buttonText value
 // className : can give the name of the component in which it is, so it will be named as such "buttonWithImage-componentName"
 
-const ButtonWithImage:React.FC<ButtonWithImageProps> = ({buttonImage, buttonText, description, className}) => {
+const ButtonWithImage:React.FC<ButtonWithImageProps> = ({imageName, buttonText, description, className}) => {
 
     // path of the assets
     const assetPath = './assets/'
@@ -34,8 +34,8 @@ const ButtonWithImage:React.FC<ButtonWithImageProps> = ({buttonImage, buttonText
     const pathToApply = () => {
         let path = assetPath
 
-        if (buttonImage) {
-            if (buttonImage.includes('svg')) path += 'icons/'
+        if (imageName) {
+            if (imageName.includes('svg')) path += 'icons/'
             else path += 'imgs/'
         }
 
@@ -44,9 +44,9 @@ const ButtonWithImage:React.FC<ButtonWithImageProps> = ({buttonImage, buttonText
     
     return (
         <div className={classesToApply()} title={description ? description : buttonText}>
-            {buttonImage && 
+            {imageName && 
                 <img 
-                    src={`${pathToApply()}${buttonImage}`} 
+                    src={`${pathToApply()}${imageName}`} 
                     alt={`${description ? description : buttonText}`}
                 />
             }

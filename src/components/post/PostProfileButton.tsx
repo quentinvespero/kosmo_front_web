@@ -46,10 +46,7 @@ const PostProfileButton:React.FC<PostProfileButtonProps> = ({postUsername}) => {
     return (
         <div className="postProfileButton">
             {userData && 
-                <ButtonWithImage 
-                    buttonImage={userData.profilePicture} 
-                    buttonText={userData.username}
-                />
+                <ButtonWithImage imageName={userData.profilePicture} buttonText={userData.username}/>
             }
         </div>
     )
