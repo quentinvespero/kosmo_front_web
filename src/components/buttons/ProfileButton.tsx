@@ -16,10 +16,6 @@ export interface ProfileButtonProps {
 }
 
 interface usersMinimalInfosTypes {
-    // string:{
-    //     username:string
-    //     profilePicture:string
-    // }
     username:string
     profilePicture:string
 }
@@ -46,8 +42,6 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
 
         const fetchingProfileImage = async () => {
 
-            // let routes = inPostContext ? './assets/jsons/user/usersMinimalInfos.json' : './assets/jsons/user/connectedUser.jsons'
-
             try {
                 const response = await fetch('./assets/jsons/user/usersMinimalInfos.json')
                 if (!response.ok) throw new Error('Problem while attempting to fetch')
@@ -67,12 +61,6 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
         }
 
         fetchingProfileImage()
-
-        // fetch('src/assets/bdd.json')
-        //     .then(response => response.json())
-        //     .then(datas => setUserData(datas))
-        //     .catch(error => console.error('Error:', error))
-
     }, [])
 
     // function to handle the actions when click on the button
@@ -118,11 +106,8 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
         switch (locationContext) {
             case 'feedSelector': text ='profile'
                 break
-            // case 'post': if (postUsername && userData) text = userData[postUsername].username
             case 'post': if (userData) text = userData.username
                 break
-            // case 'headerMenu': if (userData && screenFormat != 'mobile') text = userData
-            //     break;
         }
 
         return text

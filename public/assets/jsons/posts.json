@@ -242,7 +242,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a17",
-            "author": "user1",
+            "author": "user4",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -257,7 +257,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a18",
-            "author": "user1",
+            "author": "user2",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -272,7 +272,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a19",
-            "author": "user1",
+            "author": "user5",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -287,7 +287,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a20",
-            "author": "user1",
+            "author": "user5",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -302,7 +302,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a21",
-            "author": "user1",
+            "author": "user3",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -317,7 +317,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a22",
-            "author": "user1",
+            "author": "user4",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
@@ -332,7 +332,7 @@
         },
         {
             "_id": "5f36dccf9bfr7694b4653c6a23",
-            "author": "user1",
+            "author": "user2",
             "tags": ["tag1", "tag2"],
             "content": {
                 "text": "Hello, this is my first post!",
