@@ -80,7 +80,7 @@ const App = () => {
         <div className='app'>
             {/* <p>{import.meta.env.VITE_APP_TITLE}</p> */}
             
-            <Suspense fallback={<h1>loading</h1>}>
+            <Suspense fallback={<h1>loading...</h1>}>
             
                 <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
 

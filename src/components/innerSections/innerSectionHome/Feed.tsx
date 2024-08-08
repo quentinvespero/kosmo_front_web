@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Post from '../../post/Post'
 import { ScreenProps } from '../../../interfaces/interfaces'
 import { DatasInterfaces } from '../../../interfaces/datasInterfaces'

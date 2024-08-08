@@ -69,14 +69,14 @@ export interface AddPostButton2Props {
     handleClick?:HandleClickHeaderMenuButtonsInterface['handleClick']
 }
 
-export interface ButtonWithIconProps {
-    // buttonText: 'settings' | 'manage_feeds' | 'bookmarks'
-    buttonText: string
-    buttonIcon?: string
-    // functionToPass?: () => void
-    className?:string
-    description?:string
-}
+// export interface ButtonWithIconProps {
+//     // buttonText: 'settings' | 'manage_feeds' | 'bookmarks'
+//     buttonText: string
+//     buttonIcon?: string
+//     // functionToPass?: () => void
+//     className?:string
+//     description?:string
+// }
 
 export interface HideRightPanelButtonProps {
     isRightPanelVisible: boolean

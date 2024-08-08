@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ScreenProps } from '../../interfaces/interfaces'
-import { DatasInterfaces } from '../../interfaces/datasInterfaces'
+// import { ScreenProps } from '../../interfaces/interfaces'
+// import { DatasInterfaces } from '../../interfaces/datasInterfaces'
 import ProfilePhoto from '../imageComponents/ProfilePhoto'
 import { HandleClickHeaderMenuButtonsInterface } from '../../interfaces/headerMenuInterfaces'
 import { InnerSectionProps } from '../innerSections/InnerSection'
@@ -20,8 +20,7 @@ interface usersMinimalInfosTypes {
     profilePicture:string
 }
 
-const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({
-    screenFormat, 
+const ProfileButton:React.FC<ProfileButtonProps & HandleClickHeaderMenuButtonsInterface> = ({
     locationContext, 
     handleClick, 
     setCurrentInnerSection, 
@@ -32,12 +31,7 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     // storing informations about the user from the fetch
     const [userData, setUserData] = useState<usersMinimalInfosTypes>()
 
-    // const for when in different context
-    const inHeaderMenuContext = locationContext === 'headerMenu'
-    const inPostContext = locationContext === 'post'
-    const inFeedSelectorContext = locationContext === 'feedSelector'
-
-    // fetching the datas from the json file
+    // fetching the datas to get the user's name and profile image
     useEffect(() => {
 
         const fetchingProfileImage = async () => {
@@ -69,8 +63,6 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
     // - in feedSelector, it will change the innerSection to 'profile'
     const handleClickActions = (e: { stopPropagation: () => any }) => {
 
-        // below, just wondering whether I should use switch or single line operation
-
         switch (locationContext) {
             case 'feedSelector':setCurrentInnerSection && setCurrentInnerSection('profile')
                 break
@@ -79,22 +71,23 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             case 'post':e.stopPropagation()
                 break
         }
-
-        // inHeaderMenuContext && handleClick && handleClick('user')
-        // inPostContext && e.stopPropagation()
-        // inFeedSelectorContext && setCurrentInnerSection && setCurrentInnerSection('profile')
     }
 
     // determining the class to give to the component
     const profileButtonClasses = () => {
+        
         let classNames = 'profileButton'
 
-        if (inFeedSelectorContext) {
-            classNames += ' profileButton-feedSelector'
-            if (currentInnerSection === 'profile') classNames += ' profileButton-feedSelector-selected'
+        switch (locationContext) {
+            case 'feedSelector':
+                classNames += ' profileButton-feedSelector'
+                if (currentInnerSection === 'profile') classNames += ' profileButton-feedSelector-selected'    
+                break
+            case 'headerMenu':classNames += ' profileButton-headerMenu'
+                break
+            case 'post':classNames += ' profileButton-post'
+                break
         }
-        else if (inHeaderMenuContext) classNames += ' profileButton-headerMenu'
-        else if (inPostContext) classNames += ' profileButton-post'
         
         return classNames
     }
@@ -125,15 +118,6 @@ const ProfileButton:React.FC<ScreenProps & ProfileButtonProps & HandleClickHeade
             case 'post': if (userData) image = userData.profilePicture
                 break
         }
-
-        // if (inHeaderMenuContext && userData?.users) 
-        //     if (!inFeedSelectorContext) image = userData.users[0].userAdditionalInformations.profilePicture
-        //     else image = 'profile_icon_white2.svg'
-        // else if (inPostContext) 
-        // else {
-        //     image = 'error'
-        //     console.log('error while trying to load profile image',image,userData,locationContext)
-        // }
 
         return image
     }

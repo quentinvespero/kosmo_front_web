@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 // import { InnerSectionProps } from '../../../interfaces/innerSectionsInterfaces'
 import Feed from './Feed'
 import { ScreenProps } from '../../../interfaces/interfaces'
@@ -6,6 +6,7 @@ import RightPanel from '../../rightPanel/RightPanel'
 import ViewTypeSelector from '../../logicComponents/ViewTypeSelector'
 import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 import { InnerSectionProps } from '../InnerSection'
+import { ErrorBoundary } from 'react-error-boundary'
 
 export interface InnerSectionHomeProps {
     // isPostSelected?:boolean
@@ -34,7 +35,12 @@ const InnerSectionHome:React.FC<ScreenProps & InnerSectionHomeProps> = ({screenF
         >
             <div className="innerSectionHome-feed">
                 {screenFormat !== 'mobile' && <ViewTypeSelector selectedViewType={selectedViewType} setSelectedViewType={setSelectedViewType} screenFormat={screenFormat}/>}
-                <Feed screenFormat={screenFormat} selectedViewType={selectedViewType}/>
+
+                <ErrorBoundary fallback={<p>Something went wrong when trying to fetch datas of the Feed</p>}>
+                    <Suspense fallback={<h1>loading...</h1>}>
+                        <Feed screenFormat={screenFormat} selectedViewType={selectedViewType}/>
+                    </Suspense>
+                </ErrorBoundary>
             </div>
 
             {currentInnerSection && 

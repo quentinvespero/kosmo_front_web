@@ -48,7 +48,6 @@ const PostsFeedMapper:React.FC<PostsFeedMapperProps & ScreenProps> = ({posts, sc
             {posts.map((post) => (
                 <Post
                     key={post._id} 
-                    screenFormat={screenFormat} 
                     postId={post._id} 
                     idSelectedPost={idSelectedPost} 
                     setIdSelectedPost={setIdSelectedPost} 

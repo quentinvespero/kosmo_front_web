@@ -20,7 +20,6 @@
     @include buttonBehavior2($grey2, .95, .15s);
     align-self: flex-start;
     color: $white1;
-    
     @include flexVerticalCentered(row);
     padding: 0.3rem .7rem 0.3rem 0.3rem;
     border-radius: 3rem;

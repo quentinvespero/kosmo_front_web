@@ -16,6 +16,7 @@
     @import './components/buttons/hideRightPanelButton.scss';
     @import './components/buttons/buttonWithIcon.scss';
     // @import './components/buttons/expandButton.scss';
+    @import './components/buttons/buttonWithImage.scss';
 
     // header
     @import './components/header/header.scss';
@@ -49,6 +50,7 @@
     @import './components/post/post.scss';
     @import './components/post/postContent.scss';
     @import './components/post/postThemeElements.scss';
+    @import './components/post/postProfileButton.scss';
 
         // post interactions
         @import './components/post/postInteractions/postInteractions.scss';

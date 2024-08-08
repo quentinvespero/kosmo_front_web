@@ -1,5 +1,4 @@
 import React from 'react'
-import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 
 // ########## buttonText props ##########
 // format : "classNameOfTheButton-textInsideTheButton"
@@ -10,6 +9,13 @@ import { ButtonWithIconProps } from '../../interfaces/buttonsInterfaces'
 // ########## className props ##########
 // className props is optional, if buttonLocation is not given
 // it will give a class to the button, as such : "buttonWithIcon-className"
+
+export interface ButtonWithIconProps {
+    buttonText: string
+    buttonIcon?: string
+    className?:string
+    description?:string
+}
 
 const ButtonWithIcon:React.FC<ButtonWithIconProps> = ({buttonIcon, buttonText, className, description}) => {
 

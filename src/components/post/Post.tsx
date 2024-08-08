@@ -7,6 +7,7 @@ import { ScreenProps } from '../../interfaces/interfaces'
 import ProfileButton from '../buttons/ProfileButton'
 import { PostInterfaces } from '../../interfaces/datas/postsDataInterfaces'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
+import PostProfileButton from './PostProfileButton'
 
 export interface PostProps {
     postId: string
@@ -61,7 +62,8 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
                 `}
             >
                 <div className="innerPost-topSection">
-                    <ProfileButton locationContext='post' postUsername={postUsername} />
+                    {/* <ProfileButton locationContext='post' postUsername={postUsername} /> */}
+                    <PostProfileButton postUsername={postUsername}/>
                     <PostThemeElements/>
                 </div>
                 <div className="innerPost-content">
