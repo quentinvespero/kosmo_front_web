@@ -7,37 +7,42 @@ import FeedRegularView from './feedViews/FeedRegularView'
 import FeedColumnsView from './feedViews/FeedColumnsView'
 import { FeedProps } from '../../../interfaces/innerSectionsInterfaces'
 import { PostInterfaces, PostsInterfaces } from '../../../interfaces/datas/postsDataInterfaces'
+import { fetchPostGetAll } from '../../../utils/api/postFetches'
 
 const Feed:React.FC<ScreenProps & FeedProps> = ({screenFormat, selectedViewType}) => {
 
-    const [postsData, setPostsData] = useState<PostsInterfaces['posts'] | null>(null)
+    // contains the posts of the feed, fetched below
+    // const [postsData, setPostsData] = useState<PostsInterfaces['posts'] | null>(null)
 
     // follow the state of the post being selected to show more details about it
     const [idSelectedPost, setIdSelectedPost] = useState<string>('')
 
-    useEffect(() => {
-        // fetch('src/assets/bdd.json')
-        fetch('./assets/jsons/posts.json')
-            .then(response => response.json())
-            .then(postsData => setPostsData(postsData.posts))
-            .catch(error => console.error('Error while trying to fetch the posts:', error))
-    }, [])
+    // useEffect(() => {
+    //     // fetch('src/assets/bdd.json')
+    //     fetch('./assets/jsons/posts.json')
+    //         .then(response => response.json())
+    //         .then(postsData => setPostsData(postsData.posts))
+    //         .catch(error => console.error('Error while trying to fetch the posts:', error))
+    // }, [])
 
-    if (!postsData) {
-        return <div className='feed-loadingPost'>
-            <span className="feed-glitterElement1 feed-glitterElement">l</span>
-            <span className="feed-glitterElement2 feed-glitterElement">o</span>
-            <span className="feed-glitterElement1 feed-glitterElement">a</span>
-            <span className="feed-glitterElement2 feed-glitterElement">d</span>
-            <span className="feed-glitterElement1 feed-glitterElement">i</span>
-            <span className="feed-glitterElement2 feed-glitterElement">n</span>
-            <span className="feed-glitterElement1 feed-glitterElement">g</span>
-            <span className="feed-glitterElement2 feed-glitterElement">.</span>
-            <span className="feed-glitterElement1 feed-glitterElement">.</span>
-            <span className="feed-glitterElement2 feed-glitterElement">.</span>
-            <span className="feed-glitterElement2 feed-glitterElement">.</span>
-        </div>
-    }
+    // if (!postsData) {
+    //     return <div className='feed-loadingPost'>
+    //         <span className="feed-glitterElement1 feed-glitterElement">l</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">o</span>
+    //         <span className="feed-glitterElement1 feed-glitterElement">a</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">d</span>
+    //         <span className="feed-glitterElement1 feed-glitterElement">i</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">n</span>
+    //         <span className="feed-glitterElement1 feed-glitterElement">g</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">.</span>
+    //         <span className="feed-glitterElement1 feed-glitterElement">.</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">.</span>
+    //         <span className="feed-glitterElement2 feed-glitterElement">.</span>
+    //     </div>
+    // }
+
+    const postsData = fetchPostGetAll().data.posts
+    // console.log('---------Feed',postsData)
 
     return (
         <div 

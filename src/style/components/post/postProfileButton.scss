@@ -10,8 +10,13 @@
     font-size: .8rem;
     font-weight: 700;
 
+    &:hover {
+        box-shadow: $innerShadow7;
+    }
+
     & > .buttonWithImage{
         column-gap: .5rem;
+        align-items: center;
         
         & > img {
             box-shadow: $shadow7;

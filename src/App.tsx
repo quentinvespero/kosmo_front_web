@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 import BackgroundLayer from './pages/BackgroundLayer'
+import FallbackLoading from './components/FallbackComponents/FallbackLoading'
 
 export interface AppProps {
     currentPage: 'home' | 'entry'
@@ -80,7 +81,7 @@ const App = () => {
         <div className='app'>
             {/* <p>{import.meta.env.VITE_APP_TITLE}</p> */}
             
-            <Suspense fallback={<h1>loading...</h1>}>
+            <Suspense fallback={<FallbackLoading/>}>
             
                 <BackgroundLayer isVisible={isBackgroundLayerVIsible}/>
 

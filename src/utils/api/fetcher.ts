@@ -1,7 +1,8 @@
 // here, baseUrl contains the value stored in the environment variables, since i'm using VITE, it starts with VITE_
-const baseUrl = `${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}`
+const baseUrl = `${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_PORT}`
 
 // fetch function used as the base for the requests below
+// it returns the data in json, so it's what SWR expect, so it can be used later on with SWR
 const baseFetch = async (urlEndpoint: string, options?: RequestInit) => {
     try {
         // here we are fetching the backend with the endpoint (baseUrl + urlEndpoint parameter) and wait for its response that we'll assign to responseFromBackend
@@ -13,16 +14,18 @@ const baseFetch = async (urlEndpoint: string, options?: RequestInit) => {
         if (!responseFromBackend.ok) {
             throw new Error(dataReceived.message || 'it seems like an error occured while fetching the datas...')
         }
+        // console.log('-----fetcher.ts-----',`url:"${baseUrl}${urlEndpoint}"`)
         return dataReceived
     }
     catch (error) {
-        console.error('Fetch error:', error);
-        throw new Error('Network error or API is down');
+        console.error(
+            '-----fetcher.ts-----',
+            `url:"${baseUrl}${urlEndpoint}"`, 
+            'Fetch error:', error
+        )
+        throw new Error('Network error or API is down')
     }
 }
-
-// get request (that use fetcher above)
-export const get = (urlEndpoint: string) => baseFetch(urlEndpoint)
 
 // HOF to handle the different methods when sending datas 
 // 1 - sendWithData take a parameter POST, PUT or PATCH
@@ -35,6 +38,9 @@ const sendWithData = (method: 'POST' | 'PUT' | 'PATCH') => (urlEndpoint: string,
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(dataToSend)
 })
+
+// get request (that use fetcher above)
+export const get = (urlEndpoint: string) => baseFetch(urlEndpoint)
 
 // requests with data
 export const post = sendWithData('POST')

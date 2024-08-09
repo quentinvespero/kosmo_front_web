@@ -41,6 +41,8 @@ const ButtonWithImage:React.FC<ButtonWithImageProps> = ({imageName, buttonText, 
 
         return path
     }
+
+    // console.log('-------ButtonWithImage',imageName,buttonText)
     
     return (
         <div className={classesToApply()} title={description ? description : buttonText}>

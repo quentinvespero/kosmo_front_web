@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
@@ -8,6 +8,9 @@ import ProfileButton from '../buttons/ProfileButton'
 import { PostInterfaces } from '../../interfaces/datas/postsDataInterfaces'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
 import PostProfileButton from './PostProfileButton'
+import { ErrorBoundary } from 'react-error-boundary'
+import FallbackError from '../FallbackComponents/FallbackError'
+import FallbackLoading from '../FallbackComponents/FallbackLoading'
 
 export interface PostProps {
     postId: string
@@ -32,12 +35,12 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
     // function to handle the click on the post and make it selected
     const handleClick = (event:React.MouseEvent<HTMLDivElement>) => {
         
-        console.log(event.target)
+        // console.log(event.target)
 
         if (event.target === event.currentTarget) {
             
-            console.log(event.target)
-            console.log(event.currentTarget)
+            // console.log(event.target)
+            // console.log(event.currentTarget)
             
             if (setIdSelectedPost) {
                 setIdSelectedPost(idSelectedPost !== postId ? postId : '')
@@ -62,8 +65,11 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
                 `}
             >
                 <div className="innerPost-topSection">
-                    {/* <ProfileButton locationContext='post' postUsername={postUsername} /> */}
-                    <PostProfileButton postUsername={postUsername}/>
+                    <ErrorBoundary fallback={<FallbackError/>}>
+                        <Suspense fallback={<FallbackLoading/>}>
+                            <PostProfileButton postUsername={postUsername}/>
+                        </Suspense>
+                    </ErrorBoundary>
                     <PostThemeElements/>
                 </div>
                 <div className="innerPost-content">
