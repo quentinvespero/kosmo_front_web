@@ -4,9 +4,9 @@ import { ScreenProps } from '../../../../interfaces/interfaces'
 import Post from '../../../post/Post'
 import FeedDetailsPanel from './FeedDetailsPanel'
 import PostsFeedMapper from '../PostsFeedMapper'
-import FallbackLoading from '../../../FallbackComponents/FallbackLoading'
+import FallbackLoading from '../../../fallbackComponents/FallbackLoading'
 import { ErrorBoundary } from 'react-error-boundary'
-import FallbackError from '../../../FallbackComponents/FallbackError'
+import FallbackError from '../../../fallbackComponents/FallbackError'
 
 const FeedDetailsView:React.FC<FeedViewsInterfaces & ScreenProps> = ({posts, screenFormat, idSelectedPost, setIdSelectedPost, selectedViewType}) => {
     return (

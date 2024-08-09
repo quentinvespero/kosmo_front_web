@@ -1,0 +1,28 @@
+.fallbackLoading {
+    display: flex;
+    @include transition(.2s);
+    animation: zoomEffect1 .5s ease-in-out;
+    align-self: center;
+    
+    & > .buttonWithImage{
+        @include flexVerticalCentered(column);
+        row-gap: .5rem;
+        @include transition(.3s);
+        
+        & > img {
+            @include transition(.3s);
+            animation: fallbackLoading_rotate 3s linear infinite;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+@keyframes fallbackLoading_rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

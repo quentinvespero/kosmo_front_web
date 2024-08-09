@@ -18,6 +18,11 @@
     // @import './components/buttons/expandButton.scss';
     @import './components/buttons/buttonWithImage.scss';
 
+    // fallbackComponents
+    @import './components/fallbackComponents/fallbackError.scss';
+    @import './components/fallbackComponents/fallbackLoading.scss';
+    @import './components/fallbackComponents/fallbackTextLoading.scss';
+
     // header
     @import './components/header/header.scss';
     @import './components/header/pointCounter.scss';

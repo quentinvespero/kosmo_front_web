@@ -1,0 +1,11 @@
+.fallbackError{
+    display: flex;
+    align-self: center;
+    padding: .5rem 1.5rem;
+    @include transition(.2s);
+    animation: zoomEffect1 1s ease-in-out;
+    background: $red;
+    border-radius: 5rem;
+    box-shadow: $innerShadow2;
+    font-size: .8rem;
+}

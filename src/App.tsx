@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import EntryPage from './pages/EntryPage'
 import BackgroundLayer from './pages/BackgroundLayer'
-import FallbackLoading from './components/FallbackComponents/FallbackLoading'
+import FallbackLoading from './components/fallbackComponents/FallbackLoading'
 
 export interface AppProps {
     currentPage: 'home' | 'entry'

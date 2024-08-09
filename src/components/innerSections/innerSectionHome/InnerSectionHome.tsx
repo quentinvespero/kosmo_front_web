@@ -7,8 +7,8 @@ import ViewTypeSelector from '../../logicComponents/ViewTypeSelector'
 import { ViewTypeSelectorProps } from '../../../interfaces/logicComponents'
 import { InnerSectionProps } from '../InnerSection'
 import { ErrorBoundary } from 'react-error-boundary'
-import FallbackError from '../../FallbackComponents/FallbackError'
-import FallbackLoading from '../../FallbackComponents/FallbackLoading'
+import FallbackError from '../../fallbackComponents/FallbackError'
+import FallbackLoading from '../../fallbackComponents/FallbackLoading'
 
 export interface InnerSectionHomeProps {
     // isPostSelected?:boolean

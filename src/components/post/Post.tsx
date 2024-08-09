@@ -3,14 +3,12 @@ import PostThemeElements from './PostThemeElements'
 import PostContent from './PostContent'
 import PostInteractions from './postInteractions/PostInteractions'
 import { ScreenProps } from '../../interfaces/interfaces'
-// import { PostProps } from '../../interfaces/postInterfaces'
-import ProfileButton from '../buttons/ProfileButton'
 import { PostInterfaces } from '../../interfaces/datas/postsDataInterfaces'
 import { ViewTypeSelectorProps } from '../../interfaces/logicComponents'
 import PostProfileButton from './PostProfileButton'
 import { ErrorBoundary } from 'react-error-boundary'
-import FallbackError from '../FallbackComponents/FallbackError'
-import FallbackLoading from '../FallbackComponents/FallbackLoading'
+import FallbackError from '../fallbackComponents/FallbackError'
+import FallbackTextLoading from '../fallbackComponents/FallbackTextLoading'
 
 export interface PostProps {
     postId: string
@@ -66,10 +64,12 @@ const Post:React.FC<ScreenProps & PostProps> = ({ screenFormat, postId, idSelect
             >
                 <div className="innerPost-topSection">
                     <ErrorBoundary fallback={<FallbackError/>}>
-                        <Suspense fallback={<FallbackLoading/>}>
+                        <Suspense fallback={<FallbackTextLoading/>}>
                             <PostProfileButton postUsername={postUsername}/>
                         </Suspense>
                     </ErrorBoundary>
+                    {/* <FallbackError/> */}
+                    {/* <FallbackTextLoading/> */}
                     <PostThemeElements/>
                 </div>
                 <div className="innerPost-content">

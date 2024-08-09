@@ -30,7 +30,7 @@ const Home: React.FC<PagesProps> = ({ screenFormat, currentPage, transitionBetwe
     const [currentInnerSection, setCurrentInnerSection] = useState<InnerSectionProps['currentInnerSection']>('feed')
 
     // following state of the view selected in feed
-    const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('columnsView')
+    const [selectedViewType, setSelectedViewType] = useState<ViewTypeSelectorProps['selectedViewType']>('regularView')
 
     // state to follow height of the TopMenu, to adapt the height given to fillTheGap
     const [topMenuHeight, setTopMenuHeight] = useState<number>(0)

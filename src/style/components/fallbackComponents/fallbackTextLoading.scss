@@ -1,0 +1,44 @@
+.fallbackTextLoading {
+    display: flex;
+    width: 5rem;
+    height: 1rem;
+    @include transition(.2s);
+    @include transparent($transparentWhite2, 1rem);
+    animation: zoomEffect1 .2s ease-in-out;
+    border-radius: 5rem;
+    z-index: 1;
+    position: relative;
+    
+    & .fallbackTextLoading-movingLight{
+        @include transition(.2s);
+        position: absolute;
+        z-index: -1;
+        // display: flex;
+        align-self: center;
+        height: .7rem;
+        width: 2rem;
+        background: $transparentWhite1;
+        border-radius: 5rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(.3rem);
+        animation: fallbackTextLoading_textEffect .8s ease-out infinite;
+    }
+}
+
+@keyframes fallbackTextLoading_textEffect {
+    0% {
+        // transform: scale(.5);
+        opacity: 0;
+        left: 5%;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        // transform: translateX(10rem);
+        left: 90%;
+        opacity: 0;
+    }
+}
