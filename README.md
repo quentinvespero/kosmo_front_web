@@ -2,7 +2,7 @@
 
 - **technology** : React + Vite
 
-- **link for a description of the application** : labo.quentinvespero.com
+- **current live version of the app (only front)** : https://quentinvespero.github.io/kosmo_front_web/
 
 ---
 
